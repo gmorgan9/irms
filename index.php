@@ -38,7 +38,7 @@ session_start();
     </div>
 <br>
 <div class="record_incident">
-    <a href=""><button class="btn btn-primary rec">Record Incident</button></a>
+    <a href="record-incident.php"><button class="btn btn-primary rec">Record Incident</button></a>
 </div>
 
 <br>
