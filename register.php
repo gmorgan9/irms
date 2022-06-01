@@ -5,7 +5,7 @@
     // check to see if there is a user already logged in, if so redirect them 
     session_start(); 
     if (isset($_SESSION['user_name']) && isset($_SESSION['id'])) 
-        header("Location: ./index.php");  // redirect the user to the home page
+        header("Location: index.php");  // redirect the user to the home page
 
         if (isset($_POST['registerBtn'])){ 
             // get all of the form data 
@@ -15,7 +15,7 @@
             $password = $_POST['password']; 
             $confirm_password = $_POST['confirm_password']; 
 
-            if ($user_name != "" && $passwordd != "" && $confirm_password != ""){
+            if ($user_name != "" && $password != "" && $confirm_password != ""){
                 // make sure the two passwords match
                 if ($password === $confirm_password){
                     // make sure the password meets the min strength requirements
@@ -32,11 +32,11 @@
                 $error_msg = 'Please fill out all required fields.';
 
                 // query the database to see if the username is taken
-$query = mysqli_query($conn, "SELECT * FROM users WHERE username='{$username}'");
+$query = mysqli_query($cnn, "SELECT * FROM users WHERE user_name='{$user_name}'");
 if (mysqli_num_rows($query) == 0){
     // create and format some variables for the database
     $id = '';
-    $passwd = md5($passwd);
+    $password = md5($password);
     $date_created = time();
     $last_login = 0;
     $status = 1;
@@ -44,7 +44,7 @@ if (mysqli_num_rows($query) == 0){
     // next code block
 }
 else
-    $error_msg = 'The username <i>'.$username.'</i> is already taken. Please use another.';
+    $error_msg = 'The username <i>'.$user_name.'</i> is already taken. Please use another.';
 
     // insert the user into the database
 mysqli_query($con, "INSERT INTO users VALUES (
