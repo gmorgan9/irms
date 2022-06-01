@@ -8,8 +8,8 @@ session_start();
     {
         //something was posted
         $full_name = $_POST['full_name'];
-        $email = $_POST['email'];
         $user_name = $_POST['user_name'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
         //$confirm_password = $_POST['confirm_password'];
 
@@ -17,7 +17,7 @@ session_start();
         {
             //save to database
             $user_id = random_num(20);
-            $query = "insert into users (user_id,full_name,email,user_name,password) values ('$user_id','$full_name','$email','$user_name','$password')";
+            $query = "insert into users (user_id,full_name,user_name,email,password) values ('$user_id','$full_name','$user_name','$email','$password')";
             
             mysqli_query($query);
 
@@ -129,7 +129,7 @@ session_start();
 </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-    <button id="button" type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
+    <button id="button" type="submit" name="registerBtn" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
     <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
 </form>
