@@ -10,7 +10,7 @@ session_start();
         $emailAddress = $_POST['emailAddress'];
         $userName = $_POST['userName'];
         $password = $_POST['password'];
-        // $confirmPassword = $_POST['confirmPassword'];
+        $confirmPassword = $_POST['confirmPassword'];
 
         if(!empty($fullName) && !empty($emailAddress) && !empty($userName) && !empty($password))
         {
@@ -58,7 +58,7 @@ session_start();
 <br><br>
 <div class="d-flex justify-content-center">
     <!-- form start -->
-<form class="reg-form" method="post" action="register.php">
+<form class="reg-form" method="post">
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
         <div class="sm-circle">
@@ -106,17 +106,16 @@ session_start();
         <input name="password" class="form-control" placeholder="Create password" type="password">
 </div>
     </div> <!-- form-group// -->
-    <!-- <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
     <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input name="confirmPassword" class="form-control" placeholder="Repeat password" type="password">
 </div>
-    </div>  -->
-    <!-- form-group// -->      
+    </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-    <button type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
+    <button id="button" type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
     <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
 </form>
