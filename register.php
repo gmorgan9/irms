@@ -30,7 +30,7 @@
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
         <div class="sm-circle">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user fa-8x"></i>
         </div>
     </div>
 </div>
