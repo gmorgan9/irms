@@ -4,6 +4,8 @@
 .header {
     background-color: blue;
     height: 45px;
+    margin-top: auto;
+    margin-bottom: auton;
 }
 .logo {
     text-align: center;
