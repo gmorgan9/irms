@@ -12,7 +12,7 @@ session_start();
         $password = $_POST['password'];
         // $confirmPassword = $_POST['confirmPassword'];
 
-        if(!empty($fullName) && !empty($emailAddress) && !empty($userName) && !empty($password) && !empty($confirmPassword) && !is_numeric($userName))
+        if(!empty($fullName) && !empty($emailAddress) && !empty($userName) && !empty($password) && !empty($confirmPassword))
         {
             //save to database
             $user_id = random_num(20);
