@@ -60,7 +60,7 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
-      <td>@mdo</td>
+      <td colspan="2">@mdo</td>
       <td>asdf</td>
       <td>asdfasdf</td>
       <td>zxcvzxcv</td>
