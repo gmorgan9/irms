@@ -46,9 +46,12 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Number</th>
+      <th scope="col">Severity</th>
+      <th scope="col">Description</th>
+      <th scope="col">Configuration Item</th>
+      <th scope="col">KB Article</th>
+      <th scope="col">Date</th>
     </tr>
   </thead>
   <tbody>
