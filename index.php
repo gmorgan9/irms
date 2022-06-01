@@ -32,12 +32,15 @@
 
 <div class="col d-flex justify-content-center">
 <div class="row">
-<div class="card" style="width: 18rem;">
-<a href="#" class="btn btn-primary"><div class="card-body">
-<i class="fa-solid fa-envelope-open"></i>
-    Open Incident</a>
-  </div>
-</div>
+
+<a href="#" class="">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <i class="fa-solid fa-envelope-open"></i>
+                Open Incident
+        </div>
+    </div>
+</a>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     
