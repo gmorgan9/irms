@@ -54,3 +54,6 @@ form {
     width: 500px;
     height: 550px;
 }
+.input-group {
+    width: 80%;
+}
