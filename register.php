@@ -2,99 +2,67 @@
 session_start();
     include("database/connection.php");
     include("database/functions.php");
-    
 
-    // Define variables and initialize with empty values
-$user_name = $password = $confirm_password = "";
-$user_name_err = $password_err = $confirm_password_err = "";
- 
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    // Validate username
-    if(empty(trim($_POST["user_name"]))){
-        $user_name_err = "Please enter a username.";
-    } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["user_name"]))){
-        $user_name_err = "Username can only contain letters, numbers, and underscores.";
-    } else{
-        // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE user_name = ?";
-        
-        if($stmt = mysqli_prepare($con, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_user_name);
-            
-            // Set parameters
-            $param_user_name = trim($_POST["user_name"]);
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                /* store result */
-                mysqli_stmt_store_result($stmt);
-                
-                if(mysqli_stmt_num_rows($stmt) == 1){
-                    $user_name_err = "This username is already taken.";
-                } else{
-                    $user_name = trim($_POST["user_name"]);
+    if (isset($_POST['submit'])) {
+        if (isset($_POST['name']) && isset($_POST['email']) && 
+        isset($_POST['username']) && isset($_POST['password']) &&
+        isset($_POST['confirm_password'])) {
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
+
+        $Select = "SELECT username FROM users WHERE username = ? LIMIT 1";
+        $Insert = "INSERT INTO users (name, email, username, password,) values(?, ?, ?, ?)";
+
+        $host = "localhost";
+        $dbUsername = "root";
+        $dbPassword = "Morgan22!";
+        $dbName = "irms";
+        $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+        if ($conn->connect_error) {
+            die('Could not connect to the database.');
+        }
+        else {
+
+        $stmt = $conn->prepare($Select);
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $stmt->bind_result($resultUsername);
+            $stmt->store_result();
+            $stmt->fetch();
+            $rnum = $stmt->num_rows;
+
+            if ($rnum == 0) {
+                $stmt->close();
+                $stmt = $conn->prepare($Insert);
+                $stmt->bind_param("ssssii",$username, $password, $gender, $email, $phoneCode, $phone);
+                if ($stmt->execute()) {
+                    echo "New record inserted sucessfully.";
                 }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                else {
+                    echo $stmt->error;
+                }
             }
-
-            // Close statement
-            mysqli_stmt_close($stmt);
-        }
-    }
-    
-    // Validate password
-    if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter a password.";     
-    } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
-    } else{
-        $password = trim($_POST["password"]);
-    }
-    
-    // Validate confirm password
-    if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Please confirm password.";     
-    } else{
-        $confirm_password = trim($_POST["confirm_password"]);
-        if(empty($password_err) && ($password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
-        }
-    }
-    
-    // Check input errors before inserting in database
-    if(empty($user_name_err) && empty($password_err) && empty($confirm_password_err)){
-        
-        // Prepare an insert statement
-        $sql = "INSERT INTO users (user_name, password) VALUES (?, ?)";
-         
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_user_name, $param_password);
-            
-            // Set parameters
-            $param_user_name = $user_name;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Redirect to login page
-                header("location: login.php");
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
+            else {
+                echo "Someone already registers using this email.";
             }
-
-            // Close statement
-            mysqli_stmt_close($stmt);
+            $stmt->close();
+            $conn->close();
         }
     }
-    
-    // Close connection
-    mysqli_close($con);
+    else {
+        echo "All field are required.";
+        die();
+    }
 }
+else {
+    echo "Submit button is not set";
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -126,71 +94,63 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <br><br>
 <div class="d-flex justify-content-center">
     <!-- form start -->
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="reg-form" method="post">
-
-
-<div class="form-header d-flex justify-content-center">
-    <div class="bg-circle">
-        <div class="sm-circle">
-        <div class="d-flex justify-content-center">
-        <i class="user-header fa-solid fa-user fa-3x"></i>
-</div>
+<form action="register.php" class="reg-form" method="post">
+    <div class="form-header d-flex justify-content-center">
+        <div class="bg-circle">
+            <div class="sm-circle">
+                <div class="d-flex justify-content-center">
+                    <i class="user-header fa-solid fa-user fa-3x"></i>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-    
 <br>
 <h2 class="text-center">Registration</h2>
-    <br>
+<br>
 
-
-    <!-- <div class="d-flex justify-content-center">
-	<div class="form-group input-group w-75">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input name="full_name" class="form-control" placeholder="Full name" type="text">
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+	        </div>
+            <input name="name" class="form-control" placeholder="Full name" type="text">
         </div>
-    </div>  -->
-    <!-- form-group// -->
-    <!-- <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-        <input name="email" class="form-control" placeholder="Email address" type="email">
-</div>
-    </div>  -->
-    <!-- form-group// -->
-    <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-at"></i> </span>
-		 </div>
-        <input name="user_name" class="form-control" placeholder="User Name" type="text" <?php echo (!empty($user_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $user_name; ?>"> <span class="invalid-feedback"><?php echo $username_err; ?></span>
-</div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input name="password" class="form-control" placeholder="Create password" type="password"<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-</div>
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		    </div>
+            <input name="email" class="form-control" placeholder="Email address" type="email">
+        </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input name="confirm_password" class="form-control" placeholder="Repeat password" type="password"<?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-</div>
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-at"></i> </span>
+		    </div>
+            <input name="username" class="form-control" placeholder="User Name" type="text">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		    </div>
+            <input name="password" class="form-control" placeholder="Create password" type="password">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		    </div>
+            <input name="confirm_password" class="form-control" placeholder="Repeat password" type="password">
+        </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-    <button id="button" type="submit" name="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
-</div> 
+        <button id="button" type="submit" name="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
+    </div> 
     <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
 </form>
 </div>
