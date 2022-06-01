@@ -148,7 +148,7 @@ function getClosedInc()
 	return $closed_incidents;
 }
 // RETURNS OPEN INCIDENTS
-function getClosedInc()
+function getOpenInc()
 {
 	global $con;
 	$sql = "SELECT * FROM incidents where status=0";
