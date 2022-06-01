@@ -27,7 +27,7 @@
 <div class="record_incident">
     <a href=""><button class="btn btn-primary">Record Incident</button></a>
 </div>
-
+<div class="mx-auto" width="1800px">
 <div class="row">
 <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
@@ -53,6 +53,7 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
+  </div>
   </div>
   <br>
 <!-- Row 2 -->
