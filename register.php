@@ -2,67 +2,6 @@
 session_start();
     include("database/connection.php");
     include("database/functions.php");
-
-    if (isset($_POST['submit'])) {
-        if (isset($_POST['name']) && isset($_POST['email']) && 
-        isset($_POST['username']) && isset($_POST['password']) &&
-        isset($_POST['confirm_password'])) {
-
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $confirm_password = $_POST['confirm_password'];
-
-        $Select = "SELECT username FROM users WHERE username = ? LIMIT 1";
-        $Insert = "INSERT INTO users (name, email, username, password,) values(?, ?, ?, ?)";
-
-        $host = "localhost";
-        $dbUsername = "root";
-        $dbPassword = "Morgan22!";
-        $dbName = "irms";
-        $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
-        if ($conn->connect_error) {
-            die('Could not connect to the database.');
-        }
-        else {
-
-        $stmt = $conn->prepare($Select);
-            $stmt->bind_param("s", $username);
-            $stmt->execute();
-            $stmt->bind_result($stmt);
-            $stmt->store_result();
-            $stmt->fetch();
-            $rnum = $stmt->num_rows;
-
-            if ($rnum == 0) {
-                $stmt->close();
-                $stmt = $conn->prepare($Insert);
-                $stmt->bind_param("ssss",$name, $email, $username, $password);
-                if ($stmt->execute()) {
-                    echo "New record inserted sucessfully.";
-                }
-                else {
-                    echo $stmt->error;
-                }
-            }
-            else {
-                echo "Someone already registers using this email.";
-            }
-            $stmt->close();
-            $conn->close();
-        }
-    }
-    else {
-        echo "All field are required.";
-        die();
-    }
-}
-else {
-    echo "Submit button is not set";
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -95,6 +34,7 @@ else {
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="register.php" class="reg-form" method="post">
+<?php include('errors.php'); ?>
     <div class="form-header d-flex justify-content-center">
         <div class="bg-circle">
             <div class="sm-circle">
