@@ -58,7 +58,7 @@ session_start();
 
                 mysql_select_db("irms", $con);
 
-                $result = mysql_query("select count(1) FROM incidents");
+                $result = mysql_query("select * FROM incidents");
                 $row = mysql_fetch_array($result);
 
                 $total = $row[0];
