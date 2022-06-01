@@ -24,7 +24,7 @@ body {
 .record_incident {
     float: right;
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: 25px;
 }
 .rec {
     color: black !important;
