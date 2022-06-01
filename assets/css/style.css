@@ -1,11 +1,13 @@
 .header {
     background-color: blue;
+    height: 25px;
 }
 .logo {
     text-align: center;
 }
 .logo a {
     position: absolute;
-  right: 0;
-  margin-right: 5%;
+    right: 0;
+    margin-right: 5%;
+    color: black;
 }
