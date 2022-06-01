@@ -1,6 +1,9 @@
+* {
+    margin: 0;
+}
 .header {
     background-color: blue;
-    height: 25px;
+    height: 45px;
 }
 .logo {
     text-align: center;
