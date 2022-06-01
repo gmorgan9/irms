@@ -48,11 +48,17 @@ body {
     margin-bottom: 15px;
 }
 
-form {
+.reg-form {
     background-color: white;
     border-radius: 15px;
     width: 500px;
     height: 550px;
+}
+.log-form {
+    background-color: white;
+    border-radius: 15px;
+    width: 500px;
+    height: 300px;
 }
 .input-group {
     width: 300px;
