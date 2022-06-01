@@ -37,7 +37,7 @@
     </div>
 </div>
 <br>
-<h2>Member Login</h2>
+<h2 class="text-center">Member Login</h2>
     <br>
     
     <div class="d-flex justify-content-center">
