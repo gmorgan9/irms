@@ -140,12 +140,11 @@ if (isset($_POST['rec_inc'])) {
 }
 
 // COUNT OPEN INCIDENTS
-// function countOpenInc()
-// {
-//     global $con;
-//     $sql = "SELECT * FROM incidents";
-// 	$result = mysqli_query($con, $sql);
-//     $row = mysql_fetch_array($result);
-//     $total = $row[0];
-//     return $total; 
-// }
+function countOpenInc()
+{
+    global $con;
+    $sql="select count('1') from incidents";
+    $result=mysqli_query($con,$sql);
+    $rowtotal=mysqli_fetch_array($result); 
+    return $rowtotal; 
+}

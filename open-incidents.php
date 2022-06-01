@@ -8,7 +8,7 @@ session_start();
         header('location: login.php');
     }
     $incidents = getAllInc();
-    //$open_incidents = countOpenInc();
+    $open_incidents = countOpenInc();
 ?>
 
 
@@ -51,11 +51,7 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-
-$sql="select count('1') from incidents";
-$result=mysqli_query($con,$sql);
-$row=mysqli_fetch_array($result);
-echo "<h3>$row[0]</h3>";
+                    echo "$rowtotal[0]";
 
                 ?>
 
