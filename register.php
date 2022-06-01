@@ -28,6 +28,7 @@
 
 <form>
     <br><br>
+    <div class="d-flex justify-content-center">
 	<div class="form-group input-group w-75">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -61,7 +62,7 @@
     <button type="submit" class="btn btn-primary text-center">Create Account</button>    
     <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
 </form>
-
+</div>
 <a href="/">back</a>
 
 </body>
