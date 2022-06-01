@@ -58,7 +58,7 @@ session_start();
 <br><br>
 <div class="d-flex justify-content-center">
     <!-- form start -->
-<form class="reg-form" method="post" action="register.php">
+<form class="reg-form" method="post">
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
         <div class="sm-circle">
