@@ -35,22 +35,24 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
-        <div class="col-xs-1" text-align="center">
+            <div class="d-flex justify-content-center">
                 <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+            </div>
+            <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Open Incidents</a>
-</div>
+            </div>
         </div>
     </div>
 </div>
 <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
-        <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
-</div>
-<div class="d-flex justify-content-center">
+            </div>
+            <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Closed Incidents</a>
-</div>
+            </div>
         </div>
     </div>
 </div>
@@ -75,10 +77,10 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
-            <div class="col d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <i class="fa-solid fa-file-invoice fa-8x"></i> <br>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link" style="width: 200px;">Incident Priority Report</a>
             </div>
         </div>
@@ -87,10 +89,10 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
-            <div class="col d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Other Reports</a>
             </div>
         </div>
@@ -99,10 +101,10 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
-            <div class="col d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <i class="fa-solid fa-note-sticky fa-8x"></i> <br>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Incident Notes</a>
             </div>
         </div>
