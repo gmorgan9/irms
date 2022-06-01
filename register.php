@@ -48,14 +48,15 @@ session_start();
 <h2 class="text-center">Registration</h2>
 <br>
 
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 	        </div>
             <input name="name" class="form-control" placeholder="Full name" type="text">
         </div>
-    </div> <!-- form-group// -->
+    </div>  -->
+    <!-- form-group// -->
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
