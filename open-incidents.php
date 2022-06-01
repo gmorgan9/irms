@@ -43,7 +43,7 @@
 <br><br><br>
 
 <table class="table">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -72,7 +72,6 @@
     </tr>
   </tbody>
 </table>
-
 
 
 </body>
