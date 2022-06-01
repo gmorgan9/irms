@@ -144,7 +144,8 @@ function countOpenInc()
 {
     global $con;
     $sql = "SELECT * FROM incidents";
-    $result = mysqli_query($con, $sql);
-    $rowcount = mysqli_num_rows($result);
-    return $rowcount; 
+	$result = mysqli_query($con, $sql);
+    $row = mysql_fetch_array($result);
+    $total = $row[0];
+    return $total; 
 }

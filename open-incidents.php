@@ -52,7 +52,7 @@ session_start();
                 
                 <?php 
                 
-                echo "this is it: " . $rowcount;
+                echo $total;
                  ?>
                  
                 </h1>
