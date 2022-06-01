@@ -6,17 +6,17 @@ session_start();
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         //something was posted
-        $fullName = $_POST['fullName'];
-        $emailAddress = $_POST['emailAddress'];
+        //$fullName = $_POST['fullName'];
+        //$emailAddress = $_POST['emailAddress'];
         $userName = $_POST['userName'];
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirmPassword'];
 
-        if(!empty($fullName) && !empty($emailAddress) && !empty($userName) && !empty($password))
+        if(!empty($userName) && !empty($password) && !is_numeric($userName))
         {
             //save to database
             $user_id = random_num(20);
-            $query = "insert into users (user_id,fullName,emailAddress,userName,password) values ('$user_id','$fullName','$emailAddress','$userName','$password')";
+            $query = "insert into users (user_id,userName,password) values ('$user_id','$fullName','$userName','$password')";
             
             mysqli_query($query);
 
@@ -74,22 +74,24 @@ session_start();
     <br>
 
 
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-center">
 	<div class="form-group input-group w-75">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
         <input name="fullName" class="form-control" placeholder="Full name" type="text">
 </div>
-    </div> <!-- form-group// -->
-    <div class="d-flex justify-content-center">
+    </div>  -->
+    <!-- form-group// -->
+    <!-- <div class="d-flex justify-content-center">
     <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
         <input name="emailAddress" class="form-control" placeholder="Email address" type="email">
 </div>
-    </div> <!-- form-group// -->
+    </div>  -->
+    <!-- form-group// -->
     <div class="d-flex justify-content-center">
     <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
@@ -106,14 +108,15 @@ session_start();
         <input name="password" class="form-control" placeholder="Create password" type="password">
 </div>
     </div> <!-- form-group// -->
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-center">
     <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input name="confirmPassword" class="form-control" placeholder="Repeat password" type="password">
 </div>
-    </div> <!-- form-group// -->      
+    </div>  -->
+    <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
     <button id="button" type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
