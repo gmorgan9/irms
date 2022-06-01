@@ -42,7 +42,7 @@
 </div>
 <br><br><br>
 
-<table class="table table-striped">
+<table class="table table-hover table-light">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -54,21 +54,21 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td class="table-light">Mark</td>
+      <td class="table-light">Otto</td>
+      <td class="table-light">@mdo</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td class="table-light">Jacob</td>
+      <td class="table-light">Thornton</td>
+      <td class="table-light">@fat</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <td class="table-light">Larry</td>
+      <td class="table-light">the Bird</td>
+      <td class="table-light">@twitter</td>
     </tr>
   </tbody>
 </table>
