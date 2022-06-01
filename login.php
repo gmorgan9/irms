@@ -27,6 +27,16 @@
 
 <a href="/">back</a>
 
+<form class="form">
+  <div class="form-group">
+    <label for="userName">Username</label>
+    <input type="text" id="userName" class="form-control mx-sm-3">
+
+    <label for="inputPassword6">Password</label>
+    <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+  </div>
+</form>
+
 
 </body>
 </html>
