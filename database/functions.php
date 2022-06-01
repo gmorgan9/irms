@@ -85,6 +85,16 @@ if (isset($_POST['login_user'])) {
     }
   }
 
+  // initializing variables
+$inc_num = "";
+$priority    = "";
+$description    = "";
+$assign_group    = "";
+$kb_article    = "";
+$date    = "";
+$time    = "";
+$errors = array(); 
+
   // RECORDING AN INCIDENT
 if (isset($_POST['rec_inc'])) {
     // receive all input values from the form
