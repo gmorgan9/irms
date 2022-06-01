@@ -8,6 +8,7 @@ session_start();
         header('location: login.php');
     }
     $incidents = getAllInc();
+    $open_incidents = countOpenInc();
 ?>
 
 
@@ -47,7 +48,7 @@ session_start();
     <div class="row">
         <div class="card open-count" style="width: 15rem;">
             <div class="card-body">
-                <h1 class="text-center" style="font-size: 100px;">2</h1>
+                <h1 class="text-center" style="font-size: 100px;"><?php $open_incidents ?></h1>
                 <p class="text-center">Open Incidents</p>
             </div>
         </div>
@@ -73,12 +74,13 @@ session_start();
   <thead>
     <tr class="header-line">
       <th scope="col">#</th>
-      <th scope="col">Number</th>
+      <th scope="col">Incident Number</th>
       <th scope="col">Severity</th>
       <th scope="col">Description</th>
       <th scope="col">Assignment Group</th>
       <th scope="col">KB Article</th>
       <th scope="col">Date</th>
+      <th scope="col">Time</th>
     </tr>
   </thead>
   <tbody>
@@ -93,6 +95,7 @@ session_start();
             <td><?php echo $incident['assign_group'] ?></td>
             <td><?php echo $incident['kb_article'] ?></td>
             <td><?php echo $incident['date'] ?></td>
+            <td><?php echo $incident['time'] ?></td>
         </tr>
     <?php endforeach ?>
     
