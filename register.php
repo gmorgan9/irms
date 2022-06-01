@@ -80,7 +80,7 @@
     <div class="d-flex justify-content-center">                                
     <button type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
-    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+    <p class="text-center">Have an account? <a href="" style="color: black;">Log In</a> </p>                                                                 
 </form>
 </div>
 <a href="/">back</a>
