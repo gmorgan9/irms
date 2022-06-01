@@ -43,8 +43,8 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
-            <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
-            <a href="#" class="btn stretched-link">Open Incident</a>
+            <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
+            <a href="#" class="btn stretched-link">Closed Incident</a>
         </div>
     </div>
 </div>
