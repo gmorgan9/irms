@@ -54,50 +54,27 @@ session_start();
 </div>
 <br><br><br>
 
+
 <?php
-      $username = "root";
-      $password = "Morgan22!";
-      $host = "localhost";
 
-      $connector = mysql_connect($host,$username,$password)
-          or die("Unable to connect");
-        echo "Connections are made successfully::";
-      $selected = mysql_select_db("irms", $connector)
-        or die("Unable to connect");
 
-      //execute the SQL query and return records
-      $result = mysql_query("SELECT * FROM incidents ");
-      ?>
-      <table style= "background-color: #84ed86; color: #761a9b; margin: 0 auto;" >
-      <thead>
-        <tr>
-          <th>Incident Number</th>
-          <th>Priority</th>
-          <th>Description</th>
-          <th>Assignment Group</th>
-          <th>KB Article</th>
-          <td>Date</td>
-          <td>Time</td>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-          while( $row = mysql_fetch_assoc( $result ) ){
-            echo
-            "<tr>
-              <td>{$row\['inc_num'\]}</td>
-              <td>{$row\['priority'\]}</td>
-              <td>{$row\['description'\]}</td>
-              <td>{$row\['assign_group'\]}</td>
-              <td>{$row\['kb_article'\]}</td>
-              <td>{$row\['date'\]}</td> 
-              <td>{$row\['time'\]}</td> 
-            </tr>\n";
-          }
-        ?>
-      </tbody>
-    </table>
-     <?php mysql_close($connector); ?>
+
+$sql = "SELECT inc_num, priority, description FROM incidents";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["inc_num"]. " - Name: " . $row["priority"]. " " . $row["decription"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+$con->close();
+?>
+
+
+
 
 <br><br><br>
 
