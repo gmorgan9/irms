@@ -36,7 +36,9 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
-            <a href="#" class="btn stretched-link">Open Incidents</a>
+            <div class="col d-flex justify-content-center">
+                <a href="#" class="btn stretched-link">Open Incidents</a>
+            </div>
         </div>
     </div>
 </div>
@@ -44,7 +46,9 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
-            <a href="#" class="btn stretched-link">Closed Incidents</a>
+            <div class="col d-flex justify-content-center">
+                <a href="#" class="btn stretched-link">Closed Incidents</a>
+            </div>
         </div>
     </div>
 </div>
@@ -53,7 +57,7 @@
         <div class="card-body">
             <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
             <div class="col d-flex justify-content-center">
-            <a href="#" class="btn stretched-link">All Incidents</a>
+                <a href="#" class="btn stretched-link">All Incidents</a>
             </div>
         </div>
     </div>
@@ -68,7 +72,9 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
-            <a href="#" class="btn stretched-link">Open Incident</a>
+            <div class="col d-flex justify-content-center">
+                <a href="#" class="btn stretched-link">Closed Incidents</a>
+            </div>
         </div>
     </div>
 </div>
@@ -76,7 +82,9 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
-            <a href="#" class="btn stretched-link">Open Incident</a>
+            <div class="col d-flex justify-content-center">
+                <a href="#" class="btn stretched-link">Closed Incidents</a>
+            </div>
         </div>
     </div>
 </div>
@@ -84,7 +92,9 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
-            <a href="#" class="btn stretched-link">Open Incident</a>
+            <div class="col d-flex justify-content-center">
+                <a href="#" class="btn stretched-link">Closed Incidents</a>
+            </div>
         </div>
     </div>
 </div>
