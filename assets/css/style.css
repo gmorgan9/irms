@@ -75,5 +75,6 @@ form {
     border: 3px solid #FFFFFF;
 }
 .form-header {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: -10px;
 }
