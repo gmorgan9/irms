@@ -31,9 +31,9 @@ body {
     background-color: white !important;
     border-color: white !important;
 }
-i {
-    height: 85px;
-    width: 85px;
+.icon {
+    height: 85%;
+    width: 85%;
 }
 .card {
     border-radius: 10% !important;
