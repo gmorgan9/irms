@@ -55,28 +55,42 @@ session_start();
 <br><br><br>
 
 
+<?php 
+    $incidents = array();
+    while ($incident =  mysql_fetch_assoc($incidents))
+    {
+        $incidents[] = $incident;
+    }
+    foreach ($incidents as $incident)
+    {
+?>
+    <tr>
+        <td><?php echo $incident['inc_num']; ?></td>
+    </tr>
+<?php
+    }
+?>
 
 
 
-<table>
-            <tr>
-                <th>Inc</th>
-            </tr>
-            <!-- PHP CODE TO FETCH DATA FROM ROWS-->
-            <?php   // LOOP TILL END OF DATA
-                while($rows=$result->fetch_assoc())
-                {
-             ?>
-            <tr>
-                <!--FETCHING DATA FROM EACH
-                    ROW OF EVERY COLUMN-->
-                <td><?php echo $rows['inc_num'];?></td>
-            </tr>
-            <?php
-                }
-             ?>
-        </table>
 
+
+
+
+            <?php   
+            // $sql = "SELECT inc_num FROM incidents";
+            // $result = $con->query($sql);
+            
+            // if ($result->num_rows > 0) {
+            //   // output data of each row
+            //   while($row = $result->fetch_assoc()) {
+                
+            //   }
+            // } else {
+            //   echo "0 results";
+            // }
+            // $con->close();
+            ?>
 
 
 
