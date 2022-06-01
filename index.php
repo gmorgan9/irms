@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="header">
-        <a class="logo">
+        <a class="logo" style="text-align: center;">
             Incident Record Management System
 </a>
         <div class="header-right">
