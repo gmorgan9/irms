@@ -28,8 +28,7 @@
     <a href=""><button class="btn btn-primary rec">Record Incident</button></a>
 </div>
 
-<br>
-<br>
+<br><br><br><br><br>
 
 <div class="col d-flex justify-content-center">
 <div class="row">
