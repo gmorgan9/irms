@@ -3,5 +3,6 @@
 }
 .logo a {
     float: right;
+    position: absolute;
     padding-right: 25px;
 }
