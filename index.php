@@ -60,7 +60,7 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="col d-flex justify-content-center">
-                <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+                <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
             </div>
             <div class="col d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">All Incidents</a>
