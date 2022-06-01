@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
     <tr>
         <?php 
 
-    echo "<td> . $row['inc_num']. </td>";
+    echo "<td scope='row'> . $row["inc_num"]. </td>";
     //id: " . $row["inc_num"]. " - Name: " . $row["priority"]. " " . $row["description"]. "<br>";
   }
 } else {
