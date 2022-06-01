@@ -91,6 +91,10 @@ if (isset($_POST['rec_inc'])) {
     $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
     $priority = mysqli_real_escape_string($con, $_POST['priority']);
     $description = mysqli_real_escape_string($con, $_POST['description']);
+    $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+    $kb_article = mysqli_real_escape_string($con, $_POST['kb_artcile']);
+    $date = mysqli_real_escape_string($con, $_POST['date']);
+    $time = mysqli_real_escape_string($con, $_POST['time']);
     // $email = mysqli_real_escape_string($con, $_POST['email']);
     // $password = mysqli_real_escape_string($con, $_POST['password']);
     // $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
@@ -100,6 +104,10 @@ if (isset($_POST['rec_inc'])) {
     if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
     if (empty($priority)) { array_push($errors, "Priority is required"); }
     if (empty($description)) { array_push($errors, "Description is required"); }
+    if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
+    if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
+    if (empty($date)) { array_push($errors, "Date is required"); }
+    if (empty($time)) { array_push($errors, "Time is required"); }
     // if (empty($username)) { array_push($errors, "Username is required"); }
     // if (empty($email)) { array_push($errors, "Email is required"); }
     // if (empty($password)) { array_push($errors, "Password is required"); }
@@ -121,8 +129,8 @@ if (isset($_POST['rec_inc'])) {
     if (count($errors) == 0) {
        // $password = md5($password);//encrypt the password before saving in the database
   
-        $query = "INSERT INTO test (inc_num, priority, description) 
-                  VALUES('$inc_num', '$priority', '$description')";
+        $query = "INSERT INTO test (inc_num, priority, description, assign_group, kb_article, date, time) 
+                  VALUES('$inc_num', '$priority', '$description', '$assign_group', '$kb_article', '$date', '$time')";
         mysqli_query($con, $query);
         // $_SESSION['username'] = $username;
         // $_SESSION['success'] = "You are now logged in";
