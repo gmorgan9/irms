@@ -36,9 +36,7 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
                 <h1 class="text-center" style="font-size: 100px;">2</h1>
-            <div class="d-flex justify-content-center">
-                <p>Open Incidents</p>
-            </div>
+                <p class="text-center">Open Incidents</p>
         </div>
     </div>
 </div>
