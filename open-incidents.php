@@ -54,6 +54,63 @@ session_start();
 </div>
 <br><br><br>
 
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "Morgan22!", "irms");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt select query execution
+$sql = "SELECT * FROM incidents";
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        echo "<table>";
+            echo "<tr>";
+                echo "th scope='col'>#</th>";
+                echo "<th scope='col'>Number</th>";
+                echo "<th scope='col'>Severity</th>";
+                echo "<th scope='col'>Description</th>";
+                echo "<th scope='col'>Assignment Group</th>";
+                echo "<th scope='col'>KB Article</th>";
+                echo "<th scope='col'>Date</th>"
+                echo "<th scope='col'>Time</th>"
+            echo "</tr>";
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['inc_num'] . "</td>";
+                echo "<td>" . $row['priority'] . "</td>";
+                echo "<td>" . $row['description'] . "</td>";
+                echo "<td>" . $row['assign_group'] . "</td>";
+                echo "<td>" . $row['kb_article'] . "</td>";
+                echo "<td>" . $row['date'] . "</td>";
+                echo "<td>" . $row['time'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
+
+
+<br><br><br>
+
+
+
+
 <div class="col d-flex justify-content-center">
 <table class="table table-hover table-light">
   <thead>
