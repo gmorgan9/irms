@@ -34,31 +34,31 @@
 		 </div>
         <input name="" class="form-control" placeholder="Full name" type="text">
     </div> <!-- form-group// -->
-    <div class="form-group input-group">
+    <div class="form-group input-group w-50">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
         <input name="" class="form-control" placeholder="Email address" type="email">
     </div> <!-- form-group// -->
-    <div class="form-group input-group">
+    <div class="form-group input-group w-50">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-at"></i> </span>
 		 </div>
         <input name="" class="form-control" placeholder="User Name" type="text">
     </div> <!-- form-group// -->
-    <div class="form-group input-group">
+    <div class="form-group input-group w-50">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input class="form-control" placeholder="Create password" type="password">
     </div> <!-- form-group// -->
-    <div class="form-group input-group">
+    <div class="form-group input-group w-50">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input class="form-control" placeholder="Repeat password" type="password">
     </div> <!-- form-group// -->                                      
-    <div class="form-group">
+    <div class="form-group w-25">
         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
     </div> <!-- form-group// -->      
     <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
