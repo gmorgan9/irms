@@ -33,11 +33,9 @@
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
 <div class="card open-count" style="width: 18rem;">
-    <div class="card-body d-flex align-items-center">
         <div class="card-body">
                 <h1 class="text-center" style="font-size: 100px;">2</h1>
                 <p class="text-center">Open Incidents</p>
-        </div>
     </div>
 </div>
 <!-- <div class="card" style="width: 18rem;">
