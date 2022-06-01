@@ -39,4 +39,6 @@ body {
 }
 .card {
     border-radius: 10% !important;
+    margin-right: 10px;
+    Margin-left: 10px;
 }
