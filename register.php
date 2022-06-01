@@ -1,32 +1,68 @@
 <?php
-session_start();
     include("database/connection.php");
     include("database/functions.php");
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST')
-    {
-        //something was posted
-        $full_name = $_POST['full_name'];
-        $email_address = $_POST['email_address'];
-        $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
-        //$confirm_password = $_POST['confirm_password'];
+    // check to see if there is a user already logged in, if so redirect them 
+    session_start(); 
+    if (isset($_SESSION['user_name']) && isset($_SESSION['id'])) 
+        header("Location: ./index.php");  // redirect the user to the home page
 
-        if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-        {
-            //save to database
-            $user_id = random_num(20);
-            $query = "insert into users (user_id,full_name,email_address,user_name,password) values ('$user_id','$full_name','$email_address','$user_name','$password')";
-            
-            mysqli_query($query);
+        if (isset($_POST['registerBtn'])){ 
+            // get all of the form data 
+            $full_name = $_POST['full_name'];
+            $email_address = $_POST['email_address']; 
+            $user_name = $_POST['user_name'];
+            $password = $_POST['password']; 
+            $confirm_password = $_POST['confirm_password']; 
 
-            header("Location: login.php");
-            die;
-        } else 
-        {
-            echo "Please enter a valid username!";
-        }
-    }
+            if ($user_name != "" && $passwordd != "" && $confirm_password != ""){
+                // make sure the two passwords match
+                if ($password === $confirm_password){
+                    // make sure the password meets the min strength requirements
+                    if ( strlen($password) >= 5 && strpbrk($password, "!#$.,:;()") != false ){
+                        // next code block
+                    }
+                    else
+                        $error_msg = 'Your password is not strong enough. Please use another.';
+                }
+                else
+                    $error_msg = 'Your passwords did not match.';
+            }
+            else
+                $error_msg = 'Please fill out all required fields.';
+
+                // query the database to see if the username is taken
+$query = mysqli_query($conn, "SELECT * FROM users WHERE username='{$username}'");
+if (mysqli_num_rows($query) == 0){
+    // create and format some variables for the database
+    $id = '';
+    $passwd = md5($passwd);
+    $date_created = time();
+    $last_login = 0;
+    $status = 1;
+    
+    // next code block
+}
+else
+    $error_msg = 'The username <i>'.$username.'</i> is already taken. Please use another.';
+
+    // insert the user into the database
+mysqli_query($con, "INSERT INTO users VALUES (
+    '{$id}', '{$user_name}', '{$email_address}', '{$password}', '{$date_created}', '{$last_login}', '{$status}'
+)");
+
+// verify the user's account was created
+$query = mysqli_query($con, "SELECT * FROM users WHERE user_name='{$user_name}'");
+if (mysqli_num_rows($query) == 1){
+    
+    /* IF WE ARE HERE THEN THE ACCOUNT WAS CREATED! YAY! */
+    /* WE WILL SEND EMAIL ACTIVATION CODE HERE LATER */
+
+    $success = true;
+}
+else
+    $error_msg = 'An error occurred and your account was not created.';
+   
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +95,19 @@ session_start();
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="register.php" class="reg-form" method="post">
+
+<?php
+		// check to see if the user successfully created an account
+		if (isset($success) && $success == true){
+			echo '<p color="green">Yay!! Your account has been created. <a href="./login.php">Click here</a> to login!<p>';
+		}
+		// check to see if the error message is set, if so display it
+		else if (isset($error_msg))
+			echo '<p color="red">'.$error_msg.'</p>';
+		
+	?>
+
+
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
         <div class="sm-circle">
@@ -115,7 +164,7 @@ session_start();
 </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-    <button id="button" type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
+    <button id="button" type="submit" name="registerBtn" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
     <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
 </form>
