@@ -60,7 +60,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
 		    </div>
             <input name="priority" class="form-control" placeholder="Priority" type="text">
         </div>
@@ -68,7 +68,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-at"></i> </span>
+		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 		    </div>
             <input name="description" class="form-control" placeholder="Description" type="text">
         </div>
@@ -76,7 +76,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		        <span class="input-group-text"> <i class="fa fa-user-group"></i> </span>
 		    </div>
             <input name="assignment_group" class="form-control" placeholder="Assignment Group" type="text">
         </div>
@@ -84,7 +84,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		        <span class="input-group-text"> <i class="fa fa-file-lines"></i> </span>
 		    </div>
             <input name="kb_article" class="form-control" placeholder="KB Artcile" type="text">
         </div>
@@ -92,7 +92,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
 		    </div>
             <input name="date" class="form-control" placeholder="Date" type="date">
         </div>
