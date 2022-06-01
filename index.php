@@ -9,7 +9,7 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 
     <title>Home</title>
 </head>
