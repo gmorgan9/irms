@@ -32,7 +32,7 @@
 
 <div class="col d-flex justify-content-center">
 <div class="row">
-<div class="card open-count" style="width: 18rem;">
+<div class="card open-count" style="width: 15rem;">
     <div class="card-body">
         <h1 class="text-center" style="font-size: 100px;">2</h1>
         <p class="text-center">Open Incidents</p>
