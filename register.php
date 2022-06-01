@@ -25,10 +25,10 @@
 
 
 <br><br><br>
-
+<div class="mx-auto" style="width: 1800px;">
 <form>
     <br><br>
-    <div class="mx-auto" style="width: 1800px;">
+    
 	<div class="form-group input-group w-75">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
