@@ -55,32 +55,27 @@ session_start();
 <br><br><br>
 
 
-<?php
-         // fetch data from the database
-         $incidents = mysql_query('select inc_num from incidents') or die("Query fail: " . mysqli_error());
-?>
-<table  class="table table-striped table-condensed" id="tblData">
-    <thead>
-        <tr>
-            <th>Incident Number</th>
-       </tr>
-    </thead>
-
-    <tbody>
-       <?php 
-            //records as in an array
-
-foreach( $incidents as $incident ) // using foreach  to display each element of array
-            {
-                echo "<tr><td>".$incident['inc_num']."</td>
-                       </tr>";
-            }
-       ?>
-    </tbody>        
-</table>
 
 
 
+<table>
+            <tr>
+                <th>Inc</th>
+            </tr>
+            <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+            <?php   // LOOP TILL END OF DATA
+                while($rows=$result->fetch_assoc())
+                {
+             ?>
+            <tr>
+                <!--FETCHING DATA FROM EACH
+                    ROW OF EVERY COLUMN-->
+                <td><?php echo $rows['inc_num'];?></td>
+            </tr>
+            <?php
+                }
+             ?>
+        </table>
 
 
 
