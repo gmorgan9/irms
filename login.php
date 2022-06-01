@@ -27,7 +27,7 @@
 
 <a href="/">back</a>
 
-<form class="form">
+<form class="form-inline">
   <div class="form-group">
     <label for="userName">Username</label>
     <input type="text" id="userName" class="form-control mx-sm-3">
