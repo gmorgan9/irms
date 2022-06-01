@@ -28,7 +28,7 @@
 
 <form>
     <br><br>
-	<div class="form-group input-group w-50">
+	<div class="form-group input-group w-75">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
