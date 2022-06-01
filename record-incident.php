@@ -100,7 +100,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
+		        <span class="input-group-text"> <i class="fa fa-clock"></i> </span>
 		    </div>
             <input name="time" class="form-control" placeholder="Time" type="time">
         </div>
