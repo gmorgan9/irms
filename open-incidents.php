@@ -42,8 +42,8 @@
 </div>
 <br><br><br>
 
-<table class="table">
-  <thead class="thead-light">
+<table class="table table-striped">
+  <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
