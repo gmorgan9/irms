@@ -49,12 +49,24 @@ session_start();
         <div class="card open-count" style="width: 15rem;">
             <div class="card-body">
                 <h1 class="text-center" style="font-size: 100px;">
-                
-                <?php 
-                
-                echo $total;
-                 ?>
-                 
+
+                <?php
+                $con = mysql_connect("localhost","root","Morgan22!");
+                if (!$con) {
+                  die('Could not connect: ' . mysql_error());
+                }
+
+                mysql_select_db("irms", $con);
+
+                $result = mysql_query("select count(1) FROM incidents");
+                $row = mysql_fetch_array($result);
+
+                $total = $row[0];
+                echo "Total rows: " . $total;
+
+                mysql_close($con);
+                ?>
+
                 </h1>
                 <p class="text-center">Open Incidents</p>
             </div>
