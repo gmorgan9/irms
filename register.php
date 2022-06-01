@@ -24,7 +24,7 @@ session_start();
             die;
         } else 
         {
-            echo "Please enter a valid username!"
+            echo "Please enter a valid username!";
         }
     }
 ?>
