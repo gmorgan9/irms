@@ -41,10 +41,12 @@ session_start();
     <a href=""><button class="btn btn-primary rec">Record Incident</button></a>
 </div>
 
-<br><br><br>
+<br>
 <?php  if (isset($_SESSION['username'])) : ?>
     	<h1 class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     <?php endif ?>
+    <br>
+    <br>
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
 <div class="card" style="width: 18rem;">
