@@ -29,7 +29,7 @@
 <form>
     <div class="cirlce1">
         <div class="circle2">
-        <i class="fa-solid fa-user">
+        <i class="fa-solid fa-user"></i>
         </div>
     </div>
     <br><br>
