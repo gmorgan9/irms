@@ -17,4 +17,6 @@
 }
 .record_incident {
     float: right;
+    margin-top: 10px;
+    margin-right: 10px;
 }
