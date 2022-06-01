@@ -114,7 +114,7 @@ if (isset($_POST['rec_inc'])) {
   
     // first check the database to make sure 
     // a user does not already exist with the same username and/or email
-    $user_check_query = "SELECT * FROM incidents WHERE inc_num='$inc_num' LIMIT 1";
+    $user_check_query = "SELECT * FROM test WHERE inc_num='$inc_num' LIMIT 1";
     $result = mysqli_query($con, $user_check_query);
     $inc = mysqli_fetch_assoc($result);
     
@@ -128,7 +128,7 @@ if (isset($_POST['rec_inc'])) {
     if (count($errors) == 0) {
        // $password = md5($password);//encrypt the password before saving in the database
   
-        $query = "INSERT INTO incidents (inc_num) 
+        $query = "INSERT INTO test (inc_num) 
                   VALUES('$inc_num')";
         mysqli_query($con, $query);
         // $_SESSION['username'] = $username;
