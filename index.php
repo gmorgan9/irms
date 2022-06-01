@@ -9,7 +9,7 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.44">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.45">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -25,12 +25,15 @@
     </div>
 
 <div class="record_incident">
-    <a href=""><button class="btn btn-primary">Record Incident</button></a>
+    <a href=""><button class="btn btn-primary rec">Record Incident</button></a>
 </div>
+
+<br>
+<br>
+
 <div class="col d-flex justify-content-center">
 <div class="row">
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -38,7 +41,6 @@
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -46,7 +48,6 @@
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -60,7 +61,6 @@
 <div class="col d-flex justify-content-center">
 <div class="row">
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -68,7 +68,6 @@
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -76,7 +75,6 @@
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
