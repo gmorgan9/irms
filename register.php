@@ -30,7 +30,7 @@ session_start();
         $stmt = $conn->prepare($Select);
             $stmt->bind_param("s", $username);
             $stmt->execute();
-            $stmt->bind_result($resultUsername);
+            $stmt->bind_result($stmt);
             $stmt->store_result();
             $stmt->fetch();
             $rnum = $stmt->num_rows;
