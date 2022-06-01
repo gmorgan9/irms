@@ -128,3 +128,13 @@ if (isset($_POST['rec_inc'])) {
         header('location: /');
     }
   }
+
+// Returns all Incidents
+  function allInc()
+{
+	global $con;
+	$sql = "SELECT * FROM incidents";
+	$result = mysqli_query($con, $sql);
+	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $incidents;
+}
