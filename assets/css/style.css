@@ -2,7 +2,6 @@
     text-align: center;
 }
 .logo a {
-    float: right;
     position: absolute;
-    padding-right: 25px;
+    margin-right: 25px;
 }
