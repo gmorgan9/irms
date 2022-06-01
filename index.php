@@ -35,7 +35,7 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
   <i class="fa-solid fa-envelope-open"></i>
-    <a href="#" class="btn btn-primary stretched-link">Open Incident</a>
+    <a href="#" class="btn stretched-link">Open Incident</a>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
