@@ -24,8 +24,7 @@
     </div>
 
 
-<br><br>
-<a href="/">back</a>
+<br><br><br>
 
 <form>
 	<div class="form-group input-group">
@@ -81,6 +80,7 @@
     <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
 </form>
 
+<a href="/">back</a>
 
 </body>
 </html>
