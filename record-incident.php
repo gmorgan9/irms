@@ -76,7 +76,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-user-group"></i> </span>
+		        <span class="input-group-text"> <i class="fa fa-people-group"></i> </span>
 		    </div>
             <input name="assignment_group" class="form-control" placeholder="Assignment Group" type="text">
         </div>
