@@ -52,7 +52,7 @@ session_start();
                 
                 <?php 
                 
-                echo $rowcount;
+                echo "this is it: " . $rowcount;
                  ?>
                  
                 </h1>
