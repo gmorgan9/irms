@@ -65,7 +65,7 @@ $result = $con->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["inc_num"]. " - Name: " . $row["priority"]. " " . $row["decription"]. "<br>";
+    echo "id: " . $row["inc_num"]. " - Name: " . $row["priority"]. " " . $row["description"]. "<br>";
   }
 } else {
   echo "0 results";
