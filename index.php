@@ -81,7 +81,7 @@
                 <i class="fa-solid fa-file-invoice fa-8x"></i> <br>
             </div>
             <div class="col d-flex justify-content-center">
-                <a href="#" class="btn stretched-link" style="width: 170px;">Incident Priority Report</a>
+                <a href="#" class="btn stretched-link" style="width: 180px;">Incident Priority Report</a>
             </div>
         </div>
     </div>
