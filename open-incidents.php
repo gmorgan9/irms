@@ -64,8 +64,25 @@ $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["inc_num"]. " - Name: " . $row["priority"]. " " . $row["description"]. "<br>";
+  while($row = $result->fetch_assoc()) { ?>
+  <table class="table table-hover table-light">
+  <thead>
+    <tr class="header-line">
+      <th scope="col">#</th>
+      <th scope="col">Number</th>
+      <th scope="col">Severity</th>
+      <th scope="col">Description</th>
+      <th scope="col">Assignment Group</th>
+      <th scope="col">KB Article</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <?php 
+
+    echo "<th scope='row'> . $row['inc_num']. </th>";
+    //id: " . $row["inc_num"]. " - Name: " . $row["priority"]. " " . $row["description"]. "<br>";
   }
 } else {
   echo "0 results";
