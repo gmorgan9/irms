@@ -8,7 +8,7 @@ session_start();
     {
         //something was posted
         $full_name = $_POST['full_name'];
-        $email_address = $_POST['email_address'];
+        $email = $_POST['email'];
         $user_name = $_POST['user_name'];
         $password = $_POST['password'];
         //$confirm_password = $_POST['confirm_password'];
@@ -17,7 +17,7 @@ session_start();
         {
             //save to database
             $user_id = random_num(20);
-            $query = "insert into users (user_id,full_name,email_address,user_name,password) values ('$user_id','$full_name','$email_address','$user_name','$password')";
+            $query = "insert into users (user_id,full_name,email,user_name,password) values ('$user_id','$full_name','$email','$user_name','$password')";
             
             mysqli_query($query);
 
@@ -101,7 +101,7 @@ session_start();
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
-        <input name="email_address" class="form-control" placeholder="Email address" type="email">
+        <input name="email" class="form-control" placeholder="Email address" type="email">
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
