@@ -4,7 +4,7 @@
 .header {
     background-color: blue;
     height: 45px;
-    margin-top: 10px;
+    padding-top: 10px;
 }
 .logo {
     text-align: center;
