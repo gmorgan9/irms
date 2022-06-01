@@ -42,7 +42,7 @@
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-50">
+    <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
@@ -50,7 +50,7 @@
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-50">
+    <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-at"></i> </span>
 		 </div>
@@ -58,7 +58,7 @@
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-50">
+    <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
@@ -66,7 +66,7 @@
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-50">
+    <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
