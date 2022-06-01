@@ -25,7 +25,7 @@
     </div>
 
 <div class="record_incident">
-    <a href=""><button class="btn-primary">Record Incident</button></a>
+    <a href=""><button class="btn btn-primary">Record Incident</button></a>
 </div>
 
 
