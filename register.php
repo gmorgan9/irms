@@ -38,7 +38,7 @@ session_start();
             if ($rnum == 0) {
                 $stmt->close();
                 $stmt = $conn->prepare($Insert);
-                $stmt->bind_param("ssssii",$username, $password, $gender, $email, $phoneCode, $phone);
+                $stmt->bind_param("ssss",$name, $email, $username, $password);
                 if ($stmt->execute()) {
                     echo "New record inserted sucessfully.";
                 }
