@@ -45,7 +45,9 @@ session_start();
 </div>
 
 <br><br><br>
-<p>Welcome, <?php echo $name ?></p>
+<?php  if (isset($_SESSION['name'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['name']; ?></strong></p>
+    <?php endif ?>
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
 <div class="card" style="width: 18rem;">
