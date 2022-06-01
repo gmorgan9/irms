@@ -167,7 +167,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-at"></i> </span>
 		 </div>
-        <input name="user_name" class="form-control" placeholder="User Name" type="text">
+        <input name="user_name" class="form-control" placeholder="User Name" type="text" <?php echo (!empty($user_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $user_name; ?>"> <span class="invalid-feedback"><?php echo $username_err; ?></span>
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
@@ -175,7 +175,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="password" class="form-control" placeholder="Create password" type="password">
+        <input name="password" class="form-control" placeholder="Create password" type="password"<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
@@ -183,7 +184,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="confirm_password" class="form-control" placeholder="Repeat password" type="password">
+        <input name="confirm_password" class="form-control" placeholder="Repeat password" type="password"<?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
 </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
