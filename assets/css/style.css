@@ -93,3 +93,10 @@ body {
     background-color: #005382 !important;
     border-color: #005382 !important;
 }
+.open-count {
+    width: 254px;
+    height: 200px;
+    border-radius: 10% !important;
+    margin-right: 30px;
+    Margin-left: 30px;
+}
