@@ -37,7 +37,7 @@
         <div class="card-body">
                 <h1 class="text-center" style="font-size: 100px;">2</h1>
             <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link">Open Incidents</a>
+                <p>Open Incidents</>
             </div>
         </div>
     </div>
