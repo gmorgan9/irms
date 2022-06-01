@@ -59,8 +59,8 @@
     <tr>
       <th scope="row">1</th>
       <td>INC06909359</td>
-      <td>Otto</td>
-      <td colspan="2" style="word-wrap: normal;">Calgary Alberta  Temple High Ping on Host: CALGAHV001---Result: PING CRITICAL - Packet loss = 25%, RTA = 1012.25</td>
+      <td>P3</td>
+      <td style="word-wrap: normal;">Calgary Alberta  Temple High Ping on Host: CALGAHV001---Result: PING CRITICAL - Packet loss = 25%, RTA = 1012.25</td>
       <td>CALGAHV001</td>
       <td>N/A</td>
       <td>06/01/2022</td>
