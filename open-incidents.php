@@ -55,6 +55,28 @@ session_start();
 <br><br><br>
 
 
+<?php 
+    $incidents = array();
+    while ($incident =  mysql_fetch_assoc($records))
+    {
+        $incidents[] = $incident;
+    }
+    foreach ($incidents as $incident)
+    {
+?>
+    <tr>
+        <td><?php echo $incident['inc_num']; ?></td>
+    </tr>
+<?php
+    }
+?>
+
+
+
+
+
+
+
 <?php
 
 
