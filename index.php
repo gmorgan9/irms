@@ -15,9 +15,9 @@
 </head>
 <body>
     <div class="header">
-        <h2 class="logo">
+        <a class="logo">
             Incident Record Management System
-        </h2>
+</a>
         <div class="header-right">
         <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
