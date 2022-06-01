@@ -35,7 +35,7 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
-        <div class="col-xs-1 center-block">
+        <div class="col-xs-1" text-align="center">
                 <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
                 <a href="#" class="btn stretched-link">Open Incidents</a>
 </div>
