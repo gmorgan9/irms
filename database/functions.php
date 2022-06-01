@@ -7,7 +7,7 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-require_once('connection.php')
+require_once('connection.php');
 
 // REGISTER USER
 if (isset($_POST['submit'])) {
