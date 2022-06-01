@@ -20,7 +20,7 @@ session_start();
             
             mysqli_query($query);
 
-            header("Location: /login.php");
+            header("Location: login.php");
             die;
         } else 
         {
@@ -57,6 +57,7 @@ session_start();
 
 <br><br>
 <div class="d-flex justify-content-center">
+    <!-- form start -->
 <form class="reg-form" method="post" action="register.php">
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
