@@ -31,43 +31,47 @@
 <br><br><br>
 
 <div class="col d-flex justify-content-center">
-<div class="row">
-<div class="card open-count" style="width: 15rem;">
-    <div class="card-body">
-        <h1 class="text-center" style="font-size: 100px;">2</h1>
-        <p class="text-center">Open Incidents</p>
-    </div>
-</div>
-<!-- <div class="card" style="width: 18rem;">
-    <div class="card-body d-flex flex-column align-items-center">
-        <div class="card-body">
-            <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link"></a>
+    <div class="row">
+        <div class="card open-count" style="width: 15rem;">
+            <div class="card-body">
+                <h1 class="text-center" style="font-size: 100px;">2</h1>
+                <p class="text-center">Open Incidents</p>
             </div>
         </div>
     </div>
 </div>
-<div class="card" style="width: 18rem;">
-    <div class="card-body d-flex flex-column align-items-center">
-        <div class="card-body">
-            <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link">All Incidents</a>
-            </div>
-        </div>
-    </div>
-</div> -->
-  </div>
-  </div>
-  <br>
+<br><br><br>
 
-
-<br><br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
