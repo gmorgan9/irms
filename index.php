@@ -3,6 +3,8 @@ session_start();
     include("database/connection.php");
     include("database/functions.php");
 
+    $_SESSION['name'] = $name;
+
     if (!isset($_SESSION['username'])) {
         $_SESSION['msg'] = "You must log in first";
         header('location: login.php');
@@ -41,7 +43,7 @@ session_start();
 
 <br><br><br>
 <?php  if (isset($_SESSION['name'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['name']; ?></strong></p>
+    	<p>Welcome <strong><?php echo $name; ?></strong></p>
     <?php endif ?>
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
