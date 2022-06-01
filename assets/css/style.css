@@ -47,3 +47,7 @@ body {
 .row_one {
     margin-bottom: 15px;
 }
+
+form {
+    background-color: white;
+}
