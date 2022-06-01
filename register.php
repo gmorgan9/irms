@@ -33,12 +33,13 @@
         </div>
     </div>
     <br><br>
-    
+    <div class="d-flex justify-content-center">
 	<div class="form-group input-group w-75">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
         <input name="" class="form-control" placeholder="Full name" type="text">
+</div>
     </div> <!-- form-group// -->
     <div class="form-group input-group w-50">
     	<div class="input-group-prepend">
