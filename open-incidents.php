@@ -42,6 +42,7 @@
 </div>
 <br><br><br>
 
+<div class="col d-flex justify-content-center">
 <table class="table table-hover table-light">
   <thead>
     <tr>
@@ -75,6 +76,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 
 
 </body>
