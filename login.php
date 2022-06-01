@@ -33,7 +33,7 @@ session_start();
 
 <br><br><br><br><br>
 <div class="d-flex justify-content-center">
-<form class="log-form">
+<form action="login.php" class="log-form" method="post">
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
         <div class="sm-circle">
@@ -64,7 +64,7 @@ session_start();
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-    <button type="submit" class="btn btn-primary text-center reg-log">Log In</button>  
+    <button type="submit" name="submit" class="btn btn-primary text-center reg-log">Log In</button>  
 </div> 
     <p class="text-center">Don't have an account? <a href="/register.php" style="color: black;">Register</a> </p>                                                                 
 </form>
