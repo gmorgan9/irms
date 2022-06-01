@@ -51,6 +51,7 @@ if (isset($_POST['reg_user'])) {
   	$query = "INSERT INTO users (name, username, email, password) 
   			  VALUES('$name', '$username', '$email', '$password')";
   	mysqli_query($con, $query);
+    $_SESSION['name'] = $name;
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: /');
@@ -74,6 +75,7 @@ if (isset($_POST['login_user'])) {
         $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $results = mysqli_query($con, $query);
         if (mysqli_num_rows($results) == 1) {
+          $_SESSION['name'] = $name;
           $_SESSION['username'] = $username;
           $_SESSION['success'] = "You are now logged in";
           header('location: /');
