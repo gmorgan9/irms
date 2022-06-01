@@ -13,7 +13,7 @@
     <title>Home</title>
 </head>
 <body>
-    <header style="display:inline-block;">
+    <header style="display:inline;">
         <h2>
             Incident Record Management System
         </h2>
