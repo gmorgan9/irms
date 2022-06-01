@@ -142,9 +142,9 @@ if (isset($_POST['rec_inc'])) {
 // COUNT OPEN INCIDENTS
 function countOpenInc()
 {
-$sql = "SELECT * FROM incidents";
-if ($result = mysqli_query($con,$sql)) {
+    global $con;
+    $sql = "SELECT * FROM incidents";
+    $result = mysqli_query($con, $sql);
     $rowcount = mysqli_num_rows($result);
-    echo "The total number of rows are: " . $rowcount; 
-}
+    return $rowcount; 
 }

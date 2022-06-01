@@ -52,11 +52,7 @@ session_start();
                 
                 <?php 
                 
-                $sql = "SELECT * FROM incidents";
-                if ($result = mysqli_query($con,$sql)) {
-                    $rowcount = mysqli_num_rows($result);
-                    echo "The total number of rows are: " . $rowcount; 
-                }
+                echo $rowcount;
                  ?>
                  
                 </h1>
