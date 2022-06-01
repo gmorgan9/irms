@@ -51,7 +51,10 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-                    echo "countOpenInc($rowtotal)";
+                    $sql="select count('1') from incidents";
+                    $result=mysqli_query($con,$sql);
+                    $rowtotal=mysqli_fetch_array($result); 
+                    echo "$rowtotal[0]";
 
                 ?>
 
