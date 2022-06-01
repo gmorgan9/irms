@@ -54,21 +54,21 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td class="table-light">Mark</td>
-      <td class="table-light">Otto</td>
-      <td class="table-light">@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td class="table-light">Jacob</td>
-      <td class="table-light">Thornton</td>
-      <td class="table-light">@fat</td>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td class="table-light">Larry</td>
-      <td class="table-light">the Bird</td>
-      <td class="table-light">@twitter</td>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
     </tr>
   </tbody>
 </table>
