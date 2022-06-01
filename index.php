@@ -8,7 +8,8 @@
     <!-- Font Awesome -->
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
-
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Home</title>
 </head>
