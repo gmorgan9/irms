@@ -58,7 +58,7 @@
 		</div>
         <input class="form-control" placeholder="Repeat password" type="password">
     </div> <!-- form-group// -->                                      
-    <div class="form-group">
+    <div class="form-group w-50">
         <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
     </div> <!-- form-group// -->      
     <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
