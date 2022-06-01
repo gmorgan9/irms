@@ -23,12 +23,12 @@
             <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </h2>
     </div>
-<br><br>
+<br>
 <div class="record_incident">
     <a href=""><button class="btn btn-primary rec">Record Incident</button></a>
 </div>
 
-<br><br>
+<br><br><br>
 
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
