@@ -107,7 +107,7 @@ if (isset($_POST['rec_inc'])) {
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
     if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
-    if (empty($priority)) { array_push($errors, "Incident Number is required"); }
+    if (empty($priority)) { array_push($errors, "Priority is required"); }
     // if (empty($username)) { array_push($errors, "Username is required"); }
     // if (empty($email)) { array_push($errors, "Email is required"); }
     // if (empty($password)) { array_push($errors, "Password is required"); }
