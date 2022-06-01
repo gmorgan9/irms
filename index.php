@@ -36,7 +36,7 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
                 <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
-                <a href="#" class="btn btn-primary stretched-link">Open Incidents</a>
+                <a href="#" class="btn stretched-link">Open Incidents</a>
         </div>
     </div>
 </div>
