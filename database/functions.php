@@ -85,16 +85,6 @@ if (isset($_POST['login_user'])) {
     }
   }
 
-  // initializing variables
-$inc_num = "";
-$priority    = "";
-$description    = "";
-$assign_group    = "";
-$kb_article    = "";
-$date    = "";
-$time    = "";
-$errors = array(); 
-
 // RECORD AN INCIDENT
 if (isset($_POST['rec_inc'])) {
     // receive all input values from the form
@@ -130,7 +120,7 @@ if (isset($_POST['rec_inc'])) {
        // $password = md5($password);//encrypt the password before saving in the database
   
         $query = "INSERT INTO test (inc_num, priority) 
-                  VALUES('$inc_num', '$priority)";
+                  VALUES('$inc_num', '$priority')";
         mysqli_query($con, $query);
         // $_SESSION['username'] = $username;
         // $_SESSION['success'] = "You are now logged in";
