@@ -9,7 +9,7 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.90">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.91">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,7 +31,7 @@
     <div class="bg-circle">
         <div class="sm-circle">
         <div class="d-flex justify-content-center">
-        <i class="fa-solid fa-user fa-3x"></i>
+        <i class="user-header fa-solid fa-user fa-3x"></i>
 </div>
         </div>
     </div>
