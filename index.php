@@ -37,10 +37,9 @@
         <div class="card-body">
             <div class="col d-flex justify-content-center">
                 <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
-            </div>
-            <div class="col d-flex justify-content-center">
+            
                 <a href="#" class="btn btn-primary stretched-link">Open Incidents</a>
-            </div>
+                </div>
         </div>
     </div>
 </div>
