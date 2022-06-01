@@ -55,10 +55,10 @@ session_start();
 <br><br><br>
 
 
-<?php foreach ($incidents as $inc): ?>
+<?php foreach ($incidents as $incident): ?>
 		<div class="post" style="margin-left: 0px;">
 				<div class="post_info">
-					<h3><?php echo $inc['inc_num'] ?></h3>
+					<h3><?php echo $incident['inc_num'] ?></h3>
 					<div class="info">
 						<span class="read_more">Read more...</span>
 					</div>
