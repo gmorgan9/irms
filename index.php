@@ -14,11 +14,11 @@
     <title>Home</title>
 </head>
 <body>
-    <header>
-        <h2>
+    <div class="header">
+        <h2 class="logo">
             Incident Record Management System
         </h2>
-        <div class="logout">
+        <div class="header-right">
         <a href="/logout.php" style="color:black;"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
     </header>
