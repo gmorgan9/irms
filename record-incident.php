@@ -53,7 +53,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="incident_number" class="form-control" placeholder="Incident Number" type="text">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text">
         </div>
     </div> 
     <!-- form-group// -->
@@ -78,7 +78,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
 		    </div>
-            <input name="assignment_group" class="form-control" placeholder="Assignment Group" type="text">
+            <input name="assign_group" class="form-control" placeholder="Assignment Group" type="text">
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
@@ -106,7 +106,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="rec-inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
+        <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
     </div>                                                               
 </form>
 </div>

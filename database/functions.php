@@ -84,3 +84,46 @@ if (isset($_POST['login_user'])) {
         }
     }
   }
+
+  // RECORDING AN INCIDENT
+if (isset($_POST['rec_inc'])) {
+    // receive all input values from the form
+    $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+    $priority = mysqli_real_escape_string($con, $_POST['priority']);
+    $description = mysqli_real_escape_string($con, $_POST['description']);
+    $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+    $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+    $date = mysqli_real_escape_string($con, $_POST['date']);
+    $time = mysqli_real_escape_string($con, $_POST['time']);
+  
+    // form validation: ensure that the form is correctly filled ...
+    // by adding (array_push()) corresponding error unto $errors array
+    if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
+    if (empty($priority)) { array_push($errors, "Priority is required"); }
+    if (empty($description)) { array_push($errors, "Description is required"); }
+    if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
+    if (empty($kb_article)) { array_push($errors, "KB Article is required"); }
+    if (empty($date)) { array_push($errors, "Date is required"); }
+    if (empty($time)) { array_push($errors, "Time is required"); }
+  
+    // first check the database to make sure 
+    // a user does not already exist with the same username and/or email
+    $user_check_query = "SELECT * FROM incidents WHERE inc_num='$inc_num' LIMIT 1";
+    $result = mysqli_query($con, $user_check_query);
+    $inc_num = mysqli_fetch_assoc($result);
+    
+    if ($inc_num) { // if user exists
+      if ($inc_num['inc_num'] === $inc_num) {
+        array_push($errors, "Incident Number already exists");
+      }
+    }
+  
+    // Finally, register user if there are no errors in the form
+    if (count($errors) == 0) {
+  
+        $query = "INSERT INTO incidents (inc_num, priority, description, assign_group, kb_article, date, time) 
+                  VALUES('$inc_num', '$priority', '$description', '$assign_group', '$kb_article', '$date', '$time')";
+        mysqli_query($con, $query);
+        header('location: /');
+    }
+  }
