@@ -90,7 +90,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
+        <button id="button" type="submit" name="reg_user" class="btn btn-primary text-center reg-log">Create Account</button>  
     </div> 
     <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
 </form>

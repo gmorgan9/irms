@@ -10,7 +10,7 @@ $errors = array();
 require_once('connection.php');
 
 // REGISTER USER
-if (isset($_POST['submit'])) {
+if (isset($_POST['reg_user'])) {
   // receive all input values from the form
   $username = mysqli_real_escape_string($con, $_POST['username']);
   $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
 }
 
 // LOGIN USER
-if (isset($_POST['submit'])) {
+if (isset($_POST['login_user'])) {
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
   
