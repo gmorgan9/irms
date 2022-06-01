@@ -37,13 +37,9 @@ body {
 }
 .card {
     border-radius: 10% !important;
-    margin-right: 20px;
-    Margin-left: 20px;
+    margin-right: 30px;
+    Margin-left: 30px;
 }
-.card_notes {
-    position: absolute;
-width: 254px;
-height: 243px;
-left: 919px;
-top: 512px;
+.row_one {
+    margin-bottom: 15px;
 }
