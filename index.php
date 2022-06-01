@@ -9,15 +9,15 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.7">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.8">
 
     <title>Home</title>
 </head>
 <body>
     <div class="header">
-        <a class="logo">
+        <h2 class="logo">
             Incident Record Management System
-</a>
+        </h2>
         <div class="header-right">
         <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
