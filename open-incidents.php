@@ -51,20 +51,12 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-                $con = mysql_connect("localhost","root","Morgan22!");
-                if (!$con) {
-                  die('Could not connect: ' . mysql_error());
-                }
+                
 
-                mysql_select_db("irms", $con);
+                $result = mysql_query("SELECT * FROM incidents");
+                $rows = mysql_num_rows($result);
+                echo "There are " . $rows . " rows in my table.";
 
-                $result = mysql_query("select * FROM incidents");
-                $row = mysql_fetch_array($result);
-
-                $total = $row[0];
-                echo "Total rows: " . $total;
-
-                mysql_close($con);
                 ?>
 
                 </h1>
