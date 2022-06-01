@@ -9,7 +9,7 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.45">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.46">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -34,7 +34,7 @@
 <div class="row">
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-  <i class="fa-solid fa-envelope-open" style="text-align: center;"></i> <br>
+  <i class="fa-solid fa-envelope-open one"></i> <br>
     <a href="#" class="btn stretched-link">Open Incident</a>
   </div>
 </div>

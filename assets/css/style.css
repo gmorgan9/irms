@@ -31,3 +31,9 @@ body {
     background-color: white !important;
     border-color: white !important;
 }
+.one {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
