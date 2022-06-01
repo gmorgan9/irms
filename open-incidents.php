@@ -8,7 +8,7 @@ session_start();
         header('location: login.php');
     }
     $incidents = getAllInc();
-    $open_incidents = countOpenInc();
+    //$open_incidents = countOpenInc();
 ?>
 
 
