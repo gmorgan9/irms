@@ -84,7 +84,7 @@ session_start();
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-file-lines"></i> </span>
+		        <span class="input-group-text"> <i class="fa fa-book"></i> </span>
 		    </div>
             <input name="kb_article" class="form-control" placeholder="KB Artcile" type="text">
         </div>
