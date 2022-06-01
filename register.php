@@ -1,9 +1,7 @@
 <?php
 session_start();
     include("database/connection.php");
-    include("database/functions.php")
-
-    $user_data = check_login($con);
+    include("database/functions.php");
 ?>
 
 <!DOCTYPE html>
