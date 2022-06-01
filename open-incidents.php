@@ -51,7 +51,7 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-                    echo "$open_incidents($rowtotal[0])";
+                    echo "$countOpenInc($rowtotal[0])";
 
                 ?>
 
