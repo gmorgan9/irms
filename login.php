@@ -34,6 +34,8 @@ session_start();
 <br><br><br><br><br>
 <div class="d-flex justify-content-center">
 <form action="login.php" class="log-form" method="post">
+<?php include('errors.php'); ?>
+
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
         <div class="sm-circle">
