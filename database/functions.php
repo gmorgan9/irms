@@ -124,6 +124,8 @@ if (isset($_POST['rec_inc'])) {
         $query = "INSERT INTO incidents (inc_num, priority, description, assign_group, kb_article, date, time) 
                   VALUES('$inc_num', '$priority', '$description', '$assign_group', '$kb_article', '$date', '$time')";
         mysqli_query($con, $query);
+        $_SESSION['inc_num'] = $inc_num;
+        $_SESSION['success'] = "Incdent Created!";
         header('location: /');
     }
   }
