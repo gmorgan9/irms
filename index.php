@@ -33,10 +33,12 @@
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
 <div class="card" style="width: 18rem;">
+<div class="col d-flex justify-content-center">
   <div class="card-body">
   <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
     <a href="#" class="btn stretched-link">Open Incident</a>
   </div>
+</div>
 </div>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
