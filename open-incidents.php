@@ -55,10 +55,10 @@ session_start();
 <br><br><br>
 
 
-<?php foreach ($incidents as $incident): ?>
+<?php foreach ($incidents as $inc): ?>
 		<div class="post" style="margin-left: 0px;">
 				<div class="post_info">
-					<h3><?php echo $incident['inc_num'] ?></h3>
+					<h3><?php echo $inc['inc_num'] ?></h3>
 					<div class="info">
 						<span class="read_more">Read more...</span>
 					</div>
@@ -68,24 +68,6 @@ session_start();
 	<?php endforeach ?>
 
 
-
-
-
-
-            <?php   
-            // $sql = "SELECT inc_num FROM incidents";
-            // $result = $con->query($sql);
-            
-            // if ($result->num_rows > 0) {
-            //   // output data of each row
-            //   while($row = $result->fetch_assoc()) {
-                
-            //   }
-            // } else {
-            //   echo "0 results";
-            // }
-            // $con->close();
-            ?>
 
 
 
