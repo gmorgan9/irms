@@ -27,6 +27,11 @@
 <br><br><br>
 <div class="d-flex justify-content-center">
 <form>
+    <div class="cirlce1">
+        <div class="circle2">
+        <i class="fa-solid fa-user">
+        </div>
+    </div>
     <br><br>
     
 	<div class="form-group input-group w-75">
