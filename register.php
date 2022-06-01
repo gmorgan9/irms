@@ -27,7 +27,7 @@
 <br><br><br><br>
 <a href="/">back</a>
 
-<form class="form-inline">
+<form>
   <div class="form-group">
   <label for="fullName">Full Name</label>
     <input type="text" id="fullName" class="form-control mx-sm-3">
