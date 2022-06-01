@@ -95,7 +95,7 @@ session_start();
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-at"></i> </span>
 		 </div>
-        <input name="userName" class="form-control" placeholder="User Name" type="text">
+        <input name="user_name" class="form-control" placeholder="User Name" type="text">
 </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
