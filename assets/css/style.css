@@ -54,6 +54,6 @@ form {
     width: 500px;
     height: 550px;
 }
-.input-group-prepend {
-    width: 80px;
+.input-group {
+    width: 300px;
 }
