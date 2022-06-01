@@ -10,7 +10,7 @@ session_start();
         $emailAddress = $_POST['emailAddress'];
         $userName = $_POST['userName'];
         $password = $_POST['password'];
-        $confirmPassword = $_POST['confirmPassword'];
+        // $confirmPassword = $_POST['confirmPassword'];
 
         if(!empty($fullName) && !empty($emailAddress) && !empty($userName) && !empty($password) && !empty($confirmPassword) && !is_numeric($userName))
         {
