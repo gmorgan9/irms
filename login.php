@@ -71,7 +71,6 @@ session_start();
     <p class="text-center">Don't have an account? <a href="/register.php" style="color: black;">Register</a> </p>                                                                 
 </form>
 </div>
-<a href="/">back</a>
 
 </body>
 </html>

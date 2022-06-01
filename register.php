@@ -95,7 +95,6 @@ session_start();
     <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
 </form>
 </div>
-<a href="/">back</a>
 
 </body>
 </html>
