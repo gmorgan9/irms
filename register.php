@@ -31,7 +31,7 @@
     <div class="bg-circle">
         <div class="sm-circle">
         <div class="d-flex justify-content-center">
-        <i class="fa-solid fa-user fa-5x"></i>
+        <i class="fa-solid fa-user fa-3x"></i>
 </div>
         </div>
     </div>
