@@ -9,13 +9,13 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.6">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.7">
 
     <title>Home</title>
 </head>
 <body>
     <div class="header">
-        <a class="logo" style="text-align: center;">
+        <a class="logo">
             Incident Record Management System
 </a>
         <div class="header-right">
