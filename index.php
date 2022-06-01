@@ -52,7 +52,9 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
-            <a href="#" class="btn stretched-link" style="text-align: center;">All Incidents</a>
+            <div class="col d-flex justify-content-center">
+            <a href="#" class="btn stretched-link">All Incidents</a>
+            </div>
         </div>
     </div>
 </div>
