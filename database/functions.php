@@ -92,7 +92,7 @@ if (isset($_POST['rec_inc'])) {
     $priority = mysqli_real_escape_string($con, $_POST['priority']);
     $description = mysqli_real_escape_string($con, $_POST['description']);
     $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
-    $kb_article = mysqli_real_escape_string($con, $_POST['kb_artcile']);
+    $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
     $date = mysqli_real_escape_string($con, $_POST['date']);
     $time = mysqli_real_escape_string($con, $_POST['time']);
     // $email = mysqli_real_escape_string($con, $_POST['email']);
