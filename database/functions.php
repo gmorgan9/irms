@@ -130,7 +130,7 @@ if (isset($_POST['rec_inc'])) {
   }
 
 // Returns all Incidents
-  function allInc()
+  function getAllInc()
 {
 	global $con;
 	$sql = "SELECT * FROM incidents";
