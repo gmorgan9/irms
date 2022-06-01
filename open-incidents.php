@@ -48,7 +48,7 @@ session_start();
     <div class="row">
         <div class="card open-count" style="width: 15rem;">
             <div class="card-body">
-                <h1 class="text-center" style="font-size: 100px;"><?php $open_incidents ?></h1>
+                <h1 class="text-center" style="font-size: 100px;"><?php $open_incidents; ?></h1>
                 <p class="text-center">Open Incidents</p>
             </div>
         </div>
