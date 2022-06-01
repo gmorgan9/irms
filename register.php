@@ -106,14 +106,15 @@ session_start();
         <input name="password" class="form-control" placeholder="Create password" type="password">
 </div>
     </div> <!-- form-group// -->
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-center">
     <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input name="confirmPassword" class="form-control" placeholder="Repeat password" type="password">
 </div>
-    </div> <!-- form-group// -->      
+    </div>  -->
+    <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
     <button type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
