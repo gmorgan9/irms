@@ -55,47 +55,49 @@ session_start();
 <br><br><br>
 
 <?php
-// Attempt select query execution
-$sql = "SELECT * FROM incidents";
-if($result = mysqli_query($con, $sql)){
-    if(mysqli_num_rows($result) > 0){
-        echo "<table>";
-            echo "<tr>";
-                echo "th scope='col'>#</th>";
-                echo "<th scope='col'>Number</th>";
-                echo "<th scope='col'>Severity</th>";
-                echo "<th scope='col'>Description</th>";
-                echo "<th scope='col'>Assignment Group</th>";
-                echo "<th scope='col'>KB Article</th>";
-                echo "<th scope='col'>Date</th>"
-                echo "<th scope='col'>Time</th>"
-            echo "</tr>";
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['inc_num'] . "</td>";
-                echo "<td>" . $row['priority'] . "</td>";
-                echo "<td>" . $row['description'] . "</td>";
-                echo "<td>" . $row['assign_group'] . "</td>";
-                echo "<td>" . $row['kb_article'] . "</td>";
-                echo "<td>" . $row['date'] . "</td>";
-                echo "<td>" . $row['time'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
-        mysqli_free_result($result);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
-}
- 
-// Close connection
-mysqli_close($con);
-?>
+      $username = "root";
+      $password = "Morgan22!";
+      $host = "localhost";
 
+      $connector = mysql_connect($host,$username,$password)
+          or die("Unable to connect");
+        echo "Connections are made successfully::";
+      $selected = mysql_select_db("irms", $connector)
+        or die("Unable to connect");
+
+      //execute the SQL query and return records
+      $result = mysql_query("SELECT * FROM incidents ");
+      ?>
+      <table style= "background-color: #84ed86; color: #761a9b; margin: 0 auto;" >
+      <thead>
+        <tr>
+          <th>Incident Number</th>
+          <th>Priority</th>
+          <th>Description</th>
+          <th>Assignment Group</th>
+          <th>KB Article</th>
+          <td>Date</td>
+          <td>Time</td>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          while( $row = mysql_fetch_assoc( $result ) ){
+            echo
+            "<tr>
+              <td>{$row\['inc_num'\]}</td>
+              <td>{$row\['priority'\]}</td>
+              <td>{$row\['description'\]}</td>
+              <td>{$row\['assign_group'\]}</td>
+              <td>{$row\['kb_article'\]}</td>
+              <td>{$row\['date'\]}</td> 
+              <td>{$row\['time'\]}</td> 
+            </tr>\n";
+          }
+        ?>
+      </tbody>
+    </table>
+     <?php mysql_close($connector); ?>
 
 <br><br><br>
 
