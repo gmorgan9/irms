@@ -144,22 +144,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <br>
 
 
-    <div class="d-flex justify-content-center">
+    <!-- <div class="d-flex justify-content-center">
 	<div class="form-group input-group w-75">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
         <input name="full_name" class="form-control" placeholder="Full name" type="text">
-</div>
-    </div> <!-- form-group// -->
-    <div class="d-flex justify-content-center">
+        </div>
+    </div>  -->
+    <!-- form-group// -->
+    <!-- <div class="d-flex justify-content-center">
     <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
         <input name="email" class="form-control" placeholder="Email address" type="email">
 </div>
-    </div> <!-- form-group// -->
+    </div>  -->
+    <!-- form-group// -->
     <div class="d-flex justify-content-center">
     <div class="form-group input-group w-75">
     	<div class="input-group-prepend">
@@ -185,7 +187,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-    <button id="button" type="submit" name="registerBtn" class="btn btn-primary text-center reg-log">Create Account</button>  
+    <button id="button" type="submit" name="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
     <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
 </form>
