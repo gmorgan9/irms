@@ -126,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <br><br>
 <div class="d-flex justify-content-center">
     <!-- form start -->
-<form action="register.php" class="reg-form" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="reg-form" method="post">
 
 
 <div class="form-header d-flex justify-content-center">
