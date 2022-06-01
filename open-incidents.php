@@ -51,11 +51,14 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-                
 
-                $result = mysql_query("SELECT * FROM incidents");
-                $rows = mysql_num_rows($result);
-                echo "There are " . $rows . " rows in my table.";
+                $link = mysql_connect("localhost", "root", "Morgan22!");
+                mysql_select_db("irms", $link);
+
+                $result = mysql_query("SELECT * FROM incidents", $link);
+                $num_rows = mysql_num_rows($result);
+
+                echo "$num_rows Rows\n";
 
                 ?>
 
