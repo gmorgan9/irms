@@ -64,7 +64,7 @@ $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-  while($row = $result->fetch_assoc()) { ?>
+  foreach($row = $result->fetch_assoc()) { ?>
   <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
     <tr>
         <?php 
 
-    echo "<td scope='row'>" . $inc_num . "</td>";
+    echo "<td scope='row'>" . $row["inc_num"] . "</td>";
     //id: " . $row["inc_num"]. " - Name: " . $row["priority"]. " " . $row["description"]. "<br>";
   }
 } else {
