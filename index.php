@@ -41,17 +41,20 @@
     </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+            <a href="#" class="btn stretched-link">Open Incident</a>
+        </div>
+    </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+            <a href="#" class="btn stretched-link">Open Incident</a>
+        </div>
+    </div>
 </div>
   </div>
   </div>
@@ -60,25 +63,28 @@
 <div class="col d-flex justify-content-center">
 <div class="row">
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+            <a href="#" class="btn stretched-link">Open Incident</a>
+        </div>
+    </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+            <a href="#" class="btn stretched-link">Open Incident</a>
+        </div>
+    </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Notes</a>
-  </div>
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+            <a href="#" class="btn stretched-link">Open Incident</a>
+        </div>
+    </div>
 </div>
 </div>
 </div>
