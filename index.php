@@ -47,6 +47,8 @@
         <div class="card-body">
         <div class="d-flex justify-content-center">
                 <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
+</div>
+<div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Closed Incidents</a>
 </div>
         </div>
