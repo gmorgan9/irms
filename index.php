@@ -20,9 +20,11 @@
             Incident Record Management System
             <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </h2>
+    </div>
+
+<div class="record_incident">
+    <a href=""><button>Record Incident</button></a>
 </div>
-
-
 
 
 
