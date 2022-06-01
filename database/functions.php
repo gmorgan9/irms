@@ -95,9 +95,6 @@ if (isset($_POST['rec_inc'])) {
     $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
     $date = mysqli_real_escape_string($con, $_POST['date']);
     $time = mysqli_real_escape_string($con, $_POST['time']);
-    // $email = mysqli_real_escape_string($con, $_POST['email']);
-    // $password = mysqli_real_escape_string($con, $_POST['password']);
-    // $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
   
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
@@ -108,18 +105,15 @@ if (isset($_POST['rec_inc'])) {
     if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
     if (empty($date)) { array_push($errors, "Date is required"); }
     if (empty($time)) { array_push($errors, "Time is required"); }
-    // if (empty($username)) { array_push($errors, "Username is required"); }
-    // if (empty($email)) { array_push($errors, "Email is required"); }
-    // if (empty($password)) { array_push($errors, "Password is required"); }
     
   
     // first check the database to make sure 
-    // a user does not already exist with the same username and/or email
+    // a incident does not already exist with the same incident number
     $user_check_query = "SELECT * FROM incidents WHERE inc_num='$inc_num' LIMIT 1";
     $result = mysqli_query($con, $user_check_query);
     $inc = mysqli_fetch_assoc($result);
     
-    if ($inc) { // if user exists
+    if ($inc) { // if incident exists
       if ($inc['inc_num'] === $inc_num) {
         array_push($errors, "Incident Number already exists");
       }
@@ -127,13 +121,10 @@ if (isset($_POST['rec_inc'])) {
   
     // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
-       // $password = md5($password);//encrypt the password before saving in the database
   
         $query = "INSERT INTO incidents (inc_num, priority, description, assign_group, kb_article, date, time) 
                   VALUES('$inc_num', '$priority', '$description', '$assign_group', '$kb_article', '$date', '$time')";
         mysqli_query($con, $query);
-        // $_SESSION['username'] = $username;
-        // $_SESSION['success'] = "You are now logged in";
         header('location: /');
     }
   }
