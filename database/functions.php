@@ -99,7 +99,7 @@ $errors = array();
 if (isset($_POST['rec_inc'])) {
     // receive all input values from the form
     $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
-    // $username = mysqli_real_escape_string($con, $_POST['username']);
+    $priority = mysqli_real_escape_string($con, $_POST['priority']);
     // $email = mysqli_real_escape_string($con, $_POST['email']);
     // $password = mysqli_real_escape_string($con, $_POST['password']);
     // $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
@@ -107,6 +107,7 @@ if (isset($_POST['rec_inc'])) {
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
     if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
+    if (empty($priority)) { array_push($errors, "Incident Number is required"); }
     // if (empty($username)) { array_push($errors, "Username is required"); }
     // if (empty($email)) { array_push($errors, "Email is required"); }
     // if (empty($password)) { array_push($errors, "Password is required"); }
@@ -128,8 +129,8 @@ if (isset($_POST['rec_inc'])) {
     if (count($errors) == 0) {
        // $password = md5($password);//encrypt the password before saving in the database
   
-        $query = "INSERT INTO test (inc_num) 
-                  VALUES('$inc_num')";
+        $query = "INSERT INTO test (inc_num, priority) 
+                  VALUES('$inc_num', '$priority)";
         mysqli_query($con, $query);
         // $_SESSION['username'] = $username;
         // $_SESSION['success'] = "You are now logged in";
