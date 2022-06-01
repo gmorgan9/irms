@@ -70,9 +70,9 @@ session_start();
        <?php 
             //records as in an array
 
-foreach( $incidents as $inc ) // using foreach  to display each element of array
+foreach( $incidents as $incident ) // using foreach  to display each element of array
             {
-                echo "<tr><td>".$inc['inc_num']."</td>
+                echo "<tr><td>".$incident['inc_num']."</td>
                        </tr>";
             }
        ?>
