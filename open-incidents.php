@@ -84,9 +84,9 @@ session_start();
   <tbody>
       <?php $i=1; ?>
     
-    <?php foreach ($incidents as $incident): ?>
+    <?php foreach ($incidents as $key => $incident): ?>
         <tr>
-            <th scope="row"><?php $incident + 1; ?></th>
+            <td><?php echo $key + 1; ?></td>
             <td><?php echo $incident['inc_num'] ?></td>
             <td><?php echo $incident['priority'] ?></td>
             <td><?php echo $incident['description'] ?></td>
