@@ -9,7 +9,7 @@
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.93">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.94">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -78,7 +78,7 @@
 </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-    <button type="submit" class="btn btn-primary text-center rec">Create Account</button>  
+    <button type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
 </div> 
     <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
 </form>

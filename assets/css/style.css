@@ -82,3 +82,8 @@ form {
     margin-top: 25px;
     color: white;
 }
+.reg-log {
+    color: white !important;
+    background-color: #005382 !important;
+    border-color: #005382 !important;
+}
