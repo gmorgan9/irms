@@ -52,13 +52,10 @@ session_start();
 
                 <?php
 
-                $link = mysql_connect("localhost", "root", "Morgan22!");
-                mysql_select_db("irms", $link);
-
-                $result = mysql_query("SELECT * FROM incidents", $link);
-                $num_rows = mysql_num_rows($result);
-
-                echo "$num_rows Rows\n";
+$sql="select count('1') from incidents";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_array($result);
+echo "<h3>$row[0]</h3>";
 
                 ?>
 
