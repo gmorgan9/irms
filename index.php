@@ -67,7 +67,7 @@ session_start();
                 <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link">Closed Incidents</a>
+                <a href="/closed-incidents.php" class="btn stretched-link">Closed Incidents</a>
             </div>
         </div>
     </div>

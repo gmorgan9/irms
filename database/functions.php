@@ -129,7 +129,7 @@ if (isset($_POST['rec_inc'])) {
     }
   }
 
-// Returns all Incidents
+// RETURNS ALL INCIDENTS
   function getAllInc()
 {
 	global $con;
@@ -137,6 +137,15 @@ if (isset($_POST['rec_inc'])) {
 	$result = mysqli_query($con, $sql);
 	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $incidents;
+}
+// RETURNS CLOSED INCIDENTS
+function getClosedInc()
+{
+	global $con;
+	$sql = "SELECT * FROM incidents where status=1";
+	$result = mysqli_query($con, $sql);
+	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $closed_incidents;
 }
 
 // COUNT OPEN INCIDENTS
