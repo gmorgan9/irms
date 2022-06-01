@@ -78,7 +78,7 @@
 </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
-    <button type="submit" class="btn btn-primary text-center">Create Account</button>  
+    <button type="submit" class="btn btn-primary text-center rec">Create Account</button>  
 </div> 
     <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
 </form>
