@@ -82,6 +82,7 @@ session_start();
     </tr>
   </thead>
   <tbody>
+      <?php $i=1; ?>
     
     <?php foreach ($incidents as $incident): ?>
         <tr>
