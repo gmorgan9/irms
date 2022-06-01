@@ -17,10 +17,8 @@
     <div class="header">
         <h2 class="logo">
             Incident Record Management System
+            <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </h2>
-        <div class="header-right">
-        <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-        </div>
 </div>
 
 
