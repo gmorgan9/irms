@@ -70,7 +70,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 		    </div>
-            <input name="description" class="form-control" placeholder="Description" type="text">
+            <textarea name="description" class="form-control" placeholder="Description" type="text">
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
