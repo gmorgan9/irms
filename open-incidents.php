@@ -82,17 +82,19 @@ session_start();
     </tr>
   </thead>
   <tbody>
-    <tr>
+    
     <?php foreach ($incidents as $incident): ?>
-      <th scope="row">1</th>
-      <td><?php echo $incident['inc_num'] ?></td>
-      <td><?php echo $incident['priority'] ?></td>
-      <td><?php echo $incident['description'] ?></td>
-      <td><?php echo $incident['assign_group'] ?></td>
-      <td><?php echo $incident['kb_article'] ?></td>
-      <td><?php echo $incident['date'] ?></td>
+        <tr>
+            <th scope="row">1</th>
+            <td><?php echo $incident['inc_num'] ?></td>
+            <td><?php echo $incident['priority'] ?></td>
+            <td><?php echo $incident['description'] ?></td>
+            <td><?php echo $incident['assign_group'] ?></td>
+            <td><?php echo $incident['kb_article'] ?></td>
+            <td><?php echo $incident['date'] ?></td>
+        </tr>
     <?php endforeach ?>
-    </tr>
+    
   </tbody>
 </table>
 </div>
