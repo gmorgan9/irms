@@ -147,7 +147,15 @@ function getClosedInc()
 	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $closed_incidents;
 }
-
+// RETURNS OPEN INCIDENTS
+function getClosedInc()
+{
+	global $con;
+	$sql = "SELECT * FROM incidents where status=0";
+	$result = mysqli_query($con, $sql);
+	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $open_incidents;
+}
 // COUNT OPEN INCIDENTS
 function countOpenInc()
 {

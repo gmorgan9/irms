@@ -7,8 +7,8 @@ session_start();
         $_SESSION['msg'] = "You must log in first";
         header('location: login.php');
     }
-    $incidents = getAllInc();
-    $open_incidents = countOpenInc();
+    $open_incidents = getOpenInc();
+    $count_open_incidents = countOpenInc();
 ?>
 
 
@@ -96,16 +96,16 @@ session_start();
   <tbody>
       <?php $i=1; ?>
     
-    <?php foreach ($incidents as $key => $incident): ?>
+    <?php foreach ($open_incidents as $key => $open_incident): ?>
         <tr>
             <td><?php echo $key + 1; ?></td>
-            <td><?php echo $incident['inc_num'] ?></td>
-            <td><?php echo $incident['priority'] ?></td>
-            <td><?php echo $incident['description'] ?></td>
-            <td><?php echo $incident['assign_group'] ?></td>
-            <td><?php echo $incident['kb_article'] ?></td>
-            <td><?php echo $incident['date'] ?></td>
-            <td><?php echo $incident['time'] ?></td>
+            <td><?php echo $open_incident['inc_num'] ?></td>
+            <td><?php echo $open_incident['priority'] ?></td>
+            <td><?php echo $open_incident['description'] ?></td>
+            <td><?php echo $open_incident['assign_group'] ?></td>
+            <td><?php echo $open_incident['kb_article'] ?></td>
+            <td><?php echo $open_incident['date'] ?></td>
+            <td><?php echo $open_incident['time'] ?></td>
         </tr>
     <?php endforeach ?>
     
