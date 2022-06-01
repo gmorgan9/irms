@@ -34,7 +34,7 @@
 <div class="row">
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-  <i class="fa-solid fa-envelope-open icon"></i> <br>
+  <i class="fa-solid fa-envelope-open 2x"></i> <br>
     <a href="#" class="btn stretched-link">Open Incident</a>
   </div>
 </div>
