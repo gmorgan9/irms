@@ -1,9 +1,11 @@
-<?php
+<?php 
 session_start();
-    include("database/connection.php");
-    include("database/functions.php");
 
-    if($_SERVER['REQUEST_METHOD'] == "POST")
+	include("database/connection.php");
+	include("database/functions.php");
+
+
+	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
 		$user_name = $_POST['user_name'];
@@ -27,101 +29,56 @@ session_start();
 	}
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Font Awesome -->
-    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
-
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.98">
-
-    <!-- Bootstrap Styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Home</title>
+	<title>Signup</title>
 </head>
 <body>
-    <div class="header">
-        <h2 class="logo">
-            Incident Record Management System
-        </h2>
-    </div>
 
+	<style type="text/css">
+	
+	#text{
 
-<br><br>
-<div class="d-flex justify-content-center">
-    <!-- form start -->
-<form class="reg-form" method="post">
-<div class="form-header d-flex justify-content-center">
-    <div class="bg-circle">
-        <div class="sm-circle">
-        <div class="d-flex justify-content-center">
-        <i class="user-header fa-solid fa-user fa-3x"></i>
-</div>
-        </div>
-    </div>
-</div>
-    
-<br>
-<h2 class="text-center">Registration</h2>
-    <br>
+		height: 25px;
+		border-radius: 5px;
+		padding: 4px;
+		border: solid thin #aaa;
+		width: 100%;
+	}
 
+	#button{
 
-    <!-- <div class="d-flex justify-content-center">
-	<div class="form-group input-group w-75">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input name="fullName" class="form-control" placeholder="Full name" type="text">
-</div>
-    </div>  -->
-    <!-- form-group// -->
-    <!-- <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-        <input name="emailAddress" class="form-control" placeholder="Email address" type="email">
-</div>
-    </div>  -->
-    <!-- form-group// -->
-    <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-at"></i> </span>
-		 </div>
-        <input name="user_name" class="form-control" placeholder="User Name" type="text">
-</div>
-    </div> <!-- form-group// -->
-    <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input name="password" class="form-control" placeholder="Create password" type="password">
-</div>
-    </div> <!-- form-group// -->
-    <!-- <div class="d-flex justify-content-center">
-    <div class="form-group input-group w-75">
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		</div>
-        <input name="confirmPassword" class="form-control" placeholder="Repeat password" type="password">
-</div>
-    </div>  -->
-    <!-- form-group// -->      
-    <div class="d-flex justify-content-center">                                
-    <button id="button" type="submit" class="btn btn-primary text-center reg-log">Create Account</button>  
-</div> 
-    <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
-</form>
-</div>
-<a href="/">back</a>
+		padding: 10px;
+		width: 100px;
+		color: white;
+		background-color: lightblue;
+		border: none;
+	}
 
+	#box{
+
+		background-color: grey;
+		margin: auto;
+		width: 300px;
+		padding: 20px;
+	}
+
+	</style>
+
+	<div id="box">
+		
+		<form method="post">
+			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
+
+			<input id="text" type="text" name="user_name"><br><br>
+			<input id="text" type="password" name="password"><br><br>
+
+			<input id="button" type="submit" value="Signup"><br><br>
+
+			<a href="login.php">Click to Login</a><br><br>
+		</form>
+	</div>
 </body>
 </html>
