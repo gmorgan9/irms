@@ -36,7 +36,7 @@
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <h1 style="font-size: 120px;">2</h1> <br>
+                <h1 style="font-size: 110px;">2</h1> <br>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Open Incidents</a>
