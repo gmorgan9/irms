@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Font Awesome -->
-    <link href="/fontawesome/css/all.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
 
 
