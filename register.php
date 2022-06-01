@@ -25,7 +25,7 @@
 
 
 <br><br><br>
-<div class="mx-auto" style="width: 1800px;">
+<div class="d-flex justify-content-center">
 <form>
     <br><br>
     
