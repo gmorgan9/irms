@@ -51,7 +51,7 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-                    $sql="select count('1') from incidents";
+                    $sql="select count('1') from incidents where status=0";
                     $result=mysqli_query($con,$sql);
                     $rowtotal=mysqli_fetch_array($result); 
                     echo "$rowtotal[0]";
