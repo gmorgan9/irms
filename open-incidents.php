@@ -3,7 +3,10 @@ session_start();
     include("database/connection.php");
     include("database/functions.php");
 
-    $user_data = check_login($con);
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
 ?>
 
 
