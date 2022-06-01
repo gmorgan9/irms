@@ -2,9 +2,10 @@
     margin: 0;
 }
 .header {
-    background-color: blue;
+    background-color: #005382;
     height: 45px;
     padding-top: 10px;
+    color: white;
 }
 .logo {
     text-align: center;
@@ -13,5 +14,4 @@
     position: absolute;
     right: 0;
     margin-right: 5%;
-    color: black;
 }
