@@ -15,8 +15,6 @@ session_start();
     $time = $row['time'];
 
 
- 
-    $id=$_GET['updateid'];
     if (isset($_POST['update'])) {
         $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
         $priority = mysqli_real_escape_string($con, $priority);
