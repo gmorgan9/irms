@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
 
     $id=$_GET['updateid'];
-    $sql = "SELECT * FROM incidents where id=$id";
+    $sql = "SELECT * FROM incidents where id='$id'";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $inc_num = $row['inc_num'];
@@ -17,15 +17,15 @@ session_start();
 
     if (isset($_POST['update'])) {
         $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
-        $priority = mysqli_real_escape_string($con, $priority);
-        $description = mysqli_real_escape_string($con, $description);
-        $assign_group = mysqli_real_escape_string($con, $assign_group);
-        $kb_article = mysqli_real_escape_string($con, $kb_article);
-        $date = mysqli_real_escape_string($con, $date);
-        $time = mysqli_real_escape_string($con, $time);
+        $priority = mysqli_real_escape_string($con, $_POST['priority']);
+        $description = mysqli_real_escape_string($con, $_POST['description']);
+        $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+        $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+        $date = mysqli_real_escape_string($con, $_POST['date']);
+        $time = mysqli_real_escape_string($con, $_POST['time']);
 
         // Update Statement
-        $sql = "UPDATE `incidents` SET `inc_num`='$inc_num' WHERE `id`='$id'";
+        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
         $results=mysqli_query($con,$sql);
         if($results) {
             echo "Updated Successfully";
