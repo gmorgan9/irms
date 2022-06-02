@@ -3,14 +3,14 @@ session_start();
     include("database/connection.php");
     include("database/functions.php");
 
-
+    $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
     if (isset($_GET['edit-incident'])) {
-		$incident = getIncident($_GET['inc_id']);
+		$incident = $results;
 	}
 
 
     //$all_incidents = getAllInc();
-    $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
+    
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $inc_num; ?>">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $incident['inc_num']; ?>">
         </div>
     </div> 
     <!-- form-group// -->
