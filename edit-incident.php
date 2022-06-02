@@ -4,8 +4,8 @@ session_start();
     include("database/functions.php");
 
 
-    if (isset($_GET['inc_id'])) {
-		$incident = updateIncident($_GET['inc_id']);
+    if (isset($_GET['edit-incident'])) {
+		$incident = getPost($_GET['inc_id']);
 	}
 
 
