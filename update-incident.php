@@ -1,6 +1,20 @@
 <?php
 session_start();
     include("database/connection.php");
+
+    $id=$_GET['updateid'];
+    $sql = "SELECT * FROM incidents where id=$id";
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $inc_num = $row['inc_num'];
+    $priority = $row['priority'];
+    $description = $row['description'];
+    $assign_group = $row['assign_group'];
+    $kb_article = $row['kb_article'];
+    $date = $row['date'];
+    $time = $row['time'];
+
+
  
     $id=$_GET['updateid'];
     if (isset($_POST['update'])) {
@@ -58,19 +72,7 @@ session_start();
 <br>
 
 <div class="d-flex justify-content-center">
-<?php     
-    $id=$_GET['updateid'];
-    $sql = "SELECT * FROM incidents where id=$id";
-    $result=mysqli_query($con,$sql);
-    $row=mysqli_fetch_assoc($result);
-    $inc_num = $row['inc_num'];
-    $priority = $row['priority'];
-    $description = $row['description'];
-    $assign_group = $row['assign_group'];
-    $kb_article = $row['kb_article'];
-    $date = $row['date'];
-    $time = $row['time'];
-?>
+
     <!-- form start -->
 <form action="update-incident.php" class="reg-form" method="post">
 <?php //include('errors.php'); ?>
