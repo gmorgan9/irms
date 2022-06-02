@@ -37,7 +37,7 @@ session_start();
 
 
 <br><br>
-<?php foreach ($all_incidents as $key => $all_incident): ?>
+<?php if ($row = "SELECT inc_id FROM incidents WHERE inc_id=$inc_id;"): ?>
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="record-incident.php" class="reg-form" method="post">
