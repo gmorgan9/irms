@@ -236,7 +236,7 @@ if (isset($_GET['edit-incident'])) {
     	$date = mysqli_real_escape_string($con, $_POST['date']);
     	$time = mysqli_real_escape_string($con, $_POST['time']);
 		//Inserting the submitted data into the database.
-		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE (`inc_id` = ‘$inc_id)";
+		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id = $inc_id";
 		
 		if (mysqli_query ($con , $sql)) {
  
