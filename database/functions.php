@@ -202,31 +202,31 @@ function getAllTopics() {
 	return $topics;
 }
 
-function editTopic($topic_id) {
-	global $conn, $topic_name, $isEditingTopic, $topic_id;
-	$sql = "SELECT * FROM topics WHERE id=$topic_id LIMIT 1";
-	$result = mysqli_query($conn, $sql);
-	$topic = mysqli_fetch_assoc($result);
+function editInc($inc_id) {
+	global $con, $inc_num, $isEditingInc, $inc_id;
+	$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
+	$result = mysqli_query($con, $sql);
+	$inc = mysqli_fetch_assoc($result);
 	// set form values ($topic_name) on the form to be updated
-	$topic_name = $topic['name'];
+	$inc_num = $inc['inc_num'];
 }
-function updateTopic($request_values) {
-	global $conn, $errors, $topic_name, $topic_id;
-	$topic_name = esc($request_values['topic_name']);
-	$topic_id = esc($request_values['topic_id']);
+function updateInc($request_values) {
+	global $con, $errors, $inc_num, $inc_id;
+	$inc_num = esc($request_values['inc_num']);
+	$inc_id = esc($request_values['inc_id']);
 	// create slug: if topic is "Life Advice", return "life-advice" as slug
-	$topic_slug = makeSlug($topic_name);
+	//$topic_slug = makeSlug($topic_name);
 	// validate form
-	if (empty($topic_name)) { 
+	if (empty($inc_num)) { 
 		array_push($errors, "Topic name required"); 
 	}
 	// register topic if there are no errors in the form
 	if (count($errors) == 0) {
-		$query = "UPDATE topics SET name='$topic_name', slug='$topic_slug' WHERE id=$topic_id";
+		$query = "UPDATE topics SET inc_num='$inc_num' WHERE inc_id=$inc_id";
 		mysqli_query($conn, $query);
 
 		$_SESSION['message'] = "Topic updated successfully";
-		header('location: topics.php');
+		header('location: all-incidents.php');
 		exit(0);
 	}
 }
