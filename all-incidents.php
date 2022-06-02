@@ -9,8 +9,8 @@ session_start();
     }
 
     // DELETE
-    if(isset($_GET['deleteid'])) {
-        $id = $_GET['deleteid'];
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
     
         $sql = "DELETE FROM incidents WHERE id=$id";
         $result = mysqli_query($con, $sql);
@@ -123,8 +123,8 @@ session_start();
             <td>'.$kb_article.'</td>
             <td>'.$date.'</td>
             <td>'.$time.'</td>
-            <td><a href="update-incident.php?updateid='.$id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?deleteid='.$id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a href="update-incident.php?id='.$id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?id='.$id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>';
           }
       }
