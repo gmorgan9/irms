@@ -190,7 +190,7 @@ if (isset($_POST['update-inc'])) {
 
 // RECORD AN INCIDENT
 function updateIncident($request_values) {
-	global $con, $errors;
+	global $con;
 
 	// get id of the incident to be updated
 	$inc_id = $request_values['inc_id'];
