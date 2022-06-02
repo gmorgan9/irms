@@ -203,7 +203,7 @@ if (isset($_POST['update_inc'])) {
 // }
 
 function editInc($inc_id) {
-	global $con, $inc_num, $isEditingInc, $inc_id, $priority;
+	global $con, $inc_num, $isEditingInc, $inc_id, $priority, $description, $assign_group, $kb_article, $date, $time;
 	$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
 	$result = mysqli_query($con, $sql);
 	$inc = mysqli_fetch_assoc($result);
@@ -217,7 +217,7 @@ function editInc($inc_id) {
     $time = $inc['time'];
 }
 function updateInc($request_values) {
-	global $con, $errors, $inc_num, $inc_id, $priority;
+	global $con, $errors, $inc_num, $inc_id, $priority, $description, $assign_group, $kb_article, $date, $time;
 	$inc_num = esc($request_values['inc_num']);
 	$inc_id = esc($request_values['inc_id']);
     $priority = esc($request_values['priority']);
