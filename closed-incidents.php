@@ -101,7 +101,7 @@ session_start();
             <td><?php echo $key + 1; ?></td>
             <td><?php echo $closed_incident['inc_num'] ?></td>
             <td><?php echo $closed_incident['priority'] ?></td>
-            <td><?php echo $closed_incident['description'] ?></td>
+            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px; "><?php echo $closed_incident['description'] ?></td>
             <td><?php echo $closed_incident['assign_group'] ?></td>
             <td><?php echo $closed_incident['kb_article'] ?></td>
             <td><?php echo $closed_incident['date'] ?></td>
