@@ -15,7 +15,7 @@ session_start();
     // $time = $row['time'];
 
 
-    if(isset($_POST['update'])) {
+    if(isset($_POST['submit'])) {
         //$inc_id=$_POST['inc_id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
@@ -25,7 +25,7 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
+        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
         $result=mysqli_query($con,$sql);
         if($result) {
             echo "Updated Successfully";
@@ -130,7 +130,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="submit" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
