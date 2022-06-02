@@ -96,7 +96,7 @@
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
+            <input name="inc_num" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
         </div>
     </div> 
     <!-- form-group// -->
