@@ -167,8 +167,8 @@ function countOpenInc()
 }
 // DELETE INCIDENT
 
-if (isset($_GET['delete-inc'])) {
-	$inc_id = $_GET['delete-inc'];
+if (isset($_GET['deleteid'])) {
+	$inc_id = $_GET['deleteid'];
 	deleteInc($inc_id);
 }
 
