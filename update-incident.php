@@ -92,6 +92,15 @@
 <br>
 
     <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-50">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
+	        </div>
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $id ?>" read only>
+        </div>
+    </div> 
+    <!-- form-group// -->
+    <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
