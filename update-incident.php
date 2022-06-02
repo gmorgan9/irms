@@ -3,8 +3,8 @@ session_start();
     include("database/connection.php");
     // include("database/functions.php");
     
-    $updateid=$_GET['updateid'];
-    $sql = "SELECT * FROM incidents where id=$updateid";
+    $id=$_GET['updateid'];
+    $sql = "SELECT * FROM incidents where id=$id";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $inc_num = $row['inc_num'];
@@ -28,8 +28,8 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' WHERE id=$updateid");
-        //$results=mysqli_query($con,$sql);
+        $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num' WHERE id=$id";
+        $results=mysqli_query($con,$sql);
         if($results) {
             //echo "Updated Successfully";
             header('location: all-incidents.php'); // returns back to same page
