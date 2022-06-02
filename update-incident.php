@@ -16,8 +16,8 @@ session_start();
         $sql = "UPDATE `incidents` SET `inc_num`='$inc_num' WHERE `id`='$id'";
         $results=mysqli_query($con,$sql);
         if($results) {
-            //echo "Updated Successfully";
-            header('location: all-incidents.php');
+            echo "Updated Successfully";
+            // header('location: all-incidents.php');
         } else {
             die(mysqli_error($con));
         }
