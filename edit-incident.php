@@ -31,6 +31,7 @@ session_start();
 
 
 <br><br>
+<?php foreach ($edit_incidents as $key => $edit_incident): ?>
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="record-incident.php" class="reg-form" method="post">
@@ -53,7 +54,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $inc_num; ?>">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $edit_incident['inc_id']; ?>">
         </div>
     </div> 
     <!-- form-group// -->
@@ -106,10 +107,12 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
+        <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
+
+<?php endforeach ?>
 
 </body>
 </html>
