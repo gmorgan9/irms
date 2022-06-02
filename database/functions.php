@@ -194,13 +194,13 @@ if (isset($_POST['update_inc'])) {
 	updateInc($_POST);
 }
 
-function getAllInc() {
-	global $con;
-	$sql = "SELECT * FROM incidents";
-	$result = mysqli_query($con, $sql);
-	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	return $incidents;
-}
+// function getAllInc() {
+// 	global $con;
+// 	$sql = "SELECT * FROM incidents";
+// 	$result = mysqli_query($con, $sql);
+// 	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// 	return $incidents;
+// }
 
 function editInc($inc_id) {
 	global $con, $inc_num, $isEditingInc, $inc_id;
