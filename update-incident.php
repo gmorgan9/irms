@@ -15,7 +15,7 @@ session_start();
         // Update Statement
 if (!is_numeric($id))
 {
-    echo "Bad parameter!! here is the bad: " . $id;
+    echo 'Bad parameter!! here is the bad: '.$id;
     exit;
 } else {
     echo "GOOD!";
