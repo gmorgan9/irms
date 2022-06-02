@@ -93,7 +93,7 @@
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
-	            <span class="input-group-text"> ID</span>
+	            <span class="input-group-text"> Identifer</span>
 	        </div>
             <input name="inc_num" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
         </div>
