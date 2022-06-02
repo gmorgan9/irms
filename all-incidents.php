@@ -100,7 +100,8 @@ session_start();
             $date = $row['date'];
             $time = $row['time'];
             echo ' <tr>
-            <th scope="row">'.$inc_num.'</th>
+            <th scope="row">'.$inc_id.'</th>
+            <td>'.$inc_num.'</th>
             <td>'.$priority.'</td>
             <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">'.$description.'</td>
             <td>'.$assign_group.'</td>
@@ -114,26 +115,6 @@ session_start();
       }
 
 ?>
-
-
-
-
-    
-    <!-- <?php //foreach ($all_incidents as $key => $all_incident): ?>
-        <tr>
-            <td><?php //echo $key + 1; ?></td>
-            <td><?php //echo $all_incident['inc_num'] ?></td>
-            <td><?php //echo $all_incident['priority'] ?></td>
-            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php //echo $all_incident['description'] ?></td>
-            <td><?php //echo $all_incident['assign_group'] ?></td>
-            <td><?php //echo $all_incident['kb_article'] ?></td>
-            <td><?php //echo $all_incident['date'] ?></td>
-            <td><?php //echo $all_incident['time'] ?></td>
-            <td><a href="edit-incident.php?update-incident=<?php //echo $all_incident['inc_id']; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?delete-inc=<?php //echo $all_incident['inc_id']; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
-        </tr>
-    <?php //endforeach ?> -->
-    
   </tbody>
 </table>
 </div>
