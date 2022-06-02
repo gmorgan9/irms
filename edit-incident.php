@@ -1,7 +1,13 @@
-<?php
+<?php 
 session_start();
     include("database/connection.php");
     include("database/functions.php");
+
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
+    $all_incidents = getAllInc();
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +37,7 @@ session_start();
 
 
 <br><br>
-<?php foreach ($edit_incidents as $key => $edit_incident): ?>
+<?php foreach ($all_incidents as $key => $all_incident): ?>
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="record-incident.php" class="reg-form" method="post">
@@ -54,7 +60,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $edit_incident['inc_id']; ?>">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $all_incident['inc_id']; ?>">
         </div>
     </div> 
     <!-- form-group// -->
