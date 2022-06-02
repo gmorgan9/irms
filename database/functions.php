@@ -209,6 +209,7 @@ function editInc($inc_id) {
 	$inc = mysqli_fetch_assoc($result);
 	// set form values ($topic_name) on the form to be updated
 	$inc_num = $inc['inc_num'];
+    $priority = $inc['priority'];
 }
 function updateInc($request_values) {
 	global $con, $errors, $inc_num, $inc_id;
