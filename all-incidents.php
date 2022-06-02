@@ -10,9 +10,9 @@ session_start();
 
     // DELETE
     if(isset($_GET['deleteid'])) {
-        $inc_id = $_GET['deleteid'];
+        $id = $_GET['deleteid'];
     
-        $sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
+        $sql = "DELETE FROM incidents WHERE id=$id";
         $result = mysqli_query($con, $sql);
         if($result) {
             // echo "Deleted Successfully";
@@ -106,7 +106,7 @@ session_start();
       $result = mysqli_query($con, $sql);
       if($result) {
           while ($row = mysqli_fetch_assoc($result)) {
-            $inc_id=$row['inc_id'];
+            $id=$row['id'];
             $inc_num = $row['inc_num'];
             $priority = $row['priority'];
             $description = $row['description'];
@@ -115,7 +115,7 @@ session_start();
             $date = $row['date'];
             $time = $row['time'];
             echo ' <tr>
-            <th scope="row">'.$inc_id.'</th>
+            <th scope="row">'.$id.'</th>
             <td>'.$inc_num.'</th>
             <td>'.$priority.'</td>
             <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">'.$description.'</td>
@@ -123,8 +123,8 @@ session_start();
             <td>'.$kb_article.'</td>
             <td>'.$date.'</td>
             <td>'.$time.'</td>
-            <td><a href="update-incident.php?updateid='.$inc_id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?deleteid='.$inc_id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a href="update-incident.php?updateid='.$id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?deleteid='.$id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>';
           }
       }

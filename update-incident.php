@@ -2,7 +2,7 @@
 session_start();
     include("database/connection.php");
     include("database/functions.php");
-    $inc_id=$_GET['updateid'];
+    $id=$_GET['updateid'];
     if(isset($_POST['update'])) {
         //$inc_id=$_POST['inc_id'];
         $inc_num = $_POST['inc_num'];
@@ -13,7 +13,7 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $sql = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
+        $sql = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id=$id";
         $result=mysqli_query($con,$sql);
         if($result) {
             echo "Updated Successfully";
