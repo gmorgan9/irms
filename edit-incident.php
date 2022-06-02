@@ -47,7 +47,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo '$inc_num'; ?>">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $inc_num ?>">
         </div>
     </div> 
     <!-- form-group// -->
