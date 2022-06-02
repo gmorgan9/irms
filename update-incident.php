@@ -16,7 +16,7 @@ session_start();
 
 if (!is_numeric($id))
 {
-    var_dump($_POST['incidents']);
+    var_dump();
     echo  $id;
     exit;
 }
@@ -29,6 +29,12 @@ if (!is_numeric($id))
             die(mysqli_error($con));
         }
     }
+    if (!is_numeric($id))
+{
+    var_dump($results);
+    echo  $id;
+    exit;
+}
 
 ?>
 
