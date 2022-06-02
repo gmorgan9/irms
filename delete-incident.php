@@ -9,7 +9,7 @@ if(isset($_GET['deleteid'])) {
     $result = mysqli_query($con, $sql);
     if($result) {
         // echo "Deleted Successfully";
-        header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
+        header('location: all-incidents.php'); // returns back to same page
     } else {
         die(mysqli_error($con));
     }
