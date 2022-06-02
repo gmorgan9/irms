@@ -242,14 +242,6 @@ function editIncident($inc_id)
 		$date = esc($request_values['date']);
 		$time = esc($request_values['time']);
 
-
-
-
-		// if (isset($request_values['inc_num'])) {
-		// 	$topic_id = esc($request_values['topic_id']);
-		// }
-		// // create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
-		// $post_slug = makeSlug($title);
 		if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
     	if (empty($priority)) { array_push($errors, "Priority is required"); }
     	if (empty($description)) { array_push($errors, "Description is required"); }
@@ -257,18 +249,6 @@ function editIncident($inc_id)
     	if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
     	if (empty($date)) { array_push($errors, "Date is required"); }
     	if (empty($time)) { array_push($errors, "Time is required"); }
-
-
-		// // if new featured image has been provided
-		// if (isset($_POST['featured_image'])) {
-		// 	// Get image name
-		//   	$featured_image = $_FILES['featured_image']['name'];
-		//   	// image file directory
-		//   	$target = "../static/images/" . basename($featured_image);
-		//   	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
-		//   		array_push($errors, "Failed to upload image. Please check file settings for your server");
-		//   	}
-		// }
 
 		// register topic if there are no errors in the form
 		if (count($errors) == 0) {
