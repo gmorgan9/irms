@@ -10,7 +10,7 @@ session_start();
 
 
     //$all_incidents = getAllInc();
-    $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
+    //$results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
 ?>
 
 <!DOCTYPE html>
