@@ -25,14 +25,57 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $sql = "UPDATE 'incidents' SET id='$id', inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'";
-        $result=mysqli_query($con,$sql);
-        if($result) {
-            echo "Updated Successfully";
-            // header('location: all-incidents.php'); // returns back to same page
-        } else {
-            die(mysqli_error($con));
+
+        $sql = "UPDATE incidents SET inc_num=?, priority=?, description=?, assign_group=?, kb_article=?, date=?, time=? WHERE id=?";
+
+        if($stmt = mysqli_prepare($con, $sql)){
+            echo "<script>alert('";
+            echo "Im inside `mysqli_prepare` If Block... All Good so far"; echo "<br>"; 
+            echo "')</script> ";
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "sssssssi", $param_inc_num, $param_priority, $param_description, $param_assign_group, $param_kb_article, $param_date, $param_time, $param_id);
+
+            // Set parameters
+            $param_inc_num = $inc_num;
+            $param_priority = $priority;
+            $param_description = $description;
+            $param_assign_group = $assign_group;            
+            $param_kb_article = $kb_article;
+            $param_date = $date;
+            $param_time = $time;
+            $param_id = $id;
+
+            if(mysqli_stmt_execute($stmt)){
+                // Records updated successfully. Redirect to landing page
+            echo "<script>alert('";
+                echo "Im inside `mysqli_stmt_execute` If Block... All Good so far"; echo "<br>"; 
+            echo "')</script> ";
+                header("location: index.php");
+                exit();
+            } else{
+            echo "<script>alert('";
+                echo "Im inside `mysqli_stmt_execute` If Block... Not Good"; echo "<br>"; 
+            echo "')</script> ";
+                echo "Something went wrong. Please try again later.";
+            }
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }else{
+            echo "<script>alert('";
+            echo "Im directly into else block from `empty input check If` Block... Not Good"; echo "<br>"; 
+            echo "')</script> ";
+            echo mysqli_stmt_error($stmt);
         }
+
+
+        // $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'";
+        // $result=mysqli_query($con,$sql);
+        // if($result) {
+        //     echo "Updated Successfully";
+        //     // header('location: all-incidents.php'); // returns back to same page
+        // } else {
+        //     die(mysqli_error($con));
+        // }
     }
 
 ?>
