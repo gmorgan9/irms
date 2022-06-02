@@ -1,7 +1,7 @@
 <?php
 session_start();
     include("database/connection.php");
-    include("database/functions.php");
+    //include("database/functions.php");
 
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
     // if (isset($_GET['edit-incident'])) {
