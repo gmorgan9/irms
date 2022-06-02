@@ -109,6 +109,7 @@
 <?php
                         if(isset($_GET['updateid']))
                         {
+                            $id=$_GET['updateid'];
                             $sql = "SELECT * FROM incidents where id=$id";
                             $result=mysqli_query($con,$sql);
                             $row=mysqli_fetch_assoc($result);
