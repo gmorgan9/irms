@@ -16,6 +16,7 @@ session_start();
 
 if (!is_numeric($id))
 {
+    var_dump($id);
     echo  $id;
     exit;
 }
