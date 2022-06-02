@@ -218,9 +218,9 @@ if (isset($_POST['update_incident'])) {
     if (empty($time)) { array_push($errors, "Time is required"); }
   
     // Finally, register user if there are no errors in the form
-    if (count($errors) == 0) {
+    if (isset($inc_id)) {
   
-        $query = "UPDATE incidents SET inc_num=$inc_num, priority=$priority, description=$description, assign_group=$assign_group, kb_article=$kb_article, date=$date, time=$time WHERE inc_num=$inc_num";
+        $query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
 		
         mysqli_query($con, $query);
         header('location: /');
