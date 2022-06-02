@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
  
     if (isset($_POST['update'])) {
-        $id = mysqli_real_escape_string($con, $_POST['id']);
+        $id = $_POST['id'];
         $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
         $priority = mysqli_real_escape_string($con, $priority);
         $description = mysqli_real_escape_string($con, $description);
@@ -13,8 +13,6 @@ session_start();
         $time = mysqli_real_escape_string($con, $time);
 
         // Update Statement
-
-        $id = $_POST['id'];
 if (!is_numeric($id))
 {
     echo "Bad parameter!!";
