@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
     //include("database/functions.php");
     $inc_id=$_GET['updateid'];
-    if(isset($_POST['update-incident'])) {
+    if(isset($_POST['update'])) {
         //$inc_id=$row['inc_id'];
         $inc_num = $row['inc_num'];
         $priority = $row['priority'];
@@ -118,7 +118,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="update-incident" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
