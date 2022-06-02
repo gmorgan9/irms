@@ -4,7 +4,7 @@ session_start();
     // include("database/functions.php");
     
     $updateid=$_GET['updateid'];
-    $sql = "SELECT * FROM incidents where id=$id";
+    $sql = "SELECT * FROM incidents where id=$updateid";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $inc_num = $row['inc_num'];
