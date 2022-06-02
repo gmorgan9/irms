@@ -3,16 +3,16 @@ session_start();
     include("database/connection.php");
     // include("database/functions.php");
     $id=$_GET['updateid'];
-    // $sql = "SELECT * FROM incidents where id=$id";
-    // $result=mysqli_query($con,$sql);
-    // $row=mysqli_fetch_assoc($result);
-    // $inc_num = $row['inc_num'];
-    // $priority = $row['priority'];
-    // $description = $row['description'];
-    // $assign_group = $row['assign_group'];
-    // $kb_article = $row['kb_article'];
-    // $date = $row['date'];
-    // $time = $row['time'];
+    $sql = "SELECT * FROM incidents where id=$id";
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $inc_num = $row['inc_num'];
+    $priority = $row['priority'];
+    $description = $row['description'];
+    $assign_group = $row['assign_group'];
+    $kb_article = $row['kb_article'];
+    $date = $row['date'];
+    $time = $row['time'];
 
 
     if(isset($_POST['submit'])) {
