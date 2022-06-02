@@ -33,7 +33,7 @@ session_start();
 
 
 <br><br>
-<?php while ($row = mysqli_fetch_array($results)): { ?>
+<?php while ($row = mysqli_fetch_array($results)) { ?>
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="edit-incident.php" class="reg-form" method="post">
