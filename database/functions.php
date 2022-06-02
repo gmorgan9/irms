@@ -368,4 +368,4 @@ function editIncident($inc_id)
     //     mysqli_query($con, $query);
     //     header('location: /');
     // }
-  }
+	//}
