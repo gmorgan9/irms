@@ -224,7 +224,7 @@ function updateInc($request_values) {
 	}
 	// register topic if there are no errors in the form
 	if (count($errors) == 0) {
-		$query = "UPDATE topics SET inc_num='$inc_num' WHERE inc_id=$inc_id";
+		$query = "UPDATE topics SET inc_num='$inc_num', priority='$priority' WHERE inc_id=$inc_id";
 		mysqli_query($conn, $query);
 
 		$_SESSION['message'] = "Topic updated successfully";
