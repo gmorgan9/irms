@@ -26,8 +26,8 @@ session_start();
         $time = $_POST['time'];
 
         $sql = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
-        $result=mysqli_query($con,$sql);
-        if($result) {
+        $results=mysqli_query($con,$sql);
+        if($results) {
             echo "Updated Successfully";
             // header('location: all-incidents.php'); // returns back to same page
         } else {
