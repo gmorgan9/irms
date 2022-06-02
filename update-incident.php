@@ -114,9 +114,9 @@
 <h2 class="text-center">Record Incident</h2>
 <br>
 <?php
-                        if(isset($_GET['updateid']))
+                        if(isset($_GET['id']))
                         {
-                            $student_id = mysqli_real_escape_string($con, $_GET['updateid']);
+                            $student_id = mysqli_real_escape_string($con, $_GET['id']);
                             $query = "SELECT * FROM incidents WHERE id='$id' ";
                             $query_run = mysqli_query($con, $query);
 
@@ -199,7 +199,7 @@
                             }
                             else
                             {
-                                echo "<h4 class='text-center'>No Such Id Found</h4>";
+                                echo "<h4 class='text-center'>No Such ID Found</h4>";
                             }
                         }
                         ?>
