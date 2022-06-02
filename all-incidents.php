@@ -7,8 +7,6 @@ session_start();
         $_SESSION['msg'] = "You must log in first";
         header('location: login.php');
     }
-    $all_incidents = getAllInc();
-    //$open_incidents = countOpenInc();
 ?>
 
 

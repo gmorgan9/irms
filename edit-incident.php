@@ -15,7 +15,7 @@ session_start();
         $date = $row['date'];
         $time = $row['time'];
 
-    if(isset($_POST['update_incident'])) {
+    if(isset($_POST['update-incident'])) {
         $inc_id = $_GET['update-incident'];
         $inc_num=$_POST['inc_num'];
         $inc_num = $_POST['inc_num'];
@@ -132,7 +132,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="update_incident" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="update-incident" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
