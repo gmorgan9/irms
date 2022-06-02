@@ -215,6 +215,7 @@ function updateInc($request_values) {
 	global $con, $errors, $inc_num, $inc_id;
 	$inc_num = esc($request_values['inc_num']);
 	$inc_id = esc($request_values['inc_id']);
+    $priority = esc($request_values['priority']);
 	// create slug: if topic is "Life Advice", return "life-advice" as slug
 	//$topic_slug = makeSlug($topic_name);
 	// validate form
