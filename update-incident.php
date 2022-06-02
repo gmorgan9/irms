@@ -16,7 +16,7 @@ session_start();
 
 if (!is_numeric($id))
 {
-    var_dump($_POST['id']);
+    var_dump($_POST['incidents']);
     echo  $id;
     exit;
 }
