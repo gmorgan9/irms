@@ -101,8 +101,8 @@ session_start();
             $time = $row['time'];
             echo ' <tr>
             th scope="row">'.$inc_num.'</th>
-            <td>'.$p
-            ';
+            <td>'.$priority.'</td>
+            </tr>';
           }
       }
 
