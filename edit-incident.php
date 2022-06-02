@@ -5,7 +5,7 @@ session_start();
 
 
     if (isset($_GET['edit-incident'])) {
-		$incident = getIncident($_GET['inc_id']);
+		$incident = getIncident($inc_id);
 	}
 
 
