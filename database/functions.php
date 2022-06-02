@@ -237,7 +237,7 @@ function editIncident($inc_id)
     	if (empty($time)) { array_push($errors, "Time is required"); }
 
 		// register topic if there are no errors in the form
-		if (count($errors) == 0) {
+		if (!empty($inc_num)) {
 			$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
 			//attach topic to post on post_topic table
 			$_SESSION['message'] = "Post updated successfully";
