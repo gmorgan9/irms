@@ -13,7 +13,7 @@ session_start();
         $date = $row['date'];
         $time = $row['time'];
 
-        $sql = "UPDATE incidents SET inc_id=$inc_id, inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id='$inc_id'";
+        $sql = "UPDATE incidents SET inc_id='$inc_id', inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id='$inc_id'";
         $result=mysqli_query($con,$sql);
         if($result) {
             echo "Updated Successfully";
