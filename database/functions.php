@@ -250,17 +250,17 @@ function editIncident($inc_id)
 		if (count($errors) == 0) {
 			$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
 			// attach topic to post on post_topic table
-			if(mysqli_query($con, $query)){ // if post created successfully
-				if (isset($inc_num)) {
-					$inserted_inc_num = mysqli_insert_id($conn);
-					// create relationship between post and topic
-					$sql = "INSERT INTO incidents (inc_num, priority, description, assign_group, kb_article, date, time) 
-					VALUES('$inc_num', '$priority', '$description', '$assign_group', '$kb_article', '$date', '$time')";
-					mysqli_query($con, $sql);
-					$_SESSION['message'] = "Post created successfully";
-					header('location: all-incidents.php');
-					exit(0);
-				}
+			// if(mysqli_query($con, $query)){ // if post created successfully
+			// 	if (isset($inc_num)) {
+			// 		$inserted_inc_num = mysqli_insert_id($conn);
+			// 		// create relationship between post and topic
+			// 		$sql = "INSERT INTO incidents (inc_num, priority, description, assign_group, kb_article, date, time) 
+			// 		VALUES('$inc_num', '$priority', '$description', '$assign_group', '$kb_article', '$date', '$time')";
+			// 		mysqli_query($con, $sql);
+			// 		$_SESSION['message'] = "Post created successfully";
+			// 		header('location: all-incidents.php');
+			// 		exit(0);
+			// 	}
 			}
 			$_SESSION['message'] = "Post updated successfully";
 			header('location: all-incidents.php');
