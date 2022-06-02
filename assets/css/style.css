@@ -18,7 +18,7 @@ body {
     margin-right: 5%;
     color: white;
 }
-a:hover {
+.logo a:hover {
     color: white;
 }
 .record_incident {
@@ -108,4 +108,11 @@ a:hover {
 }
 .header-line {
     border-bottom: 3px rgb(128, 128, 128) solid;
+}
+
+td a {
+    color: black;
+}
+td a:hover {
+    color: black;
 }
