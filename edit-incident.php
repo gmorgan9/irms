@@ -17,13 +17,13 @@ session_start();
     $kb_article = $_POST['kb_article'];
     $date = $_POST['date'];
     $time = $_POST['time'];	
-$result = mysqli_query($mysqli, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id=$inc_id");
-header("Location: /"); 
+    $result = mysqli_query($mysqli, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'");
+    header("Location: /"); 
 }
 
-$inc_id = $_GET['inc_id'];
-$result = mysqli_query($mysqli, "SELECT * FROM incidents WHERE inc_id=$inc_id");
-while($res = mysqli_fetch_array($result))
+    $inc_id = $_GET['inc_id'];
+    $result = mysqli_query($mysqli, "SELECT * FROM incidents WHERE inc_id=$inc_id");
+    while($res = mysqli_fetch_array($result))
 {
     $inc_num = $res['inc_num'];
     $priority = $res['priority'];
