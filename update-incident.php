@@ -114,7 +114,7 @@
 <h2 class="text-center">Record Incident</h2>
 <br>
 <?php
-                        if(isset($_GET['id']))
+                        if(isset($_GET['updateid']))
                         {
                             $id = mysqli_real_escape_string($con, $_GET['id']);
                             $query = "SELECT * FROM incidents WHERE id='$id' ";
