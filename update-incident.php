@@ -3,17 +3,17 @@
     include("database/connection.php");
     // include("database/functions.php");
     
-    $id=$_GET['updateid'];
-    $sql = "SELECT * FROM incidents where id=$id";
-    $result=mysqli_query($con,$sql);
-    $row=mysqli_fetch_assoc($result);
-    $inc_num = $row['inc_num'];
-    $priority = $row['priority'];
-    $description = $row['description'];
-    $assign_group = $row['assign_group'];
-    $kb_article = $row['kb_article'];
-    $date = $row['date'];
-    $time = $row['time'];
+    // $id=$_GET['updateid'];
+    // $sql = "SELECT * FROM incidents where id=$id";
+    // $result=mysqli_query($con,$sql);
+    // $row=mysqli_fetch_assoc($result);
+    // $inc_num = $row['inc_num'];
+    // $priority = $row['priority'];
+    // $description = $row['description'];
+    // $assign_group = $row['assign_group'];
+    // $kb_article = $row['kb_article'];
+    // $date = $row['date'];
+    // $time = $row['time'];
 
 
 
@@ -106,7 +106,17 @@
 <br>
 
 <div class="d-flex justify-content-center">
+<?php
+                        if(isset($_GET['id']))
+                        {
+                            $student_id = mysqli_real_escape_string($con, $_GET['id']);
+                            $query = "SELECT * FROM students WHERE id='$student_id' ";
+                            $query_run = mysqli_query($con, $query);
 
+                            if(mysqli_num_rows($query_run) > 0)
+                            {
+                                $student = mysqli_fetch_array($query_run);
+                                ?>
     <!-- form start -->
 <form action="update-incident.php" class="reg-form" method="post">
 <?php //include('errors.php'); ?>
@@ -185,6 +195,14 @@
     </div>                                                               
 </form>
 </div>
+<?php
+                            }
+                            else
+                            {
+                                echo "<h4>No Such Id Found</h4>";
+                            }
+                        }
+                        ?>
 
 </body>
 </html>
