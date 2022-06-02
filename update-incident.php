@@ -4,7 +4,7 @@ session_start();
  
     $id=$_GET['updateid'];
     if (isset($_POST['update'])) {
-        $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+        $inc_num = mysqli_real_escape_string($con, $inc_num);
         $priority = mysqli_real_escape_string($con, $priority);
         $description = mysqli_real_escape_string($con, $description);
         $assign_group = mysqli_real_escape_string($con, $assign_group);
@@ -13,8 +13,6 @@ session_start();
         $time = mysqli_real_escape_string($con, $time);
 
         // Update Statement
-        echo $id;
-
         $sql = "UPDATE incidents SET id=$id, inc_num='$inc_num' WHERE id=$id";
         $results=mysqli_query($con,$sql);
         if($results) {
