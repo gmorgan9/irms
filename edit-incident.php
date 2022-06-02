@@ -10,7 +10,7 @@ session_start();
 
 
     //$all_incidents = getAllInc();
-    //$results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
+    $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +42,7 @@ session_start();
 <br><br>
 <div class="d-flex justify-content-center">
     <!-- form start -->
+    <?php while ($incident = mysqli_fetch_assoc($results)) { ?>
 <form action="edit-incident.php" class="reg-form" method="post">
 <?php //include('errors.php'); ?>
 <br>
@@ -53,7 +54,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $inc_num; ?>">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $incident['inc_num']; ?>">
         </div>
     </div> 
     <!-- form-group// -->
@@ -110,6 +111,7 @@ session_start();
     </div>                                                               
 </form>
 </div>
+<?php } ?>
 
 </body>
 </html>
