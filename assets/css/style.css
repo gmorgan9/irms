@@ -116,3 +116,6 @@ td a {
 td a:hover {
     color: black;
 }
+.delete {
+    color: rgb(142, 0, 0);
+}

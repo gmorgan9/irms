@@ -23,7 +23,7 @@ session_start();
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.14">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.15">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -95,8 +95,8 @@ session_start();
             <td><?php echo $all_incident['kb_article'] ?></td>
             <td><?php echo $all_incident['date'] ?></td>
             <td><?php echo $all_incident['time'] ?></td>
-            <td><i class="fa-solid fa-pen-to-square"></i></td>
-            <td><i class="fa-solid fa-trash-can"></i></td>
+            <td><a href=""><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
         </tr>
     <?php endforeach ?>
     
