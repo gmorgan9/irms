@@ -199,7 +199,7 @@
                             }
                             else
                             {
-                                echo "<h4>No Such Id Found</h4>";
+                                echo "<h4 class='text-center'>No Such Id Found</h4>";
                             }
                         }
                         ?>
