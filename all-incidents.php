@@ -119,8 +119,8 @@ session_start();
             <td>'.$kb_article.'</td>
             <td>'.$date.'</td>
             <td>'.$time.'</td>
-            <td><a href="all-incident.php?updateid='.$inc_id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incident.php?deleteid='.$inc_id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a href="all-incidents.php?updateid='.$inc_id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?deleteid='.$inc_id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>';
           }
       }
