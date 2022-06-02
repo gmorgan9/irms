@@ -4,7 +4,7 @@ session_start();
     //include("database/functions.php");
     $inc_id=$_GET['updateid'];
     if(isset($_POST['update-incident'])) {
-        //$inc_id=$row['inc_id'];
+        $inc_id=$row['inc_id'];
         $inc_num = $row['inc_num'];
         $priority = $row['priority'];
         $description = $row['description'];
