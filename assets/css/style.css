@@ -111,10 +111,10 @@ body {
 }
 
 td a {
-    color: black;
+    color: rgb(0, 123, 255);
 }
 td a:hover {
-    color: black;
+    color: rgb(0, 123, 255);
 }
 .delete {
     color: rgb(142, 0, 0);
