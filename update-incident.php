@@ -83,7 +83,7 @@
 
 <br>
 <div class="record_incident">
-    <a href="/"><button class="btn btn-primary rec">Back</button></a>
+    <a href="javascript:history.back()"><button class="btn btn-primary rec">Back</button></a>
 </div>
 <br>
 
