@@ -116,7 +116,7 @@
 <?php
                         if(isset($_GET['updateid']))
                         {
-                            $student_id = mysqli_real_escape_string($con, $_GET['updateid']);
+                            $id = mysqli_real_escape_string($con, $_GET['updateid']);
                             $query = "SELECT * FROM incidents WHERE updateid='$id' ";
                             $query_run = mysqli_query($con, $query);
 
