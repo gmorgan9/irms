@@ -266,7 +266,7 @@ function editIncident($inc_id)
 			header('location: all-incidents.php');
 			exit(0);
 		}
-	}
+	//}
 
 
 
