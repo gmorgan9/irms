@@ -135,8 +135,8 @@ if (isset($_POST['rec_inc'])) {
 	global $con;
 	$sql = "SELECT * FROM incidents";
 	$result = mysqli_query($con, $sql);
-	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	return $incidents;
+	$all_incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $all_incidents;
 }
 // RETURNS CLOSED INCIDENTS
 function getClosedInc()
