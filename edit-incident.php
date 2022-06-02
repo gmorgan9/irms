@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
 
-$topics = getAllTopics();	
+$topics = getAllInc();	
 ?>
 
 	<title>Admin | Manage Topics</title>
@@ -23,12 +23,12 @@ $topics = getAllTopics();
 				<!-- validation errors for the form -->
 				
 				<!-- if editing topic, the id is required to identify that topic -->
-				<?php if ($isEditingTopic === true): ?>
-					<input type="hidden" name="topic_id" value="<?php echo "id"; ?>">
+				<?php if ($isEditingInc === true): ?>
+					<input type="hidden" name="inc_id" value="<?php echo $inc_id; ?>">
 				<?php endif ?>
-				<input type="text" name="topic_name" value="<?php echo "name"; ?>" placeholder="Topic">
+				<input type="text" name="inc_num" value="<?php echo $inc_num; ?>" placeholder="Topic">
 				<!-- if editing topic, display the update button instead of create button -->
-				<?php if ($isEditingTopic === true): ?> 
+				<?php if ($isEditingInc === true): ?> 
 					<button type="submit" class="btn" name="update_topic">UPDATE</button>
 				<?php else: ?>
 					<button type="submit" class="btn" name="create_topic">Save Topic</button>
@@ -36,6 +36,6 @@ $topics = getAllTopics();
 			</form>
 		</div>
 		<!-- // Middle form - to create and edit -->
-
+	</div>
 </body>
 </html>
