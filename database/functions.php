@@ -198,31 +198,39 @@ if (isset($_GET['edit-incident'])) {
 //// UPDATE /////
 // if user clicks the update post button
 if (isset($_POST['update_incident'])) {
-    global $con, $errors, $inc_num, $priority, $description, $assign_group, $kb_article, $date, $time;
-
-		$inc_num = esc($request_values['inc_num']);
-		$priority = esc($request_values['priority']);
-		$description = esc($request_values['description']);
-		$assign_group = esc($request_values['assign_group']);
-		$kb_article = esc($request_values['kb_article']);
-		$date = esc($request_values['date']);
-		$time = esc($request_values['time']);
-
-		if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
-    	if (empty($priority)) { array_push($errors, "Priority is required"); }
-    	if (empty($description)) { array_push($errors, "Description is required"); }
-    	if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
-    	if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
-    	if (empty($date)) { array_push($errors, "Date is required"); }
-    	if (empty($time)) { array_push($errors, "Time is required"); }
-
-		// register topic if there are no errors in the form
-		if (!empty($inc_num)) {
-			$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
-			//attach topic to post on post_topic table
-			$_SESSION['message'] = "Post updated successfully";
-			header('location: all-incidents.php');
-			exit(0);
+    // receive all input values from the form
+    // $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+    $priority = mysqli_real_escape_string($con, $_POST['priority']);
+    // $description = mysqli_real_escape_string($con, $_POST['description']);
+    // $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+    // $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+    // $date = mysqli_real_escape_string($con, $_POST['date']);
+    // $time = mysqli_real_escape_string($con, $_POST['time']);
+  
+    // form validation: ensure that the form is correctly filled ...
+    // by adding (array_push()) corresponding error unto $errors array
+    // if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
+    if (empty($priority)) { array_push($errors, "Priority is required"); }
+    // if (empty($description)) { array_push($errors, "Description is required"); }
+    // if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
+    // if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
+    // if (empty($date)) { array_push($errors, "Date is required"); }
+    // if (empty($time)) { array_push($errors, "Time is required"); }
+  
+    // Finally, register user if there are no errors in the form
+    if (count($errors) == 0) {
+  
+        $query = "UPDATE incidents SET 
+		-- inc_num='$inc_num', 
+		priority='$priority', 
+		-- description='$description', 
+		-- assign_group='$assign_group', 
+		-- kb_article='$kb_article', 
+		-- date='$date', 
+		-- time='$time'";
+		
+        mysqli_query($con, $query);
+        header('location: /');
     }
   }
 
