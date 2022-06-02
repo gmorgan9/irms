@@ -4,9 +4,9 @@ session_start();
     include("database/functions.php");
 
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
-    if (isset($_GET['edit-incident'])) {
-		$incident = $results;
-	}
+    // if (isset($_GET['edit-incident'])) {
+	// 	$incident = $results;
+	// }
 
 
     //$all_incidents = getAllInc();
