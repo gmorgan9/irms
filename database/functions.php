@@ -210,12 +210,22 @@ function editInc($inc_id) {
 	// set form values ($topic_name) on the form to be updated
 	$inc_num = $inc['inc_num'];
     $priority = $inc['priority'];
+    $description = $inc['description'];
+    $assign_group = $inc['assign_group'];
+    $kb_article = $inc['kb_article'];
+    $date = $inc['date'];
+    $time = $inc['time'];
 }
 function updateInc($request_values) {
 	global $con, $errors, $inc_num, $inc_id, $priority;
 	$inc_num = esc($request_values['inc_num']);
 	$inc_id = esc($request_values['inc_id']);
     $priority = esc($request_values['priority']);
+    $description = esc($request_values['description']);
+    $assign_group = esc($request_values['assign_group']);
+    $kb_article = esc($request_values['kb_article']);
+    $date = esc($request_values['date']);
+    $time = esc($request_values['time']);
 	// create slug: if topic is "Life Advice", return "life-advice" as slug
 	//$topic_slug = makeSlug($topic_name);
 	// validate form
@@ -224,7 +234,7 @@ function updateInc($request_values) {
 	}
 	// register topic if there are no errors in the form
 	if (count($errors) == 0) {
-		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority' WHERE inc_id=$inc_id";
+		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id=$inc_id";
 		mysqli_query($conn, $query);
 
 		$_SESSION['message'] = "Topic updated successfully";
