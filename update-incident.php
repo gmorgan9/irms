@@ -14,12 +14,7 @@ session_start();
 
         // Update Statement
 
-if (!is_numeric($id))
-{
-    var_dump();
-    echo  $id;
-    exit;
-}
+
         $sql = "UPDATE incidents SET id=$id, inc_num='$inc_num' WHERE id=$id";
         $results=mysqli_query($con,$sql);
         if($results) {
@@ -31,7 +26,7 @@ if (!is_numeric($id))
     }
     if (!is_numeric($id))
 {
-    var_dump($results);
+    var_dump($sql);
     echo  $id;
     exit;
 }
