@@ -199,40 +199,60 @@ if (isset($_GET['edit-incident'])) {
 // if user clicks the update post button
 if (isset($_POST['update_incident'])) {
     // receive all input values from the form
-    // $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+    $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
     $priority = mysqli_real_escape_string($con, $_POST['priority']);
-    // $description = mysqli_real_escape_string($con, $_POST['description']);
-    // $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
-    // $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
-    // $date = mysqli_real_escape_string($con, $_POST['date']);
-    // $time = mysqli_real_escape_string($con, $_POST['time']);
+    $description = mysqli_real_escape_string($con, $_POST['description']);
+    $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+    $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+    $date = mysqli_real_escape_string($con, $_POST['date']);
+    $time = mysqli_real_escape_string($con, $_POST['time']);
   
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
-    // if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
+    if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
     if (empty($priority)) { array_push($errors, "Priority is required"); }
-    // if (empty($description)) { array_push($errors, "Description is required"); }
-    // if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
-    // if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
-    // if (empty($date)) { array_push($errors, "Date is required"); }
-    // if (empty($time)) { array_push($errors, "Time is required"); }
+    if (empty($description)) { array_push($errors, "Description is required"); }
+    if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
+    if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
+    if (empty($date)) { array_push($errors, "Date is required"); }
+    if (empty($time)) { array_push($errors, "Time is required"); }
   
-    // Finally, register user if there are no errors in the form
-    if (count($errors) == 0) {
-  
-        $query = "UPDATE incidents SET 
-		-- inc_num='$inc_num', 
-		priority='$priority', 
-		-- description='$description', 
-		-- assign_group='$assign_group', 
-		-- kb_article='$kb_article', 
-		-- date='$date', 
-		-- time='$time'";
+
+
+
+	if (isset ($_GET ['edit-incident']) ) {
+		//Checking If the user has submitted the form
+		if (isset ($_POST ['update_incident'] )) {
+		//checking If the user has completely fill all the form field
+		if ( isset ($_POST ['inc_num'] , $_POST ['priortiy'] ,$_POST ['decsription'] ,$_POST ['assign_group'], $_POST ['kb_article'], $_POST ['date'], $_POST ['time'])) {
+		$inc = $_GET ['edit-incident'] ;
+		/*
+		mysqli_real_escape_string is for security purpose. It is used for escaping special characters inserted by the user which can sometimes be harmful to our database 
+		*/ 
+		 
+		$inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+    	$priority = mysqli_real_escape_string($con, $_POST['priority']);
+    	$description = mysqli_real_escape_string($con, $_POST['description']);
+    	$assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+    	$kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+    	$date = mysqli_real_escape_string($con, $_POST['date']);
+    	$time = mysqli_real_escape_string($con, $_POST['time']);
+		//Inserting the submitted data into the database.
+		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE (`inc_id` = ‘$inc_id)";
 		
-        mysqli_query($con, $query);
-        header('location: /');
-    }
-  }
+		if (mysqli_query ($con , $sql) ) {
+ 
+			echo "success";
+			 
+			}
+			else {
+			echo "Failed: " .mysqli_error ($con); 
+			 
+			} 
+		}
+	}
+
+
 
 function editIncident($inc_id)
 	{
