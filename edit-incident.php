@@ -2,7 +2,7 @@
 session_start();
     include("database/connection.php");
     include("database/functions.php");
-
+    $all_incidents = getAllInc();
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
 ?>
 
