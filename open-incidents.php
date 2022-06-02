@@ -105,8 +105,8 @@ session_start();
             <td><?php echo $open_incident['kb_article'] ?></td>
             <td><?php echo $open_incident['date'] ?></td>
             <td><?php echo $open_incident['time'] ?></td>
-            <td><i class="fa-solid fa-pen-to-square"></i></td>
-            <td><i class="fa-solid fa-trash-can"></i></td>
+            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a></td>
+            <td><a href=""><i class="fa-solid fa-trash-can"></i></a></td>
         </tr>
     <?php endforeach ?>
     
