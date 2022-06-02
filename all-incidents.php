@@ -102,11 +102,13 @@ session_start();
             echo ' <tr>
             <th scope="row">'.$inc_num.'</th>
             <td>'.$priority.'</td>
-            <td>'.$description.'</td>
+            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">'.$description.'</td>
             <td>'.$assign_group.'</td>
             <td>'.$kb_article.'</td>
             <td>'.$date.'</td>
             <td>'.$time.'</td>
+            <td><a href=""><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href=""><i class="fa-solid fa-trashcan"></a></i></td>
             </tr>';
           }
       }
