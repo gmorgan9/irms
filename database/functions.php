@@ -220,7 +220,7 @@ if (isset($_POST['update_incident'])) {
     // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
   
-        $query = "UPDATE incidents SET inc_num='$inc_num', priority=$priority, description=$description, assign_group=$assign_group, kb_article=$kb_article, date=$date, time=$time WHERE inc_id=$inc_id";
+        $query = "UPDATE incidents SET inc_num=$inc_num, priority=$priority, description=$description, assign_group=$assign_group, kb_article=$kb_article, date=$date, time=$time WHERE inc_num=$inc_num";
 		
         mysqli_query($con, $query);
         header('location: /');
