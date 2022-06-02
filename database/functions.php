@@ -253,18 +253,18 @@ if (isset($_GET['edit-incident'])) {
 
 
 
-// function editIncident($inc_id)
-// 	{
-// 		global $con;
-// 		$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
-// 		$result = mysqli_query($con, $sql);
-// 		$incident = mysqli_fetch_assoc($result);
-// 		// set form values on the form to be updated
-// 		$inc_num = $incident['inc_num'];
-// 		$priority = $incident['priority'];
-// 		$description = $incident['description'];
-// 		$assign_group = $incident['assign_group'];
-// 		$kb_article = $incident['kb_article'];
-// 		$date = $incident['date'];
-// 		$time = $incident['time'];
-// 	}
+function editIncident($inc_id)
+	{
+		global $con;
+		$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
+		$result = mysqli_query($con, $sql);
+		$incident = mysqli_fetch_assoc($result);
+		// set form values on the form to be updated
+		$inc_num = $incident['inc_num'];
+		$priority = $incident['priority'];
+		$description = $incident['description'];
+		$assign_group = $incident['assign_group'];
+		$kb_article = $incident['kb_article'];
+		$date = $incident['date'];
+		$time = $incident['time'];
+	}
