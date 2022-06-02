@@ -7,7 +7,7 @@ $inc_num = $priority = $description = $assign_group = $kb_article = $date = $tim
 $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
  
 // Processing form data when form is submitted
-if(isset($_POST["inc_id"]) && !empty($_POST["inc_id"])){
+if(isset($_POST["submit"]) && !empty($_POST["inc_id"])){
     // Get hidden input value
     $inc_id = $_POST["inc_id"];
     
@@ -172,6 +172,7 @@ if(isset($_POST["inc_id"]) && !empty($_POST["inc_id"])){
         header("location: error.php");
         exit();
     }
+
 }
 ?>
  
