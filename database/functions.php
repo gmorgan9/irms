@@ -203,7 +203,7 @@ if (isset($_POST['update_inc'])) {
 // }
 
 function editInc($inc_id) {
-	global $con, $inc_num, $isEditingInc, $inc_id;
+	global $con, $inc_num, $isEditingInc, $inc_id, $priority;
 	$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
 	$result = mysqli_query($con, $sql);
 	$inc = mysqli_fetch_assoc($result);
@@ -224,7 +224,7 @@ function updateInc($request_values) {
 	}
 	// register topic if there are no errors in the form
 	if (count($errors) == 0) {
-		$query = "UPDATE topics SET inc_num='$inc_num', priority='$priority' WHERE inc_id=$inc_id";
+		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority' WHERE inc_id=$inc_id";
 		mysqli_query($conn, $query);
 
 		$_SESSION['message'] = "Topic updated successfully";
