@@ -88,13 +88,12 @@
 <?php //include('errors.php'); ?>
 <br>
 <h2 class="text-center">Record Incident</h2>
-<?php echo $id ?>
 <br>
 
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
-	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
+	            <span class="input-group-text"> ID</span>
 	        </div>
             <input name="inc_num" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
         </div>
