@@ -25,6 +25,25 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
+   //Validate email address
+   $input_inc_num = trim($_POST["inc_num"]);
+   if(empty($input_inc_num)){
+       $inc_num_err = "Please enter an email address.";
+   } else{
+       $inc_num = $input_inc_num;
+   }
+
+   echo "<script>alert('";
+    echo "Checking all inputs vales---"; 
+    echo $id; echo "=id--<br>";
+    echo $input_inc_num; echo "=fname---<br>";
+    echo "')</script> ";
+
+    if(empty($inc_num_err)){
+        // Prepare an update statement
+            echo "<script>alert('";
+            echo "Im inside `Check Inputs before inserting in database` If Block... All Good so far"; echo "<br>"; 
+            echo "')</script> ";
 
         $sql = "UPDATE incidents SET inc_num=?, priority=?, description=?, assign_group=?, kb_article=?, date=?, time=? WHERE id=?";
 
@@ -77,6 +96,7 @@ session_start();
         //     die(mysqli_error($con));
         // }
     }
+}
 
 ?>
 
