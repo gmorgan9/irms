@@ -4,14 +4,14 @@ session_start();
     // include("database/functions.php");
     $inc_id=$_GET['updateid'];
     if(isset($_POST['update'])) {
-        $inc_id=$row['inc_id'];
-        $inc_num = $row['inc_num'];
-        $priority = $row['priority'];
-        $description = $row['description'];
-        $assign_group = $row['assign_group'];
-        $kb_article = $row['kb_article'];
-        $date = $row['date'];
-        $time = $row['time'];
+        $inc_id=$_POST['inc_id'];
+        $inc_num = $_POST['inc_num'];
+        $priority = $_POST['priority'];
+        $description = $_POST['description'];
+        $assign_group = $_POST['assign_group'];
+        $kb_article = $_POST['kb_article'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
 
         $sql = "UPDATE incidents SET inc_id='$inc_id', inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id='$inc_id'";
         $result=mysqli_query($con,$sql);
