@@ -14,9 +14,9 @@ session_start();
 
         // Update Statement
 
-if (!is_numeric($_POST['id']))
+if (!is_numeric($id))
 {
-    var_dump($id);
+    var_dump($_POST['id']);
     echo  $id;
     exit;
 }
