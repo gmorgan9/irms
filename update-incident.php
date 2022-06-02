@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
     // include("database/functions.php");
     
-    $id=$_GET['id'];
+    $id=$_GET['updateid'];
     $sql = "SELECT * FROM incidents where id=$id";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
