@@ -19,7 +19,7 @@
 
     if(isset($_POST['update']))
 {
-    $id = mysqli_real_escape_string($con, $_POST['id']);
+    //$id = mysqli_real_escape_string($con, $_POST['id']);
 
     $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
     $priority = mysqli_real_escape_string($con, $_POST['priority']);
