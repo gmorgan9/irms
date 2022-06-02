@@ -1,7 +1,7 @@
 <?php
 session_start();
     include("database/connection.php");
-    //include("database/functions.php");
+    include("database/functions.php");
     $inc_id=$_GET['updateid'];
     if(isset($_POST['update'])) {
         //$inc_id=$row['inc_id'];
