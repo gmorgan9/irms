@@ -151,7 +151,7 @@ function getClosedInc()
 function getOpenInc()
 {
 	global $con;
-	$sql = "SELECT * FROM incidents where status=0";
+	$sql = "SELECT * FROM incidents";
 	$result = mysqli_query($con, $sql);
 	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	return $oincidents;
