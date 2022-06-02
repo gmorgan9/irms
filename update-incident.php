@@ -28,7 +28,7 @@
         $date = mysqli_real_escape_string($con, $date);
         $time = mysqli_real_escape_string($con, $time);
 
-        $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num' WHERE id='$id'";
+        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
         $results=mysqli_query($con,$sql);
         if($results) {
             //echo "Updated Successfully";
