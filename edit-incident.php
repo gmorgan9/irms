@@ -4,26 +4,27 @@ session_start();
     //include("database/functions.php");
 
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
+    //$inc_id = $_GET['update-id'];
+    if(isset($_POST['update_incident'])) {
+        $inc_num=$_POST['inc_num'];
+        $inc_num = $_POST['inc_num'];
+        $priority = $_POST['priority'];
+        $description = $_POST['description'];
+        $assign_group = $_POST['assign_group'];
+        $kb_article = $_POST['kb_article'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
 
-    // $inc_num = $_POST['inc_num'];
-    // $priority = $_POST['priority'];
-    // $description = $_POST['description'];
-    // $assign_group = $_POST['assign_group'];
-    // $kb_article = $_POST['kb_article'];
-    // $date = $_POST['date'];
-    // $time = $_POST['time'];	
-    // $result = mysqli_query($mysqli, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'");
-    
+        $sql = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'"
+        $result=mysqli_query($con, $sql);
+        if($result) {
+            echo "Data update Successfully";
+        } else {
+            die(mysqli_error($con));
+        }
+    }
 
    
-    if(isset($_POST['update_incident'])) {
-        $sql = "UPDATE incidents set inc_num='" . $_POST["inc_num"] . "', priority='" . $_POST["priority"] . "', description='" . $_POST["description"] . "', assign_group='" . $_POST["assign_group"] . "', kb_article='" . $_POST["kb_article"] . "', date='" . $_POST["date"] . "', time='" . $_POST["time"] . "' WHERE inc_id='" . $_POST["inc_id"] . "'";
-        mysqli_query($con,$sql);
-        $message = "Record Modified Successfully";
-    }
-    $select_query = "SELECT * FROM incidents WHERE inc_id='" . $_GET["inc_id"] . "'";
-    $result = mysqli_query($con,$select_query);
-    $row = mysqli_fetch_array($result);
     
 ?>
 
