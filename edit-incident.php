@@ -21,6 +21,19 @@ $result = mysqli_query($mysqli, "UPDATE incidents SET inc_num='$inc_num', priori
 header("Location: /"); 
 }
 
+$inc_id = $_GET['inc_id'];
+$result = mysqli_query($mysqli, "SELECT * FROM incidents WHERE inc_id=$inc_id");
+while($res = mysqli_fetch_array($result))
+{
+    $inc_num = $res['inc_num'];
+    $priority = $res['priority'];
+    $description = $res['description'];
+    $assign_group = $res['assign_group'];
+    $kb_article = $res['kb_article'];
+    $date = $res['date'];
+    $time = $res['time'];	
+}
+
 
     //$all_incidents = getAllInc();
     
