@@ -42,8 +42,13 @@ session_start();
         $id = $_POST['id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
+        $description = $_POST['description'];
+        $assign_group = $_POST['assign_group'];
+        $kb_article = $_POST['kb_article'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
     
-        mysqli_query($con, "UPDATE info SET inc_num='$inc_num', priority='$priority' WHERE id=$id");
+        mysqli_query($con, "UPDATE info SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id=$id");
         $_SESSION['message'] = "Address updated!"; 
         header('location: index.php');
     }
