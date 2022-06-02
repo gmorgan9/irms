@@ -4,7 +4,7 @@ session_start();
     //include("database/functions.php");
 
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
-    $inc_id = $_GET['update-id'];
+    $inc_id = $_GET['update-incident'];
     if(isset($_POST['update_incident'])) {
         $inc_num=$_POST['inc_num'];
         $inc_num = $_POST['inc_num'];
