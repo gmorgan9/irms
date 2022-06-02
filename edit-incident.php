@@ -29,9 +29,9 @@ $inc = getAllInc();
 				<input type="text" name="inc_num" value="<?php echo $inc_num; ?>" placeholder="Topic">
 				<!-- if editing topic, display the update button instead of create button -->
 				<?php if ($isEditingInc === true): ?> 
-					<button type="submit" class="btn" name="update_topic">UPDATE</button>
+					<button type="submit" class="btn" name="update_inc">UPDATE</button>
 				<?php else: ?>
-					<button type="submit" class="btn" name="create_topic">Save Topic</button>
+					<button type="submit" class="btn" name="create_inc">Save Topic</button>
 				<?php endif ?>
 			</form>
 		</div>
