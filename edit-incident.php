@@ -6,7 +6,7 @@ session_start();
     $sql = "SELECT * FROM incidents where inc_id=$inc_id";
     $results = mysqli_query($con, $sql);
     $row =mysqli_fetch_assoc($results);
-        $inc_num=$row['inc_num'];
+        $inc_id=$row['inc_id'];
         $inc_num = $row['inc_num'];
         $priority = $row['priority'];
         $description = $row['description'];
@@ -15,8 +15,8 @@ session_start();
         $date = $row['date'];
         $time = $row['time'];
 
-    $inc_id = $_GET['update-incident'];
     if(isset($_POST['update_incident'])) {
+        $inc_id = $_GET['update-incident'];
         $inc_num=$_POST['inc_num'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];

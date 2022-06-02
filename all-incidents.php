@@ -84,21 +84,48 @@ session_start();
   </thead>
   <tbody>
       <?php $i=1; ?>
+
+      <?php
+
+      $sql = "SELECT * FROM incidents";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $inc_id=$row['inc_id'];
+            $inc_num = $row['inc_num'];
+            $priority = $row['priority'];
+            $description = $row['description'];
+            $assign_group = $row['assign_group'];
+            $kb_article = $row['kb_article'];
+            $date = $row['date'];
+            $time = $row['time'];
+            echo ' <tr>
+            th scope="row">'.$inc_num.'</th>
+            <td>'.$p
+            ';
+          }
+      }
+
+?>
+
+
+
+
     
-    <?php foreach ($all_incidents as $key => $all_incident): ?>
+    <!-- <?php //foreach ($all_incidents as $key => $all_incident): ?>
         <tr>
-            <td><?php echo $key + 1; ?></td>
-            <td><?php echo $all_incident['inc_num'] ?></td>
-            <td><?php echo $all_incident['priority'] ?></td>
-            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $all_incident['description'] ?></td>
-            <td><?php echo $all_incident['assign_group'] ?></td>
-            <td><?php echo $all_incident['kb_article'] ?></td>
-            <td><?php echo $all_incident['date'] ?></td>
-            <td><?php echo $all_incident['time'] ?></td>
-            <td><a href="edit-incident.php?update-incident=<?php echo $all_incident['inc_id']; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?delete-inc=<?php echo $all_incident['inc_id']; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><?php //echo $key + 1; ?></td>
+            <td><?php //echo $all_incident['inc_num'] ?></td>
+            <td><?php //echo $all_incident['priority'] ?></td>
+            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php //echo $all_incident['description'] ?></td>
+            <td><?php //echo $all_incident['assign_group'] ?></td>
+            <td><?php //echo $all_incident['kb_article'] ?></td>
+            <td><?php //echo $all_incident['date'] ?></td>
+            <td><?php //echo $all_incident['time'] ?></td>
+            <td><a href="edit-incident.php?update-incident=<?php //echo $all_incident['inc_id']; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?delete-inc=<?php //echo $all_incident['inc_id']; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
         </tr>
-    <?php endforeach ?>
+    <?php //endforeach ?> -->
     
   </tbody>
 </table>
