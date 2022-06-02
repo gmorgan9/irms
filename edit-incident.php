@@ -37,7 +37,7 @@ session_start();
 
 
 <br><br>
-<?php if ($row = "SELECT inc_id FROM incidents WHERE inc_id=$all_incidents['inc_id'];"): ?>
+<?php if ($row = "SELECT inc_id FROM incidents WHERE inc_id=$all_incidents['inc_id']";) { ?>
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="record-incident.php" class="reg-form" method="post">
@@ -118,7 +118,7 @@ session_start();
 </form>
 </div>
 
-<?php endforeach ?>
+<?php } ?>
 
 </body>
 </html>
