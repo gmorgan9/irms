@@ -18,24 +18,34 @@ session_start();
 
     
 
-    if (isset($_POST['submit'])) {
-        // $id=$_POST['id'];
+    // if (isset($_POST['submit'])) {
+    //     // $id=$_POST['id'];
+    //     $inc_num = $_POST['inc_num'];
+    //     $priority = $_POST['priority'];
+    //     $description = $_POST['description'];
+    //     $assign_group = $_POST['assign_group'];
+    //     $kb_article = $_POST['kb_article'];
+    //     $date = $_POST['date'];
+    //     $time = $_POST['time'];
+
+    //     $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num' WHERE id='$id'";
+    //     $results=mysqli_query($con,$sql);
+    //     if($results) {
+    //         //echo "Updated Successfully";
+    //         header('location: all-incidents.php'); // returns back to same page
+    //     } else {
+    //         die(mysqli_error($con));
+    //     }
+    // }
+
+    if (isset($_POST['update'])) {
+        $id = $_POST['id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
-        $description = $_POST['description'];
-        $assign_group = $_POST['assign_group'];
-        $kb_article = $_POST['kb_article'];
-        $date = $_POST['date'];
-        $time = $_POST['time'];
-
-        $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num' WHERE id='$id'";
-        $results=mysqli_query($con,$sql);
-        if($results) {
-            //echo "Updated Successfully";
-            header('location: all-incidents.php'); // returns back to same page
-        } else {
-            die(mysqli_error($con));
-        }
+    
+        mysqli_query($con, "UPDATE info SET inc_num='$inc_num', priority='$priority' WHERE id=$id");
+        $_SESSION['message'] = "Address updated!"; 
+        header('location: index.php');
     }
 
 ?>
@@ -134,7 +144,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="submit" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
