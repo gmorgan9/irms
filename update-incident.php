@@ -97,33 +97,36 @@
             Incident Record Management System
         </h2>
     </div>
+
+
 <br>
-    <div class="record_incident">
+<div class="record_incident">
     <a href="javascript:history.back()"><button class="btn btn-primary rec">Back</button></a>
 </div>
 <br>
 
-<br>
-
 <div class="d-flex justify-content-center">
-
+<?php
+                        if(isset($_GET['updateid']))
+                        {
+                            $sql = "SELECT * FROM incidents where id=$id";
+                            $result=mysqli_query($con,$sql);
+                            $row=mysqli_fetch_assoc($result);
+                            $inc_num = $row['inc_num'];
+                            $priority = $row['priority'];
+                            $description = $row['description'];
+                            $assign_group = $row['assign_group'];
+                            $kb_article = $row['kb_article'];
+                            $date = $row['date'];
+                            $time = $row['time'];
+                                ?>
     <!-- form start -->
 <form action="update-incident.php" class="reg-form" method="post">
 <?php //include('errors.php'); ?>
 <br>
 <h2 class="text-center">Record Incident</h2>
 <br>
-<?php
-                        if(isset($_GET['id']))
-                        {
-                            $id = mysqli_real_escape_string($con, $_GET['updateid']);
-                            $query = "SELECT * FROM incidents WHERE id='$id' ";
-                            $query_run = mysqli_query($con, $query);
 
-                            if(mysqli_num_rows($query_run) > 0)
-                            {
-                                $student = mysqli_fetch_array($query_run);
-                                ?>
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
@@ -199,7 +202,7 @@
                             }
                             else
                             {
-                                echo "<h4 class='text-center'>No Such ID Found</h4>";
+                                echo "<h4>No Such Id Found</h4>";
                             }
                         }
                         ?>
