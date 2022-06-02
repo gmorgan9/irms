@@ -55,7 +55,7 @@ session_start();
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="record-incident.php" class="reg-form" method="post">
-<?php include('errors.php'); ?>
+<?php //include('errors.php'); ?>
 <br>
 <h2 class="text-center">Record Incident</h2>
 <br>
