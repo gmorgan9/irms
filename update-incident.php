@@ -4,16 +4,16 @@
     // include("database/functions.php");
     
     $id=$_GET['updateid'];
-    // $sql = "SELECT * FROM incidents where id=$id";
-    // $result=mysqli_query($con,$sql);
-    // $row=mysqli_fetch_assoc($result);
-    // $inc_num = $row['inc_num'];
-    // $priority = $row['priority'];
-    // $description = $row['description'];
-    // $assign_group = $row['assign_group'];
-    // $kb_article = $row['kb_article'];
-    // $date = $row['date'];
-    // $time = $row['time'];
+    $sql = "SELECT * FROM incidents where id=$id";
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $inc_num = $row['inc_num'];
+    $priority = $row['priority'];
+    $description = $row['description'];
+    $assign_group = $row['assign_group'];
+    $kb_article = $row['kb_article'];
+    $date = $row['date'];
+    $time = $row['time'];
 
 
     
@@ -48,7 +48,7 @@
         $date = $_POST['date'];
         $time = $_POST['time'];
     
-        mysqli_query($con, "UPDATE info SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id=$id");
+        mysqli_query($con, "UPDATE info SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'");
         $_SESSION['message'] = "Address updated!"; 
         header('location: index.php');
     }
