@@ -4,38 +4,26 @@ session_start();
     //include("database/functions.php");
 
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
-    // if (isset($_GET['edit-incident'])) {
-	// 	$incident = $results;
-	// }
 
-    if(isset($_POST['update_incident']))
-{
-    $inc_num = $_POST['inc_num'];
-    $priority = $_POST['priority'];
-    $description = $_POST['description'];
-    $assign_group = $_POST['assign_group'];
-    $kb_article = $_POST['kb_article'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];	
-    $result = mysqli_query($mysqli, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'");
-    header("Location: /"); 
-}
+    // $inc_num = $_POST['inc_num'];
+    // $priority = $_POST['priority'];
+    // $description = $_POST['description'];
+    // $assign_group = $_POST['assign_group'];
+    // $kb_article = $_POST['kb_article'];
+    // $date = $_POST['date'];
+    // $time = $_POST['time'];	
+    // $result = mysqli_query($mysqli, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'");
+    
 
-    $inc_id = $_GET['inc_id'];
-    $result = mysqli_query($mysqli, "SELECT * FROM incidents WHERE inc_id=$inc_id");
-    while($res = mysqli_fetch_array($result))
-{
-    $inc_num = $res['inc_num'];
-    $priority = $res['priority'];
-    $description = $res['description'];
-    $assign_group = $res['assign_group'];
-    $kb_article = $res['kb_article'];
-    $date = $res['date'];
-    $time = $res['time'];	
-}
-
-
-    //$all_incidents = getAllInc();
+   
+    if(count($_POST)>0) {
+        $sql = "UPDATE incidents set inc_num='" . $_POST["inc_num"] . "', priority='" . $_POST["priority"] . "', description='" . $_POST["description"] . "', assign_group='" . $_POST["assign_group"] . "', kb_article='" . $_POST["kb_article"] . "', date='" . $_POST["date"] . "', time='" . $_POST["time"] . "' WHERE inc_id='" . $_POST["inc_id"] . "'";
+        mysqli_query($con,$sql);
+        $message = "Record Modified Successfully";
+    }
+    $select_query = "SELECT * FROM incidents WHERE inc_id='" . $_GET["inc_id"] . "'";
+    $result = mysqli_query($con,$select_query);
+    $row = mysqli_fetch_array($result);
     
 ?>
 
