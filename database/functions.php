@@ -166,6 +166,13 @@ function countOpenInc()
     return $rowtotal; 
 }
 // DELETE INCIDENT
+
+if (isset($_GET['delete-inc'])) {
+	$inc_id = $_GET['delete-inc'];
+	deleteInc($inc_id);
+}
+
+
 function deleteInc($inc_id) {
 	global $con;
 	$sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
