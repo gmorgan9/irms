@@ -97,7 +97,7 @@
             Incident Record Management System
         </h2>
     </div>
-
+<br>
     <div class="record_incident">
     <a href="javascript:history.back()"><button class="btn btn-primary rec">Back</button></a>
 </div>
