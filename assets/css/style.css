@@ -18,7 +18,7 @@ body {
     margin-right: 5%;
     color: white;
 }
-.logo a:hover {
+a:hover {
     color: white;
 }
 .record_incident {
