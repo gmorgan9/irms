@@ -187,7 +187,7 @@ function deleteInc($inc_id) {
 
 // if user clicks the Edit post button
 if (isset($_GET['edit-incident'])) {
-	//$isEditingPost = true;
+	$isEditingPost = true;
 	$inc_id = $_GET['edit-incident'];
 	editIncident($inc_id);
 }
