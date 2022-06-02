@@ -96,16 +96,16 @@ session_start();
   <tbody>
       <?php $i=1; ?>
     
-    <?php foreach ($cincidents as $key => $cincident): ?>
+    <?php foreach ($closed_incidents as $key => $closed_incident): ?>
         <tr>
             <td><?php echo $key + 1; ?></td>
             <td><?php echo $cincident['inc_num'] ?></td>
-            <td><?php echo $cincident['priority'] ?></td>
-            <td><?php echo $cincident['description'] ?></td>
-            <td><?php echo $cincident['assign_group'] ?></td>
-            <td><?php echo $cincident['kb_article'] ?></td>
-            <td><?php echo $cincident['date'] ?></td>
-            <td><?php echo $cincident['time'] ?></td>
+            <td><?php echo $closed_incident['priority'] ?></td>
+            <td><?php echo $closed_incident['description'] ?></td>
+            <td><?php echo $closed_incident['assign_group'] ?></td>
+            <td><?php echo $closed_incident['kb_article'] ?></td>
+            <td><?php echo $closed_incident['date'] ?></td>
+            <td><?php echo $closed_incident['time'] ?></td>
         </tr>
     <?php endforeach ?>
     
