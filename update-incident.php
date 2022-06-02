@@ -18,7 +18,7 @@ session_start();
 
     
 
-    if(isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) {
         // $id=$_POST['id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
