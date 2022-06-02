@@ -4,6 +4,7 @@ session_start();
     // include("database/functions.php");
     
     //$id=$_GET['updateid'];
+    $id=$_POST['id'];
     $sql = "SELECT * FROM incidents where id=$id";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
