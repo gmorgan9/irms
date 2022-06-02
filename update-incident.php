@@ -2,9 +2,9 @@
 session_start();
     include("database/connection.php");
  
+    $id=$_GET['updateid'];
     if (isset($_POST['update'])) {
-        $id = $_GET['updateid'];
-        $inc_num = mysqli_real_escape_string($con, (int)$_POST['inc_num']);
+        $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
         $priority = mysqli_real_escape_string($con, $priority);
         $description = mysqli_real_escape_string($con, $description);
         $assign_group = mysqli_real_escape_string($con, $assign_group);
@@ -13,12 +13,11 @@ session_start();
         $time = mysqli_real_escape_string($con, $time);
 
         // Update Statement
+\
 if (!is_numeric($id))
 {
-    echo 'Bad parameter!! here is the bad: '.$id;
+    echo "Bad parameter!!";
     exit;
-} else {
-    echo "GOOD!";
 }
         $sql = "UPDATE incidents SET id=$id, inc_num='$inc_num' WHERE id=$id";
         $results=mysqli_query($con,$sql);
