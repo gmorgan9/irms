@@ -96,6 +96,7 @@ session_start();
             <td><?php echo $all_incident['date'] ?></td>
             <td><?php echo $all_incident['time'] ?></td>
             <td><i class="fa-solid fa-pen-to-square"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
         </tr>
     <?php endforeach ?>
     
