@@ -83,6 +83,9 @@
 
 <br><br>
 <div class="d-flex justify-content-center">
+<div class="record_incident">
+    <a href="/"><button class="btn btn-primary rec">Back</button></a>
+</div>
     <!-- form start -->
 <form action="update-incident.php" class="reg-form" method="post">
 <?php //include('errors.php'); ?>
