@@ -79,7 +79,7 @@ session_start();
                 <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link">All Incidents</a>
+                <a href="/all-incidents.php" class="btn stretched-link">All Incidents</a>
             </div>
         </div>
     </div>
