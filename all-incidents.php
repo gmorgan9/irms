@@ -100,8 +100,13 @@ session_start();
             $date = $row['date'];
             $time = $row['time'];
             echo ' <tr>
-            th scope="row">'.$inc_num.'</th>
+            <th scope="row">'.$inc_num.'</th>
             <td>'.$priority.'</td>
+            <td>'.$description.'</td>
+            <td>'.$assign_group.'</td>
+            <td>'.$kb_article.'</td>
+            <td>'.$date.'</td>
+            <td>'.$time.'</td>
             </tr>';
           }
       }
