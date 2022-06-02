@@ -7,8 +7,8 @@ session_start();
         $_SESSION['msg'] = "You must log in first";
         header('location: login.php');
     }
-    $open_incidents = getOpenInc();
-    $count_open_incidents = countOpenInc();
+    $oincidents = getOpenInc();
+    $coincidents = countOpenInc();
 ?>
 
 
@@ -51,7 +51,7 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-                    $sql="select count('1') from incidents where status=1";
+                    $sql="select count('1') from incidents where status=0";
                     $result=mysqli_query($con,$sql);
                     $rowtotal=mysqli_fetch_array($result); 
                     echo "$rowtotal[0]";
@@ -94,18 +94,17 @@ session_start();
     </tr>
   </thead>
   <tbody>
-      <?php $i=1; ?>
     
-    <?php foreach ($open_incidents as $key => $open_incident): ?>
+    <?php foreach ($oincidents as $key => $oincident): ?>
         <tr>
             <td><?php echo $key + 1; ?></td>
-            <td><?php echo $open_incident['inc_num'] ?></td>
-            <td><?php echo $open_incident['priority'] ?></td>
-            <td><?php echo $open_incident['description'] ?></td>
-            <td><?php echo $open_incident['assign_group'] ?></td>
-            <td><?php echo $open_incident['kb_article'] ?></td>
-            <td><?php echo $open_incident['date'] ?></td>
-            <td><?php echo $open_incident['time'] ?></td>
+            <td><?php echo $oincident['inc_num'] ?></td>
+            <td><?php echo $oincident['priority'] ?></td>
+            <td><?php echo $oincident['description'] ?></td>
+            <td><?php echo $oincident['assign_group'] ?></td>
+            <td><?php echo $oincident['kb_article'] ?></td>
+            <td><?php echo $oincident['date'] ?></td>
+            <td><?php echo $oincident['time'] ?></td>
         </tr>
     <?php endforeach ?>
     
