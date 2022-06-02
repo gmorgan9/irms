@@ -3,7 +3,6 @@ session_start();
     include("database/connection.php");
     include("database/functions.php");
 
-    $all_incidents = getAllInc();
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id=$inc_id;");
 ?>
 
@@ -34,7 +33,7 @@ session_start();
 
 
 <br><br>
-<?php while ($row = mysqli_fetch_array($results)) { ?>
+<?php while ($row = mysqli_fetch_array($results);) { ?>
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="record-incident.php" class="reg-form" method="post">
@@ -101,7 +100,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="upd-inc" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="update-inc" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>

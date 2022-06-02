@@ -184,7 +184,7 @@ function deleteInc($inc_id) {
 }
 
 // UPDATE INCIDENT
-if (isset($_POST['upd-inc'])) {
+if (isset($_POST['update-inc'])) {
 	updateincident($_POST);
 }
 
