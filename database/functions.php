@@ -229,9 +229,7 @@ function updateInc($request_values) {
 	// create slug: if topic is "Life Advice", return "life-advice" as slug
 	//$topic_slug = makeSlug($topic_name);
 	// validate form
-	if (empty($inc_num)) { 
-		array_push($errors, "Topic name required"); 
-	}
+	if (empty($inc_num)) {array_push($errors, "Topic name required");}
 	// register topic if there are no errors in the form
 	if (count($errors) == 0) {
 		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id=$inc_id";
