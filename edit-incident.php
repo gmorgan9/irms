@@ -62,7 +62,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
 		    </div>
-            <input name="priority" class="form-control" placeholder="Priority" type="text" value="<?php echo $upd_inc['priority']; ?>">
+            <input name="priority" class="form-control" placeholder="Priority" type="text" value="<?php echo $upd_inc[$priority]; ?>">
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
