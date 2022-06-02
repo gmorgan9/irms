@@ -53,7 +53,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $inc_num; ?>">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $upd_inc['inc_num']; ?>">
         </div>
     </div> 
     <!-- form-group// -->
@@ -62,7 +62,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
 		    </div>
-            <input name="priority" class="form-control" placeholder="Priority" type="text" value="<?php echo $priority; ?>">
+            <input name="priority" class="form-control" placeholder="Priority" type="text" value="<?php echo $upd_inc['priority']; ?>">
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
@@ -70,7 +70,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 		    </div>
-            <input name="description" class="form-control" placeholder="Description" type="text" value="<?php echo $description; ?>">
+            <input name="description" class="form-control" placeholder="Description" type="text" value="<?php echo $upd_inc['description']; ?>">
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
@@ -78,7 +78,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
 		    </div>
-            <input name="assign_group" class="form-control" placeholder="Assignment Group" type="text" value="<?php echo $assign_group; ?>">
+            <input name="assign_group" class="form-control" placeholder="Assignment Group" type="text" value="<?php echo $upd_inc['assign_group']; ?>">
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
@@ -86,7 +86,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-book"></i> </span>
 		    </div>
-            <input name="kb_article" class="form-control" placeholder="KB Artcile" type="text" value="<?php echo $kb_article; ?>">
+            <input name="kb_article" class="form-control" placeholder="KB Artcile" type="text" value="<?php echo $upd_inc['kb_article']; ?>">
         </div>
     </div> <!-- form-group// -->    
     <div class="d-flex justify-content-center">
@@ -94,7 +94,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
 		    </div>
-            <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date;?>">
+            <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $upd_inc['date'];?>">
         </div>
     </div> <!-- form-group// -->    
     <div class="d-flex justify-content-center">
@@ -102,7 +102,7 @@ session_start();
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-clock"></i> </span>
 		    </div>
-            <input name="time" class="form-control" placeholder="Time" type="time" value="<?php echo $time; ?>">
+            <input name="time" class="form-control" placeholder="Time" type="time" value="<?php echo $upd_inc['time']; ?>">
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
