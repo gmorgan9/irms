@@ -108,7 +108,7 @@ session_start();
             <td>'.$date.'</td>
             <td>'.$time.'</td>
             <td><a href=""><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href=""><i class="fa-solid fa-trashcan"></a></i></td>
+            <td><a href=""><i class="fa-solid fa-trash-can"></a></i></td>
             </tr>';
           }
       }
