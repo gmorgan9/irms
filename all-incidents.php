@@ -107,8 +107,8 @@ session_start();
             <td>'.$kb_article.'</td>
             <td>'.$date.'</td>
             <td>'.$time.'</td>
-            <td><a href="edit-incident.php?update-incident=<?php //echo $all_incident['inc_id']; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?delete-inc=<?php //echo $all_incident['inc_id']; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a href="edit-incident.php?update-incident='.$inc_id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?delete-inc='.$inc_id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>';
           }
       }
