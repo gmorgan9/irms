@@ -184,22 +184,22 @@ function deleteInc($inc_id) {
 }
 
 // UPDATE INCIDENT
-if (isset($_GET['edit-topic'])) {
-	$isEditingTopic = true;
-	$topic_id = $_GET['edit-topic'];
-	editTopic($topic_id);
+if (isset($_GET['edit-inc'])) {
+	$isEditingInc = true;
+	$inc_id = $_GET['edit-inc'];
+	editInc($inc_id);
 }
 // if user clicks the update topic button
-if (isset($_POST['update_topic'])) {
-	updateTopic($_POST);
+if (isset($_POST['update_inc'])) {
+	updateInc($_POST);
 }
 
-function getAllTopics() {
-	global $conn;
-	$sql = "SELECT * FROM topics";
-	$result = mysqli_query($conn, $sql);
-	$topics = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	return $topics;
+function getAllInc() {
+	global $con;
+	$sql = "SELECT * FROM incidents";
+	$result = mysqli_query($con, $sql);
+	$incidents = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $incidents;
 }
 
 function editInc($inc_id) {
