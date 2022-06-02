@@ -184,41 +184,49 @@ function deleteInc($inc_id) {
 }
 
 // UPDATE INCIDENT
-if (isset($_GET['edit-inc'])) {
-	$isEditingInc = true;
-	$inc_id = $_GET['edit-inc'];
-	editInc($inc_id);
+if (isset($_GET['edit-topic'])) {
+	$isEditingTopic = true;
+	$topic_id = $_GET['edit-topic'];
+	editTopic($topic_id);
 }
 // if user clicks the update topic button
-if (isset($_POST['update_inc'])) {
+if (isset($_POST['update_topic'])) {
 	updateTopic($_POST);
 }
 
-function editInc($inc_id) {
-	global $con;
-	$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
-	$result = mysqli_query($con, $sql);
-	$inc = mysqli_fetch_assoc($result);
-	// set form values ($topic_name) on the form to be updated
-	$inc_num = $inc['inc_num'];
+function getAllTopics() {
+	global $conn;
+	$sql = "SELECT * FROM topics";
+	$result = mysqli_query($conn, $sql);
+	$topics = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	return $topics;
 }
-function updateInc($request_values) {
-	global $con;
-	$inc_num = esc($request_values['inc_num']);
-	$inc_id = esc($request_values['inc_id']);
+
+function editTopic($topic_id) {
+	global $conn, $topic_name, $isEditingTopic, $topic_id;
+	$sql = "SELECT * FROM topics WHERE id=$topic_id LIMIT 1";
+	$result = mysqli_query($conn, $sql);
+	$topic = mysqli_fetch_assoc($result);
+	// set form values ($topic_name) on the form to be updated
+	$topic_name = $topic['name'];
+}
+function updateTopic($request_values) {
+	global $conn, $errors, $topic_name, $topic_id;
+	$topic_name = esc($request_values['topic_name']);
+	$topic_id = esc($request_values['topic_id']);
 	// create slug: if topic is "Life Advice", return "life-advice" as slug
-	//$topic_slug = makeSlug($topic_name);
+	$topic_slug = makeSlug($topic_name);
 	// validate form
-	if (empty($inc_num)) { 
-		array_push($errors, "Incident name required"); 
+	if (empty($topic_name)) { 
+		array_push($errors, "Topic name required"); 
 	}
 	// register topic if there are no errors in the form
 	if (count($errors) == 0) {
-		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority',description='$description',assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id=$inc_id";
+		$query = "UPDATE topics SET name='$topic_name', slug='$topic_slug' WHERE id=$topic_id";
 		mysqli_query($conn, $query);
 
-		$_SESSION['message'] = "Incident updated successfully";
-		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
+		$_SESSION['message'] = "Topic updated successfully";
+		header('location: topics.php');
 		exit(0);
 	}
 }
