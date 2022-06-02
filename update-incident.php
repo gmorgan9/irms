@@ -112,8 +112,6 @@
                             $id=$_GET['updateid'];
                             $sql = "SELECT * FROM incidents where id=$id";
                             $result=mysqli_query($con,$sql);
-                            if(mysqli_num_rows($query_run) > 0)
-                            {
                             $row=mysqli_fetch_assoc($result);
                             $inc_num = $row['inc_num'];
                             $priority = $row['priority'];
@@ -201,15 +199,7 @@
     </div>                                                               
 </form>
 </div>
-<?php
-                            }
-                            else
-                            {
-                                echo "<h4>No Such Id Found</h4>";
-                            }
-                        }
-                    
-                        ?>
+
 
 </body>
 </html>
