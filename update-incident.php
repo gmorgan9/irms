@@ -13,7 +13,7 @@ session_start();
         $time = mysqli_real_escape_string($con, $time);
 
         // Update Statement
-\
+
 if (!is_numeric($id))
 {
     echo "Bad parameter!!";
