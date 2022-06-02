@@ -66,18 +66,7 @@ session_start();
 </div>
 <br><br><br>
 
-
-
-
-
-
-
-
-
 <br><br><br>
-
-
-
 
 <div class="col d-flex justify-content-center">
 <table class="table table-hover table-light">
@@ -106,6 +95,7 @@ session_start();
             <td><?php echo $all_incident['kb_article'] ?></td>
             <td><?php echo $all_incident['date'] ?></td>
             <td><?php echo $all_incident['time'] ?></td>
+            <td><i class="fa-solid fa-pen-to-square"></i></td>
         </tr>
     <?php endforeach ?>
     
