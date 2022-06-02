@@ -15,8 +15,10 @@ session_start();
         // Update Statement
 if (!is_numeric($id))
 {
-    echo "Bad parameter!!";
+    echo "Bad parameter!! here is the bad: " . $id;
     exit;
+} else {
+    echo "GOOD!";
 }
         $sql = "UPDATE incidents SET id=$id, inc_num='$inc_num' WHERE id=$id";
         $results=mysqli_query($con,$sql);
