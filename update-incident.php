@@ -18,28 +18,8 @@
 
     
 
-    // if (isset($_POST['submit'])) {
-    //     // $id=$_POST['id'];
-    //     $inc_num = $_POST['inc_num'];
-    //     $priority = $_POST['priority'];
-    //     $description = $_POST['description'];
-    //     $assign_group = $_POST['assign_group'];
-    //     $kb_article = $_POST['kb_article'];
-    //     $date = $_POST['date'];
-    //     $time = $_POST['time'];
-
-    //     $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num' WHERE id='$id'";
-    //     $results=mysqli_query($con,$sql);
-    //     if($results) {
-    //         //echo "Updated Successfully";
-    //         header('location: all-incidents.php'); // returns back to same page
-    //     } else {
-    //         die(mysqli_error($con));
-    //     }
-    // }
-
     if (isset($_POST['update'])) {
-        //$id = $_POST['id'];
+        // $id=$_POST['id'];
         $inc_num = mysqli_real_escape_string($con, $inc_num);
         $priority = mysqli_real_escape_string($con, $priority);
         $description = mysqli_real_escape_string($con, $description);
@@ -47,11 +27,31 @@
         $kb_article = mysqli_real_escape_string($con, $kb_article);
         $date = mysqli_real_escape_string($con, $date);
         $time = mysqli_real_escape_string($con, $time);
-    
-        mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'");
-        $_SESSION['message'] = "Address updated!"; 
-        header('location: index.php');
+
+        $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num' WHERE id='$id'";
+        $results=mysqli_query($con,$sql);
+        if($results) {
+            //echo "Updated Successfully";
+            header('location: all-incidents.php'); // returns back to same page
+        } else {
+            die(mysqli_error($con));
+        }
     }
+
+    // if (isset($_POST['update'])) {
+    //     //$id = $_POST['id'];
+    //     $inc_num = mysqli_real_escape_string($con, $inc_num);
+    //     $priority = mysqli_real_escape_string($con, $priority);
+    //     $description = mysqli_real_escape_string($con, $description);
+    //     $assign_group = mysqli_real_escape_string($con, $assign_group);
+    //     $kb_article = mysqli_real_escape_string($con, $kb_article);
+    //     $date = mysqli_real_escape_string($con, $date);
+    //     $time = mysqli_real_escape_string($con, $time);
+    
+    //     mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'");
+    //     $_SESSION['message'] = "Address updated!"; 
+    //     header('location: index.php');
+    // }
 
 ?>
 
