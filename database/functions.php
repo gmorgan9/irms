@@ -212,7 +212,7 @@ function editInc($inc_id) {
     $priority = $inc['priority'];
 }
 function updateInc($request_values) {
-	global $con, $errors, $inc_num, $inc_id;
+	global $con, $errors, $inc_num, $inc_id, $priority;
 	$inc_num = esc($request_values['inc_num']);
 	$inc_id = esc($request_values['inc_id']);
     $priority = esc($request_values['priority']);
