@@ -5,7 +5,7 @@ session_start();
 
 
     if (isset($_GET['update-inc'])) {
-		$upd_inc = updateIncident($_GET['update-inc']);
+		$update_incident = updateIncident($_GET['update-inc']);
 	}
 
 
