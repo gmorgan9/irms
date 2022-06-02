@@ -106,6 +106,13 @@
 <br>
 
 <div class="d-flex justify-content-center">
+
+    <!-- form start -->
+<form action="update-incident.php" class="reg-form" method="post">
+<?php //include('errors.php'); ?>
+<br>
+<h2 class="text-center">Record Incident</h2>
+<br>
 <?php
                         if(isset($_GET['updateid']))
                         {
@@ -117,13 +124,6 @@
                             {
                                 $student = mysqli_fetch_array($query_run);
                                 ?>
-    <!-- form start -->
-<form action="update-incident.php" class="reg-form" method="post">
-<?php //include('errors.php'); ?>
-<br>
-<h2 class="text-center">Record Incident</h2>
-<br>
-
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
