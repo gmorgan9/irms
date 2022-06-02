@@ -225,7 +225,7 @@ if (isset($_GET['edit-incident'])) {
 		if (isset ($_POST ['update_incident'] )) {
 		//checking If the user has completely fill all the form field
 		if ( isset ($_POST ['inc_num'] , $_POST ['priortiy'] ,$_POST ['decsription'] ,$_POST ['assign_group'], $_POST ['kb_article'], $_POST ['date'], $_POST ['time'])) {
-		//$inc = $_GET ['edit-incident'] ;
+		$inc_id = $_GET ['inc_id'] ;
 
 		 
 		$inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
