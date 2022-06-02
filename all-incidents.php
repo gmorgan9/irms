@@ -96,7 +96,7 @@ session_start();
             <td><?php echo $all_incident['date'] ?></td>
             <td><?php echo $all_incident['time'] ?></td>
             <td><a href=""><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a href="all-incidents.php?delete-incident=<?php echo $all_incident['inc_id'] ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
         </tr>
     <?php endforeach ?>
     

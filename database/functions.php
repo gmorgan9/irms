@@ -166,10 +166,10 @@ function countOpenInc()
     return $rowtotal; 
 }
 // DELETE INCIDENT
-function deleteInc($id) {
-	global $conn;
-	$sql = "DELETE FROM incidents WHERE id=$id";
-	if (mysqli_query($conn, $sql)) {
+function deleteInc($inc_id) {
+	global $con;
+	$sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
+	if (mysqli_query($con, $sql)) {
 		$_SESSION['message'] = "Incident successfully deleted";
 		header("location: /");
 		exit(0);
