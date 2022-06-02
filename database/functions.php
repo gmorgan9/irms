@@ -188,12 +188,12 @@ function deleteInc($inc_id) {
 
 
 
-// if user clicks the Edit post button
-if (isset($_GET['edit-incident'])) {
-	//$isEditingPost = true;
-	$inc_id = $_GET['edit-incident'];
-	editIncident($inc_id);
-}
+// // if user clicks the Edit post button
+// if (isset($_GET['edit-incident'])) {
+// 	//$isEditingPost = true;
+// 	$inc_id = $_GET['edit-incident'];
+// 	editIncident($inc_id);
+// }
 
 //// UPDATE /////
 // if user clicks the update post button
@@ -220,51 +220,51 @@ if (isset($_GET['edit-incident'])) {
 
 
 
-	if (isset ($_GET ['edit-incident']) ) {
-		//Checking If the user has submitted the form
-		if (isset ($_POST ['update_incident'] )) {
-		//checking If the user has completely fill all the form field
-		if ( isset ($_POST ['inc_num'] , $_POST ['priortiy'] ,$_POST ['decsription'] ,$_POST ['assign_group'], $_POST ['kb_article'], $_POST ['date'], $_POST ['time'])) {
-		$inc_id = $_GET ['inc_id'] ;
+// 	if (isset ($_GET ['edit-incident']) ) {
+// 		//Checking If the user has submitted the form
+// 		if (isset ($_POST ['update_incident'] )) {
+// 		//checking If the user has completely fill all the form field
+// 		if ( isset ($_POST ['inc_num'] , $_POST ['priortiy'] ,$_POST ['decsription'] ,$_POST ['assign_group'], $_POST ['kb_article'], $_POST ['date'], $_POST ['time'])) {
+// 		$inc_id = $_GET ['inc_id'] ;
 
 		 
-		$inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
-    	$priority = mysqli_real_escape_string($con, $_POST['priority']);
-    	$description = mysqli_real_escape_string($con, $_POST['description']);
-    	$assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
-    	$kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
-    	$date = mysqli_real_escape_string($con, $_POST['date']);
-    	$time = mysqli_real_escape_string($con, $_POST['time']);
-		//Inserting the submitted data into the database.
-		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id = $inc_id";
+// 		$inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+//     	$priority = mysqli_real_escape_string($con, $_POST['priority']);
+//     	$description = mysqli_real_escape_string($con, $_POST['description']);
+//     	$assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+//     	$kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+//     	$date = mysqli_real_escape_string($con, $_POST['date']);
+//     	$time = mysqli_real_escape_string($con, $_POST['time']);
+// 		//Inserting the submitted data into the database.
+// 		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id = $inc_id";
 		
-		if (mysqli_query ($con , $sql)) {
+// 		if (mysqli_query ($con , $sql)) {
  
-			echo "success";
+// 			echo "success";
 			 
-			}
-			else {
-			echo "Failed: " .mysqli_error ($con); 
+// 			}
+// 			else {
+// 			echo "Failed: " .mysqli_error ($con); 
 			 
-			} 
-		}
-	}
-}
+// 			} 
+// 		}
+// 	}
+// }
 
 
 
-function editIncident($inc_id)
-	{
-		global $con;
-		$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
-		$result = mysqli_query($con, $sql);
-		$incident = mysqli_fetch_assoc($result);
-		// set form values on the form to be updated
-		$inc_num = $incident['inc_num'];
-		$priority = $incident['priority'];
-		$description = $incident['description'];
-		$assign_group = $incident['assign_group'];
-		$kb_article = $incident['kb_article'];
-		$date = $incident['date'];
-		$time = $incident['time'];
-	}
+// function editIncident($inc_id)
+// 	{
+// 		global $con;
+// 		$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
+// 		$result = mysqli_query($con, $sql);
+// 		$incident = mysqli_fetch_assoc($result);
+// 		// set form values on the form to be updated
+// 		$inc_num = $incident['inc_num'];
+// 		$priority = $incident['priority'];
+// 		$description = $incident['description'];
+// 		$assign_group = $incident['assign_group'];
+// 		$kb_article = $incident['kb_article'];
+// 		$date = $incident['date'];
+// 		$time = $incident['time'];
+// 	}
