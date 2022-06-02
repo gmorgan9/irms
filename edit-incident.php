@@ -16,7 +16,7 @@ session_start();
     
 
    
-    if(count($_POST)>0) {
+    if(isset($_POST('update_incident'))) {
         $sql = "UPDATE incidents set inc_num='" . $_POST["inc_num"] . "', priority='" . $_POST["priority"] . "', description='" . $_POST["description"] . "', assign_group='" . $_POST["assign_group"] . "', kb_article='" . $_POST["kb_article"] . "', date='" . $_POST["date"] . "', time='" . $_POST["time"] . "' WHERE inc_id='" . $_POST["inc_id"] . "'";
         mysqli_query($con,$sql);
         $message = "Record Modified Successfully";
