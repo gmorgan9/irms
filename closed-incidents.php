@@ -99,7 +99,7 @@ session_start();
     <?php foreach ($closed_incidents as $key => $closed_incident): ?>
         <tr>
             <td><?php echo $key + 1; ?></td>
-            <td><?php echo $cincident['inc_num'] ?></td>
+            <td><?php echo $closed_incident['inc_num'] ?></td>
             <td><?php echo $closed_incident['priority'] ?></td>
             <td><?php echo $closed_incident['description'] ?></td>
             <td><?php echo $closed_incident['assign_group'] ?></td>
