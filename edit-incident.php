@@ -4,7 +4,7 @@ session_start();
     include("database/functions.php");
 
 
-    if (isset($_GET['update-inc'])) {
+    if (isset($_GET['inc_id'])) {
 		$update_incident = updateIncident($_GET['inc_id']);
 	}
 
