@@ -98,11 +98,11 @@
         </h2>
     </div>
 
-
-<br>
-<div class="record_incident">
+    <div class="record_incident">
     <a href="javascript:history.back()"><button class="btn btn-primary rec">Back</button></a>
 </div>
+<br>
+
 <br>
 
 <div class="d-flex justify-content-center">
