@@ -106,7 +106,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="update-inc" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="update_incident" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>

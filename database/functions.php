@@ -185,58 +185,144 @@ function deleteInc($inc_id) {
 
 // UPDATE INCIDENT
 
-function getIncident($incident){
-	global $con;
-	// Get single post slug
-	$inc_id = $_GET['inc_id'];
-	$sql = "SELECT * FROM incidents WHERE inc_id='$inc_id'";
-	$result = mysqli_query($con, $sql);
-
-	// fetch query results as associative array.
-	$incident = mysqli_fetch_assoc($result);
-	// if ($incident) {
-	// 	// get the topic to which this post belongs
-	// 	$incident['inc_id'] = getPostTopic($post['id']);
-	// }
-	return $incident;
-}
-
-
-
-
-
-
-if (isset($_POST['update-inc'])) {
+// if user clicks the update post button
+if (isset($_POST['update_incident'])) {
 	updateIncident($_POST);
 }
 
-// RECORD AN INCIDENT
-function updateIncident($request_values) {
-	global $con;
-
-	// get id of the incident to be updated
-	$inc_id = $request_values['inc_id'];
-
-	// request values of fields
-	$inc_num = esc($request_values['inc_num']);
-	$priority = esc($request_values['priority']);
-	$description = esc($request_values['description']);
-	$assign_group = esc($request_values['assign_group']);
-	$kb_article = esc($request_values['kb_article']);
-	$date = esc($request_values['date']);
-	$time = esc($request_values['time']);
-
-	if (count($errors) == 0) {
-		//encrypt the password (security purposes)
-		// $password = md5($password);
-
-		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";;
-		mysqli_query($con, $query);
-
-		$_SESSION['message'] = "Incident updated successfully";
-		header('location: all-incidents.php');
-		exit(0);
+function editIncident($inc_id)
+	{
+		global $con;
+		$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
+		$result = mysqli_query($con, $sql);
+		$incident = mysqli_fetch_assoc($result);
+		// set form values on the form to be updated
+		$inc_num = $incident['inc_num'];
+		$priority = $incident['priority'];
+		$description = $incident['description'];
+		$assign_group = $incident['assign_group'];
+		$kb_article = $incident['kb_article'];
+		$date = $incident['date'];
+		$time = $incident['time'];
 	}
+
+	function updateIncident($request_values)
+	{
+		global $con, $errors, $inc_num, $priority, $description, $assign_group, $kb_article, $date, $time;
+
+		$inc_num = esc($request_values['inc_num']);
+		$priority = esc($request_values['priority']);
+		$description = esc($request_values['description']);
+		$assign_group = esc($request_values['assign_group']);
+		$kb_article = esc($request_values['kb_article']);
+		$date = esc($request_values['date']);
+		$time = esc($request_values['time']);
+
+
+
+
+		// if (isset($request_values['inc_num'])) {
+		// 	$topic_id = esc($request_values['topic_id']);
+		// }
+		// // create slug: if title is "The Storm Is Over", return "the-storm-is-over" as slug
+		// $post_slug = makeSlug($title);
+		if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
+    	if (empty($priority)) { array_push($errors, "Priority is required"); }
+    	if (empty($description)) { array_push($errors, "Description is required"); }
+    	if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
+    	if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
+    	if (empty($date)) { array_push($errors, "Date is required"); }
+    	if (empty($time)) { array_push($errors, "Time is required"); }
+
+
+		// // if new featured image has been provided
+		// if (isset($_POST['featured_image'])) {
+		// 	// Get image name
+		//   	$featured_image = $_FILES['featured_image']['name'];
+		//   	// image file directory
+		//   	$target = "../static/images/" . basename($featured_image);
+		//   	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
+		//   		array_push($errors, "Failed to upload image. Please check file settings for your server");
+		//   	}
+		// }
+
+		// register topic if there are no errors in the form
+		if (count($errors) == 0) {
+			$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
+			// attach topic to post on post_topic table
+			if(mysqli_query($con, $query)){ // if post created successfully
+				if (isset($inc_num)) {
+					$inserted_inc_num = mysqli_insert_id($conn);
+					// create relationship between post and topic
+					$sql = "INSERT INTO incidents (inc_num, priority, description, assign_group, kb_article, date, time) 
+					VALUES('$inc_num', '$priority', '$description', '$assign_group', '$kb_article', '$date', '$time')";
+					mysqli_query($con, $sql);
+					$_SESSION['message'] = "Post created successfully";
+					header('location: all-incidents.php');
+					exit(0);
+				}
+			}
+			$_SESSION['message'] = "Post updated successfully";
+			header('location: all-incidents.php');
+			exit(0);
+		}
+	}
+
+
+
+
+// function getIncident($incident){
+// 	global $con;
+// 	// Get single post slug
+// 	$inc_id = $_GET['inc_id'];
+// 	$sql = "SELECT * FROM incidents WHERE inc_id='$inc_id'";
+// 	$result = mysqli_query($con, $sql);
+
+// 	// fetch query results as associative array.
+// 	$incident = mysqli_fetch_assoc($result);
+// 	// if ($incident) {
+// 	// 	// get the topic to which this post belongs
+// 	// 	$incident['inc_id'] = getPostTopic($post['id']);
+// 	// }
+// 	return $incident;
+// }
+
+
+
+
+
+
+// if (isset($_POST['update-inc'])) {
+// 	updateIncident($_POST);
+// }
+
+// // RECORD AN INCIDENT
+// function updateIncident($request_values) {
+// 	global $con;
+
+// 	// get id of the incident to be updated
+// 	$inc_id = $request_values['inc_id'];
+
+// 	// request values of fields
+// 	$inc_num = esc($request_values['inc_num']);
+// 	$priority = esc($request_values['priority']);
+// 	$description = esc($request_values['description']);
+// 	$assign_group = esc($request_values['assign_group']);
+// 	$kb_article = esc($request_values['kb_article']);
+// 	$date = esc($request_values['date']);
+// 	$time = esc($request_values['time']);
+
+// 	if (count($errors) == 0) {
+// 		//encrypt the password (security purposes)
+// 		// $password = md5($password);
+
+// 		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time'";
+// 		mysqli_query($con, $query);
+
+// 		$_SESSION['message'] = "Incident updated successfully";
+// 		header('location: all-incidents.php');
+// 		exit(0);
+// 	}
 
 
 
