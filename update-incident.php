@@ -25,7 +25,7 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$_GET['updateid']";
+        $sql = "UPDATE incidents SET inc_num='$inc_num' where id=$id";
         $result=mysqli_query($con,$sql);
         if($result) {
             echo "Updated Successfully";
