@@ -184,8 +184,13 @@ function deleteInc($inc_id) {
 }
 
 // UPDATE INCIDENT
-// RECORD AN INCIDENT
 if (isset($_POST['upd-inc'])) {
+	updateincident($_POST);
+}
+
+// RECORD AN INCIDENT
+function updateIncident($request_values) {
+	global $con, $errors;
 
 	// get id of the incident to be updated
 	$inc_id = $request_values['inc_id'];
