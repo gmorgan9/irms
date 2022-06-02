@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
  
     if (isset($_POST['update'])) {
-        $inc_num = mysqli_real_escape_string($con, $inc_num);
+        $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
         $priority = mysqli_real_escape_string($con, $priority);
         $description = mysqli_real_escape_string($con, $description);
         $assign_group = mysqli_real_escape_string($con, $assign_group);
