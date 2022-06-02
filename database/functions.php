@@ -245,14 +245,14 @@ function updateInc($request_values) {
 
 // WORK ON
 
-if (isset($_GET['edit-post'])) {
-	$isEditingPost = true;
-	$post_id = $_GET['edit-post'];
-	editPost($post_id);
+if (isset($_GET['edit-inc'])) {
+	$isEditingInc = true;
+	$inc_id = $_GET['edit-inc'];
+	editInc($inc_id);
 }
 // if user clicks the update post button
-if (isset($_POST['update_post'])) {
-	updatePost($_POST);
+if (isset($_POST['update_inc'])) {
+	updateInc($_POST);
 }
 
 function editPost($role_id)
