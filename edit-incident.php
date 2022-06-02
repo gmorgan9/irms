@@ -2,6 +2,13 @@
 session_start();
     include("database/connection.php");
     include("database/functions.php");
+
+
+    if (isset($_GET['update-inc'])) {
+		$upd_inc = updateIncident($_GET['update-inc']);
+	}
+
+
     //$all_incidents = getAllInc();
     $results = mysqli_query($con, "SELECT * FROM incidents where inc_id='$inc_id'");
 ?>
@@ -33,7 +40,6 @@ session_start();
 
 
 <br><br>
-<?php //while ($row = mysqli_fetch_array($results)) { ?>
 <div class="d-flex justify-content-center">
     <!-- form start -->
 <form action="edit-incident.php" class="reg-form" method="post">
@@ -47,7 +53,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $inc_num; ?>">
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text" value="<?php echo $upd_inc['inc_num']; ?>">
         </div>
     </div> 
     <!-- form-group// -->
@@ -104,7 +110,6 @@ session_start();
     </div>                                                               
 </form>
 </div>
-<?php// } ?>
 
 </body>
 </html>
