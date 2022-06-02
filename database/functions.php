@@ -185,6 +185,23 @@ function deleteInc($inc_id) {
 
 // UPDATE INCIDENT
 
+
+function getIncident($inc_id){
+	global $con;
+	// Get single post slug
+	$inc_id = $_GET['inc_id'];
+	$sql = "SELECT * FROM incidents WHERE inc_id='$inc_id'";
+	$result = mysqli_query($con, $sql);
+
+	// fetch query results as associative array.
+	$post = mysqli_fetch_assoc($result);
+	// if ($post) {
+	// 	// get the topic to which this post belongs
+	// 	$post['topic'] = getPostTopic($post['id']);
+	// }
+	return $incident;
+}
+
 // if user clicks the Edit post button
 if (isset($_GET['edit-incident'])) {
 	$isEditingPost = true;
