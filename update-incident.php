@@ -1,75 +1,26 @@
 <?php
 session_start();
     include("database/connection.php");
-    // include("database/functions.php");
-    
-    // $id=$_GET['updateid'];
-    // $sql = "SELECT * FROM incidents where id=$id";
-    // $result=mysqli_query($con,$sql);
-    // $row=mysqli_fetch_assoc($result);
-    // $inc_num = $row['inc_num'];
-    // $priority = $row['priority'];
-    // $description = $row['description'];
-    // $assign_group = $row['assign_group'];
-    // $kb_article = $row['kb_article'];
-    // $date = $row['date'];
-    // $time = $row['time'];
+ 
+    if (isset($_POST['update'])) {
+        $inc_num = mysqli_real_escape_string($con, $inc_num);
+        $priority = mysqli_real_escape_string($con, $priority);
+        $description = mysqli_real_escape_string($con, $description);
+        $assign_group = mysqli_real_escape_string($con, $assign_group);
+        $kb_article = mysqli_real_escape_string($con, $kb_article);
+        $date = mysqli_real_escape_string($con, $date);
+        $time = mysqli_real_escape_string($con, $time);
 
-
-
-    if(isset($_POST['update']))
-{
-    //$id = mysqli_real_escape_string($con, $_POST['id']);
-
-    $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
-    $priority = mysqli_real_escape_string($con, $_POST['priority']);
-    $description = mysqli_real_escape_string($con, $_POST['description']);
-    $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
-    $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
-    $date = mysqli_real_escape_string($con, $_POST['date']);
-    $time = mysqli_real_escape_string($con, $_POST['time']);
-
-    $query = "UPDATE students SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id' ";
-    $query_run = mysqli_query($con, $query);
-
-    if($query_run)
-    {
-        $_SESSION['message'] = "Student Updated Successfully";
-        header("Location: index.php");
-        exit(0);
+        // Update Statement
+        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
+        $results=mysqli_query($con,$sql);
+        if($results) {
+            //echo "Updated Successfully";
+            header('location: all-incidents.php');
+        } else {
+            die(mysqli_error($con));
+        }
     }
-    else
-    {
-        $_SESSION['message'] = "Student Not Updated";
-        header("Location: index.php");
-        exit(0);
-    }
-
-}
-
-
-
-    
-
-    // if (isset($_POST['update'])) {
-    //     // $id=$_POST['id'];
-    //     $inc_num = mysqli_real_escape_string($con, $inc_num);
-    //     $priority = mysqli_real_escape_string($con, $priority);
-    //     $description = mysqli_real_escape_string($con, $description);
-    //     $assign_group = mysqli_real_escape_string($con, $assign_group);
-    //     $kb_article = mysqli_real_escape_string($con, $kb_article);
-    //     $date = mysqli_real_escape_string($con, $date);
-    //     $time = mysqli_real_escape_string($con, $time);
-
-    //     $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
-    //     $results=mysqli_query($con,$sql);
-    //     if($results) {
-    //         //echo "Updated Successfully";
-    //         header('location: all-incidents.php'); // returns back to same page
-    //     } else {
-    //         die(mysqli_error($con));
-    //     }
-    // }
 
 ?>
 
