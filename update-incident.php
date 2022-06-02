@@ -107,10 +107,10 @@
 
 <div class="d-flex justify-content-center">
 <?php
-                        if(isset($_GET['id']))
+                        if(isset($_GET['updateid']))
                         {
-                            $student_id = mysqli_real_escape_string($con, $_GET['id']);
-                            $query = "SELECT * FROM students WHERE id='$student_id' ";
+                            $student_id = mysqli_real_escape_string($con, $_GET['updateid']);
+                            $query = "SELECT * FROM incidents WHERE id='$id' ";
                             $query_run = mysqli_query($con, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
