@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
 
-$topics = getAllInc();	
+$inc = getAllInc();	
 ?>
 
 	<title>Admin | Manage Topics</title>
