@@ -13,7 +13,7 @@ session_start();
         $time = mysqli_real_escape_string($con, $time);
 
         // Update Statement
-
+        echo $id;
 
         $sql = "UPDATE incidents SET id=$id, inc_num='$inc_num' WHERE id=$id";
         $results=mysqli_query($con,$sql);
@@ -24,12 +24,6 @@ session_start();
             die(mysqli_error($con));
         }
     }
-    if (!is_numeric($id))
-{
-    var_dump($id);
-    echo  $id;
-    exit;
-}
 
 ?>
 
