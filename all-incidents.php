@@ -7,6 +7,19 @@ session_start();
         $_SESSION['msg'] = "You must log in first";
         header('location: login.php');
     }
+
+    if(isset($_GET['deleteid'])) {
+        $inc_id = $_GET['deleteid'];
+    
+        $sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
+        $result = mysqli_query($con, $sql);
+        if($result) {
+            // echo "Deleted Successfully";
+            header('location: all-incidents.php'); // returns back to same page
+        } else {
+            die(mysqli_error($con));
+        }
+    }
 ?>
 
 
@@ -106,8 +119,8 @@ session_start();
             <td>'.$kb_article.'</td>
             <td>'.$date.'</td>
             <td>'.$time.'</td>
-            <td><a href="update-incident.php?updateid='.$inc_id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="delete-incident.php?deleteid='.$inc_id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a href="all-incident.php?updateid='.$inc_id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incident.php?deleteid='.$inc_id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>';
           }
       }
