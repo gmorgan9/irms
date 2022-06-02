@@ -48,7 +48,7 @@
         $date = $_POST['date'];
         $time = $_POST['time'];
     
-        mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'");
+        mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id=$id");
         $_SESSION['message'] = "Address updated!"; 
         header('location: index.php');
     }
