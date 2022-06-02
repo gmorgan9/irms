@@ -73,6 +73,7 @@ session_start();
 <?php //include('errors.php'); ?>
 <br>
 <h2 class="text-center">Record Incident</h2>
+<?php echo $id ?>
 <br>
 
     <div class="d-flex justify-content-center">
