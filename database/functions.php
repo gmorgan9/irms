@@ -178,7 +178,7 @@ function deleteInc($inc_id) {
 	$sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
 	if (mysqli_query($con, $sql)) {
 		$_SESSION['message'] = "Incident successfully deleted";
-		header("location: /");
+		header('location: '.$_SERVER['PHP_SELF']);
 		exit(0);
 	}
 }
