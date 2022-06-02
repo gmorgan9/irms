@@ -13,9 +13,14 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'";
-        $result=mysqli_query($con,$sql);
-        if($result) {
+        // $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num', priority='$priority', description='$description', assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE id='$id'";
+        // $result=mysqli_query($con,$sql);
+
+        $sql = "UPDATE incidents SET id=?, inc_num=?, priority=?, description=?, assign_group=?, kb_article=?, date=?, time='? WHERE id=?";
+        $stmt= $con->prepare($sql);
+        $stmt->bind_param("isssssss", $id, $inc_num, $priority, $description, $assign_group, $kb_article, $date, $time);
+        $stmt->execute();
+        if($stmt) {
             echo "Updated Successfully";
             // header('location: all-incidents.php'); // returns back to same page
         } else {
