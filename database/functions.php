@@ -178,7 +178,47 @@ function deleteInc($inc_id) {
 	$sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
 	if (mysqli_query($con, $sql)) {
 		$_SESSION['message'] = "Incident successfully deleted";
-		header('location: '.$_SERVER['PHP_SELF']);
+		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
+		exit(0);
+	}
+}
+
+// UPDATE INCIDENT
+if (isset($_GET['edit-inc'])) {
+	$isEditingInc = true;
+	$inc_id = $_GET['edit-inc'];
+	editInc($inc_id);
+}
+// if user clicks the update topic button
+if (isset($_POST['update_inc'])) {
+	updateTopic($_POST);
+}
+
+function editInc($inc_id) {
+	global $con;
+	$sql = "SELECT * FROM incidents WHERE inc_id=$inc_id LIMIT 1";
+	$result = mysqli_query($con, $sql);
+	$inc = mysqli_fetch_assoc($result);
+	// set form values ($topic_name) on the form to be updated
+	$inc_num = $inc['inc_num'];
+}
+function updateInc($request_values) {
+	global $con;
+	$inc_num = esc($request_values['inc_num']);
+	$inc_id = esc($request_values['inc_id']);
+	// create slug: if topic is "Life Advice", return "life-advice" as slug
+	//$topic_slug = makeSlug($topic_name);
+	// validate form
+	if (empty($inc_num)) { 
+		array_push($errors, "Incident name required"); 
+	}
+	// register topic if there are no errors in the form
+	if (count($errors) == 0) {
+		$query = "UPDATE incidents SET inc_num='$inc_num', priority='$priority',description='$description',assign_group='$assign_group', kb_article='$kb_article', date='$date', time='$time' WHERE inc_id=$inc_id";
+		mysqli_query($conn, $query);
+
+		$_SESSION['message'] = "Incident updated successfully";
+		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
 		exit(0);
 	}
 }
