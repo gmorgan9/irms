@@ -230,11 +230,16 @@ if(isset($_POST["update"])){
     </div> 
     <!-- form-group// -->
     
-            <input name="status" class="text-center" placeholder="Status" type="checkbox" checked>
-            <?php 
-    $check = isset($_POST['status']) ? "<input name='status' class='text-center' placeholder='Status' type='checkbox' checked>" : "<input name='status' class='text-center' placeholder='Status' type='checkbox'>";
-    echo $check;
-    ?>
+    <?php 
+if($status == 0) {
+   echo "<button type='submit' class='invisibleBTN'><img class='ckbx' src='assets/img/checkbox.png' /></button><input type='hidden' name='id' value=" . $id.">";
+} else {
+    echo "<button type='submit' class='invisibleBTN'><img class='ckbx' src='assets/img/checked.svg' /></button><input type='hidden' name='id' value=" . $id.">";
+}
+
+?>
+
+
     <!-- form-group// -->
     
             <!-- <input name="status" class="text-center" placeholder="Status" type="checkbox"> -->
