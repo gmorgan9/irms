@@ -231,11 +231,17 @@ if(isset($_POST["update"])){
     <!-- form-group// -->
     
     <?php 
-if($status == 0) {
-   echo "<input name='status' class='text-center' placeholder='Status' type='checkbox'>";
-} else {
-    echo "<input name='status' class='text-center' placeholder='Status' type='checkbox' checked>";
-}
+<?php if (isset($status) && $status == 1): ?>
+    <label>
+        <input type="checkbox" name="status" checked>
+        not
+    </label>
+<?php else: ?>
+    <label>
+        <input type="checkbox" name="status">
+        completed
+    </label>
+<?php endif; ?>
 
 ?>
 
