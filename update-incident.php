@@ -237,7 +237,7 @@ if(isset($_POST["update"])){
             <div class="input-group-prepend">
 	            <span class="input-group-text">Status</span>
 	        </div>
-            <input name="status" class="form-control text-center" placeholder="Incident Number" type="checkbox" value="<?php echo $status; ?>" checked>
+            <input name="status" class=" text-center" placeholder="Incident Number" type="checkbox" value="<?php echo $status; ?>" checked>
         </div>
     </div> 
     <!-- form-group// -->
