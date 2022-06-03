@@ -12,11 +12,11 @@ session_start();
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
     
-        $sql = "DELETE FROM incidents WHERE id=$id";
+        $sql = "DELETE FROM notes WHERE id=$id";
         $result = mysqli_query($con, $sql);
         if($result) {
             // echo "Deleted Successfully";
-            header('location: all-incidents.php'); // returns back to same page
+            header('location: incident-notes.php'); // returns back to same page
         } else {
             die(mysqli_error($con));
         }
@@ -66,7 +66,7 @@ session_start();
                 <h1 class="text-center" style="font-size: 100px;">
 
                 <?php
-                    $sql="select count('1') from incidents";
+                    $sql="select count('1') from notes";
                     $result=mysqli_query($con,$sql);
                     $rowtotal=mysqli_fetch_array($result); 
                     echo "$rowtotal[0]";
@@ -103,8 +103,8 @@ session_start();
       $result = mysqli_query($con, $sql);
       if($result) {
           while ($row = mysqli_fetch_assoc($result)) {
-            $id=$row['id'];
-            $date=$row['date'];
+            $id = $row['id'];
+            $date = $row['date'];
             $title = $row['title'];
             $note = $row['note'];
             $tag = $row['tag'];
