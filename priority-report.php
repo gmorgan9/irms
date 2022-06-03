@@ -192,7 +192,7 @@ if(mysqli_num_rows($result) == 0 ) {
     <h2>Priority 2</h2>
 </div>
 <?php 
-$sql = "SELECT * FROM incidents where priority=2";
+$sql = "SELECT * FROM incidents where priority=3";
 $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result) == 0 ) {
 ?>
@@ -256,6 +256,9 @@ if(mysqli_num_rows($result) == 0 ) {
   </tbody>
 </table>
 </div>
+<?php 
+    }
+?>
 
 
 <!-- Table (3) -->
@@ -263,7 +266,7 @@ if(mysqli_num_rows($result) == 0 ) {
     <h2>Priority 2</h2>
 </div>
 <?php 
-$sql = "SELECT * FROM incidents where priority=2";
+$sql = "SELECT * FROM incidents where priority=4";
 $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result) == 0 ) {
 ?>
