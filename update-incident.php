@@ -48,12 +48,12 @@ $inc_num = $priority = $description = $assign_group = $kb_article = $date = $tim
 $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err "";
 
 // Processing form data when form is submitted
-if(isset($_POST["id"]) && !empty($_POST["id"])){
+if(isset($_POST['id']) && !empty($_POST['id'])){
     // Get hidden input value
-    $id = $_POST["id"];
+    $id = $_POST['id'];
     
    // Validate address address
-   $input_inc_num = trim($_POST["inc_num"]);
+   $input_inc_num = trim($_POST['inc_num']);
    if(empty($input_inc_num)){
        $inc_num_err = "Please enter an address.";     
    } else{
@@ -145,9 +145,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     mysqli_close($con);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    if(isset($_GET['id']) && !empty(trim($_GET['id']))){
         // Get URL parameter
-        $id =  trim($_GET["id"]);
+        $id =  trim($_GET['id']);
         
         // Prepare a select statement
         $sql = "SELECT * FROM incidents WHERE id = ?";
@@ -168,21 +168,21 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $inc_num = $row["inc_num"];
-                    $priority = $row["priority"];
-                    $description = $row["description"];
-                    $assign_group = $row["assign_group"];
-                    $kb_article = $row["kb_article"];
-                    $date = $row["date"];
-                    $time = $row["time"];
+                    $inc_num = $row['inc_num'];
+                    $priority = $row['priority'];
+                    $description = $row['description'];
+                    $assign_group = $row['assign_group'];
+                    $kb_article = $row['kb_article'];
+                    $date = $row['date'];
+                    $time = $row['time'];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
-                    header("location: errors.php");
+                    header('location: die-page.php');
                     exit();
                 }
                 
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo 'Oops! Something went wrong. Please try again later.';
             }
         }
         
@@ -193,7 +193,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
-        header("location: errors.php");
+        header("location: die-page.php");
         exit();
     }
 }
@@ -332,7 +332,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="id" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
