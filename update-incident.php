@@ -13,7 +13,7 @@ session_start();
 		$inc_num = $_POST['inc_num'];
 		//$address = $_POST['address'];
 
-		mysqli_query($con, "UPDATE incidents SET inc_num=$inc_num where id=$id"); 
+		mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' where id=$id"); 
 		$_SESSION['message'] = "Record updated"; 
 		header('location: all-incidents.php');
 	}
