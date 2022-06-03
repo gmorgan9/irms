@@ -224,8 +224,9 @@ session_start();
 </table>
 </div>
 
-<h2>Priority 4</h2>
 <div class="col d-flex justify-content-center">
+    <h2>Priority 4</h2>
+</div>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
