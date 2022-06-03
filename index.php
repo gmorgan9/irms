@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include("path.php");
-include("app/database/db.php");
+include("app/database/functions.php");
 if (!isset($_SESSION['username'])) {
   $_SESSION['msg'] = "You must log in first";
   header('location: login.php');
