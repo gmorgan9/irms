@@ -2,30 +2,30 @@
 session_start();
     include("database/connection.php");
 
-//     $id = intval(trim($_GET['id']));
-//     if(isset($id) && is_numeric($id)) {
-//     $sql = "SELECT * FROM incidents where id='$id' limit 1";
-//     $result=mysqli_query($con,$sql);
-//     $row=mysqli_fetch_assoc($result);
-//    // $id=$row['id'];
-//     $inc_num = $row['inc_num'];
-//     $priority = $row['priority'];
-//     $description = $row['description'];
-//     $assign_group = $row['assign_group'];
-//     $kb_article = $row['kb_article'];
-//     $date = $row['date'];
-//     $time = $row['time'];
+    $id = intval(trim($_GET['updateid']));
+    if(isset($id) && is_numeric($id)) {
+    $sql = "SELECT * FROM incidents where id='$id' limit 1";
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_assoc($result);
+   // $id=$row['id'];
+    $inc_num = $row['inc_num'];
+    $priority = $row['priority'];
+    $description = $row['description'];
+    $assign_group = $row['assign_group'];
+    $kb_article = $row['kb_article'];
+    $date = $row['date'];
+    $time = $row['time'];
     
-//     if (isset($_POST['update'])) {
-//         //$id = (int)$_POST['id'];
-//         //$id=(INT)$_GET['id'];
-//         $inc_num = $_POST['inc_num'];
-//         $priority = $_POST['priority'];
-//         $description = $_POST['description'];
-//         $assign_group = $_POST['assign_group'];
-//         $kb_article = $_POST['kb_article'];
-//         $date = $_POST['date'];
-//         $time = $_POST['time'];
+    if (isset($_POST['update'])) {
+        //$id = (int)$_POST['id'];
+        //$id=(INT)$_GET['id'];
+        $inc_num = $_POST['inc_num'];
+        $priority = $_POST['priority'];
+        $description = $_POST['description'];
+        $assign_group = $_POST['assign_group'];
+        $kb_article = $_POST['kb_article'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
 
 
 //         $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
@@ -47,44 +47,21 @@ session_start();
 // $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
 // $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
 
-
-
-if(count($_POST)>0){
-	if($_POST['type']==2){
-		$id=$_POST['id'];
-		$inc_num=$_POST['inc_num'];
-		$sql = "UPDATE `incidents` SET `inc_num`='$inc_num' WHERE id=$id";
-		if (mysqli_query($con, $sql)) {
-			echo json_encode(array("statusCode"=>200));
-		} 
-		else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($con);
-		}
-		mysqli_close($con);
-	}
-}
-
-
-
-
-
-
-
-
-
-        // Update Statement
-        // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
-        // $result=mysqli_query($con,$sql);
-        // if(mysqli_affected_rows($con) == 1)
-		// 	{
+        Update Statement
+        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
+        $result=mysqli_query($con,$sql);
+        if(mysqli_affected_rows($con) == 1)
+			{
 				
-		// 		header('location: index.php');
-		// 		exit();
-		// 	}
-		// 	else
-		// 	{
-		// 		echo 'Unable to save blog' ;
-		// 	}
+				header('location: index.php');
+				exit();
+			}
+			else
+			{
+				echo 'Unable to save blog' ;
+			}
+        }
+    }
 
 
 ?>
