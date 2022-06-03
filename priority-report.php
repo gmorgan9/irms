@@ -157,8 +157,6 @@ session_start();
             <!-- <td><?php #echo $kb_article; ?></td> -->
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
-            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>
          <?php }
       }
@@ -215,8 +213,6 @@ session_start();
             <!-- <td><?php #echo $kb_article; ?></td> -->
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
-            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>
          <?php }
       }
@@ -227,6 +223,7 @@ session_start();
 </div>
 
 <div class="col d-flex justify-content-center">
+    <h2>Priority 4</h2>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -273,8 +270,6 @@ session_start();
             <!-- <td><?php #echo $kb_article; ?></td> -->
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
-            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>
          <?php }
       }
