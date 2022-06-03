@@ -170,12 +170,13 @@ session_start();
        
   </tbody>
 </table>
-
-</div>
 <h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
+
+</div>
+
 
 <br>
 <br>
