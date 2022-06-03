@@ -172,7 +172,7 @@ session_start();
 </table>
 
 </div>
-<h4 class="text-center"> No Records Found!</h4> <br>
+<h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
