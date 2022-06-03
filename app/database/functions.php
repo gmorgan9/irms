@@ -51,14 +51,14 @@ function register(){
 	if (count($errors) == 0) {
 		$password = md5($password);//encrypt the password before saving in the database
 
-		if (isset($_POST['user_type'])) {
-			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (name, username, email, user_type, password) 
-					  VALUES('$name', '$username', '$email', '$user_type', '$password')";
-			mysqli_query($db, $query);
-			$_SESSION['success']  = "New user successfully created!!";
-			header('location: /');
-		}else{
+		// if (isset($_POST['user_type'])) {
+		// 	$user_type = e($_POST['user_type']);
+		// 	$query = "INSERT INTO users (name, username, email, user_type, password) 
+		// 			  VALUES('$name', '$username', '$email', '$user_type', '$password')";
+		// 	mysqli_query($db, $query);
+		// 	$_SESSION['success']  = "New user successfully created!!";
+		// 	header('location: /');
+		// }else{
 			$query = "INSERT INTO users (name, username, email, user_type, password) 
 					  VALUES('$name','$username', '$email', 'user', '$password')";
 			mysqli_query($db, $query);
@@ -71,7 +71,6 @@ function register(){
 			header('location: /');				
 		}
 	}
-}
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['create_user_btn'])) {
