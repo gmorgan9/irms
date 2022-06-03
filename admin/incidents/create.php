@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include("app/controllers/topics.php");
+<?php include("app/controllers/incidents.php");
 //adminOnly();
 ?>
 <!DOCTYPE html>
