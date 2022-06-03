@@ -16,7 +16,6 @@ session_start();
 //     $date = $row['date'];
 //     $time = $row['time'];
 
-if (isset($_POST['update'])) {
 if (isset($_GET['updateid'])) {
     
 	$id = $_GET['updateid'];
@@ -31,10 +30,9 @@ function updateInc($id) {
 	$sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
 	if (mysqli_query($con, $sql)) {
 		$_SESSION['message'] = "Incident successfully updated";
-		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
+		header('location: all-incidents.php'); // returns back to same page
 		exit(0);
 	}
-}
 }
 
 
