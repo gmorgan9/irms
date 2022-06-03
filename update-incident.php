@@ -15,25 +15,53 @@ session_start();
     $date = $row['date'];
     $time = $row['time'];
     
-    if (isset($_POST['update'])) {
-        $inc_num = $_POST['inc_num'];
-        $priority = $_POST['priority'];
-        $description = $_POST['description'];
-        $assign_group = $_POST['assign_group'];
-        $kb_article = $_POST['kb_article'];
-        $date = $_POST['date'];
-        $time = $_POST['time'];
+    // if (isset($_POST['update'])) {
+    //     $inc_num = $_POST['inc_num'];
+    //     $priority = $_POST['priority'];
+    //     $description = $_POST['description'];
+    //     $assign_group = $_POST['assign_group'];
+    //     $kb_article = $_POST['kb_article'];
+    //     $date = $_POST['date'];
+    //     $time = $_POST['time'];
 
-        $new = intval($id);
-        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$new";
+    //     $new = intval($id);
+    //     $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$new";
 
-            if (mysqli_query($con, $sql)) {
+           // check if form was submitted
+if(isset($_POST['update'])){
+ 
+    try{
+ 
+        // write update query
+        // in this case, it seemed like we have so many fields to pass and
+        // it is better to label them and not use question marks
+        $query = "UPDATE incidents
+                    SET inc_num=:inc_num
+                    WHERE id = :id";
+ 
+        // prepare query for excecution
+        $stmt = $con->prepare($query);
+ 
+        // posted values
+        $name=htmlspecialchars(strip_tags($_POST['inc_num']));
+        //$description=htmlspecialchars(strip_tags($_POST['description']));
+        //$price=htmlspecialchars(strip_tags($_POST['price']));
+ 
+        // bind the parameters
+        $stmt->bindParam(':inc_num', $inc_num);
+        //$stmt->bindParam(':description', $description);
+        //$stmt->bindParam(':price', $price);
+        $stmt->bindParam(':id', $id);
+ 
+        // Execute the query
+        if($stmt->execute()){
                 // header('location: all-incidents.php');
                 echo "<div class='alert alert-success'>Record was updated.</div>";
             } else {
                 echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
                 }
             }
+        }
 
         // //Update Statement
         // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
