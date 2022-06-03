@@ -62,8 +62,8 @@ session_start();
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="password" class="form-control" placeholder="Enter password" type="password" id="password"><br>
-        <input type="checkbox" id="checkbox">Show Password
+        <input name="password" class="form-control" placeholder="Enter password" type="password" id="password">
+        <br><br><input type="checkbox" id="checkbox">Show Password
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
