@@ -6,7 +6,7 @@ session_start();
 
     $inc_num = "";
 	$priority = "";
-	$id = 0;
+	$id = intval($_GET['updateid']);
 	$update = false;
 
     if (isset($_GET['updateid'])) {
