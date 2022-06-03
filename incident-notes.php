@@ -90,7 +90,7 @@ session_start();
       <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Title</th>
-      <th scope="col" style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">Note</th>
+      <th scope="col" style="max-width: 10em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">Note</th>
       <th scope="col">Tag</th>
     </tr>
   </thead>
