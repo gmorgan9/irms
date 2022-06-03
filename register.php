@@ -1,7 +1,7 @@
 <?php
 session_start();
     //include("database/connection.php");
-    include("database/db.php");
+    include("database/functions.php");
 ?>
 
 <!DOCTYPE html>
