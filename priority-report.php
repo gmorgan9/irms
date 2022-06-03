@@ -98,8 +98,12 @@ session_start();
             <?php
             $sql="select count('1') from incidents where priority=4";
             $result=mysqli_query($con,$sql);
+            if(mysqli_num_rows($result) > 0) {
+                echo "no records";
+            } else {
             $rowtotal=mysqli_fetch_array($result); 
             echo "$rowtotal[0]";
+            }
         ?>
         </h1>
             </div>
