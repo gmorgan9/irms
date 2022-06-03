@@ -138,7 +138,7 @@ session_start();
 
       $sql = "SELECT * FROM incidents where priority=2";
       $result = mysqli_query($con, $sql);
-      if(mysqli_num_rows($result) > 0) {
+      if(mysqli_num_rows($result) < 0) {
           while ($row = mysqli_fetch_assoc($result)) {
             $id=$row['id'];
             $status=$row['status'];
@@ -167,10 +167,10 @@ session_start();
             </tr>
          <?php 
         } 
-    }else { ?>
-      
-      <h3 class="text-center">No Records Found!</h3>
-  <?php } ?>
+    }else { 
+        echo "No Records Found!";
+        } 
+    ?>
   </tbody>
 </table>
 </div>
