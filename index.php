@@ -1,6 +1,6 @@
 <?php 
 include("path.php");
-//include(ROOT_PATH . "/app/controllers/topics.php");
+
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ include("path.php");
 </div>
 
 <br>
-<?php  if (isset($_SESSION['username'])) : ?>
+<?php  if (isset($_SESSION['user'])) : ?>
     	<h1 style="margin-left: 150px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     <?php endif ?>
     <br>
