@@ -168,6 +168,7 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
+                    $id = $row['id'];
                     $inc_num = $row['inc_num'];
                     $priority = $row['priority'];
                     $description = $row['description'];
@@ -193,7 +194,7 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
-        header('location: die-page.php');
+        header('location: die-page2.php');
         exit();
     }
 }
