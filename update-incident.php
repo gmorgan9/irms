@@ -32,8 +32,8 @@ session_start();
         // }
         $result=mysqli_query($con,$sql);
         if($result) {
-            echo "Updated Successfully";
-            // header('location: all-incidents.php');
+            // echo "Updated Successfully";
+            header('location: all-incidents.php');
         } else {
             die(mysqli_error($con));
         }
