@@ -1,7 +1,7 @@
 <?php
 session_start();
     include("database/connection.php");
-    include("database/functions.php");
+    //include("database/functions.php");
 
 //     $id = intval($_GET['updateid']);
 //     $sql = "SELECT * FROM incidents where id=$id";
