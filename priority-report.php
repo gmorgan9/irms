@@ -53,7 +53,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <h1>
+                <h1 class="text-center" style="font-size: 100px;">
             <?php
             $sql="select count('1') from incidents where status=1";
             $result=mysqli_query($con,$sql);
@@ -72,7 +72,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <h1>
+                <h1 class="text-center" style="font-size: 100px;">
             <?php
             $sql="select count('1') from incidents where status=1";
             $result=mysqli_query($con,$sql);
@@ -91,7 +91,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <h1>
+                <h1 class="text-center" style="font-size: 100px;">
             <?php
             $sql="select count('1') from incidents where status=1";
             $result=mysqli_query($con,$sql);
