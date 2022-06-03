@@ -63,6 +63,7 @@ session_start();
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input name="password" class="form-control" placeholder="Enter password" type="password">
+        <input type="checkbox" onclick="myFunction()">Show Password
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
@@ -71,6 +72,17 @@ session_start();
     <p class="text-center">Don't have an account? <a href="/register.php" style="color: black;">Register</a> </p>                                                                 
 </form>
 </div>
+
+<script>
+    function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 
 </body>
 </html>
