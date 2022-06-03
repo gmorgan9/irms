@@ -84,7 +84,7 @@ session_start();
 <br><br><br>
 
 <div class="col d-flex justify-content-center">
-<table class="table table-hover table-light notes-table w-auto">
+<table class="table table-hover table-light" style="table-layout: fixed;">
   <thead>
     <tr class="header-line">
       <th scope="col">#</th>
@@ -112,7 +112,7 @@ session_start();
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td scope="row"><?php echo $note; ?></td>
+            <td scope="row" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $note; ?></td>
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
