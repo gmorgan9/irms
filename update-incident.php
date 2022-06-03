@@ -28,6 +28,7 @@ session_start();
     //     $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$new";
 
     if (isset($_POST['update'])) {
+        $id = intval($_GET['updateid']);
         // receive all input values from the form
         $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
         $priority = mysqli_real_escape_string($con, $_POST['priority']);
