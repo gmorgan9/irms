@@ -47,7 +47,7 @@ session_start();
     <?php endif ?>
     <br>
 
-
+<div class="col d-flex justify-content-center">
 <div class="row row_one">
     <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
@@ -107,6 +107,7 @@ session_start();
     </div>
 </div>
 
+</div>
 </div>
 
 
