@@ -91,7 +91,7 @@ session_start();
     </div>
     <!-- end row // -->
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
+        <button id="button" type="submit" name="rec_note" class="btn btn-primary text-center reg-log">Submit Note</button>  
     </div>                                                               
 </form>
 </div>

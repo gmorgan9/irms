@@ -129,51 +129,45 @@ if (isset($_POST['rec_inc'])) {
     }
   }
 
-  // // UPDATE INCIDENT
-  // if (isset($_POST['update'])) {
-  //   $id = intval($_GET['updateid']);
-  //   // receive all input values from the form
-  //   $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
-  //   $priority = mysqli_real_escape_string($con, $_POST['priority']);
-  //   $description = mysqli_real_escape_string($con, $_POST['description']);
-  //   $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
-  //   $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
-  //   $date = mysqli_real_escape_string($con, $_POST['date']);
-  //   $time = mysqli_real_escape_string($con, $_POST['time']);
+  // RECORD AN INCIDENT
+if (isset($_POST['rec_note'])) {
+  // receive all input values from the form
+  $date = mysqli_real_escape_string($con, $_POST['date']);
+  $title = mysqli_real_escape_string($con, $_POST['title']);
+  $note = mysqli_real_escape_string($con, $_POST['note']);
+  $tag = mysqli_real_escape_string($con, $_POST['tag']);
+
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if (empty($date)) { array_push($errors, "Date is required"); }
+  if (empty($title)) { array_push($errors, "Title is required"); }
+  if (empty($note)) { array_push($errors, "Note is required"); }
+  if (empty($tag)) { array_push($errors, "Tag is required"); }
   
-  //   // form validation: ensure that the form is correctly filled ...
-  //   // by adding (array_push()) corresponding error unto $errors array
-  //   if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
-  //   if (empty($priority)) { array_push($errors, "Priority is required"); }
-  //   if (empty($description)) { array_push($errors, "Description is required"); }
-  //   if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
-  //   if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
-  //   if (empty($date)) { array_push($errors, "Date is required"); }
-  //   if (empty($time)) { array_push($errors, "Time is required"); }
-    
+
+  // first check the database to make sure 
+  // a incident does not already exist with the same incident number
+  $note_check_query = "SELECT * FROM notes WHERE title='$title' LIMIT 1";
+  $result = mysqli_query($con, $note_check_query);
+  $note = mysqli_fetch_assoc($result);
   
-  //   // first check the database to make sure 
-  //   // a incident does not already exist with the same incident number
-  //   $incident_check_query = "SELECT * FROM incidents WHERE inc_num='$inc_num' LIMIT 1";
-  //   $result = mysqli_query($con, $incdient_check_query);
-  //   $inc = mysqli_fetch_assoc($result);
-    
-  //   if ($inc) { // if incident exists
-  //     if ($inc['inc_num'] === $inc_num) {
-  //       array_push($errors, "Incident Number already exists");
-  //     }
-  //   }
+  if ($note) { // if incident exists
+    if ($note['title'] === $title) {
+      array_push($errors, "Title already exists");
+    }
+  }
+
+  // Finally, register user if there are no errors in the form
+  if (count($errors) == 0) {
+
+      $query = "INSERT INTO notes (date, title, note, tag) 
+                VALUES('$date', '$title', '$note', '$tag')";
+      mysqli_query($con, $query);
+      header('location: incident-notes.php');
+  }
+}
+
   
-  //   // Finally, register user if there are no errors in the form
-  //   if (count($errors) == 0) {
-  
-  //       $query = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
-  //       mysqli_query($con, $query);
-  //       header('location: all-incidents.php');
-  //   } else {
-  //       echo "failed";
-  //   }
-  // }
 
 
 
@@ -213,33 +207,3 @@ function countOpenInc()
     $rowtotal=mysqli_fetch_array($result); 
     return $rowtotal; 
 }
-// DELETE INCIDENT
-
-// if (isset($_GET['deleteid'])) {
-// 	$inc_id = $_GET['deleteid'];
-// 	deleteInc($inc_id);
-// }
-
-
-// function deleteInc($inc_id) {
-// 	global $con;
-// 	$sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
-// 	if (mysqli_query($con, $sql)) {
-// 		$_SESSION['message'] = "Incident successfully deleted";
-// 		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
-// 		exit(0);
-// 	}
-// }
-
-
-
-// UPDATE //
-// if (isset($_POST['update'])) {
-// 	$id = $_GET['updateid'];
-// 	$inc_nam = $_POST['inc_num'];
-// 	$priority = $_POST['priority'];
-
-// 	mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num', priority='$priority' WHERE id=$id");
-// 	$_SESSION['message'] = "Record updated!"; 
-// 	header('location: all-incidents.php');
-// }
