@@ -48,7 +48,7 @@ $inc_num = $priority = $description = $assign_group = $kb_article = $date = $tim
 $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
 
 // Processing form data when form is submitted
-if(isset($_POST['id']) && !empty($_POST['id'])){
+if(isset($_POST['submit']) && !empty($_POST['id'])){
     // Get hidden input value
     $id = $_POST['id'];
     
