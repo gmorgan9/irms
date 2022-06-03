@@ -245,7 +245,7 @@ if(isset($_POST["update"])){
             <div class="input-group-prepend">
 	            <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
 	        </div>
-            <input name="status" class="form-control text-center" placeholder="Status" type="text" value="<?php echo $status ?>" readonly>
+            <input name="status" class="form-control text-center" placeholder="Status" type="checkbox">
         </div>
     </div> 
     <!-- form-group// -->
