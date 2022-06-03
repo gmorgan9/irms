@@ -28,7 +28,7 @@ session_start();
         $time = $_POST['time'];
 
 
-        $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=1";
+        $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
         echo "<br>";
 $query = "SELECT inc_num FROM incidents WHERE id = 1";
 $result = mysqli_query($con, $query);
