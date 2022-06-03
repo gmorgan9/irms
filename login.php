@@ -1,42 +1,40 @@
-<?php include('path.php'); ?>
-<?php 
-include(ROOT_PATH . "/app/controllers/users.php"); 
-//guestsOnly();
+<?php
+session_start();
+    //include("database/connection.php");
+    include("app/database/db.php");
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome -->
-  <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/assets/images/fav.png?v=<?php echo time(); ?>">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css?v=2.14">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Custom Styling -->
-  <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
-
-  <!-- Bootstrap Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>Login</title>
+    <title>Home</title>
 </head>
-
 <body>
+    <div class="header">
+        <h2 class="logo">
+            Incident Record Management System
+        </h2>
+    </div>
 
-<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 <br><br><br><br><br>
 <div class="d-flex justify-content-center">
 <form action="login.php" class="log-form" method="post">
-<?php //include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+<?php //include('errors.php'); ?>
 
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
@@ -68,19 +66,11 @@ include(ROOT_PATH . "/app/controllers/users.php");
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-    <button type="submit" name="login_btn" class="btn btn-primary text-center reg-log">Log In</button>  
+    <button type="submit" name="login-btn" class="btn btn-primary text-center reg-log">Log In</button>  
 </div> 
     <p class="text-center">Don't have an account? <a href="/register.php" style="color: black;">Register</a> </p>                                                                 
 </form>
 </div>
 
-
-  <!-- JQuery
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-  <script src="assets/js/scripts.js"></script> -->
-
 </body>
-
 </html>

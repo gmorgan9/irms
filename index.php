@@ -1,42 +1,41 @@
 <?php 
 session_start();
-include("path.php");
-include("app/database/functions.php");
-if (!isset($_SESSION['username'])) {
-  $_SESSION['msg'] = "You must log in first";
-  header('location: login.php');
-}
+    //include("database/connection.php");
+    include("app/database/db.php");
 
+    $_SESSION['name'] = $name;
+
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome -->
-  <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/assets/images/fav.png?v=<?php echo time(); ?>">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css?v=2.14">
 
-  <!-- Custome Styles -->
-  <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Bootstrap Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <title>Recipes</title>
+    <title>Home</title>
 </head>
 <body>
-
-<?php include(ROOT_PATH . "/app/includes/header.php") ?>
-<?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
-
+    <div class="header">
+        <h2 class="logo">
+            Incident Record Management System
+            <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </h2>
+    </div>
 <br>
 <div class="record_incident">
     <a href="record-incident.php"><button class="btn btn-primary rec">Record Incident</button></a>
@@ -131,7 +130,6 @@ if (!isset($_SESSION['username'])) {
 </div>
 
 <br><br>
-
 
 </body>
 </html>
