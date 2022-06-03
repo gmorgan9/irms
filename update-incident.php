@@ -5,21 +5,14 @@ session_start();
 
 
    // Define variables and initialize with empty values
-   $status =  $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
-   $status_err = $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
+   $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
+   $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
     // Get hidden input value
     $id = $_POST["id"];
     
-    // Validate address address
-    $input_status = trim($_POST["status"]);
-    if(empty($input_status)){
-        $status_err = "Please enter Status.";     
-    } else{
-        $status = $input_status;
-    }
 
     // Validate address address
     $input_inc_num = trim($_POST["inc_num"]);
@@ -79,7 +72,7 @@ if(isset($_POST["update"])){
     
     
     // Check input errors before inserting in database
-    if(empty($status_err) && empty($inc_num_err) && empty($priority_err) && empty($description_err) && empty($assign_group_err)
+    if(empty($inc_num_err) && empty($priority_err) && empty($description_err) && empty($assign_group_err)
     && empty($kb_article_err) && empty($date_err) && empty($time_err)){
         // Prepare an update statement
         $sql = "UPDATE incidents SET status= ?, inc_num=?, priority=?, description=?, assign_group=?, kb_article=?, date=?, time=? WHERE id=?";
