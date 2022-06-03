@@ -118,7 +118,10 @@ session_start();
             $time = $row['time'];
             echo ' <tr>
             <th scope="row">'.$id.'</th>
-            <td>'.$status.'</th>
+            '.if($status == 1){ .'
+            <td>open</th> '. } else { 
+                .'<td>closed</th>
+            } '. }.'
             <td>'.$inc_num.'</th>
             <td>'.$priority.'</td>
             <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">'.$description.'</td>
