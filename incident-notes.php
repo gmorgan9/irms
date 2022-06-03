@@ -90,8 +90,8 @@ session_start();
       <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Title</th>
-      <th class="w-75" scope="col">Note</th>
-      <th class="w-25" scope="col">Tag</th>
+      <th class="w-50" scope="col">Note</th>
+      <th scope="col">Tag</th>
     </tr>
   </thead>
   <tbody>
