@@ -83,7 +83,7 @@ session_start();
             password.setAttribute("type", type);
             
             // toggle the icon
-            this.classList.toggle("fa-eye");
+            this.classList.toggle("fa-solid fa-eye");
         });
 
         // prevent form submit
