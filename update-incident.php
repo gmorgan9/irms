@@ -334,7 +334,7 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
         </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="id" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
