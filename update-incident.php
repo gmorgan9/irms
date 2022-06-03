@@ -44,7 +44,7 @@ session_start();
 
 
 
-$name = $address = $salary = "";
+$inc_num = $priority = $description = $assign_group = $kb_article = $date = $time "";
 $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err "";
 
 // Processing form data when form is submitted
