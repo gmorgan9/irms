@@ -6,14 +6,14 @@ session_start();
     
     $inc_num = "";
 	//$address = "";
-	$id = $_GET['updateid'];
+	$id = intval($_GET['updateid']);
 	//$update = false;
 
 	if (isset($_POST['update'])) {
 		$inc_num = $_POST['inc_num'];
 		//$address = $_POST['address'];
 
-		mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' where id='$id'"); 
+		mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' where id=$id"); 
 		$_SESSION['message'] = "Record updated"; 
 		header('location: all-incidents.php');
 	}
