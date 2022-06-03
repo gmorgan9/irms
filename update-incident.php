@@ -4,9 +4,20 @@ session_start();
 
     $id=(INT)$_GET['id'];
     if(isset($id) && is_numeric($id)) {
+    $sql = "SELECT * FROM incidents where id='$id' limit 1";
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $inc_num = $row['inc_num'];
+    $priority = $row['priority'];
+    $description = $row['description'];
+    $assign_group = $row['assign_group'];
+    $kb_article = $row['kb_article'];
+    $date = $row['date'];
+    $time = $row['time'];
     
     if (isset($_POST['update'])) {
         //$id = (int)$_POST['id'];
+        $id=(INT)$_GET['id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
         $description = $_POST['description'];
@@ -19,21 +30,11 @@ session_start();
         $update = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
         $result=mysqli_query($con,$update);
         if($result) {
-            echo 'Updated Successfully using ID: ' . $id;
+            echo 'Updated Successfully using ID: ' . $inc_num;
             // header('location: all-incidents.php');
         } else {
             die(mysqli_error($con));
         }
-        $sql = "SELECT * FROM incidents where id='$id' limit 1";
-        $result=mysqli_query($con,$sql);
-        $row=mysqli_fetch_assoc($result);
-        $inc_num = $row['inc_num'];
-        $priority = $row['priority'];
-        $description = $row['description'];
-        $assign_group = $row['assign_group'];
-        $kb_article = $row['kb_article'];
-        $date = $row['date'];
-        $time = $row['time'];
     }
 } else {
     echo "failed";
