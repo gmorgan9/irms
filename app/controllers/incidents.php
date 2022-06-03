@@ -26,7 +26,7 @@ if (isset($_POST['add-incident'])) {
     if (count($errors) === 0) {
         unset($_POST['add-incident']);
         $incident_id = create($table, $_POST);
-        $_SESSION['message'] = 'Topic created successfully';
+        $_SESSION['message'] = 'Incident created successfully';
         $_SESSION['type'] = 'success';
         header('location: ' . BASE_URL . '/admin/incidents/index.php');
         exit(); 
@@ -59,7 +59,7 @@ if (isset($_GET['del_id'])) {
     //adminOnly();
     $id = $_GET['del_id'];
     $count = delete($table, $id);
-    $_SESSION['message'] = 'Topic deleted successfully';
+    $_SESSION['message'] = 'Incident deleted successfully';
     $_SESSION['type'] = 'success';
     header('location: ' . BASE_URL . '/admin/incidents/index.php');
     exit();
@@ -67,14 +67,14 @@ if (isset($_GET['del_id'])) {
 
 
 if (isset($_POST['update-incident'])) {
-    adminOnly();
+    //adminOnly();
     $errors = validateIncident($_POST);
 
     if (count($errors) === 0) { 
         $id = $_POST['id'];
         unset($_POST['update-incident'], $_POST['id']);
         $incident_id = update($table, $id, $_POST);
-        $_SESSION['message'] = 'Topic updated successfully';
+        $_SESSION['message'] = 'Incident updated successfully';
         $_SESSION['type'] = 'success';
         header('location: ' . BASE_URL . '/admin/incidents/index.php');
         exit();
