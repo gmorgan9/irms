@@ -65,6 +65,18 @@ session_start();
     <!-- form-group// -->
     </div>
     <!-- end row // -->
+    <div class="form-row">
+        <div class="mx-auto" style="width: -1100px;">
+            <div class="form-group input-group">
+    	        <div class="input-group-prepend">
+		            <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
+		        </div>
+                <input name="tag" class="form-control" placeholder="Tag" type="text">
+            </div>
+        </div> 
+        <!-- form-group// -->
+    </div>
+    <!-- end row // -->
 
     <div class="form-row">
     <div class="mx-auto" style="width: -1100px;">
@@ -73,19 +85,6 @@ session_start();
 		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
                     <textarea name="note" class="form-control" placeholder="Note" type=""></textarea>
                     </div>
-            </div>
-        </div> 
-        <!-- form-group// -->
-    </div>
-    <!-- end row // -->
-
-    <div class="form-row">
-        <div class="mx-auto" style="width: -1100px;">
-            <div class="form-group input-group">
-    	        <div class="input-group-prepend">
-		            <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
-		        </div>
-                <input name="tag" class="form-control" placeholder="Tag" type="text">
             </div>
         </div> 
         <!-- form-group// -->
