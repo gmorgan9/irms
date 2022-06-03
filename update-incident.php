@@ -5,48 +5,37 @@ session_start();
 
 
     $inc_num = "";
-	/$address = "";
+	$priority = "";
 	$id = 0;
 	$update = false;
 
     if (isset($_GET['updateid'])) {
-		$id = intval($_GET['updateid']);
+		$id = $_GET['updateid'];
 		$update = true;
 		$record = mysqli_query($con, "SELECT * FROM incidents WHERE id=$id");
 
 		if (count($record) == 1 ) {
 			$n = mysqli_fetch_array($record);
 			$inc_num = $n['inc_num'];
-			//$address = $n['address'];
+			$priority = $n['priority'];
 		}
 	}
-
-    if (isset($_POST['update'])) {
-       // $id = $_POST['id'];
-        $inc_num = $_POST['inc_num'];
-        //$address = $_POST['address'];
-    
-        mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id");
-        //$_SESSION['message'] = "Address updated!"; 
-        header('location: all-incidents.php');
-    }
-
     
 
 
         
-$id = intval($_GET['updateid']);
-    $sql = "SELECT * FROM incidents where id=$id";
-    $result=mysqli_query($con,$sql);
-    $row=mysqli_fetch_assoc($result);
-   // $id=$row['id'];
-    $inc_num = $row['inc_num'];
-    $priority = $row['priority'];
-    $description = $row['description'];
-    $assign_group = $row['assign_group'];
-    $kb_article = $row['kb_article'];
-    $date = $row['date'];
-    $time = $row['time'];
+// $id = intval($_GET['updateid']);
+//     $sql = "SELECT * FROM incidents where id=$id";
+//     $result=mysqli_query($con,$sql);
+//     $row=mysqli_fetch_assoc($result);
+//    // $id=$row['id'];
+//     $inc_num = $row['inc_num'];
+//     $priority = $row['priority'];
+//     $description = $row['description'];
+//     $assign_group = $row['assign_group'];
+//     $kb_article = $row['kb_article'];
+//     $date = $row['date'];
+//     $time = $row['time'];
 
 ?>
 
