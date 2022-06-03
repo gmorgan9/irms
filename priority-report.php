@@ -123,7 +123,7 @@ session_start();
       <th scope="col">#</th>
       <th scope="col">Status</th>
       <th scope="col">Incident Number</th>
-      <th scope="col">Severity</th>
+      <th scope="col">Priority</th>
       <th scope="col">Description</th>
       <!-- <th scope="col">Assignment Group</th> -->
       <!-- <th scope="col">KB Article</th> -->
@@ -182,7 +182,7 @@ session_start();
       <th scope="col">#</th>
       <th scope="col">Status</th>
       <th scope="col">Incident Number</th>
-      <th scope="col">Severity</th>
+      <th scope="col">Priority</th>
       <th scope="col">Description</th>
       <!-- <th scope="col">Assignment Group</th> -->
       <!-- <th scope="col">KB Article</th> -->
@@ -241,7 +241,7 @@ session_start();
       <th scope="col">#</th>
       <th scope="col">Status</th>
       <th scope="col">Incident Number</th>
-      <th scope="col">Severity</th>
+      <th scope="col">Priority</th>
       <th scope="col">Description</th>
       <!-- <th scope="col">Assignment Group</th> -->
       <!-- <th scope="col">KB Article</th> -->
