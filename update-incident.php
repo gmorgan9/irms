@@ -227,7 +227,7 @@ if(isset($_POST["update"])){
             <div class="input-group-prepend">
 	            <span class="input-group-text"> Identifer</span>
 	        </div>
-            <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
+            <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>">
         </div>
     </div> 
     <!-- form-group// -->
@@ -237,7 +237,7 @@ if(isset($_POST["update"])){
             <div class="input-group-prepend">
 	            <span class="input-group-text">Status</span>
 	        </div>
-            <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $status ?>" readonly>
+            <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $status ?>">
         </div>
     </div> 
     <!-- form-group// -->
