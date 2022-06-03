@@ -102,7 +102,7 @@ session_start();
 
       <?php
 
-      $sql = "SELECT * FROM incidents";
+      $sql = "SELECT * FROM incidents where status=1";
       $result = mysqli_query($con, $sql);
       if($result) {
           while ($row = mysqli_fetch_assoc($result)) {
