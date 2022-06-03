@@ -4,7 +4,7 @@ session_start();
 
     $id=(INT)$_GET['id'];
     if(isset($id) && is_numeric($id)) {
-    $sql = "SELECT * FROM incidents where id='$uid' limit 1";
+    $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $inc_num = $row['inc_num'];
