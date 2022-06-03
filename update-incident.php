@@ -29,11 +29,17 @@ session_start();
 
 
         $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=1";
-        // if (mysqli_query($con, $query)) {
-        //     echo "Record updated successfully";
-        // } else {
-        //     echo "Error: " . mysqli_error($con);
-        // }
+        echo "<br>";
+$query = "SELECT inc_num FROM incidents WHERE id = $id";
+$result = mysqli_query($con, $query);
+if (mysqli_num_rows($result) > 0) {
+    //print data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "inc_num: " . $row["inc_num"];
+    }
+} else {
+    echo "No record exists";
+}
 
 
 
@@ -44,16 +50,16 @@ session_start();
         // Update Statement
         // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
         // $result=mysqli_query($con,$sql);
-        if(mysqli_affected_rows($sql) == 1)
-			{
+        // if(mysqli_affected_rows($con) == 1)
+		// 	{
 				
-				header('location: index.php');
-				exit();
-			}
-			else
-			{
-				echo 'Unable to save blog' ;
-			}
+		// 		header('location: index.php');
+		// 		exit();
+		// 	}
+		// 	else
+		// 	{
+		// 		echo 'Unable to save blog' ;
+		// 	}
     }
 } else {
     echo "failed";
