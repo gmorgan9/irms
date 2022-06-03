@@ -110,6 +110,180 @@ session_start();
 </div>
 </div>
 
+<div class="col d-flex justify-content-center">
+<table class="table table-hover table-light">
+  <thead>
+    <tr class="header-line">
+      <th scope="col">#</th>
+      <th scope="col">Status</th>
+      <th scope="col">Incident Number</th>
+      <th scope="col">Severity</th>
+      <th scope="col">Description</th>
+      <!-- <th scope="col">Assignment Group</th> -->
+      <!-- <th scope="col">KB Article</th> -->
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <?php
+
+      $sql = "SELECT * FROM incidents where priority=2";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $id=$row['id'];
+            $status=$row['status'];
+            $inc_num = $row['inc_num'];
+            $priority = $row['priority'];
+            $description = $row['description'];
+            //$assign_group = $row['assign_group'];
+            //$kb_article = $row['kb_article'];
+            $date = $row['date'];
+            $time = $row['time'];
+            ?>
+            <tr>
+            <th scope="row"><?php echo $id; ?></th>
+            <?php if($status == 0) { ?>
+                <td>open</td>
+            <?php } else { ?>
+            <td>closed</td>
+            <?php } ?>
+            <td><?php echo $inc_num; ?></td>
+            <td><?php echo $priority; ?></td>
+            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
+            <!-- <td><?php #echo $assign_group; ?></td> -->
+            <!-- <td><?php #echo $kb_article; ?></td> -->
+            <td><?php echo $date; ?></td>
+            <td><?php echo $time; ?></td>
+            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+         <?php }
+      }
+
+?>
+  </tbody>
+</table>
+</div>
+
+<div class="col d-flex justify-content-center">
+<table class="table table-hover table-light">
+  <thead>
+    <tr class="header-line">
+      <th scope="col">#</th>
+      <th scope="col">Status</th>
+      <th scope="col">Incident Number</th>
+      <th scope="col">Severity</th>
+      <th scope="col">Description</th>
+      <!-- <th scope="col">Assignment Group</th> -->
+      <!-- <th scope="col">KB Article</th> -->
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <?php
+
+      $sql = "SELECT * FROM incidents where priority=3";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $id=$row['id'];
+            $status=$row['status'];
+            $inc_num = $row['inc_num'];
+            $priority = $row['priority'];
+            $description = $row['description'];
+            //$assign_group = $row['assign_group'];
+            //$kb_article = $row['kb_article'];
+            $date = $row['date'];
+            $time = $row['time'];
+            ?>
+            <tr>
+            <th scope="row"><?php echo $id; ?></th>
+            <?php if($status == 0) { ?>
+                <td>open</td>
+            <?php } else { ?>
+            <td>closed</td>
+            <?php } ?>
+            <td><?php echo $inc_num; ?></td>
+            <td><?php echo $priority; ?></td>
+            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
+            <!-- <td><?php #echo $assign_group; ?></td> -->
+            <!-- <td><?php #echo $kb_article; ?></td> -->
+            <td><?php echo $date; ?></td>
+            <td><?php echo $time; ?></td>
+            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+         <?php }
+      }
+
+?>
+  </tbody>
+</table>
+</div>
+
+<div class="col d-flex justify-content-center">
+<table class="table table-hover table-light">
+  <thead>
+    <tr class="header-line">
+      <th scope="col">#</th>
+      <th scope="col">Status</th>
+      <th scope="col">Incident Number</th>
+      <th scope="col">Severity</th>
+      <th scope="col">Description</th>
+      <!-- <th scope="col">Assignment Group</th> -->
+      <!-- <th scope="col">KB Article</th> -->
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <?php
+
+      $sql = "SELECT * FROM incidents where priority=4";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $id=$row['id'];
+            $status=$row['status'];
+            $inc_num = $row['inc_num'];
+            $priority = $row['priority'];
+            $description = $row['description'];
+            //$assign_group = $row['assign_group'];
+            //$kb_article = $row['kb_article'];
+            $date = $row['date'];
+            $time = $row['time'];
+            ?>
+            <tr>
+            <th scope="row"><?php echo $id; ?></th>
+            <?php if($status == 0) { ?>
+                <td>open</td>
+            <?php } else { ?>
+            <td>closed</td>
+            <?php } ?>
+            <td><?php echo $inc_num; ?></td>
+            <td><?php echo $priority; ?></td>
+            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
+            <!-- <td><?php #echo $assign_group; ?></td> -->
+            <!-- <td><?php #echo $kb_article; ?></td> -->
+            <td><?php echo $date; ?></td>
+            <td><?php echo $time; ?></td>
+            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+         <?php }
+      }
+
+?>
+  </tbody>
+</table>
+</div>
+
 
 
 </body>
