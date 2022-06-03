@@ -165,22 +165,15 @@ if(mysqli_num_rows($result) > 0) {
             <td><?php echo $time; ?></td>
             </tr>
          <?php } 
-    }else { ?> 
-
-       
+    }else { ?>    
   </tbody>
 </table>
-<h5 class="text-center"> No Records Found!</h5> <br>
-<?php
-    } 
-?>
-
+    <h5 class="text-center"> No Records Found!</h5> <br>
+<?php } ?>
 </div>
 
 
-<br>
-<br>
-
+<!-- New Table -->
 <div class="col d-flex justify-content-center">
     <h2>Priority 3</h2>
 </div>
@@ -233,18 +226,14 @@ if(mysqli_num_rows($result) > 0) {
             </tr>
             <?php } 
     }else { ?> 
-    
-
   </tbody>
 </table>
-<h5 class="text-center"> No Records Found!</h5> <br>
-<?php
-    } 
-?>
+    <h5 class="text-center"> No Records Found!</h5> <br>
+<?php } ?>
 </div>
 
-<!-- new table -->
 
+<!-- new table -->
 <div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
 </div>
@@ -297,13 +286,10 @@ if(mysqli_num_rows($result) > 0) {
             </tr>
             <?php } 
     }else { ?>
-
   </tbody>
 </table>
-<h5 class="text-center"> No Records Found!</h5> <br>
-<?php
-    } 
-?>
+    <h5 class="text-center"> No Records Found!</h5> <br>
+<?php } ?>
 </div>
 
 
