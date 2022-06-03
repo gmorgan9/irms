@@ -25,7 +25,7 @@ session_start();
         $time = $_POST['time'];
 
         // Update Statement
-        $sql = "UPDATE `incidents` SET `inc_num`='$inc_num',`priority`='$priority',`description`='$description',`assign_group`='$assign_group',`kb_article`='$kb_article',`date`='$date',`time`='$time' WHERE `id`=$id";
+        $sql = "UPDATE `incidents` SET `inc_num`='$inc_num',`priority`='$priority',`description`='$description',`assign_group`='$assign_group',`kb_article`='$kb_article',`date`='$date',`time`='$time' WHERE `id`=1";
         $result=mysqli_query($con,$sql);
         if($result) {
             //echo "Updated Successfully";
