@@ -46,43 +46,52 @@ session_start();
     <div class="d-flex justify-content-center">
 
 
-        <div class="form-row">
+    <div class="form-row">
         <div class="form-group input-group">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="date" class="form-control" placeholder="Date" type="date">
+                <input name="date" class="form-control" placeholder="Date" type="date">
+            </div>
         </div>
-    </div> 
-    <div class="p-3"></div>
     <!-- form-group// -->
-    <div class="d-flex justify-content-center">
-        <div class="form-group input-group">
-    	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
-		    </div>
+        <div class="p-3"></div>
+        <div class="d-flex justify-content-center">
+            <div class="form-group input-group">
+    	        <div class="input-group-prepend">
+		            <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
+		        </div>
             <input name="title" class="form-control" placeholder="Title" type="text">
         </div>
-    </div> <!-- form-group// -->
+        </div> 
+    <!-- form-group// -->
     </div>
+    <!-- end row // -->
 
+    <div class="form-row">
+        <div class="d-flex justify-content-center">
+            <div class="form-group input-group w-100">
+    	        <div class="input-group-prepend">
+		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
+		        </div>
+                <textarea name="note" class="form-control" placeholder="Note" type=""></textarea>
+            </div>
+        </div> 
+        <!-- form-group// -->
+    </div>
+    <!-- end row // -->
 
-    <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-100">
-    	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-		    </div>
-            <textarea name="note" class="form-control" placeholder="Note" type=""></textarea>
-        </div>
-    </div> <!-- form-group// -->
-    <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-50">
-    	    <div class="input-group-prepend">
-		        <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
-		    </div>
-            <input name="tag" class="form-control" placeholder="Tag" type="text">
-        </div>
-    </div> <!-- form-group// -->
+    <div class="form-row">
+        <div class="d-flex justify-content-center">
+            <div class="form-group input-group w-50">
+    	        <div class="input-group-prepend">
+		            <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
+		        </div>
+                <input name="tag" class="form-control" placeholder="Tag" type="text">
+            </div>
+        </div> 
+        <!-- form-group// -->
+    </div>
     <div class="d-flex justify-content-center">                                
         <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
     </div>                                                               
