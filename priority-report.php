@@ -43,7 +43,7 @@ session_start();
 
 <br>
 <?php  if (isset($_SESSION['username'])) : ?>
-    	<h1 style="margin-left: 120px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
+    	<h1 style="margin-left: 75px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     <?php endif ?>
     <br>
 
