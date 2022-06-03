@@ -7,7 +7,6 @@ session_start();
     
     if (isset($_POST['update'])) {
         //$id = (int)$_POST['id'];
-        $id=(INT)$_GET['id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
         $description = $_POST['description'];
