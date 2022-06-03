@@ -16,7 +16,7 @@ session_start();
         $result = mysqli_query($con, $sql);
         if($result) {
             // echo "Deleted Successfully";
-            header('location: all-incidents.php'); // returns back to same page
+            header('location: open-incidents.php'); // returns back to same page
         } else {
             die(mysqli_error($con));
         }

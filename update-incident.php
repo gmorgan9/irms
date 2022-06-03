@@ -95,7 +95,7 @@ if(isset($_POST["update"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location: all-incidents.php");
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
