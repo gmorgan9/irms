@@ -230,7 +230,6 @@ if(isset($_POST["update"])){
     </div> 
     <!-- form-group// -->
     
-    <?php 
 <?php if (isset($status) && $status == 1): ?>
     <label>
         <input type="checkbox" name="status" checked>
@@ -242,8 +241,6 @@ if(isset($_POST["update"])){
         completed
     </label>
 <?php endif; ?>
-
-?>
 
 
     <!-- form-group// -->
