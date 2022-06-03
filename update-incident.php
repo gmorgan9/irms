@@ -16,7 +16,7 @@ session_start();
 	}
 
     if (isset($_POST['update'])) {
-        $id = $_POST['id'];
+       // $id = $_POST['id'];
         $inc_num = $_POST['inc_num'];
         //$address = $_POST['address'];
     
