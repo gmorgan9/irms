@@ -30,12 +30,16 @@ session_start();
         // Update Statement
         $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
         $result=mysqli_query($con,$sql);
-        if($result) {
-            //echo 'Updated Successfully';
-            header('location: all-incidents.php');
-        } else {
-            die(mysqli_error($con));
-        }
+        if(mysqli_affected_rows($con) == 1)
+			{
+				
+				header('location: index.php');
+				exit();
+			}
+			else
+			{
+				echo 'Unable to save blog' ;
+			}
     }
 } else {
     echo "failed";
