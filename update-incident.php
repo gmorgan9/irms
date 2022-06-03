@@ -231,6 +231,11 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
+    <?php if($status == 1) { ?>
+    <input type="checkbox" name="status" value="0" id="status">
+    <?php } else { ?>
+    <input type="checkbox" name="status" value="1" id="status">
+    <?php } ?>
 
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
