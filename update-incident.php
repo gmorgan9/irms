@@ -229,6 +229,17 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
+    <?php if(isset($_POST['status'] == 1)) { ?>
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-25">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
+	        </div>
+            <input name="status" class="form-control text-center" placeholder="Status" type="checkox" checked>
+        </div>
+    </div> 
+    <!-- form-group// -->
+    <?php } else { ?>
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
@@ -238,6 +249,7 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
+    <?php } ?>
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
             <div class="input-group-prepend">
