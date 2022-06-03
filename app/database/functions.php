@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require('connect.php');
+//require('connect.php');
 
 // connect to database update
 $db = mysqli_connect('localhost', 'root', 'Morgan22!', 'irms');
@@ -8,6 +8,8 @@ $db = mysqli_connect('localhost', 'root', 'Morgan22!', 'irms');
 // variable declaration
 $username = "";
 $email    = "";
+$name = "";
+$password    = "";
 $errors   = array(); 
 
 // call the register() function if register_btn is clicked
