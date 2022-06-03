@@ -187,6 +187,8 @@ if(mysqli_num_rows($result) == 0 ) {
     }
 ?>
 
+<hr>
+
 <!-- Table (2) -->
 <div class="col d-flex justify-content-center">
     <h2>Priority 3</h2>
@@ -260,6 +262,7 @@ if(mysqli_num_rows($result) == 0 ) {
     }
 ?>
 
+<hr>
 
 <!-- Table (3) -->
 <div class="col d-flex justify-content-center">
