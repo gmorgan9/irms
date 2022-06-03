@@ -83,7 +83,7 @@ session_start();
             <div class="form-group input-group">
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-                    <textarea name="note" class="form-control" placeholder="Note" type="text"></textarea>
+                    <textarea name="note" class="form-control" placeholder="Note" type="longtext"></textarea>
                     </div>
             </div>
         </div> 
@@ -99,7 +99,7 @@ session_start();
 <script>
                 // Replace the <textarea id="editor1"> with a CKEditor 4
                 // instance, using default configuration.
-                //CKEDITOR.replace( 'note' );
+                CKEDITOR.replace( 'note' );
             </script>
 
 </body>
