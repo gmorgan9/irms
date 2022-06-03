@@ -12,8 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/assets/images/fav.png?v=<?php echo time(); ?>">
@@ -23,6 +22,9 @@
 
   <!-- Custom Styling -->
   <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+
+  <!-- Bootstrap Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <title>Login</title>
 </head>
