@@ -13,7 +13,7 @@ session_start();
     $description = $row['description'];
     $assign_group = $row['assign_group'];
     $kb_article = $row['kb_article'];
-    $date = $row['date'];
+   // $date = $row['date'];
     $time = $row['time'];
     
     if (isset($_POST['update'])) {
@@ -24,7 +24,7 @@ session_start();
         $description = $_POST['description'];
         $assign_group = $_POST['assign_group'];
         $kb_article = $_POST['kb_article'];
-        $date = $_POST['date'];
+        //$date = $_POST['date'];
         $time = $_POST['time'];
 
         // Update Statement
