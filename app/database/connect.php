@@ -1,9 +1,9 @@
 <?php
 
 $host = 'localhost';
-$user = 'gmorg';
-$pass = 'gmorgpass';
-$db_name = 'recipes';
+$user = 'root';
+$pass = 'Morgan22!';
+$db_name = 'irms';
 
 $conn = new MySQLi($host, $user, $pass, $db_name);
 
