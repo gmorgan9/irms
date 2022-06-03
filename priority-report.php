@@ -113,6 +113,11 @@ session_start();
 </div>
 </div>
 
+
+<!-- Table (1) -->
+<div class="col d-flex justify-content-center">
+    <h2>Priority 2</h2>
+</div>
 <?php 
 $sql = "SELECT * FROM incidents where priority=2";
 $result = mysqli_query($con, $sql);
@@ -122,10 +127,7 @@ if(mysqli_num_rows($result) == 0 ) {
 <?php 
     } else {
 ?>
-<!-- Table (1) -->
-<div class="col d-flex justify-content-center">
-    <h2>Priority 2</h2>
-</div>
+
 <div class="col d-flex justify-content-center">
 <table class="table table-hover table-light">
   <thead>
