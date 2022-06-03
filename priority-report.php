@@ -169,11 +169,11 @@ session_start();
     }else { ?> 
        
   </tbody>
-  <?php
+</table>
+<?php
   echo "<br><br><br><br>No Records Found!";
     } 
 ?>
-</table>
 </div>
 
 
