@@ -123,15 +123,15 @@ session_start();
             <?php } else { ?>
             <td>closed</td>
             <?php } ?>
-            <td><?php $inc_num; ?></td>
-            <td><?php $priority; ?></td>
-            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php $description ?></td>
-            <td><?php $assign_group ?></td>
-            <td><?php $kb_article ?></td>
-            <td><?php $date ?></td>
-            <td><?php $time ?></td>
-            <td><a href="update-incident.php?updateid=<?php $id ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?id=<?php $id ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><?php echo $inc_num; ?></td>
+            <td><?php echo $priority; ?></td>
+            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
+            <td><?php echo $assign_group; ?></td>
+            <td><?php echo $ekb_article; ?></td>
+            <td><?php echo $date; ?></td>
+            <td><?php echo $time; ?></td>
+            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>
          <?php }
       }
