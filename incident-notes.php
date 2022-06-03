@@ -84,14 +84,14 @@ session_start();
 <br><br><br>
 
 <div class="col d-flex justify-content-center">
-<table class="table table-hover table-light notes-table">
+<table class="table table-hover table-light notes-table w-auto">
   <thead>
     <tr class="header-line">
-      <th style="width: 10px;" scope="col">#</th>
-      <th style="width: 20px;" scope="col">Date</th>
-      <th style="width: 20px;" scope="col">Title</th>
-      <th style="width: 50px;" class="w-75" scope="col">Note</th>
-      <th style="width: 20px;" scope="col">Tag</th>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Title</th>
+      <th scope="col">Note</th>
+      <th scope="col">Tag</th>
     </tr>
   </thead>
   <tbody>
