@@ -13,65 +13,10 @@ session_start();
 		$inc_num = $_POST['inc_num'];
 		//$address = $_POST['address'];
 
-		mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' where id=$id"); 
+		mysqli_query($con, "UPDATE incidents SET inc_num=$inc_num where id=$id"); 
 		$_SESSION['message'] = "Record updated"; 
 		header('location: all-incidents.php');
 	}
-
-
-
-
-    
-    // if (isset($_POST['update'])) {
-    //     $inc_num = $_POST['inc_num'];
-    //     $priority = $_POST['priority'];
-    //     $description = $_POST['description'];
-    //     $assign_group = $_POST['assign_group'];
-    //     $kb_article = $_POST['kb_article'];
-    //     $date = $_POST['date'];
-    //     $time = $_POST['time'];
-
-    //     $new = intval($id);
-    //     $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$new";
-
-    
-        //         // header('location: all-incidents.php');
-        //         echo "<div class='alert alert-success'>Record was updated.</div>";
-        //     } else {
-        //         echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
-        //         }
-        //     }
-        // }
-
-        // //Update Statement
-        // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
-        // $result=mysqli_query($con,$sql);
-        // if($row = mysqli_fetch_assoc($result)) {
-        //             echo "inc_num: " . $row["inc_num"];
-        //     } else {
-        //         echo "No record exists";
-        //     }
-        // }
-
-
-//         $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
-//         echo "<br>";
-// $query = "SELECT inc_num FROM incidents WHERE id = 1";
-// $result = mysqli_query($con, $query);
-// if (mysqli_num_rows($result) > 0) {
-//     //print data of each row
-//     while($row = mysqli_fetch_assoc($result)) {
-//         echo "inc_num: " . $row["inc_num"];
-//     }
-// } else {
-//     echo "No record exists";
-// }
-
-
-
-
-// $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
-// $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
 
         
 $id = intval($_GET['updateid']);
