@@ -1,0 +1,369 @@
+:root {
+    --primary-color: #002E5D;
+    --secondary-color: #002f5dc7;
+    --backgroud: #F8F8FF;
+    --light-text: #fff;
+    --red-background: #f2dede;
+	--red-text: #a94442;
+	--green-text: #3c763d;
+	--green-background: #dff0d8;
+}
+* { 
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+}
+body {
+    font-size: 120%;
+    background: var(--backgroud);
+} 
+.header {
+    /* margin: 50px auto 0px; */
+    margin-top: 0;
+    color: var(--light-text);
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-bottom: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.logo {
+    float: left;
+}
+.logo span {
+    color: rgb(31, 108, 172);
+}
+.log-header {
+    /* width: 40%; */
+    margin: 50px auto 0px;
+    color: var(--light-text);
+    background: var(--primary-color);
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+}
+.createpost-header {
+    width: 70%;
+    margin: 50px auto 0px;
+    color: var(--light-text);
+    background: var(--primary-color);
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+}
+.btn {
+    padding: 10px;
+    font-size: 15px;
+    color: var(--light-text);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 20%;
+    margin-top: -50px;
+    position: absolute;
+}
+
+/* FORM */
+form, .message-content {
+    width: 40%;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+.createpostform {
+    width: 70%;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+.manage-btn {
+    padding: 10px;
+    font-size: 15px;
+    color: var(--light-text);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline;
+    position: relative;
+}
+.manage-btn-group {
+    margin-left: 20%;
+}
+.input-group {
+    margin: 10px 0px 10px 0px;
+}
+.input-group label {
+    display: block;
+    text-align: left;
+    margin: 3px;
+}
+.input-group input {
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.log-btn {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+#user_type {
+    height: 40px;
+    width: 98%;
+    padding: 5px 10px;
+    background: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.error {
+    width: 92%; 
+    margin: 0px auto; 
+    padding: 10px; 
+    border: 1px solid var(--red-text); 
+    color: var(--red-text); 
+    background: var(--red-background); 
+    border-radius: 5px; 
+    text-align: left;
+}
+.success {
+    color: var(--green-text); 
+    background: var(--green-background); 
+    border: 1px solid var(--green-text);
+    margin-bottom: 20px;
+}
+
+/* Navigation */
+.nav-header{
+    color: var(--light-text);
+    display: flex;
+    margin-top:10px;
+    margin-left: 65%;
+}
+.nav-list-item {
+    list-style-type:none;
+    margin-right: 12px;
+}
+.nav-list-link,#login,#logout,#profile,#register {
+    cursor:pointer;
+    color:var(--light-text);
+    text-decoration:none;
+}
+/* DROPDOWN */
+.dropdown span {
+    float: right;
+}
+.dropdown-content {
+  position: absolute;
+  background-color: var(--primary-color);
+  display: none;
+  /* min-width: 110px; */
+  padding: 12px 12px;
+}
+.dropdown:hover .dropdown-content {
+  display: inline-block;
+}
+/* Column KB Cards */
+.row {
+    margin-left: 8%;
+}
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 30%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.box {
+    background-color: #fff;
+    text-align: center;
+    height: 200px;
+    box-shadow: 4px 2px 2px rgba(170, 170, 170, 0.45);
+  }
+  .box:hover {
+    transition: transform .3s ease;
+    transform: scale(1.025);
+  }
+  .top-bar {
+      height: 20px;
+      background-size: cover;
+      background-position: 50%;
+      background-color: #002e5d;
+      /* border-radius: 10px 10px 0px 0px; */
+  }
+  .content {
+      padding: 10px;
+  }
+  .content p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  hr {
+    display: none;
+  }
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+    .header {
+        width: 350px;
+    }
+    .nav-header {
+        width: 350px;
+        height: 100px;
+    } 
+    #nav-list {
+        margin-left: -2.5%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    #login, #register, #logout, #register {
+        text-decoration: none;
+        color: white;
+    }
+    #loginreg, #profilelogout {
+        float: none;
+        margin-top: 5px;
+        text-align: center;
+    }
+    .column {
+        width: 50%;
+    }
+    .steps {
+        clear: all;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+        width: 95% !important;
+        text-align: center !important;
+    }
+    .content-header {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    .btn {
+        margin-left: 42.5%;
+        margin-top: -50px;
+        position: absolute;
+    }
+    hr {
+        display: block;
+        margin-left: 75px;
+    }
+    form, .content {
+        width: 84%;
+    }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        margin-left: -15px;
+    } 
+}
+
+
+
+/* DOCUMENT-1 */
+.steps {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+code{
+    color: red;
+}
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+
+  /* ACCOUNT TABS */
+.tablinks {
+    font-size: 15px;
+    width: 27.6%;
+    margin: 50px auto 0px;
+    color: var(--light-text);
+    background: var(--primary-color);
+    text-align: center;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+}
+.tablinks:hover {
+    background: var(--secondary-color);
+}
+.tab button.active {
+    background: var(--secondary-color);
+  }
+  .all_tabs {
+    width: 65%;
+    margin-left: 18%;
+  }
+  /* Style the tab */
+.tab {
+    margin-left: 30.5%;
+    overflow: hidden;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
