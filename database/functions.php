@@ -235,7 +235,7 @@ function countOpenInc()
 
 // UPDATE //
 if (isset($_POST['update'])) {
-	$id = $_POST['id'];
+	$id = $_GET['updateid'];
 	$inc_nam = $_POST['inc_num'];
 	$priority = $_POST['priority'];
 
