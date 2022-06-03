@@ -118,6 +118,22 @@ session_start();
     <h2>Priority 2</h2>
 </div>
 <div class="col d-flex justify-content-center">
+<?php
+
+$sql = "SELECT * FROM incidents where priority=3";
+$result = mysqli_query($con, $sql);
+if(mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $id=$row['id'];
+      $status=$row['status'];
+      $inc_num = $row['inc_num'];
+      $priority = $row['priority'];
+      $description = $row['description'];
+      //$assign_group = $row['assign_group'];
+      //$kb_article = $row['kb_article'];
+      $date = $row['date'];
+      $time = $row['time'];
+      ?>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -133,23 +149,6 @@ session_start();
     </tr>
   </thead>
   <tbody>
-
-      <?php
-
-      $sql = "SELECT * FROM incidents where priority=2";
-      $result = mysqli_query($con, $sql);
-      if(mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-            $id=$row['id'];
-            $status=$row['status'];
-            $inc_num = $row['inc_num'];
-            $priority = $row['priority'];
-            $description = $row['description'];
-            //$assign_group = $row['assign_group'];
-            //$kb_article = $row['kb_article'];
-            $date = $row['date'];
-            $time = $row['time'];
-            ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
             <?php if($status == 0) { ?>
@@ -170,11 +169,11 @@ session_start();
 
        
   </tbody>
-  <h5 class="text-center"> No Records Found!</h5> <br>
+</table>
+<h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
-</table>
 
 </div>
 
@@ -237,18 +236,35 @@ if(mysqli_num_rows($result) > 0) {
     
 
   </tbody>
-  <h5 class="text-center"> No Records Found!</h5> <br>
+</table>
+<h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
-</table>
-
 </div>
+
+<!-- new table -->
 
 <div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
 </div>
 <div class="col d-flex justify-content-center">
+<?php
+
+$sql = "SELECT * FROM incidents where priority=3";
+$result = mysqli_query($con, $sql);
+if(mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $id=$row['id'];
+      $status=$row['status'];
+      $inc_num = $row['inc_num'];
+      $priority = $row['priority'];
+      $description = $row['description'];
+      //$assign_group = $row['assign_group'];
+      //$kb_article = $row['kb_article'];
+      $date = $row['date'];
+      $time = $row['time'];
+      ?>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -264,23 +280,6 @@ if(mysqli_num_rows($result) > 0) {
     </tr>
   </thead>
   <tbody>
-
-      <?php
-
-      $sql = "SELECT * FROM incidents where priority=4";
-      $result = mysqli_query($con, $sql);
-      if(mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-            $id=$row['id'];
-            $status=$row['status'];
-            $inc_num = $row['inc_num'];
-            $priority = $row['priority'];
-            $description = $row['description'];
-            //$assign_group = $row['assign_group'];
-            //$kb_article = $row['kb_article'];
-            $date = $row['date'];
-            $time = $row['time'];
-            ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
             <?php if($status == 0) { ?>
@@ -298,14 +297,13 @@ if(mysqli_num_rows($result) > 0) {
             </tr>
             <?php } 
     }else { ?>
-    <h5 class="text-center"> No Records Found!</h5> <br>
-<?php
-    } 
-?>
 
   </tbody>
 </table>
-
+<h5 class="text-center"> No Records Found!</h5> <br>
+<?php
+    } 
+?>
 </div>
 
 
