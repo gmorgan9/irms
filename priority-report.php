@@ -58,7 +58,7 @@ session_start();
             <div class="d-flex justify-content-center">
                 <h1 class="text-center" style="font-size: 100px;">
             <?php
-            $sql="select count('1') from incidents where status=1";
+            $sql="select count('1') from incidents where priority=2";
             $result=mysqli_query($con,$sql);
             $rowtotal=mysqli_fetch_array($result); 
             echo "$rowtotal[0]";
@@ -77,7 +77,7 @@ session_start();
             <div class="d-flex justify-content-center">
                 <h1 class="text-center" style="font-size: 100px;">
             <?php
-            $sql="select count('1') from incidents where status=1";
+            $sql="select count('1') from incidents where priority=3";
             $result=mysqli_query($con,$sql);
             $rowtotal=mysqli_fetch_array($result); 
             echo "$rowtotal[0]";
@@ -96,7 +96,7 @@ session_start();
             <div class="d-flex justify-content-center">
                 <h1 class="text-center" style="font-size: 100px;">
             <?php
-            $sql="select count('1') from incidents where status=1";
+            $sql="select count('1') from incidents where priority=4";
             $result=mysqli_query($con,$sql);
             $rowtotal=mysqli_fetch_array($result); 
             echo "$rowtotal[0]";
