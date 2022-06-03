@@ -232,9 +232,9 @@ if(isset($_POST["update"])){
     
     <?php 
 if($status == 0) {
-   echo "<button type='submit' class='invisibleBTN'><img class='ckbx' src='assets/img/checkbox.png' /></button><input type='hidden' name='id' value=" . $id.">";
+   echo "<input name='status' class='text-center' placeholder='Status' type='checkbox'>";
 } else {
-    echo "<button type='submit' class='invisibleBTN'><img class='ckbx' src='assets/img/checked.svg' /></button><input type='hidden' name='id' value=" . $id.">";
+    echo "<input name='status' class='text-center' placeholder='Status' type='checkbox' checked>";
 }
 
 ?>
