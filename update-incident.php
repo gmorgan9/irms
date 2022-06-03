@@ -2,8 +2,8 @@
 session_start();
     include("database/connection.php");
 
-    $update = intval($_GET['updateid']);
-    $sql = "SELECT * FROM incidents where id=$update";
+    $id = intval($_GET['updateid']);
+    $sql = "SELECT * FROM incidents where id=$id";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
    // $id=$row['id'];
