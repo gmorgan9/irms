@@ -116,7 +116,7 @@ session_start();
 <?php 
 $sql = "SELECT * FROM incidents where priority=2";
 $result = mysqli_query($con, $sql);
-if(mysqli_num_rows($results) = 0 ) {
+if(mysqli_num_rows($result) = 0 ) {
 ?>
 <h3 class="text-center">No records found!</h3>
 <?php 
