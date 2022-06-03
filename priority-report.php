@@ -90,7 +90,7 @@ session_start();
         </div>
     </div>
 </div>
-<div class="card" style="width: 18rem;">
+<div class="card open-count" style="width: 15rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
