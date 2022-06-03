@@ -33,7 +33,7 @@
 
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
-<br><br><br><br><br>
+
 <div class="d-flex justify-content-center">
 <form action="login.php" class="log-form" method="post">
 <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
@@ -70,40 +70,16 @@
     <div class="d-flex justify-content-center">                                
     <button type="submit" name="login-btn" class="btn btn-primary text-center reg-log">Log In</button>  
 </div> 
-    <p class="text-center">Don't have an account? <a href="<?php echo BASE_URL . '/register.php' ?>" style="color: black;">Register</a> </p>                                                                 
+    <p class="text-center">Don't have an account? <a href="/register.php" style="color: black;">Register</a> </p>                                                                 
 </form>
 </div>
 
 
-  <div class="auth-content">
-
-    <form action="login.php" method="post">
-      <h2 class="form-title">Login</h2>
-
-      <?php //include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
-
-      <div>
-        <label>Username</label>
-        <input type="text" name="username" value="<?php echo $username; ?>" class="text-input">
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" name="password" value="<?php echo $password; ?>" class="text-input">
-      </div>
-      <div>
-        <button type="submit" name="login-btn" class="btn btn-big">Login</button>
-      </div>
-      <p>Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign Up</a></p>
-    </form>
-
-  </div>
-
-
-  <!-- JQuery -->
+  <!-- JQuery
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Custom Script -->
-  <script src="assets/js/scripts.js"></script>
+
+  <script src="assets/js/scripts.js"></script> -->
 
 </body>
 
