@@ -233,7 +233,7 @@ if(isset($_POST["update"])){
     <!-- form-group// -->
     
 <?php 
-if (isset($_POST['status'] == 1)) {
+if ($status == 1) {
     echo "<input name='status' class='text-center' placeholder='Status' type='checkbox' checked>"
  
 } else {
