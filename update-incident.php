@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
 
     $id=(int)$_GET['id'];
-    $sql = "SELECT * FROM `incidents` where id='$id' limit 1";
+    $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $inc_num = $row['inc_num'];
@@ -13,6 +13,8 @@ session_start();
     $kb_article = $row['kb_article'];
     $date = $row['date'];
     $time = $row['time'];
+
+    echo vardump($sql);
 
 
     if (isset($_POST['update'])) {
