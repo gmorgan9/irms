@@ -13,8 +13,8 @@
         <!-- Font Awesome -->
         <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
-            <!-- Bootstrap Styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap Styles -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Candal|Lora"
@@ -24,10 +24,7 @@
         <link rel="icon" type="image/x-icon" href="/assets/images/fav.png?v=<?php echo time(); ?>">
 
         <!-- Custom Styling -->
-        <link rel="stylesheet" href="../../assets/css/style.css">
-
-        <!-- Admin Styling -->
-        <link rel="stylesheet" href="../../assets/css/admin.css">
+        <link rel="stylesheet" href="../../assets/css/style.css?v=<?php echo time(); ?>">
 
         <title>Admin Section - Add Topic</title>
     </head>
