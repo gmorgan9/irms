@@ -131,3 +131,6 @@ td a:hover {
 .delete {
     color: rgb(142, 0, 0);
 }
+.notes-table {
+    width: 1200px !important;
+}

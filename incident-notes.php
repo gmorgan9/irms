@@ -38,7 +38,7 @@ session_start();
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.18">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.19">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -84,7 +84,7 @@ session_start();
 <br><br><br>
 
 <div class="col d-flex justify-content-center">
-<table class="table table-hover table-light" style="width:100px;">
+<table class="table table-hover table-light notes-table">
   <thead>
     <tr class="header-line">
       <th scope="col">#</th>
