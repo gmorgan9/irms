@@ -83,7 +83,7 @@ session_start();
             <div class="form-group input-group">
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-                    <textarea name="note" class="form-control" placeholder="Note" type=""></textarea>
+                    <textarea name="note" class="form-control" placeholder="Note" type="text"></textarea>
                     </div>
             </div>
         </div> 
