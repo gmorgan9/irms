@@ -27,7 +27,7 @@ session_start();
         //Update Statement
         $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
         $result=mysqli_query($con,$sql);
-        while($row = mysqli_fetch_assoc($result)) {
+        if($row = mysqli_fetch_assoc($result)) {
                     echo "inc_num: " . $row["inc_num"];
                 }
             } else {
