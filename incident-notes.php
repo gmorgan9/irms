@@ -116,8 +116,8 @@ session_start();
             <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note; ?></td>
             <td><?php echo $tag; ?></td>
             <td><?php echo $time; ?></td>
-            <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="incident-notes.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>
          <?php }
       }
