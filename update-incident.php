@@ -19,15 +19,23 @@ session_start();
     if (isset($_POST['update'])) {
         //$id = (int)$_POST['id'];
         //$id=(INT)$_GET['id'];
-        $inc_num = $_POST['inc_num'];
-        $priority = $_POST['priority'];
-        $description = $_POST['description'];
-        $assign_group = $_POST['assign_group'];
-        $kb_article = $_POST['kb_article'];
-        $date = $_POST['date'];
-        $time = $_POST['time'];
+        // $inc_num = $_POST['inc_num'];
+        // $priority = $_POST['priority'];
+        // $description = $_POST['description'];
+        // $assign_group = $_POST['assign_group'];
+        // $kb_article = $_POST['kb_article'];
+        // $date = $_POST['date'];
+        // $time = $_POST['time'];
+        $inc_num = filter_var(trim($_POST['inc_num']),FILTER_SANITIZE_STRING);
+		$priority = filter_var(trim($_POST['priority']),FILTER_SANITIZE_STRING);
+		$description = filter_var(trim($_POST['description']),FILTER_SANITIZE_STRING);
+        $assign_group = filter_var(trim($_POST['assign_group']),FILTER_SANITIZE_STRING);
+		$kb_article = filter_var(trim($_POST['kb_article']),FILTER_SANITIZE_STRING);
+		$date = filter_var(trim($_POST['date']),FILTER_SANITIZE_STRING);
+        $time = filter_var(trim($_POST['time']),FILTER_SANITIZE_STRING);
 
         // Update Statement
+        $sql = "UPDATE incidents SET inc_num = '".$inc_num."', priority='".$priority."', description='".$description."', assign_group='".$assign_group."', kb_article='".$kb_article."', date='".$date."', time='".$time."' WHERE id = ".$id;
         $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
         $result=mysqli_query($con,$sql);
         if(mysqli_affected_rows($con) == 1)
