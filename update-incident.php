@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
 
     $id = intval($_GET['updateid']);
-    $sql = "SELECT * FROM incidents where id='$id'";
+    $sql = "SELECT * FROM incidents where id=$id";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
    // $id=$row['id'];
@@ -24,7 +24,6 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $update = intval($id);
         $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
 
             if (mysqli_query($con, $sql)) {
