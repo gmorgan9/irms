@@ -16,18 +16,18 @@ session_start();
 
 
     if (isset($_POST['update'])) {
-        $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
-        $priority = mysqli_real_escape_string($con, $_POST['priority']);
-        $description = mysqli_real_escape_string($con, $_POST['description']);
-        $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
-        $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
-        $date = mysqli_real_escape_string($con, $_POST['date']);
-        $time = mysqli_real_escape_string($con, $_POST['time']);
+        $inc_num = $_POST['inc_num'];
+        $priority = $_POST['priority'];
+        $description = $_POST['description'];
+        $assign_group = $_POST['assign_group'];
+        $kb_article = $_POST['kb_article'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
 
         // Update Statement
-        $sql = "UPDATE incidents SET id='$id', inc_num='$inc_num' WHERE id='$id'";
-        $results=mysqli_query($con,$sql);
-        if($results) {
+        $sql = "UPDATE `incidents` SET `inc_num`='$inc_num',`priority`='$priority',`description`='$description',`assign_group`='$assign_group',`kb_article`='$kb_article',`date`='$date',`time`='$time' WHERE id=$id";
+        $result=mysqli_query($con,$sql);
+        if($result) {
             //echo "Updated Successfully";
             header('location: all-incidents.php');
         } else {
