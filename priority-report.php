@@ -110,8 +110,8 @@ session_start();
 </div>
 </div>
 
+<h2>Priority 2</h2>
 <div class="col d-flex justify-content-center">
-<h2>Priority 2</h2> <br>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -167,8 +167,8 @@ session_start();
 </table>
 </div>
 
+<h2>Priority 3</h2>
 <div class="col d-flex justify-content-center">
-<h2>Priority 3</h2> <br>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -224,8 +224,8 @@ session_start();
 </table>
 </div>
 
+<h2>Priority 4</h2>
 <div class="col d-flex justify-content-center">
-    <h2>Priority 4</h2> <br>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
