@@ -113,7 +113,7 @@ session_start();
             <th scope="row"><?php echo $id; ?></th>
             <td><?php echo $date; ?></td>
             <td><?php echo $title; ?></td>
-            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note ?></td>
+            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note; ?></td>
             <td><?php echo $tag; ?></td>
             <td><?php echo $time; ?></td>
             <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
