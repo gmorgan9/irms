@@ -3,18 +3,39 @@ session_start();
     include("database/connection.php");
     include("database/functions.php");
 
-    $id = intval($_GET['updateid']);
-    $sql = "SELECT * FROM incidents where id=$id";
-    $result=mysqli_query($con,$sql);
-    $row=mysqli_fetch_assoc($result);
-   // $id=$row['id'];
-    $inc_num = $row['inc_num'];
-    $priority = $row['priority'];
-    $description = $row['description'];
-    $assign_group = $row['assign_group'];
-    $kb_article = $row['kb_article'];
-    $date = $row['date'];
-    $time = $row['time'];
+//     $id = intval($_GET['updateid']);
+//     $sql = "SELECT * FROM incidents where id=$id";
+//     $result=mysqli_query($con,$sql);
+//     $row=mysqli_fetch_assoc($result);
+//    // $id=$row['id'];
+//     $inc_num = $row['inc_num'];
+//     $priority = $row['priority'];
+//     $description = $row['description'];
+//     $assign_group = $row['assign_group'];
+//     $kb_article = $row['kb_article'];
+//     $date = $row['date'];
+//     $time = $row['time'];
+
+
+if (isset($_GET['updateid'])) {
+	$id = $_GET['updateid'];
+	updateInc($id);
+}
+
+
+function updateInc($id) {
+	global $con;
+    $inc_num = $_POST['inc_num'];
+	$sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
+	if (mysqli_query($con, $sql)) {
+		$_SESSION['message'] = "Incident successfully updated";
+		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
+		exit(0);
+	}
+}
+
+
+
     
     // if (isset($_POST['update'])) {
     //     $inc_num = $_POST['inc_num'];
