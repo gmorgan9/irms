@@ -249,7 +249,8 @@ function updateInc($id) {
 	$sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
 	if (mysqli_query($con, $sql)) {
 		$_SESSION['message'] = "Incident successfully updated";
-		header('location: /'); // returns back to same page
+		//header('location: '); // returns back to same page
+    echo 'update';
 		exit(0);
 	}
 }
