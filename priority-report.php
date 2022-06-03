@@ -188,10 +188,19 @@ if(mysqli_num_rows($result) == 0 ) {
 ?>
 
 <!-- Table (2) -->
-
 <div class="col d-flex justify-content-center">
-    <h2>Priority 3</h2>
+    <h2>Priority 2</h2>
 </div>
+<?php 
+$sql = "SELECT * FROM incidents where priority=2";
+$result = mysqli_query($con, $sql);
+if(mysqli_num_rows($result) == 0 ) {
+?>
+<h3 class="text-center">No records found!</h3>
+<?php 
+    } else {
+?>
+
 <div class="col d-flex justify-content-center">
 <table class="table table-hover table-light">
   <thead>
@@ -251,6 +260,19 @@ if(mysqli_num_rows($result) == 0 ) {
 
 <!-- Table (3) -->
 <div class="col d-flex justify-content-center">
+    <h2>Priority 2</h2>
+</div>
+<?php 
+$sql = "SELECT * FROM incidents where priority=2";
+$result = mysqli_query($con, $sql);
+if(mysqli_num_rows($result) == 0 ) {
+?>
+<h3 class="text-center">No records found!</h3>
+<?php 
+    } else {
+?>
+
+<div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
 </div>
 <div class="col d-flex justify-content-center">
@@ -308,6 +330,9 @@ if(mysqli_num_rows($result) == 0 ) {
   </tbody>
 </table>
 </div>
+<?php 
+    }
+?>
 
 
 
