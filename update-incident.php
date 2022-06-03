@@ -4,7 +4,7 @@ session_start();
     //include("database/functions.php");
 
     if (isset($_GET['updateid'])) {
-		$id = $_GET['updateid'];
+		$id = intval($_GET['updateid']);
 		$update = true;
 		$record = mysqli_query($con, "SELECT * FROM incidents WHERE id=$id");
 
@@ -16,7 +16,7 @@ session_start();
 	}
 
     if (isset($_POST['update'])) {
-        $id = intval($_POST['id']);
+        $id = $_POST['id'];
         $inc_num = $_POST['inc_num'];
         //$address = $_POST['address'];
     
