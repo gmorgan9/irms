@@ -11,6 +11,7 @@ $admin_users = selectAll($table);
 
 $errors = array();
 $id = '';
+$name = '';
 $username = '';
 $admin = '';
 $email = '';
@@ -21,6 +22,7 @@ $passwordConf = '';
 function loginUser($user)
 {
     $_SESSION['id'] = $user['id'];
+    $_SESSION['name'] = $user['name'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['admin'] = $user['admin'];
     $_SESSION['message'] = 'You are now logged in';
@@ -55,11 +57,12 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
             loginUser($user);
         }
     } else {
+        $name = $_POST['name'];
         $username = $_POST['username'];
-        $admin = isset($_POST['admin']) ? 1 : 0;
         $email = $_POST['email'];
         $password = $_POST['password'];
         $passwordConf = $_POST['passwordConf'];
+        $admin = isset($_POST['admin']) ? 1 : 0;
     }
 }
 
