@@ -24,7 +24,7 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $new = $update;
+        $new = intval($id);
         $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$new";
 
             if (mysqli_query($con, $sql)) {
