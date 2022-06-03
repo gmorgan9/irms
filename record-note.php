@@ -90,7 +90,6 @@ session_start();
         <!-- form-group// -->
     </div>
     <!-- end row // -->
-</div>
     <div class="d-flex justify-content-center">                                
         <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
     </div>                                                               
