@@ -229,10 +229,12 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
-    <?php if($status == 1) { ?>
+    <?php if($status == 1) { 
+        $status =1?>
             <input name="status" class="text-center" placeholder="Status" type="checkbox" checked>
     <!-- form-group// -->
-    <?php } else { ?>
+    <?php } else { 
+        $status =0?>
             <input name="status" class="text-center" placeholder="Status" type="checkbox">
     <!-- form-group// -->
     <?php } ?>
