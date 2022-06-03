@@ -3,6 +3,7 @@ session_start();
     include("database/connection.php");
 
     $id=$_GET['id'];
+    if(isset($_GET['id']) && is_numeric($_GET['id'])) {
     $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
@@ -13,10 +14,11 @@ session_start();
     $kb_article = $row['kb_article'];
     $date = $row['date'];
     $time = $row['time'];
+    }
 
 
     if (isset($_POST['update'])) {
-        $id = (int)$_POST['id'];
+        //$id = (int)$_POST['id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
         $description = $_POST['description'];
