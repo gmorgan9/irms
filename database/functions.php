@@ -6,6 +6,8 @@ $username = "";
 $email    = "";
 $errors = array(); 
 
+// connect to the database
+require_once('connection.php');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -163,3 +165,24 @@ function countOpenInc()
     $rowtotal=mysqli_fetch_array($result); 
     return $rowtotal; 
 }
+// DELETE INCIDENT
+
+// if (isset($_GET['deleteid'])) {
+// 	$inc_id = $_GET['deleteid'];
+// 	deleteInc($inc_id);
+// }
+
+
+// function deleteInc($inc_id) {
+// 	global $con;
+// 	$sql = "DELETE FROM incidents WHERE inc_id=$inc_id";
+// 	if (mysqli_query($con, $sql)) {
+// 		$_SESSION['message'] = "Incident successfully deleted";
+// 		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
+// 		exit(0);
+// 	}
+// }
+
+
+
+// UPDATE //
