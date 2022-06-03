@@ -2,7 +2,7 @@
 
 include(ROOT_PATH . "/app/database/functions.php");
 //include(ROOT_PATH . "/app/helpers/middleware.php");
-include(ROOT_PATH . "/app/helpers/validateTopic.php");
+include(ROOT_PATH . "/app/helpers/validateIncident.php");
 
 $table = 'incidents';
 
@@ -28,7 +28,7 @@ if (isset($_POST['add-incident'])) {
         $incident_id = create($table, $_POST);
         $_SESSION['message'] = 'Topic created successfully';
         $_SESSION['type'] = 'success';
-        header('location: ' . BASE_URL . '/admin/topics/index.php');
+        header('location: ' . BASE_URL . '/admin/incidents/index.php');
         exit(); 
     } else {
         $inc_num = $_POST['inc_num'];
@@ -61,7 +61,7 @@ if (isset($_GET['del_id'])) {
     $count = delete($table, $id);
     $_SESSION['message'] = 'Topic deleted successfully';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/admin/topics/index.php');
+    header('location: ' . BASE_URL . '/admin/incidents/index.php');
     exit();
 }
 
@@ -76,7 +76,7 @@ if (isset($_POST['update-incident'])) {
         $incident_id = update($table, $id, $_POST);
         $_SESSION['message'] = 'Topic updated successfully';
         $_SESSION['type'] = 'success';
-        header('location: ' . BASE_URL . '/admin/topics/index.php');
+        header('location: ' . BASE_URL . '/admin/incidents/index.php');
         exit();
     } else {
         $id = $_POST['id'];
