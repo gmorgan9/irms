@@ -235,7 +235,7 @@ if(isset($_POST["update"])){
         <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
-	            <span class="input-group-text">Closed</span>
+	            <span class="input-group-text">Status</span>
 	        </div>
             <input name="status" class="form-control text-center" placeholder="Incident Number" type="checkbox" value="<?php echo $status; ?>" checked>
         </div>
@@ -245,7 +245,7 @@ if(isset($_POST["update"])){
         <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
-	            <span class="input-group-text">Open</span>
+	            <span class="input-group-text">Status</span>
 	        </div>
             <input name="status" class="form-control text-center" placeholder="Incident Number" type="checkbox" value="<?php echo $status; ?>">
         </div>

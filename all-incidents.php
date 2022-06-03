@@ -88,6 +88,7 @@ session_start();
   <thead>
     <tr class="header-line">
       <th scope="col">#</th>
+      <th scope="col">Status</th>
       <th scope="col">Incident Number</th>
       <th scope="col">Severity</th>
       <th scope="col">Description</th>
@@ -107,6 +108,7 @@ session_start();
       if($result) {
           while ($row = mysqli_fetch_assoc($result)) {
             $id=$row['id'];
+            $status=$row['status'];
             $inc_num = $row['inc_num'];
             $priority = $row['priority'];
             $description = $row['description'];
@@ -116,6 +118,7 @@ session_start();
             $time = $row['time'];
             echo ' <tr>
             <th scope="row">'.$id.'</th>
+            <td>'.$status.'</th>
             <td>'.$inc_num.'</th>
             <td>'.$priority.'</td>
             <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">'.$description.'</td>
