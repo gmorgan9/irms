@@ -220,10 +220,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 		// 	{
 		// 		echo 'Unable to save blog' ;
 		// 	}
-    }
-} else {
-    echo "failed";
-}
+
 
 ?>
 
