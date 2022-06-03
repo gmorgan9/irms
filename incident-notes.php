@@ -90,8 +90,8 @@ session_start();
       <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Title</th>
-      <th scope="col">Notes</th>
-      <th scope="col">Tags</th>
+      <th scope="col">Note</th>
+      <th scope="col">Tag</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -106,15 +106,15 @@ session_start();
             $id=$row['id'];
             $date=$row['date'];
             $title = $row['title'];
-            $notes = $row['notes'];
-            $tags = $row['tags'];
+            $note = $row['note'];
+            $tag = $row['tag'];
             ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
             <td><?php echo $date; ?></td>
             <td><?php echo $title; ?></td>
-            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $notes ?></td>
-            <td><?php echo $tags; ?></td>
+            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note ?></td>
+            <td><?php echo $tag; ?></td>
             <td><?php echo $time; ?></td>
             <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
             <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
