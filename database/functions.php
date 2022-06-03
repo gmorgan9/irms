@@ -234,12 +234,12 @@ function countOpenInc()
 
 
 // UPDATE //
-if (isset($_POST['update'])) {
-	$id = $_GET['updateid'];
-	$inc_nam = $_POST['inc_num'];
-	$priority = $_POST['priority'];
+// if (isset($_POST['update'])) {
+// 	$id = $_GET['updateid'];
+// 	$inc_nam = $_POST['inc_num'];
+// 	$priority = $_POST['priority'];
 
-	mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num', priority='$priority' WHERE id=$id");
-	$_SESSION['message'] = "Record updated!"; 
-	header('location: all-incidents.php');
-}
+// 	mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num', priority='$priority' WHERE id=$id");
+// 	$_SESSION['message'] = "Record updated!"; 
+// 	header('location: all-incidents.php');
+// }

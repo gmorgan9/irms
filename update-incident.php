@@ -4,22 +4,111 @@ session_start();
     //include("database/functions.php");
 
 
-    $inc_num = "";
-	$priority = "";
-	$id = intval($_GET['updateid']);
-	$update = false;
+   // Define variables and initialize with empty values
+$inc_num = $priority = "";
+$inc_num_err = $priority_err = "";
+ 
+// Processing form data when form is submitted
+if(isset($_POST["update"])){
+    // Get hidden input value
+    $id = $_POST["id"];
+    
+    // Validate address address
+    $input_inc_num = trim($_POST["inc_num"]);
+    if(empty($input_inc_num)){
+        $inc_num_err = "Please enter an Incident Number.";     
+    } else{
+        $inc_num = $input_inc_num;
+    }
 
-    if (isset($_GET['updateid'])) {
-		$id = intval($_GET['updateid']);
-		$update = true;
-		$record = mysqli_query($con, "SELECT * FROM incidents WHERE id=$id");
-
-		if (count($record) == 1 ) {
-			$n = mysqli_fetch_array($record);
-			$inc_num = $n['inc_num'];
-			$priority = $n['priority'];
-		}
-	}
+    // Validate address address
+    $input_priority = trim($_POST["priority"]);
+    if(empty($input_priority)){
+        $priority_err = "Please enter an Incident Number.";     
+    } else{
+        $priority = $input_priority;
+    }
+    
+    
+    // Check input errors before inserting in database
+    if(empty($inc_num_err) && empty($priority_err)){
+        // Prepare an update statement
+        $sql = "UPDATE incidents SET inc_num=?, priority=? WHERE id=?";
+         
+        if($stmt = mysqli_prepare($con, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "ssi", $param_inc_num, $param_priority, $param_id);
+            
+            // Set parameters
+            $param_inc_num = $inc_num;
+            $param_priority = $priority;
+            $param_id = $id;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Records updated successfully. Redirect to landing page
+                header("location: index.php");
+                exit();
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+        }
+         
+        // Close statement
+        mysqli_stmt_close($stmt);
+    }
+    
+    // Close connection
+    mysqli_close($con);
+} else{
+    // Check existence of id parameter before processing further
+    if(isset($_GET["updateid"]) && !empty(trim($_GET["updateid"]))){
+        // Get URL parameter
+        $id =  trim($_GET["updateid"]);
+        
+        // Prepare a select statement
+        $sql = "SELECT * FROM incidents WHERE id = ?";
+        if($stmt = mysqli_prepare($con, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            
+            // Set parameters
+            $param_id = $id;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                $result = mysqli_stmt_get_result($stmt);
+    
+                if(mysqli_num_rows($result) == 1){
+                    /* Fetch result row as an associative array. Since the result set
+                    contains only one row, we don't need to use while loop */
+                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                    
+                    // Retrieve individual field value
+                    $inc_num = $row["inc_num"];
+                    $priority = $row["priority"];
+                } else{
+                    // URL doesn't contain valid id. Redirect to error page
+                    header("location: die-page.php");
+                    exit();
+                }
+                
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+        }
+        
+        // Close statement
+        mysqli_stmt_close($stmt);
+        
+        // Close connection
+        mysqli_close($con);
+    }  else{
+        // URL doesn't contain id parameter. Redirect to error page
+        header("location: di-page2.php");
+        exit();
+    }
+}
     
 
 
