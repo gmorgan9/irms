@@ -62,8 +62,10 @@ session_start();
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="password" class="form-control" placeholder="Enter password" type="password" id="myInput">
-        <input type="checkbox" onclick="myFunction()">Show Password
+        <p>
+        <input name="password" class="form-control" placeholder="Enter password" type="password" id="password">
+        <i class="bi bi-eye-slash" id="togglePassword"></i>
+</p>
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
@@ -74,14 +76,23 @@ session_start();
 </div>
 
 <script>
-    function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
+     const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
 </script>
 
 </body>
