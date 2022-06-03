@@ -127,7 +127,7 @@ session_start();
             <td><?php echo $priority; ?></td>
             <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
             <td><?php echo $assign_group; ?></td>
-            <td><?php echo $ekb_article; ?></td>
+            <td><?php echo $kb_article; ?></td>
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
