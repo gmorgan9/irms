@@ -1,28 +1,11 @@
 <?php
 session_start();
     include("database/connection.php");
-    //include("database/functions.php");
+    include("database/functions.php");
 
     
 
-if (isset($_GET['updateid'])) {
-    
-	$id = $_GET['updateid'];
-    $inc_num = $_POST['inc_num'];
-	updateInc($id);
-}
 
-
-
-function updateInc($id) {
-	global $con, $inc_num;
-	$sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
-	if (mysqli_query($con, $sql)) {
-		$_SESSION['message'] = "Incident successfully updated";
-		header('location: /'); // returns back to same page
-		exit(0);
-	}
-}
 
 
 
