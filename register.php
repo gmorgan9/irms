@@ -1,5 +1,5 @@
 <?php include("path.php"); ?>
-<?php //include(ROOT_PATH . "/app/controllers/users.php");
+<?php include("app/controllers/users.php");
 //guestsOnly();
 ?>
 <!DOCTYPE html>
@@ -91,7 +91,7 @@
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		    </div>
-            <input name="confirm_password" class="form-control" placeholder="Repeat password" type="password">
+            <input name="passwordConf" class="form-control" placeholder="Repeat password" type="password">
         </div>
     </div> <!-- form-group// -->      
     <div class="d-flex justify-content-center">                                
