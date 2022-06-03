@@ -44,7 +44,10 @@ session_start();
 <br>
 
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-50">
+
+    
+        <div class="form-row">
+        <div class="form-group col-md-6">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
@@ -60,6 +63,9 @@ session_start();
             <input name="title" class="form-control" placeholder="Title" type="text">
         </div>
     </div> <!-- form-group// -->
+    </div>
+
+
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-100">
     	    <div class="input-group-prepend">
