@@ -125,7 +125,7 @@ session_start();
             <?php } ?>
             <td><?php echo $inc_num; ?></td>
             <td><?php echo $priority; ?></td>
-            <td style="max-width: 45em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
+            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
             <!-- <td><?php #echo $assign_group; ?></td> -->
             <!-- <td><?php #echo $kb_article; ?></td> -->
             <td><?php echo $date; ?></td>
