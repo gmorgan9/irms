@@ -90,7 +90,7 @@ session_start();
       <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Title</th>
-      <th scope="col" style="max-width: 10em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">Note</th>
+      <th scope="col">Note</th>
       <th scope="col">Tag</th>
     </tr>
   </thead>
@@ -112,7 +112,7 @@ session_start();
             <th scope="row"><?php echo $id; ?></th>
             <td><?php echo $date; ?></td>
             <td><?php echo $title; ?></td>
-            <td><?php echo $note; ?></td>
+            <td style="max-width: 10em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note; ?></td>
             <td><?php echo $tag; ?></td>
             <td><?php echo $time; ?></td>
             <td><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
