@@ -7,13 +7,13 @@ session_start();
     $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
-    $id=$row['id'];
+   // $id=$row['id'];
     $inc_num = $row['inc_num'];
     $priority = $row['priority'];
     $description = $row['description'];
     $assign_group = $row['assign_group'];
     $kb_article = $row['kb_article'];
-   // $date = $row['date'];
+    $date = $row['date'];
     $time = $row['time'];
     
     if (isset($_POST['update'])) {
@@ -24,11 +24,11 @@ session_start();
         $description = $_POST['description'];
         $assign_group = $_POST['assign_group'];
         $kb_article = $_POST['kb_article'];
-        //$date = $_POST['date'];
+        $date = $_POST['date'];
         $time = $_POST['time'];
 
         // Update Statement
-        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',time='$time' WHERE id='$id'";
+        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
         $result=mysqli_query($con,$sql);
         if($result) {
             //echo 'Updated Successfully';
