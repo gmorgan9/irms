@@ -10,18 +10,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- Font Awesome -->
+  <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/assets/images/fav.png?v=<?php echo time(); ?>">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
   <!-- Custom Styling -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+
+  <!-- Bootstrap Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <title>Register</title>
 </head>
@@ -31,36 +33,73 @@
   
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
-  <div class="auth-content">
+      
 
-    <form action="register.php" method="post">
-      <h2 class="form-title">Register</h2>
+      <br><br>
+<div class="d-flex justify-content-center">
+    <!-- form start -->
+<form action="register.php" class="reg-form" method="post">
+<?php //include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+    <div class="form-header d-flex justify-content-center">
+        <div class="bg-circle">
+            <div class="sm-circle">
+                <div class="d-flex justify-content-center">
+                    <i class="user-header fa-solid fa-user fa-3x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<h2 class="text-center">Registration</h2>
+<br>
 
-      <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
-
-      <div>
-        <label>Username</label>
-        <input type="text" name="username" value="<?php echo $username; ?>" class="text-input" >
-      </div>
-      <div>
-        <label>Email</label>
-        <input type="email" name="email"  value="<?php echo $email; ?>" class="text-input">
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" name="password"  value="<?php echo $password; ?>" class="text-input">
-      </div>
-      <div>
-        <label>Password Confirmation</label>
-        <input type="password" name="passwordConf"  value="<?php echo $passwordConf; ?>" class="text-input">
-      </div>
-      <div>
-        <button type="submit" name="register-btn" class="btn btn-big">Register</button>
-      </div>
-      <p>Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
-    </form>
-
-  </div>
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+	        </div>
+            <input name="name" class="form-control" placeholder="Full name" type="text">
+        </div>
+    </div> 
+    <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		    </div>
+            <input name="email" class="form-control" placeholder="Email address" type="email">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-at"></i> </span>
+		    </div>
+            <input name="username" class="form-control" placeholder="User Name" type="text">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		    </div>
+            <input name="password" class="form-control" placeholder="Create password" type="password">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		    </div>
+            <input name="confirm_password" class="form-control" placeholder="Repeat password" type="password">
+        </div>
+    </div> <!-- form-group// -->      
+    <div class="d-flex justify-content-center">                                
+        <button id="button" type="submit" name="reg_user" class="btn btn-primary text-center reg-log">Create Account</button>  
+    </div> 
+    <p class="text-center">Have an account? <a href="/login.php" style="color: black;">Log In</a> </p>                                                                 
+</form>
+</div>
 
 
   <!-- JQuery -->

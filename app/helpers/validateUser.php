@@ -4,6 +4,10 @@ function validateUser($user)
 {
     $errors = array();
 
+    if (empty('name')) {
+        array_push($errors, 'Name is required');
+    }
+
     if (empty('username')) {
         array_push($errors, 'Username is required');
     }
