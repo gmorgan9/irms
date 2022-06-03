@@ -20,7 +20,7 @@ session_start();
         $inc_num = $_POST['inc_num'];
         //$address = $_POST['address'];
     
-        mysqli_query($db, "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id");
+        mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id");
         $_SESSION['message'] = "Address updated!"; 
         header('location: index.php');
     }
