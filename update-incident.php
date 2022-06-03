@@ -27,7 +27,6 @@ session_start();
         //Update Statement
         $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
         $result=mysqli_query($con,$sql);
-        if(mysqli_affected_rows($con) == 1)
         if (mysqli_num_rows($result) > 0) {
                 //print data of each row
                 while($row = mysqli_fetch_assoc($result)) {
