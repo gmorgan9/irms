@@ -16,13 +16,13 @@ session_start();
 	}
 
     if (isset($_POST['update'])) {
-        $id = $_POST['id'];
+        $id = intval($_POST['id']);
         $inc_num = $_POST['inc_num'];
         //$address = $_POST['address'];
     
         mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id");
-        $_SESSION['message'] = "Address updated!"; 
-        header('location: index.php');
+        //$_SESSION['message'] = "Address updated!"; 
+        header('location: all-incidents.php');
     }
 
     
