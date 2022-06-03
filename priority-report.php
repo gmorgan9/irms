@@ -113,6 +113,16 @@ session_start();
 </div>
 </div>
 
+<?php 
+$sql = "SELECT * FROM incidents where priority=2";
+$result = mysqli_query($con, $sql);
+if(mysqli_num_rows($results) = 0 ) {
+?>
+<h3 class="text-center">No records found!</h3>
+<?php 
+    } else {
+?>
+<!-- Table (1) -->
 <div class="col d-flex justify-content-center">
     <h2>Priority 2</h2>
 </div>
@@ -171,6 +181,11 @@ session_start();
   </tbody>
 </table>
 </div>
+<?php 
+    }
+?>
+
+<!-- Table (2) -->
 
 <div class="col d-flex justify-content-center">
     <h2>Priority 3</h2>
@@ -231,6 +246,8 @@ session_start();
 </table>
 </div>
 
+
+<!-- Table (3) -->
 <div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
 </div>
