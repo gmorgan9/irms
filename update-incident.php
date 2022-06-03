@@ -12,7 +12,7 @@ session_start();
 if(isset($_POST["update"])){
     // Get hidden input value
     $id = $_POST["id"];
-    $status = $_POST["status"];
+    $status = isset($_POST['status']) ? 1 : 0;
     
     // Validate address address
     $input_inc_num = trim($_POST["inc_num"]);
