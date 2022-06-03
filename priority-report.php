@@ -169,9 +169,10 @@ session_start();
         } 
     }else { ?>
       
-  </tbody>
-  <h3 class="text-center">No Records Found!</h3>
+      <h3 class="text-center">No Records Found!</h3>
   <?php } ?>
+  </tbody>
+  
 </table>
       
       
