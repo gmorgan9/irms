@@ -45,9 +45,9 @@ session_start();
 </div> -->
 
 <br>
-<?php  if (isset($_SESSION['username'])) : ?>
-    	<h1 class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
-    <?php endif ?>
+
+    	<h1 class="text-center"><strong>Incident Priority Report</strong></h1>
+ 
     <br>
 
 <div class="col d-flex justify-content-center">
