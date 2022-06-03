@@ -54,7 +54,7 @@ session_start();
             <input name="date" class="form-control" placeholder="Date" type="date">
         </div>
     </div> 
-    <div class="p-2"></div>
+    <div class="p-3"></div>
     <!-- form-group// -->
     <div class="d-flex justify-content-center">
         <div class="form-group input-group">
