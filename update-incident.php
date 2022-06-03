@@ -229,7 +229,7 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
-    <?php if(isset($_POST['status'] == 1)) { ?>
+    <?php if($_POST['status'] == 1) { ?>
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
