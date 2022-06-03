@@ -19,35 +19,41 @@ session_start();
     if (isset($_POST['update'])) {
         //$id = (int)$_POST['id'];
         //$id=(INT)$_GET['id'];
-        // $inc_num = $_POST['inc_num'];
-        // $priority = $_POST['priority'];
-        // $description = $_POST['description'];
-        // $assign_group = $_POST['assign_group'];
-        // $kb_article = $_POST['kb_article'];
-        // $date = $_POST['date'];
-        // $time = $_POST['time'];
-        $inc_num = filter_var(trim($_POST['inc_num']));
-		$priority = filter_var(trim($_POST['priority']));
-		$description = filter_var(trim($_POST['description']));
-        $assign_group = filter_var(trim($_POST['assign_group']));
-		$kb_article = filter_var(trim($_POST['kb_article']));
-		$date = filter_var(trim($_POST['date']));
-        $time = filter_var(trim($_POST['time']));
+        $inc_num = $_POST['inc_num'];
+        $priority = $_POST['priority'];
+        $description = $_POST['description'];
+        $assign_group = $_POST['assign_group'];
+        $kb_article = $_POST['kb_article'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+
+
+        $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
+        if (mysqli_query($con, $query)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error: " . mysqli_error($con);
+        }
+
+
+
+
+
+
 
         // Update Statement
-        $sql = "UPDATE incidents SET inc_num = '".$inc_num."', priority='".$priority."', description='".$description."', assign_group='".$assign_group."', kb_article='".$kb_article."', date='".$date."', time='".$time."' WHERE id = ".$id;
-       // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
-       $rs = mysqli_query($con,$sql);
-        if(mysqli_affected_rows($con) == 1)
-			{
+        // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
+        // $result=mysqli_query($con,$sql);
+        // if(mysqli_affected_rows($con) == 1)
+		// 	{
 				
-				header('location: index.php');
-				exit();
-			}
-			else
-			{
-				echo 'Unable to save blog' ;
-			}
+		// 		header('location: index.php');
+		// 		exit();
+		// 	}
+		// 	else
+		// 	{
+		// 		echo 'Unable to save blog' ;
+		// 	}
     }
 } else {
     echo "failed";
