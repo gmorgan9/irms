@@ -5,15 +5,15 @@ session_start();
 
 
    // Define variables and initialize with empty values
-   $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
+   $status = $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
    $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
     // Get hidden input value
     $id = $_POST["id"];
+    $status = $_POST["status"];
     
-
     // Validate address address
     $input_inc_num = trim($_POST["inc_num"]);
     if(empty($input_inc_num)){
