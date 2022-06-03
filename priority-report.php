@@ -177,6 +177,8 @@ session_start();
     } 
 ?>
 
+<br>
+<br>
 
 <div class="col d-flex justify-content-center">
     <h2>Priority 3</h2>
@@ -239,6 +241,8 @@ session_start();
 <?php
     } 
 ?>
+<br>
+<br>
 
 <div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
