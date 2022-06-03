@@ -87,45 +87,7 @@ session_start();
   </div>
   </div>
   <br>
-<!-- Row 2 -->
-<div class="col d-flex justify-content-center">
-<div class="row">
-<div class="card" style="width: 18rem;">
-    <div class="card-body d-flex flex-column align-items-center">
-        <div class="card-body">
-            <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-file-invoice fa-8x"></i> <br>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a href="priority-report.php" class="btn stretched-link" style="width: 200px;">Incident Priority Report</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <div class="card-body d-flex flex-column align-items-center">
-        <div class="card-body">
-            <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-file-lines fa-8x"></i> <br>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link">Other Reports</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <div class="card-body d-flex flex-column align-items-center">
-        <div class="card-body">
-            <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-note-sticky fa-8x"></i> <br>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link">Incident Notes</a>
-            </div>
-        </div>
-    </div>
-</div>
+
 </div>
 </div>
 
