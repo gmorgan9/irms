@@ -36,6 +36,9 @@ session_start();
             <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </h2>
     </div>
+    <div class="record_incident">
+    <a href="/"><button class="btn btn-primary rec">Back</button></a>
+</div>
 <br>
 <!-- <div class="record_incident">
     <a href="record-incident.php"><button class="btn btn-primary rec">Record Incident</button></a>
