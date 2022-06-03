@@ -1,7 +1,7 @@
 <?php 
 session_start();
-    include("database/connection.php");
-    include("database/functions.php");
+    //include("database/connection.php");
+    include("app/database/db.php");
 
     $_SESSION['name'] = $name;
 
