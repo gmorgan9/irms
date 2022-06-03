@@ -63,7 +63,7 @@ session_start();
         </h1>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
+                <a href="/open-incidents.php" class="btn stretched-link">Priority 2</a>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@ session_start();
         </h1>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
+                <a href="/open-incidents.php" class="btn stretched-link">Priority 3</a>
             </div>
         </div>
     </div>
@@ -101,7 +101,7 @@ session_start();
         </h1>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
+                <a href="/open-incidents.php" class="btn stretched-link">Priority 4</a>
             </div>
         </div>
     </div>
