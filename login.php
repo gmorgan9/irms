@@ -62,7 +62,7 @@ session_start();
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input name="password" class="form-control" placeholder="Enter password" type="password">
+        <input name="password" class="form-control" placeholder="Enter password" type="password" id="myInput">
         <input type="checkbox" onclick="myFunction()">Show Password
 </div>
     </div> <!-- form-group// -->   
