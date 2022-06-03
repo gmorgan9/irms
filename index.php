@@ -29,91 +29,101 @@ include("path.php");
 <?php include(ROOT_PATH . "/app/includes/header.php") ?>
 <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
+<br>
+<div class="record_incident">
+    <a href="record-incident.php"><button class="btn btn-primary rec">Record Incident</button></a>
+</div>
 
-
-  <!-- Page Wrapper -->
-  <div class="page-wrapper">
-
-    <!-- Post Slider -->
-    <!-- <div class="post-slider">
-      <i class="fas fa-chevron-left prev"></i>
-      <i class="fas fa-chevron-right next"></i>
-
-      <div class="post-wrapper">
-
-        <?php 
-        // foreach ($posts as $post): ?>
-          <div class="post">
-            <div class="post-info">
-              <h4><a href="single.php?id=<?php 
-              // echo $post['id']; ?>"><?
-              // php echo $post['title']; ?></a></h4>
-              <i class="far fa-user"> <?
-              // php echo $post['username']; ?></i>
-              &nbsp;
-              <i class="far fa-calendar"> <?php 
-              // echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+<br>
+<?php  if (isset($_SESSION['username'])) : ?>
+    	<h1 style="margin-left: 150px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
+    <?php endif ?>
+    <br>
+<div class="col d-flex justify-content-center">
+<div class="row row_one">
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
             </div>
-          </div>
-        <?php 
-      // endforeach; ?>
-
-
-      </div>
-
-    </div> -->
-    <!-- // Post Slider -->
-
-    <!-- Content -->
-    <div class="content clearfix">
-
-      <!-- Main Content -->
-      <div class="main-content">
-        <h1 class="recent-post-title"><?php echo $postsTitle ?></h1>
-
-        <?php foreach ($posts as $post): ?>
-          <div class="post clearfix">
-            <div class="post-preview">
-              <h2><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h2>
-              <i class="far fa-user"> <?php echo $post['username']; ?></i>
-              &nbsp;
-              <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
-              <p class="preview-text">
-                <?php echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?>
-              </p>
-              <a href="single.php?id=<?php echo $post['id']; ?>" class="btn read-more">Read More</a>
+            <div class="d-flex justify-content-center">
+                <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
             </div>
-          </div>    
-        <?php endforeach; ?>
-        
-
-
-      </div>
-      <!-- // Main Content -->
-
-      <div class="sidebar">
-
-        <div class="section search">
-          <h2 class="section-title">Search</h2>
-          <form action="index.php" method="post">
-            <input type="text" name="search-term" class="text-input" placeholder="Search...">
-          </form>
         </div>
-
-
-        <div class="section topics">
-          <h2 class="section-title">Topics</h2>
-          <ul>
-            <?php foreach ($topics as $key => $topic): ?>
-              <li><a href="<?php echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-
-      </div>
-
     </div>
-    <!-- // Content -->
-
+</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="/closed-incidents.php" class="btn stretched-link">Closed Incidents</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="/all-incidents.php" class="btn stretched-link">All Incidents</a>
+            </div>
+        </div>
+    </div>
+</div>
   </div>
-  <!-- // Page Wrapper -->
+  </div>
+  <br>
+<!-- Row 2 -->
+<div class="col d-flex justify-content-center">
+<div class="row">
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <i class="fa-solid fa-file-invoice fa-8x"></i> <br>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="btn stretched-link" style="width: 200px;">Incident Priority Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <i class="fa-solid fa-file-lines fa-8x"></i> <br>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="btn stretched-link">Other Reports</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <i class="fa-solid fa-note-sticky fa-8x"></i> <br>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="btn stretched-link">Incident Notes</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<br><br>
+
+
+</body>
+</html>
