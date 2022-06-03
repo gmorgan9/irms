@@ -22,39 +22,43 @@ function register(){
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
-	$username    =  e($_POST['username']);
-	$email       =  e($_POST['email']);
-	$password_1  =  e($_POST['password_1']);
-	$password_2  =  e($_POST['password_2']);
+    $name         =  e($_POST['name']);
+	$username     =  e($_POST['username']);
+	$email        =  e($_POST['email']);
+	$password     =  e($_POST['password']);
+	$passwordConf =  e($_POST['passwordConf']);
 
 	// form validation: ensure that the form is correctly filled
+    if (empty($name)) { 
+		array_push($errors, "Name is required"); 
+	}
 	if (empty($username)) { 
 		array_push($errors, "Username is required"); 
 	}
 	if (empty($email)) { 
 		array_push($errors, "Email is required"); 
 	}
-	if (empty($password_1)) { 
+	if (empty($password)) { 
 		array_push($errors, "Password is required"); 
 	}
-	if ($password_1 != $password_2) {
+	if ($password != $passwordConf) {
 		array_push($errors, "The two passwords do not match");
 	}
 
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
-		$password = md5($password_1);//encrypt the password before saving in the database
+		$password = md5($password);//encrypt the password before saving in the database
 
 		if (isset($_POST['user_type'])) {
 			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (username, email, user_type, password) 
-					  VALUES('$username', '$email', '$user_type', '$password')";
+			$query = "INSERT INTO users (name, username, email, user_type, password) 
+					  VALUES('$name', '$username', '$email', '$user_type', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: /');
 		}else{
-			$query = "INSERT INTO users (username, email, user_type, password) 
-					  VALUES('$username', '$email', 'user', '$password')";
+			$query = "INSERT INTO users (name, username, email, user_type, password) 
+					  VALUES('$name','$username', '$email', 'user', '$password')";
 			mysqli_query($db, $query);
 
 			// get id of the created user
