@@ -44,8 +44,8 @@ session_start();
 
 
 
-$inc_num = $priority = $description = $assign_group = $kb_article = $date = $time "";
-$inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err "";
+$inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
+$inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
 
 // Processing form data when form is submitted
 if(isset($_POST['id']) && !empty($_POST['id'])){
@@ -130,10 +130,10 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location: index.php");
+                header('location: index.php');
                 exit();
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo 'Oops! Something went wrong. Please try again later.';
             }
         }
          
@@ -153,7 +153,7 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
         $sql = "SELECT * FROM incidents WHERE id = ?";
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            mysqli_stmt_bind_param($stmt, 'i', $param_id);
             
             // Set parameters
             $param_id = $id;
@@ -193,7 +193,7 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
-        header("location: die-page.php");
+        header('location: die-page.php');
         exit();
     }
 }
