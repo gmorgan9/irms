@@ -167,9 +167,9 @@ if(mysqli_num_rows($result) > 0) {
          <?php } 
     }else { ?>    
   </tbody>
-</table>
-    <h5 class="text-center"> No Records Found!</h5> <br>
+  <h5 class="text-center"> No Records Found!</h5> <br>
 <?php } ?>
+</table>
 </div>
 
 
@@ -227,9 +227,9 @@ if(mysqli_num_rows($result) > 0) {
             <?php } 
     }else { ?> 
   </tbody>
-</table>
-    <h5 class="text-center"> No Records Found!</h5> <br>
+  <h5 class="text-center"> No Records Found!</h5> <br>
 <?php } ?>
+</table>
 </div>
 
 
@@ -287,9 +287,9 @@ if(mysqli_num_rows($result) > 0) {
             <?php } 
     }else { ?>
   </tbody>
-</table>
-    <h5 class="text-center"> No Records Found!</h5> <br>
+  <h5 class="text-center"> No Records Found!</h5> <br>
 <?php } ?>
+</table>
 </div>
 
 
