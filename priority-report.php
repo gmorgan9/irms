@@ -52,7 +52,7 @@ session_start();
 
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
-    <div class="card open-count" style="width: 1rem;">
+<div class="card open-count" style="width: 15rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
@@ -66,7 +66,7 @@ session_start();
         </h1>
             </div>
             <div class="d-flex justify-content-center">
-            <p class="text-center">Priority 2</p>
+                <p class="text-center">Priority 2</p>
             </div>
         </div>
     </div>
