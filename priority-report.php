@@ -187,7 +187,7 @@ if(mysqli_num_rows($result) == 0 ) {
     }
 ?>
 
-<hr size="10">
+<hr style="height:3px;border:none;color:#333;background-color:#333;">
 
 <!-- Table (2) -->
 <div class="col d-flex justify-content-center">
