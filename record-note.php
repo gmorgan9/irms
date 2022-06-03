@@ -44,7 +44,7 @@ session_start();
 <br>
 
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+        <div class="form-group input-group w-50">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
@@ -53,7 +53,7 @@ session_start();
     </div> 
     <!-- form-group// -->
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+        <div class="form-group input-group w-50">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
 		    </div>
@@ -61,7 +61,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+        <div class="form-group input-group w-100">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 		    </div>
@@ -69,7 +69,7 @@ session_start();
         </div>
     </div> <!-- form-group// -->
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+        <div class="form-group input-group w-50">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
 		    </div>
