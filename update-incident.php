@@ -27,6 +27,7 @@ if (isset($_GET['updateid'])) {
 
 function updateInc($id) {
 	global $con, $inc_num;
+    $inc_num = $_POST['inc_num'];
 	$sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
 	if (mysqli_query($con, $sql)) {
 		$_SESSION['message'] = "Incident successfully updated";
