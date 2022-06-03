@@ -3,7 +3,7 @@ session_start();
     include("database/connection.php");
 
     $id=$_GET['id'];
-    $sql = "SELECT * FROM incidents where id='$id' limit 1";
+    $sql = "SELECT * FROM incidents where id=$id limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $inc_num = $row['inc_num'];
@@ -25,7 +25,7 @@ session_start();
         $time = $_POST['time'];
 
         // Update Statement
-        $sql = "UPDATE `incidents` SET `inc_num`='$inc_num',`priority`='$priority',`description`='$description',`assign_group`='$assign_group',`kb_article`='$kb_article',`date`='$date',`time`='$time' WHERE id='$id'";
+        $sql = "UPDATE `incidents` SET `inc_num`='$inc_num',`priority`='$priority',`description`='$description',`assign_group`='$assign_group',`kb_article`='$kb_article',`date`='$date',`time`='$time' WHERE id=$id";
         $result=mysqli_query($con,$sql);
         if($result) {
             //echo "Updated Successfully";
