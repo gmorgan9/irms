@@ -112,7 +112,7 @@ session_start();
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td scope="row" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $note; ?></td>
+            <td scope="row" style="width: 11%;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><?php echo $note; ?></td>
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
