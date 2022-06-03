@@ -123,7 +123,7 @@ session_start();
             <td>'.$kb_article.'</td>
             <td>'.$date.'</td>
             <td>'.$time.'</td>
-            <td><a href="update-incident.php?updateid='.$id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="update-incident.php?id='.$id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
             <td><a href="all-incidents.php?id='.$id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>';
           }
