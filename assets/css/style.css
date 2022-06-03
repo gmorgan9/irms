@@ -54,6 +54,12 @@ body {
     width: 500px;
     height: 600px;
 }
+.inc-form {
+    background-color: white;
+    border-radius: 15px;
+    width: 500px;
+    height: 650px;
+}
 .log-form {
     background-color: white;
     border-radius: 15px;

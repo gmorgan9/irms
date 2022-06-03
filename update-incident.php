@@ -193,7 +193,7 @@ if(isset($_POST["update"])){
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.14">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.15">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -217,7 +217,7 @@ if(isset($_POST["update"])){
 <div class="d-flex justify-content-center">
 
     <!-- form start -->
-<form action="update-incident.php" class="reg-form" method="post">
+<form action="update-incident.php" class="inc-form" method="post">
 <?php //include('errors.php'); ?>
 <br>
 <h2 class="text-center">Record Incident</h2>
