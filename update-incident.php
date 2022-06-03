@@ -44,162 +44,25 @@ session_start();
 
 
 
-$inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
-$inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
+// $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
+// $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
 
-// Processing form data when form is submitted
-if(isset($_POST['submit']) && !empty($_POST['id'])){
-    // Get hidden input value
-    $id = $_POST['id'];
-    
-   // Validate address address
-   $input_inc_num = trim($_POST['inc_num']);
-   if(empty($input_inc_num)){
-       $inc_num_err = "Please enter an address.";     
-   } else{
-       $inc_num = $input_inc_num;
-   }
-    
-    // Validate address address
-    $input_priority = trim($_POST["priority"]);
-    if(empty($input_priority)){
-        $priority_err = "Please enter an address.";     
-    } else{
-        $priority = $input_priority;
-    }
-    
-    // Validate address address
-    $input_description = trim($_POST["description"]);
-    if(empty($input_description)){
-        $description_err = "Please enter an address.";     
-    } else{
-        $description = $input_description;
-    }
 
-    // Validate address address
-    $input_assign_group = trim($_POST["assign_group"]);
-    if(empty($input_assign_group)){
-        $assign_group_err = "Please enter an address.";     
-    } else{
-        $assign_group = $input_assign_group;
-    }
 
-    // Validate address address
-    $input_kb_article = trim($_POST["kb_article"]);
-    if(empty($input_kb_article)){
-        $kb_article_err = "Please enter an address.";     
-    } else{
-        $kb_article = $input_kb_article;
-    }
-
-    // Validate address address
-    $input_date = trim($_POST["date"]);
-    if(empty($input_date)){
-        $date_err = "Please enter an address.";     
-    } else{
-        $date = $input_date;
-    }
-    $input_time = trim($_POST["time"]);
-    if(empty($input_time)){
-        $time_err = "Please enter an address.";     
-    } else{
-        $time = $input_time;
-    }
-    
-    // Check input errors before inserting in database
-    if(empty($inc_num_err) && empty($priority_err) && empty($description_err)
-    && empty($assign_group_err) && empty($kb_article_err)
-    && empty($date_err) && empty($time_err)){
-        // Prepare an update statement
-        $sql = "UPDATE incidents SET inc_num=?, priority=?, description=?, assign_group=?, kb_article=? , date=?, time=? WHERE id=?";
-         
-        if($stmt = mysqli_prepare($con, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "issssss", $param_id, $param_inc_num, $param_priority, $param_description, $param_assign_group, $param_kb_article, $param_date, $param_time);
-            
-            // Set parameters
-            $param_id = $id;
-            $param_inc_num = $inc_num;
-            $param_priority = $priority;
-            $param_description = $description;
-            $param_assign_group = $assign_group;
-            $param_kb_article = $kb_article;
-            $param_date = $date;
-            $param_time = $time;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Records updated successfully. Redirect to landing page
-                header('location: index.php');
-                exit();
-            } else{
-                echo 'Oops! Something went wrong. Please try again later.';
-            }
-        }
-         
-        // Close statement
-        mysqli_stmt_close($stmt);
-    }
-    
-    // Close connection
-    mysqli_close($con);
-} else{
-    $id = intval(trim($_GET['id']));
-    // Check existence of id parameter before processing further
-    if(isset($id) && !empty($id)){
-        // Get URL parameter
-        $id =  (INT)trim($_GET['id']);
-        
-        // Prepare a select statement
-        $sql = "SELECT * FROM incidents WHERE id = ?";
-        if($stmt = mysqli_prepare($con, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, 'i', $param_id);
-            
-            // Set parameters
-            $param_id = $id;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                $result = mysqli_stmt_get_result($stmt);
-    
-                if(mysqli_num_rows($result) == 1){
-                    /* Fetch result row as an associative array. Since the result set
-                    contains only one row, we don't need to use while loop */
-                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                    
-                    // Retrieve individual field value
-                    $id = $row['id'];
-                    $inc_num = $row['inc_num'];
-                    $priority = $row['priority'];
-                    $description = $row['description'];
-                    $assign_group = $row['assign_group'];
-                    $kb_article = $row['kb_article'];
-                    $date = $row['date'];
-                    $time = $row['time'];
-                } else{
-                    // URL doesn't contain valid id. Redirect to error page
-                    header('location: die-page.php');
-                    exit();
-                }
-                
-            } else{
-                echo 'Oops! Something went wrong. Please try again later.';
-            }
-        }
-        
-        // Close statement
-        mysqli_stmt_close($stmt);
-        
-        // Close connection
-        mysqli_close($con);
-    }  else{
-        // URL doesn't contain id parameter. Redirect to error page
-        header('location: die-page2.php');
-        exit();
-    }
+if(count($_POST)>0){
+	if($_POST['type']==2){
+		$id=$_POST['id'];
+		$inc_num=$_POST['inc_num'];
+		$sql = "UPDATE `incidents` SET `inc_num`='$inc_num' WHERE id=$id";
+		if (mysqli_query($con, $sql)) {
+			echo json_encode(array("statusCode"=>200));
+		} 
+		else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($con);
+		}
+		mysqli_close($con);
+	}
 }
-
 
 
 
