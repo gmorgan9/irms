@@ -56,7 +56,7 @@ session_start();
     </div> 
     <!-- form-group// -->
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-50">
+        <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
 		    </div>
