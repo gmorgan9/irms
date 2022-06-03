@@ -232,7 +232,7 @@ if(isset($_POST["update"])){
     
             <input name="status" class="text-center" placeholder="Status" type="checkbox" checked>
             <?php 
-    $check = isset($_POST['status']) ? "checked" : "unchecked";
+    $check = isset($_POST['status']) ? "<input name='status' class='text-center' placeholder='Status' type='checkbox' checked>" : "<input name='status' class='text-center' placeholder='Status' type='checkbox'>";
     echo $check;
     ?>
     <!-- form-group// -->
