@@ -2,8 +2,8 @@
 session_start();
     include("database/connection.php");
 
-    $id = $_GET['updateid'];
-    $sql = "SELECT * FROM incidents where id='$id'";
+    $udpateid = $_GET['updateid'];
+    $sql = "SELECT * FROM incidents where id='$updateid'";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
    // $id=$row['id'];
@@ -25,7 +25,7 @@ session_start();
         $time = $_POST['time'];
 
         //Update Statement
-        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
+        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$updateid'";
         $result=mysqli_query($con,$sql);
         if(mysqli_affected_rows($con) == 1)
 			{
