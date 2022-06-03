@@ -24,15 +24,24 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        //Update Statement
-        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
-        $result=mysqli_query($con,$sql);
-        if($row = mysqli_fetch_assoc($result)) {
-                    echo "inc_num: " . $row["inc_num"];
+        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=1";
+
+            if (mysqli_query($con, $sql)) {
+                echo "Record updated successfully";
             } else {
-                echo "No record exists";
+                 echo "Error updating record: " . mysqli_error($con);
+                }
             }
-        }
+
+        // //Update Statement
+        // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
+        // $result=mysqli_query($con,$sql);
+        // if($row = mysqli_fetch_assoc($result)) {
+        //             echo "inc_num: " . $row["inc_num"];
+        //     } else {
+        //         echo "No record exists";
+        //     }
+        // }
 
 
 //         $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
