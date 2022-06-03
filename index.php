@@ -109,7 +109,7 @@ session_start();
                 <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="#" class="btn stretched-link">Other Reports</a>
+                <a href="incident-notes.php" class="btn stretched-link">Other Reports</a>
             </div>
         </div>
     </div>
