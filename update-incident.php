@@ -57,7 +57,7 @@ session_start();
                 array_push($errors, "Incident already exists");
               }
             }
-          
+            $id = intval($_GET['updateid']);
             // Finally, register user if there are no errors in the form
             if (count($errors) == 0) {
                 //$password = md5($password);//encrypt the password before saving in the database
