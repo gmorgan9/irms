@@ -27,49 +27,47 @@ session_start();
     //     $new = intval($id);
     //     $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$new";
 
-           // check if form was submitted
-           if (isset($_POST['update'])) {
-            // receive all input values from the form
-            $name = mysqli_real_escape_string($con, $_POST['name']);
-            $username = mysqli_real_escape_string($con, $_POST['username']);
-            $email = mysqli_real_escape_string($con, $_POST['email']);
-            $password = mysqli_real_escape_string($con, $_POST['password']);
-            $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
-          
-            // form validation: ensure that the form is correctly filled ...
-            // by adding (array_push()) corresponding error unto $errors array
-            if (empty($name)) { array_push($errors, "Name is required"); }
-            if (empty($username)) { array_push($errors, "Username is required"); }
-            if (empty($email)) { array_push($errors, "Email is required"); }
-            if (empty($password)) { array_push($errors, "Password is required"); }
-            if ($password != $confirm_password) {
-              array_push($errors, "The two passwords do not match");
-            }
-          
-            // first check the database to make sure 
-            // a user does not already exist with the same username and/or email
-            $incident_check_query = "SELECT * FROM incidents WHERE inc_num='$inc_num' LIMIT 1";
-            $result = mysqli_query($con, $incident_check_query);
-            $incident = mysqli_fetch_assoc($result);
-            
-            if ($incident) { // if user exists
-              if ($incident['inc_num'] === $inc_num) {
-                array_push($errors, "Incident already exists");
-              }
-            }
-            $id = intval($_GET['updateid']);
-            // Finally, register user if there are no errors in the form
-            if (count($errors) == 0) {
-                //$password = md5($password);//encrypt the password before saving in the database
-          
-                $query = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
-                mysqli_query($con, $query);
-              //$_SESSION['name'] = $name;
-                //$_SESSION['username'] = $username;
-                $_SESSION['success'] = "Record was updated.";
-                header('location: all-incidents.php');
-            }
+    if (isset($_POST['update'])) {
+        // receive all input values from the form
+        $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+        $priority = mysqli_real_escape_string($con, $_POST['priority']);
+        $description = mysqli_real_escape_string($con, $_POST['description']);
+        $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+        $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+        $date = mysqli_real_escape_string($con, $_POST['date']);
+        $time = mysqli_real_escape_string($con, $_POST['time']);
+      
+        // form validation: ensure that the form is correctly filled ...
+        // by adding (array_push()) corresponding error unto $errors array
+        if (empty($inc_num)) { array_push($errors, "Incident Number is required"); }
+        if (empty($priority)) { array_push($errors, "Priority is required"); }
+        if (empty($description)) { array_push($errors, "Description is required"); }
+        if (empty($assign_group)) { array_push($errors, "Assignment Group is required"); }
+        if (empty($kb_article)) { array_push($errors, "KB Artcile is required"); }
+        if (empty($date)) { array_push($errors, "Date is required"); }
+        if (empty($time)) { array_push($errors, "Time is required"); }
+        
+      
+        // first check the database to make sure 
+        // a incident does not already exist with the same incident number
+        $incident_check_query = "SELECT * FROM incidents WHERE inc_num='$inc_num' LIMIT 1";
+        $result = mysqli_query($con, $incdient_check_query);
+        $inc = mysqli_fetch_assoc($result);
+        
+        if ($inc) { // if incident exists
+          if ($inc['inc_num'] === $inc_num) {
+            array_push($errors, "Incident Number already exists");
           }
+        }
+      
+        // Finally, register user if there are no errors in the form
+        if (count($errors) == 0) {
+      
+            $query = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
+            mysqli_query($con, $query);
+            header('location: all-incidents.php');
+        }
+      }
         //         // header('location: all-incidents.php');
         //         echo "<div class='alert alert-success'>Record was updated.</div>";
         //     } else {
