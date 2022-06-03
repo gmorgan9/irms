@@ -99,7 +99,6 @@ session_start();
     </tr>
   </thead>
   <tbody>
-      <?php $i=1; ?>
 
       <?php
 
@@ -116,20 +115,25 @@ session_start();
             $kb_article = $row['kb_article'];
             $date = $row['date'];
             $time = $row['time'];
-            echo ' <tr>
-            <th scope="row">'.$id.'</th>
-            '. if($status == 1) { .'<td>open</td> '. } else { .'<td>closed</td>'. }.'
-            <td>'.$inc_num.'</td>
-            <td>'.$priority.'</td>
-            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;">'.$description.'</td>
-            <td>'.$assign_group.'</td>
-            <td>'.$kb_article.'</td>
-            <td>'.$date.'</td>
-            <td>'.$time.'</td>
-            <td><a href="update-incident.php?updateid='.$id.'"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="all-incidents.php?id='.$id.'" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
-            </tr>';
-          }
+            ?>
+            <tr>
+            <th scope="row"><?php $id; ?></th>
+            <?php if($status == 0) { ?>
+                <td>open</td>
+            <?php } else { ?>
+            <td>closed</td>
+            <?php } ?>
+            <td><?php $inc_num; ?></td>
+            <td><?php $priority; ?></td>
+            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php $description ?></td>
+            <td><?php $assign_group ?></td>
+            <td><?php $kb_article ?></td>
+            <td><?php $date ?></td>
+            <td><?php $time ?></td>
+            <td><a href="update-incident.php?updateid=<?php $id ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td><a href="all-incidents.php?id=<?php $id ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+         <?php }
       }
 
 ?>
