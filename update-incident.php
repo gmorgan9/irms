@@ -2,7 +2,7 @@
 session_start();
     include("database/connection.php");
 
-    $id = $_GET['updateid'];
+    
     $sql = "SELECT * FROM incidents where id='$id'";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
@@ -24,8 +24,8 @@ session_start();
         $date = $_POST['date'];
         $time = $_POST['time'];
 
-        $update = 1;
-        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$update";
+        $id = $_GET['updateid'];
+        $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
 
             if (mysqli_query($con, $sql)) {
                 echo "Record updated successfully";
