@@ -69,14 +69,14 @@ session_start();
     <!-- end row // -->
 
     <div class="form-row">
-        <div class="d-flex justify-content-center">
+    <div class="mx-auto" style="width: 200px;">
             <div class="form-group input-group">
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 		        </div>
-                <div class="mx-auto" style="width: 200px;">
+                
                     <textarea name="note" class="form-control" placeholder="Note" type=""></textarea>
-                </div>
+                
             </div>
         </div> 
         <!-- form-group// -->
