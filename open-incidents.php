@@ -95,16 +95,16 @@ session_start();
   </thead>
   <tbody>
     
-    <?php foreach ($open_incidents as $key => $open_incident): ?>
+    <?php foreach ($open_incidents as $key => $oi): ?>
         <tr>
             <td><?php echo $key + 1; ?></td>
-            <td><?php echo $open_incident['inc_num'] ?></td>
-            <td><?php echo $open_incident['priority'] ?></td>
+            <td><?php echo $oi['inc_num'] ?></td>
+            <td><?php echo $oi['priority'] ?></td>
             <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $open_incident['description'] ?></td>
-            <td><?php echo $open_incident['assign_group'] ?></td>
-            <td><?php echo $open_incident['kb_article'] ?></td>
-            <td><?php echo $open_incident['date'] ?></td>
-            <td><?php echo $open_incident['time'] ?></td>
+            <td><?php echo $oi['assign_group'] ?></td>
+            <td><?php echo $oi['kb_article'] ?></td>
+            <td><?php echo $oi['date'] ?></td>
+            <td><?php echo $oi['time'] ?></td>
             <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a></td>
             <td><a href=""><i class="fa-solid fa-trash-can"></i></a></td>
         </tr>
