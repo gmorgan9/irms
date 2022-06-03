@@ -28,41 +28,55 @@ session_start();
     //     $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$new";
 
            // check if form was submitted
-if(isset($_POST['update'])){
- 
-    try{
- 
-        // write update query
-        // in this case, it seemed like we have so many fields to pass and
-        // it is better to label them and not use question marks
-        $query = "UPDATE incidents
-                    SET inc_num=:inc_num
-                    WHERE id = :id";
- 
-        // prepare query for excecution
-        $stmt = $con->prepare($query);
- 
-        // posted values
-        $name=htmlspecialchars(strip_tags($_POST['inc_num']));
-        //$description=htmlspecialchars(strip_tags($_POST['description']));
-        //$price=htmlspecialchars(strip_tags($_POST['price']));
- 
-        $id = intval($_GET['updateid']);
-        // bind the parameters
-        $stmt->bindParam(':inc_num', $inc_num);
-        //$stmt->bindParam(':description', $description);
-        //$stmt->bindParam(':price', $price);
-        $stmt->bindParam(':id', $id);
- 
-        // Execute the query
-        if($stmt->execute()){
-                // header('location: all-incidents.php');
-                echo "<div class='alert alert-success'>Record was updated.</div>";
-            } else {
-                echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
-                }
+           if (isset($_POST['update'])) {
+            // receive all input values from the form
+            $name = mysqli_real_escape_string($con, $_POST['name']);
+            $username = mysqli_real_escape_string($con, $_POST['username']);
+            $email = mysqli_real_escape_string($con, $_POST['email']);
+            $password = mysqli_real_escape_string($con, $_POST['password']);
+            $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
+          
+            // form validation: ensure that the form is correctly filled ...
+            // by adding (array_push()) corresponding error unto $errors array
+            if (empty($name)) { array_push($errors, "Name is required"); }
+            if (empty($username)) { array_push($errors, "Username is required"); }
+            if (empty($email)) { array_push($errors, "Email is required"); }
+            if (empty($password)) { array_push($errors, "Password is required"); }
+            if ($password != $confirm_password) {
+              array_push($errors, "The two passwords do not match");
             }
-        }
+          
+            // first check the database to make sure 
+            // a user does not already exist with the same username and/or email
+            $incident_check_query = "SELECT * FROM incidents WHERE inc_num='$inc_num' LIMIT 1";
+            $result = mysqli_query($con, $incident_check_query);
+            $incident = mysqli_fetch_assoc($result);
+            
+            if ($incident) { // if user exists
+              if ($incident['inc_num'] === $inc_num) {
+                array_push($errors, "Incident already exists");
+              }
+            }
+          
+            // Finally, register user if there are no errors in the form
+            if (count($errors) == 0) {
+                //$password = md5($password);//encrypt the password before saving in the database
+          
+                $query = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
+                mysqli_query($con, $query);
+              //$_SESSION['name'] = $name;
+                //$_SESSION['username'] = $username;
+                $_SESSION['success'] = "Record was updated.";
+                header('location: all-incidents.php');
+            }
+          }
+        //         // header('location: all-incidents.php');
+        //         echo "<div class='alert alert-success'>Record was updated.</div>";
+        //     } else {
+        //         echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
+        //         }
+        //     }
+        // }
 
         // //Update Statement
         // $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
