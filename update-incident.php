@@ -16,8 +16,6 @@ session_start();
     $time = $row['time'];
     
     if (isset($_POST['update'])) {
-        //$id = (int)$_POST['id'];
-        //$id=(INT)$_GET['id'];
         $inc_num = $_POST['inc_num'];
         $priority = $_POST['priority'];
         $description = $_POST['description'];
@@ -25,6 +23,21 @@ session_start();
         $kb_article = $_POST['kb_article'];
         $date = $_POST['date'];
         $time = $_POST['time'];
+
+        //Update Statement
+        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
+        $result=mysqli_query($con,$sql);
+        if(mysqli_affected_rows($con) == 1)
+			{
+				
+				header('location: index.php');
+				exit();
+			}
+			else
+			{
+				echo 'Unable to save blog' ;
+			}
+        }
 
 
 //         $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
@@ -46,20 +59,7 @@ session_start();
 // $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
 // $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
 
-        //Update Statement
-        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
-        $result=mysqli_query($con,$sql);
-        if(mysqli_affected_rows($con) == 1)
-			{
-				
-				header('location: index.php');
-				exit();
-			}
-			else
-			{
-				echo 'Unable to save blog' ;
-			}
-        }
+        
 
 
 ?>
