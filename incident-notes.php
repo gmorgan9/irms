@@ -84,7 +84,7 @@ session_start();
 <br><br><br>
 
 <div class="col d-flex justify-content-center">
-<table class="table table-hover table-light">
+<table class="table table-hover table-light" style="width:100px;">
   <thead>
     <tr class="header-line">
       <th scope="col">#</th>
