@@ -46,9 +46,8 @@ session_start();
     	<h1 style="margin-left: 150px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     <?php endif ?>
     <br>
-    <div class="card" style="width: 18rem;">
+    <div class="row">
     <div class="col d-flex justify-content-center">
-    <div class="row">
         <div class="card open-count" style="width: 15rem;">
             <div class="card-body">
                 <h1 class="text-center" style="font-size: 100px;">
@@ -64,13 +63,9 @@ session_start();
                 </h1>
                 <p class="text-center">Closed Incidents</p>
             </div>
-        </div>
-</div>
     </div>
 </div>
-<div class="card" style="width: 18rem;">
 <div class="col d-flex justify-content-center">
-    <div class="row">
         <div class="card open-count" style="width: 15rem;">
             <div class="card-body">
                 <h1 class="text-center" style="font-size: 100px;">
@@ -85,14 +80,10 @@ session_start();
 
                 </h1>
                 <p class="text-center">Closed Incidents</p>
-            </div>
-        </div>
     </div>
 </div>
 </div>
-<div class="card" style="width: 18rem;">
 <div class="col d-flex justify-content-center">
-    <div class="row">
         <div class="card open-count" style="width: 15rem;">
             <div class="card-body">
                 <h1 class="text-center" style="font-size: 100px;">
@@ -109,13 +100,11 @@ session_start();
                 <p class="text-center">Closed Incidents</p>
             </div>
         </div>
-</div>
-    </div>
 </div>
   </div>
   </div>
   <br>
-
+  </div>
 </div>
 </div>
 
