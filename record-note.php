@@ -74,7 +74,9 @@ session_start();
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 		        </div>
+                <div class="d-flex justify-content-center">
                 <textarea name="note" class="form-control" placeholder="Note" type=""></textarea>
+                </div>
             </div>
         </div> 
         <!-- form-group// -->
