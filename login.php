@@ -63,7 +63,7 @@ session_start();
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
         <input name="password" class="form-control" placeholder="Enter password" type="password" id="password">
-        <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+        <input type="checkbox" id="checkbox">Show Password
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
@@ -74,23 +74,11 @@ session_start();
 </div>
 
 <script>
-     const togglePassword = document.querySelector("#togglePassword");
-        const password = document.querySelector("#password");
-
-        togglePassword.addEventListener("click", function () {
-            // toggle the type attribute
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-            
-            // toggle the icon
-            this.classList.toggle("fa-solid fa-eye");
-        });
-
-        // prevent form submit
-        const form = document.querySelector("form");
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-        });
+$(document).ready(function(){
+    $('#checkbox').on('change', function(){
+        $('#password').attr('type',$('#checkbox').prop('checked')==true?"text":"password"); 
+    });
+});
 </script>
 
 </body>
