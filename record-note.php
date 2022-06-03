@@ -45,9 +45,9 @@ session_start();
 
     <div class="d-flex justify-content-center">
 
-    
+
         <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
