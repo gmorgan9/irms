@@ -94,21 +94,41 @@ session_start();
     </tr>
   </thead>
   <tbody>
-    
-    <?php foreach ($open_incidents as $key => $oi): ?>
-        <tr>
-            <td><?php echo $key + 1; ?></td>
-            <td><?php echo $oi['inc_num'] ?></td>
-            <td><?php echo $oi['priority'] ?></td>
-            <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $open_incident['description'] ?></td>
-            <td><?php echo $oi['assign_group'] ?></td>
-            <td><?php echo $oi['kb_article'] ?></td>
-            <td><?php echo $oi['date'] ?></td>
-            <td><?php echo $oi['time'] ?></td>
-            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a></td>
-            <td><a href=""><i class="fa-solid fa-trash-can"></i></a></td>
-        </tr>
-    <?php endforeach ?>
+  <?php
+
+$sql = "SELECT * FROM incidents";
+$result = mysqli_query($con, $sql);
+if($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $id=$row['id'];
+      $status=$row['status'];
+      $inc_num = $row['inc_num'];
+      $priority = $row['priority'];
+      $description = $row['description'];
+      $assign_group = $row['assign_group'];
+      $kb_article = $row['kb_article'];
+      $date = $row['date'];
+      $time = $row['time'];
+      ?>
+      <tr>
+      <th scope="row"><?php echo $id; ?></th>
+      <?php if($status == 0) { ?>
+          <td>open</td>
+      <?php } else { ?>
+      <td>closed</td>
+      <?php } ?>
+      <td><?php echo $inc_num; ?></td>
+      <td><?php echo $priority; ?></td>
+      <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
+      <td><?php echo $assign_group; ?></td>
+      <td><?php echo $ekb_article; ?></td>
+      <td><?php echo $date; ?></td>
+      <td><?php echo $time; ?></td>
+      <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+      <td><a href="all-incidents.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+      </tr>
+   <?php }
+}
     
   </tbody>
 </table>
