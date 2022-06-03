@@ -202,7 +202,7 @@ session_start();
 
       $sql = "SELECT * FROM incidents where priority=3";
       $result = mysqli_query($con, $sql);
-      if($result) {
+      if(mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
             $id=$row['id'];
             $status=$row['status'];
@@ -229,13 +229,16 @@ session_start();
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-         <?php }
-      }
+            <?php } 
+    }else { ?> 
 
-?>
   </tbody>
 </table>
 </div>
+<h5 class="text-center"> No Records Found!</h5> <br>
+<?php
+    } 
+?>
 
 <div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
@@ -261,7 +264,7 @@ session_start();
 
       $sql = "SELECT * FROM incidents where priority=4";
       $result = mysqli_query($con, $sql);
-      if($result) {
+      if(mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
             $id=$row['id'];
             $status=$row['status'];
@@ -288,15 +291,16 @@ session_start();
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-         <?php }
-      }
+            <?php } 
+    }else { ?>
 
-?>
   </tbody>
 </table>
 </div>
-
-
+<h5 class="text-center"> No Records Found!</h5> <br>
+<?php
+    } 
+?>
 
 </body>
 </html>
