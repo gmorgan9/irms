@@ -37,9 +37,9 @@ session_start();
         </h2>
     </div>
 <br>
-<div class="record_incident">
+<!-- <div class="record_incident">
     <a href="record-incident.php"><button class="btn btn-primary rec">Record Incident</button></a>
-</div>
+</div> -->
 
 <br>
 <?php  if (isset($_SESSION['username'])) : ?>
