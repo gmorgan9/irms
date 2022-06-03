@@ -25,7 +25,7 @@ session_start();
         $kb_article = $_POST['kb_article'];
         $date = $_POST['date'];
         $time = $_POST['time'];
-        $uid =$_GET['id'];
+        $uid =$_GET['updateid'];
 
         // Update Statement
         $update = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$uid'";
