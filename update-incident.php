@@ -2,7 +2,7 @@
 session_start();
     include("database/connection.php");
 
-    $id=(INT)$_GET['id'];
+    $id=$_GET['id'];
     if(isset($id) && is_numeric($id)) {
     $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
@@ -15,8 +15,6 @@ session_start();
     $date = $row['date'];
     $time = $row['time'];
     
-
-
     if (isset($_POST['update'])) {
         //$id = (int)$_POST['id'];
         $inc_num = $_POST['inc_num'];
@@ -29,10 +27,6 @@ session_start();
 
         // Update Statement
         $update = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
-        // if(count($_POST)>0) {
-        //     mysqli_query($con,"UPDATE incidents set inc_num='" . $_POST['inc_num'] . "', priority='" . $_POST['priority'] . "', description='" . $_POST['description'] . "', assign_group='" . $_POST['assign_group'] . "' ,kb_article='" . $_POST['kb_article'] . "' ,date='" . $_POST['date'] . "' ,time='" . $_POST['time'] . "' where id='" . $_POST['id'] . "'");
-        // $message = "Record Modified Successfully";
-        // }
         $result=mysqli_query($con,$update);
         if($result) {
             // echo "Updated Successfully";
