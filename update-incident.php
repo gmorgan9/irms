@@ -10,7 +10,7 @@ session_start();
 	$update = false;
 
     if (isset($_GET['updateid'])) {
-		$id = $_GET['updateid'];
+		$id = intval($_GET['updateid']);
 		$update = true;
 		$record = mysqli_query($con, "SELECT * FROM incidents WHERE id=$id");
 
