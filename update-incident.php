@@ -14,8 +14,6 @@ session_start();
     $date = $row['date'];
     $time = $row['time'];
 
-    echo vardump($sql);
-
 
     if (isset($_POST['update'])) {
         $id = (int)$_POST['id'];
