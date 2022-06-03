@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include("path.php");
 
 
@@ -38,7 +39,7 @@ include("path.php");
 </div>
 
 <br>
-<?php  if (isset($_SESSION['user'])) : ?>
+<?php  if (isset($_SESSION['username'])) : ?>
     	<h1 style="margin-left: 150px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     <?php endif ?>
     <br>
