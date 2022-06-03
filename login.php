@@ -68,7 +68,7 @@
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
-    <button type="submit" name="login-btn" class="btn btn-primary text-center reg-log">Log In</button>  
+    <button type="submit" name="login_btn" class="btn btn-primary text-center reg-log">Log In</button>  
 </div> 
     <p class="text-center">Don't have an account? <a href="/register.php" style="color: black;">Register</a> </p>                                                                 
 </form>
