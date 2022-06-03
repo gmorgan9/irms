@@ -7,7 +7,7 @@ session_start();
     $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
-    $id=row['id'];
+    $id=$row['id'];
     $inc_num = $row['inc_num'];
     $priority = $row['priority'];
     $description = $row['description'];
