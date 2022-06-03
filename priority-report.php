@@ -46,7 +46,7 @@ session_start();
     	<h1 style="margin-left: 150px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     <?php endif ?>
     <br>
-    <div class="row">
+    <div class="row row_one">
     <div class="col d-flex justify-content-center">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
