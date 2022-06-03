@@ -29,10 +29,10 @@ session_start();
         $result=mysqli_query($con,$sql);
         if($row = mysqli_fetch_assoc($result)) {
                     echo "inc_num: " . $row["inc_num"];
-                }
             } else {
                 echo "No record exists";
             }
+        }
 
 
 //         $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
