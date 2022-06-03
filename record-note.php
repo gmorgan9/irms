@@ -22,6 +22,7 @@ session_start();
 
     <!-- CKEDITOR -->
     <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
 
     <title>Record Note - IRMS</title>
 </head>
@@ -81,13 +82,11 @@ session_start();
 </form>
 </div>
 
-<script src='tinymce/tinymce.min.js'>
-
-tinymce.init({
-    selector: '#myTextarea'
-});
-
-</script>
+<script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'note' );
+            </script>
 
 </body>
 </html>
