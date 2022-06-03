@@ -2,44 +2,44 @@
 session_start();
     include("database/connection.php");
 
-    $id=(INT)$_GET['id'];
-    if(isset($id) && is_numeric($id)) {
-    $sql = "SELECT * FROM incidents where id='$id' limit 1";
-    $result=mysqli_query($con,$sql);
-    $row=mysqli_fetch_assoc($result);
-    $id=$row['id'];
-    $inc_num = $row['inc_num'];
-    $priority = $row['priority'];
-    $description = $row['description'];
-    $assign_group = $row['assign_group'];
-    $kb_article = $row['kb_article'];
-    $date = $row['date'];
-    $time = $row['time'];
+//     $id=(INT)$_GET['id'];
+//     if(isset($id) && is_numeric($id)) {
+//     $sql = "SELECT * FROM incidents where id='$id' limit 1";
+//     $result=mysqli_query($con,$sql);
+//     $row=mysqli_fetch_assoc($result);
+//     $id=$row['id'];
+//     $inc_num = $row['inc_num'];
+//     $priority = $row['priority'];
+//     $description = $row['description'];
+//     $assign_group = $row['assign_group'];
+//     $kb_article = $row['kb_article'];
+//     $date = $row['date'];
+//     $time = $row['time'];
     
-    if (isset($_POST['update'])) {
-        //$id = (int)$_POST['id'];
-        //$id=(INT)$_GET['id'];
-        $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
-        $priority = mysqli_real_escape_string($con, $_POST['priority']);
-        $description = mysqli_real_escape_string($con, $_POST['description']);
-        $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
-        $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
-        $date = mysqli_real_escape_string($con, $_POST['date']);
-        $time = mysqli_real_escape_string($con, $_POST['time']);
+//     if (isset($_POST['update'])) {
+//         //$id = (int)$_POST['id'];
+//         //$id=(INT)$_GET['id'];
+//         $inc_num = mysqli_real_escape_string($con, $_POST['inc_num']);
+//         $priority = mysqli_real_escape_string($con, $_POST['priority']);
+//         $description = mysqli_real_escape_string($con, $_POST['description']);
+//         $assign_group = mysqli_real_escape_string($con, $_POST['assign_group']);
+//         $kb_article = mysqli_real_escape_string($con, $_POST['kb_article']);
+//         $date = mysqli_real_escape_string($con, $_POST['date']);
+//         $time = mysqli_real_escape_string($con, $_POST['time']);
 
-        // Update Statement
-        $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
-        $result=mysqli_query($con,$sql);
-        if($result) {
-            echo 'Updated Successfully';
-            // header('location: all-incidents.php');
-        } else {
-            die(mysqli_error($con));
-        }
-    }
-} else {
-    echo "failed";
-}
+//         // Update Statement
+//         $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
+//         $result=mysqli_query($con,$sql);
+//         if($result) {
+//             echo 'Updated Successfully';
+//             // header('location: all-incidents.php');
+//         } else {
+//             die(mysqli_error($con));
+//         }
+//     }
+// } else {
+//     echo "failed";
+// }
 
 ?>
 

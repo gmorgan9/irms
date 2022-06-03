@@ -1,26 +1,26 @@
 <?php 
 session_start();
-    include("database/connection.php");
-    include("database/functions.php");
+    //include("database/connect.php");
+    include("database/db.php");
 
-    if (!isset($_SESSION['username'])) {
-        $_SESSION['msg'] = "You must log in first";
-        header('location: login.php');
-    }
+    // if (!isset($_SESSION['username'])) {
+    //     $_SESSION['msg'] = "You must log in first";
+    //     header('location: login.php');
+    // }
 
-    // DELETE
-    if(isset($_GET['id'])) {
-        $id = $_GET['id'];
+    // // DELETE
+    // if(isset($_GET['id'])) {
+    //     $id = $_GET['id'];
     
-        $sql = "DELETE FROM incidents WHERE id=$id";
-        $result = mysqli_query($con, $sql);
-        if($result) {
-            // echo "Deleted Successfully";
-            header('location: all-incidents.php'); // returns back to same page
-        } else {
-            die(mysqli_error($con));
-        }
-    }
+    //     $sql = "DELETE FROM incidents WHERE id=$id";
+    //     $result = mysqli_query($con, $sql);
+    //     if($result) {
+    //         // echo "Deleted Successfully";
+    //         header('location: all-incidents.php'); // returns back to same page
+    //     } else {
+    //         die(mysqli_error($con));
+    //     }
+    // }
 
     // UPDATE
 
