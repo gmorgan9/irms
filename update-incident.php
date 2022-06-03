@@ -3,6 +3,12 @@ session_start();
     include("database/connection.php");
     //include("database/functions.php");
 
+
+    $inc_num = "";
+	/$address = "";
+	$id = 0;
+	$update = false;
+
     if (isset($_GET['updateid'])) {
 		$id = intval($_GET['updateid']);
 		$update = true;
