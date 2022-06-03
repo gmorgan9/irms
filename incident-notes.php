@@ -87,11 +87,11 @@ session_start();
 <table class="table table-hover table-light notes-table">
   <thead>
     <tr class="header-line">
-      <th scope="col">#</th>
-      <th scope="col">Date</th>
-      <th scope="col">Title</th>
-      <th class="w-75" scope="col">Note</th>
-      <th scope="col">Tag</th>
+      <th style="width: 10px;" scope="col">#</th>
+      <th style="width: 20px;" scope="col">Date</th>
+      <th style="width: 20px;" scope="col">Title</th>
+      <th style="width: 50px;" class="w-75" scope="col">Note</th>
+      <th style="width: 20px;" scope="col">Tag</th>
     </tr>
   </thead>
   <tbody>
