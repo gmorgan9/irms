@@ -93,7 +93,7 @@ session_start();
       <th scope="col">Severity</th>
       <th scope="col">Description</th>
       <th scope="col">Assignment Group</th>
-      <th scope="col">KB Article</th>
+      <!-- <th scope="col">KB Article</th> -->
       <th scope="col">Date</th>
       <th scope="col">Time</th>
     </tr>
@@ -112,7 +112,7 @@ session_start();
             $priority = $row['priority'];
             $description = $row['description'];
             $assign_group = $row['assign_group'];
-            $kb_article = $row['kb_article'];
+            //$kb_article = $row['kb_article'];
             $date = $row['date'];
             $time = $row['time'];
             ?>
@@ -127,7 +127,7 @@ session_start();
             <td><?php echo $priority; ?></td>
             <td style="max-width: 30em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $description ?></td>
             <td><?php echo $assign_group; ?></td>
-            <td><?php echo $kb_article; ?></td>
+            <!-- <td><?php #echo $kb_article; ?></td> -->
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             <td><a href="update-incident.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
