@@ -95,24 +95,13 @@ session_start();
         <div class="card-body">
             <div class="d-flex justify-content-center">
             
-                <p class="text-center" style="font-size: 33.65px;">
-                <?php
+            <h1 class="text-center" style="font-size: 100px;">
+            <?php
             $sql="select count('1') from incidents where priority=4";
             $result=mysqli_query($con,$sql);
-                if(mysqli_num_rows($result) > 0) {
-                echo "no records";
-            ?>
-                </p>
-                <h1 class="text-center" style="font-size: 100px;">
-                <?php 
-            } else {
             $rowtotal=mysqli_fetch_array($result); 
             echo "$rowtotal[0]";
-            }
-            
-
         ?>
-        
         </h1>
             </div>
             <div class="d-flex justify-content-center">
@@ -177,8 +166,9 @@ session_start();
             <td><?php echo $time; ?></td>
             </tr>
          <?php } 
-      }else {
-        echo "no records";
+      }else { ?>
+        <h1 class="text-center">No Records Found!</h1>
+        <?php
     }
 
 ?>
