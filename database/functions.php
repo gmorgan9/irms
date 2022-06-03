@@ -129,7 +129,7 @@ if (isset($_POST['rec_inc'])) {
     }
   }
 
-  // RECORD AN INCIDENT
+  // REGISTER USER
 if (isset($_POST['rec_note'])) {
   // receive all input values from the form
   $date = mysqli_real_escape_string($con, $_POST['date']);
@@ -139,31 +139,32 @@ if (isset($_POST['rec_note'])) {
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
-  if (empty($date)) { array_push($errors, "Date is required"); }
-  if (empty($title)) { array_push($errors, "Title is required"); }
-  if (empty($note)) { array_push($errors, "Note is required"); }
-  if (empty($tag)) { array_push($errors, "Tag is required"); }
-  
+  if (empty($date)) { array_push($errors, "date is required"); }
+  if (empty($title)) { array_push($errors, "title is required"); }
+  if (empty($note)) { array_push($errors, "note is required"); }
+  if (empty($tag)) { array_push($errors, "tag is required"); }
 
   // first check the database to make sure 
-  // a incident does not already exist with the same incident number
+  // a user does not already exist with the same username and/or email
   $note_check_query = "SELECT * FROM notes WHERE title='$title' LIMIT 1";
   $result = mysqli_query($con, $note_check_query);
-  $note = mysqli_fetch_assoc($result);
+  $inc_note = mysqli_fetch_assoc($result);
   
-  if ($note) { // if incident exists
+  if ($inc_note) { // if user exists
     if ($note['title'] === $title) {
-      array_push($errors, "Title already exists");
+      array_push($errors, "Username already exists");
     }
   }
 
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
+  	//$password = md5($password);//encrypt the password before saving in the database
 
-      $query = "INSERT INTO notes (date, title, note, tag) 
-                VALUES('$date', '$title', '$note', '$tag')";
-      mysqli_query($con, $query);
-      header('location: incident-notes.php');
+  	$query = "INSERT INTO notes (date, title, note, tag) 
+  			  VALUES('$date', '$title', '$note', '$tag')";
+  	mysqli_query($con, $query);
+  	$_SESSION['success'] = "Note Successfully Created!";
+  	header('location: /');
   }
 }
 
