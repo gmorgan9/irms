@@ -67,6 +67,8 @@ session_start();
             $query = "UPDATE incidents SET inc_num='$inc_num' WHERE id='$id'";
             mysqli_query($con, $query);
             header('location: all-incidents.php');
+        } else {
+            echo "failed";
         }
       }
         //         // header('location: all-incidents.php');
