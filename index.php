@@ -25,8 +25,8 @@ include(ROOT_PATH . "/app/controllers/users.php");
 </head>
 <body>
 
-<?php include(ROOT_PATH . "/app/includes/header.php") ?>
-<?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
+<?php //include(ROOT_PATH . "/app/includes/header.php") ?>
+<?php //include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
 
 
