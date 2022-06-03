@@ -14,7 +14,7 @@ session_start();
     $kb_article = $row['kb_article'];
     $date = $row['date'];
     $time = $row['time'];
-    }
+    
 
 
     if (isset($_POST['update'])) {
@@ -41,6 +41,9 @@ session_start();
             die(mysqli_error($con));
         }
     }
+} else {
+    echo "failed";
+}
 
 ?>
 
