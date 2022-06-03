@@ -1,22 +1,32 @@
 <?php
 session_start();
     include("database/connection.php");
-    include("database/functions.php");
+    //include("database/functions.php");
+
+    if (isset($_GET['updateid'])) {
+		$id = $_GET['updateid'];
+		$update = true;
+		$record = mysqli_query($con, "SELECT * FROM incidents WHERE id=$id");
+
+		if (count($record) == 1 ) {
+			$n = mysqli_fetch_array($record);
+			$inc_num = $n['inc_num'];
+			//$address = $n['address'];
+		}
+	}
+
+    if (isset($_POST['update'])) {
+        $id = $_POST['id'];
+        $inc_num = $_POST['inc_num'];
+        //$address = $_POST['address'];
+    
+        mysqli_query($db, "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id");
+        $_SESSION['message'] = "Address updated!"; 
+        header('location: index.php');
+    }
 
     
-    $inc_num = "";
-	//$address = "";
-	$id = intval($_GET['updateid']);
-	//$update = false;
 
-	if (isset($_POST['update'])) {
-		$inc_num = $_POST['inc_num'];
-		//$address = $_POST['address'];
-
-		mysqli_query($con, "UPDATE incidents SET inc_num='$inc_num' where id=$id"); 
-		$_SESSION['message'] = "Record updated"; 
-		header('location: all-incidents.php');
-	}
 
         
 $id = intval($_GET['updateid']);
