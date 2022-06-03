@@ -11,6 +11,7 @@ $admin_users = selectAll($table);
 
 $errors = array();
 $id = '';
+$name = '';
 $username = '';
 $admin = '';
 $email = '';
