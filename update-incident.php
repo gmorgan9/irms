@@ -133,7 +133,7 @@ if(isset($_POST["update"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $status = $row['status'];
+                    // $status = $row['status'];
                     $inc_num = $row["inc_num"];
                     $priority = $row["priority"];
                     $description = $row["description"];
@@ -230,21 +230,6 @@ if(isset($_POST["update"])){
             <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
         </div>
     </div> 
-    <!-- form-group// -->
-    
-<?php 
-if ($status == 1) {
-    echo "<input name='status' class='text-center' placeholder='Status' type='checkbox' checked>"
- 
-} else {
-
-    echo "<input name='status' class='text-center' placeholder='Status' type='checkbox'>"
-}
-?>
-
-    <!-- form-group// -->
-    
-            <!-- <input name="status" class="text-center" placeholder="Status" type="checkbox"> -->
     <!-- form-group// -->
 
     <div class="d-flex justify-content-center">
