@@ -232,9 +232,25 @@ if(isset($_POST["update"])){
     </div> 
     <!-- form-group// -->
     <?php if($status == 1) { ?>
-    <p>Closed</p>
+        <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-25">
+            <div class="input-group-prepend">
+	            <span class="input-group-text">Closed</span>
+	        </div>
+            <!-- <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="" readonly> -->
+        </div>
+    </div> 
+    <!-- form-group// -->
     <?php } else { ?>
-    <p>Not Closed</p>
+        <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-25">
+            <div class="input-group-prepend">
+	            <span class="input-group-text">Not Closed</span>
+	        </div>
+            <!-- <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="" readonly> -->
+        </div>
+    </div> 
+    <!-- form-group// -->
     <?php } ?>
 
     <div class="d-flex justify-content-center">
