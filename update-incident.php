@@ -47,6 +47,7 @@ if(isset($_POST['update'])){
         //$description=htmlspecialchars(strip_tags($_POST['description']));
         //$price=htmlspecialchars(strip_tags($_POST['price']));
  
+        $id = intval($_GET['updateid']);
         // bind the parameters
         $stmt->bindParam(':inc_num', $inc_num);
         //$stmt->bindParam(':description', $description);
