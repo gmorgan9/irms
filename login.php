@@ -64,7 +64,7 @@ session_start();
 		</div>
         <input name="password" class="form-control" placeholder="Enter password" type="password" id="password">
 </div>
-<br><br><input type="checkbox" id="checkbox">Show Password
+<input type="checkbox" id="checkbox">Show Password
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
     <button type="submit" name="login_user" class="btn btn-primary text-center reg-log">Log In</button>  
