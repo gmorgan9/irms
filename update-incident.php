@@ -2,9 +2,9 @@
 session_start();
     include("database/connection.php");
 
-    $id=(INT)$_GET['id'];
+    $uid=(INT)$_GET['updateid'];
     if(isset($id) && is_numeric($id)) {
-    $sql = "SELECT * FROM incidents where id='$id' limit 1";
+    $sql = "SELECT * FROM incidents where id='$uid' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $inc_num = $row['inc_num'];
