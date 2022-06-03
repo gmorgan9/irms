@@ -165,17 +165,16 @@ session_start();
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-         <?php } 
-         }else { ?>
+         <?php 
+        } 
+    }else { ?>
       
   </tbody>
   <h3 class="text-center">No Records Found!</h3>
+  <?php } ?>
 </table>
       
-      <?php
-  }
-
-?>
+      
 </div>
 
 
