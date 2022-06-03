@@ -36,7 +36,7 @@
 <br><br><br><br><br>
 <div class="d-flex justify-content-center">
 <form action="login.php" class="log-form" method="post">
-<?php //include('errors.php'); ?>
+<?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
 <div class="form-header d-flex justify-content-center">
     <div class="bg-circle">
@@ -70,7 +70,7 @@
     <div class="d-flex justify-content-center">                                
     <button type="submit" name="login-btn" class="btn btn-primary text-center reg-log">Log In</button>  
 </div> 
-    <p class="text-center">Don't have an account? <a href="/register.php" style="color: black;">Register</a> </p>                                                                 
+    <p class="text-center">Don't have an account? <a href="<?php echo BASE_URL . '/register.php' ?>" style="color: black;">Register</a> </p>                                                                 
 </form>
 </div>
 
