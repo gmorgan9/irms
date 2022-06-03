@@ -16,11 +16,12 @@ session_start();
 //     $date = $row['date'];
 //     $time = $row['time'];
 
-
+if (isset($_POST['update'])) {
 if (isset($_GET['updateid'])) {
     
 	$id = $_GET['updateid'];
 	updateInc($id);
+}
 }
 
 
