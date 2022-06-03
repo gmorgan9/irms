@@ -30,7 +30,7 @@ session_start();
 
         $query = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=1";
         echo "<br>";
-$query = "SELECT inc_num FROM incidents WHERE id = $id";
+$query = "SELECT inc_num FROM incidents WHERE id = 1";
 $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
     //print data of each row
