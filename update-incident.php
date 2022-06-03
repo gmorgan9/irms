@@ -219,8 +219,9 @@ if(isset($_POST["update"])){
     <!-- form start -->
 <form action="update-incident.php" class="reg-form" method="post">
 <?php //include('errors.php'); ?>
-<h2 class="text-center">Record Incident</h2>
 <br>
+<h2 class="text-center">Record Incident</h2>
+
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
