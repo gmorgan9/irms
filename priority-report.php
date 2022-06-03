@@ -167,13 +167,13 @@ session_start();
             </tr>
          <?php } 
     }else { ?> 
-       
-  </tbody>
-</table>
-<h5 class="text-center"> No Records Found!</h5> <br>
+    <h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
+       
+  </tbody>
+</table>
 
 </div>
 
@@ -234,17 +234,15 @@ session_start();
             </tr>
             <?php } 
     }else { ?> 
-
-  </tbody>
-</table>
-<h5 class="text-center"> No Records Found!</h5> <br>
+    <h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
-</div>
 
-<br>
-<br>
+  </tbody>
+</table>
+
+</div>
 
 <div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
@@ -299,14 +297,16 @@ session_start();
             </tr>
             <?php } 
     }else { ?>
-
-  </tbody>
-</table>
-</div>
-<h5 class="text-center"> No Records Found!</h5> <br>
+    <h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
+
+  </tbody>
+</table>
+
+</div>
+
 
 </body>
 </html>
