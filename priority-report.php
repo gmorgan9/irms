@@ -169,8 +169,9 @@ session_start();
          }else { ?>
       
   </tbody>
+  <h3 class="text-center">No Records Found!</h3>
 </table>
-      <h3 class="text-center">No Records Found!</h3>
+      
       <?php
   }
 
