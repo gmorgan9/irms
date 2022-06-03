@@ -164,7 +164,7 @@ if (isset($_POST['rec_note'])) {
   			  VALUES('$date', '$title', '$note', '$tag')";
   	mysqli_query($con, $query);
   	$_SESSION['success'] = "Note Successfully Created!";
-  	header('location: /');
+  	header('location: incident-notes.php');
   }
 }
 
