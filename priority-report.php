@@ -149,7 +149,7 @@ session_start();
 
       $sql = "SELECT * FROM incidents where priority=2";
       $result = mysqli_query($con, $sql);
-      if($result) {
+      if(mysqli_num_rows($result) < 0) {
           while ($row = mysqli_fetch_assoc($result)) {
             $id=$row['id'];
             $status=$row['status'];
@@ -176,7 +176,9 @@ session_start();
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-         <?php }
+         <?php } else {
+             echo "no records";
+         }
       }
 
 ?>
