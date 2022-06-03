@@ -4,7 +4,7 @@
     </a>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav">
-        <?php if (isset($_SESSION['username'])): ?>
+        <?php //if (isset($_SESSION['username'])): ?>
             <li>
             <a href="/">
             <i class="fa fa-globe"></i>
@@ -20,6 +20,6 @@
                     <li><a href="<?php echo BASE_URL . '/logout.php'; ?>" class="logout">Logout</a></li>
                 </ul>
             </li>
-        <?php endif; ?>
+        <?php //endif; ?>
     </ul>
 </header>

@@ -4,11 +4,11 @@
     </a>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav">
-    <?php if (strpos($_SERVER['SCRIPT_NAME'], 'login.php') !== false || strpos($_SERVER['SCRIPT_NAME'], 'register.php') !== false) { ?>
+    <?php //if (strpos($_SERVER['SCRIPT_NAME'], 'login.php') !== false || strpos($_SERVER['SCRIPT_NAME'], 'register.php') !== false) { ?>
       <li><a href="<?php echo BASE_URL . '/' ?>" class="logout">Home</a></li>
-        <?php } else { ?>
-        <?php } ?>
-      <?php if (isset($_SESSION['id'])): ?>
+        <?php //} else { ?>
+        <?php //} ?>
+      <?php //if (isset($_SESSION['id'])): ?>
         <li>
           <a href="#">
             <i class="fa fa-user"></i>
@@ -16,15 +16,15 @@
             <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
           </a>
           <ul>
-            <?php if($_SESSION['admin']): ?>
+            <?php //if($_SESSION['admin']): ?>
               <li><a href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Dashboard</a></li>
-            <?php endif; ?>
+            <?php //endif; ?>
             <li><a href="<?php echo BASE_URL . '/logout.php' ?>" class="logout">Logout</a></li>
           </ul>
         </li>
-      <?php else: ?>
+      <?php //else: ?>
         <li><a href="<?php echo BASE_URL . '/register.php' ?>">Sign Up</a></li>
         <li><a href="<?php echo BASE_URL . '/login.php' ?>">Login</a></li>
-      <?php endif; ?>
+      <?php //endif; ?>
     </ul>
 </header>
