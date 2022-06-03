@@ -233,7 +233,7 @@ if(isset($_POST["update"])){
     <!-- form-group// -->
     <?php if($status == 1) { ?>
         <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-25">
+        <div class="form-group input-group w-50">
             <div class="input-group-prepend">
 	            <span class="input-group-text">Status</span>
 	        </div>
@@ -243,7 +243,7 @@ if(isset($_POST["update"])){
     <!-- form-group// -->
     <?php } else { ?>
         <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-25">
+        <div class="form-group input-group w-50">
             <div class="input-group-prepend">
 	            <span class="input-group-text">Status</span>
 	        </div>
