@@ -150,7 +150,7 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
         $id =  trim($_GET['id']);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM incidents WHERE id = ?";
+        $sql = "SELECT * FROM incidents WHERE id = $id";
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, 'i', $param_id);
