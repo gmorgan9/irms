@@ -110,13 +110,13 @@ session_start();
             ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
-            <td><?php echo $date; ?></td>
-            <td><?php echo $title; ?></td>
-            <td><?php echo $note; ?></td>
-            <td><?php echo $tag; ?></td>
-            <td><?php echo $time; ?></td>
-            <td><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
-            <td><a href="incident-notes.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td scope="row"><?php echo $date; ?></td>
+            <td scope="row"><?php echo $title; ?></td>
+            <td scope="row"><?php echo $note; ?></td>
+            <td scope="row"><?php echo $tag; ?></td>
+            <td scope="row"><?php echo $time; ?></td>
+            <td scope="row"><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>
+            <td scope="row"><a href="incident-notes.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can"></i></a></td>
             </tr>
          <?php }
       }
