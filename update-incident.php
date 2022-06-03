@@ -79,7 +79,7 @@ if(isset($_POST["update"])){
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssi", $param_status, $param_inc_num, $param_priority, $param_description, $param_assign_group, $param_kb_article, $param_date, $param_time, $param_id);
+            mysqli_stmt_bind_param($stmt, "isssssssi", $param_status, $param_inc_num, $param_priority, $param_description, $param_assign_group, $param_kb_article, $param_date, $param_time, $param_id);
             
             // Set parameters
             $param_status = $status;
