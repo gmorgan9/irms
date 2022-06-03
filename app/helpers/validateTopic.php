@@ -1,16 +1,16 @@
 <?php
 
-function validateIncident($incidents)
+function validateIncident($incident)
 {
     $errors = array();
 
-    if (empty($incidents['inc_num'])) {
+    if (empty($incident['inc_num'])) {
         array_push($errors, 'Name is required');
     }
 
     $existingIncident = selectOne('incidents', ['inc_num' => $post['inc_num']]);
     if ($existingIncident) {
-        if (isset($post['update-incident']) && $existingIncident['id'] != $incidents['id']) {
+        if (isset($post['update-incident']) && $existingIncident['id'] != $incident['id']) {
             array_push($errors, 'Name already exists');
         }
 
