@@ -117,7 +117,7 @@ session_start();
             $time = $row['time'];
             ?>
             <tr>
-            <th scope="row"><?php $id; ?></th>
+            <th scope="row"><?php echo $id; ?></th>
             <?php if($status == 0) { ?>
                 <td>open</td>
             <?php } else { ?>
