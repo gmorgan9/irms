@@ -27,6 +27,7 @@ session_start();
         $sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
 
             if (mysqli_query($con, $sql)) {
+                header('location: all-incidents.php');
                 echo "Record updated successfully" . $id;
             } else {
                  echo "Error updating record: " . mysqli_error($con);
