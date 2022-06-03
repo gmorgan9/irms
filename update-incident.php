@@ -230,14 +230,7 @@ if(isset($_POST["update"])){
     </div> 
     <!-- form-group// -->
     <?php if($status == 1) { ?>
-    <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-25">
-            <div class="input-group-prepend">
-	            <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
-	        </div>
             <input name="status" class="form-control text-center" placeholder="Status" type="checkbox" checked>
-        </div>
-    </div> 
     <!-- form-group// -->
     <?php } else { ?>
     <div class="d-flex justify-content-center">
