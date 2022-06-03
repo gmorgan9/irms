@@ -172,8 +172,8 @@ session_start();
 </table>
 
 </div>
+<h2 class="text-center"> No Records Found!</h2>
 <?php
-  echo "<br><br><br><br>No Records Found!";
     } 
 ?>
 
