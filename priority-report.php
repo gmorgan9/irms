@@ -165,10 +165,10 @@ if(mysqli_num_rows($result) > 0) {
             <td><?php echo $time; ?></td>
             </tr>
          <?php } 
-    }else { ?>    
+    }else { ?>   
+    <h5 class="text-center"> No Records Found!</h5> <br>
+<?php } ?> 
   </tbody>
-  <h5 class="text-center"> No Records Found!</h5> <br>
-<?php } ?>
 </table>
 </div>
 
@@ -286,9 +286,9 @@ if(mysqli_num_rows($result) > 0) {
             </tr>
             <?php } 
     }else { ?>
-  </tbody>
-  <h5 class="text-center"> No Records Found!</h5> <br>
+     <h5 class="text-center"> No Records Found!</h5> <br>
 <?php } ?>
+  </tbody>
 </table>
 </div>
 
