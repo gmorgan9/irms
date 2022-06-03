@@ -131,6 +131,7 @@ if(isset($_POST["update"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
+                    $status = $row["status"];
                     $inc_num = $row["inc_num"];
                     $priority = $row["priority"];
                     $description = $row["description"];
@@ -219,13 +220,21 @@ if(isset($_POST["update"])){
 <br>
 <h2 class="text-center">Record Incident</h2>
 <br>
-
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> Identifer</span>
 	        </div>
             <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
+        </div>
+    </div> 
+    <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-25">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
+	        </div>
+            <input name="status" class="form-control text-center" placeholder="Status" type="text" value="<?php echo $status ?>" readonly>
         </div>
     </div> 
     <!-- form-group// -->
