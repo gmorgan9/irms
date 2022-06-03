@@ -288,9 +288,9 @@ if(mysqli_num_rows($result) > 0) {
     }else { ?>
   </tbody>
 </table>
-</div>
 <h5 class="text-center"> No Records Found!</h5> <br>
 <?php } ?>
+</div>
 
 
 </body>
