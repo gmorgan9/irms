@@ -92,7 +92,6 @@ session_start();
       <th scope="col">Title</th>
       <th scope="col">Note</th>
       <th scope="col">Tag</th>
-      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
