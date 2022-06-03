@@ -95,7 +95,7 @@ session_start();
         <div class="card-body">
             <div class="d-flex justify-content-center">
             
-                <p class="text-center" style="font-size: 33.5px;">
+                <p class="text-center" style="font-size: 33.75px;">
                 <?php
             $sql="select count('1') from incidents where priority=4";
             $result=mysqli_query($con,$sql);
