@@ -74,7 +74,7 @@ session_start();
                 ?>
 
                 </h1>
-                <p class="text-center">Closed Incidents</p>
+                <p class="text-center">Open Incidents</p>
             </div>
         </div>
     </div>
