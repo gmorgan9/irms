@@ -176,10 +176,10 @@ session_start();
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-         <?php } else {
-             echo "no records";
-         }
-      }
+         <?php } 
+      }else {
+        echo "no records";
+    }
 
 ?>
   </tbody>
