@@ -223,7 +223,7 @@ if(isset($_POST["update"])){
 <h2 class="text-center">Record Incident</h2>
 
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-25">
+        <div class="form-group input-group w-50">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> Identifer</span>
 	        </div>
