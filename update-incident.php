@@ -144,8 +144,9 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
     // Close connection
     mysqli_close($con);
 } else{
+    $id = intval(trim($_GET['id']));
     // Check existence of id parameter before processing further
-    if(!empty(trim($_GET['id']))){
+    if(isset($id) && !empty($id)){
         // Get URL parameter
         $id =  (INT)trim($_GET['id']);
         
