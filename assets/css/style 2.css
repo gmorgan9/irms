@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: #d9d9d9 !important;
+}
+.header {
+    background-color: #005382;
+    height: 45px;
+    color: white;
+}
+.logo {
+    text-align: center;
+}
+.logo a {
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
+    color: white;
+}
+.logo a:hover {
+    color: white;
+}
+.record_incident {
+    float: right;
+    margin-top: 10px;
+    margin-right: 25px;
+}
+.rec {
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+}
+.icon {
+    text-align: center;
+}
+.card {
+    width: 254px;
+    height: 243px;
+    border-radius: 10% !important;
+    margin-right: 30px;
+    Margin-left: 30px;
+}
+.card-body a {
+    margin-top: 20px;
+}
+.row_one {
+    margin-bottom: 15px;
+}
+
+.reg-form {
+    background-color: white;
+    border-radius: 15px;
+    width: 500px;
+    height: 600px;
+}
+.log-form {
+    background-color: white;
+    border-radius: 15px;
+    width: 500px;
+    height: 450px;
+}
+.input-group {
+    width: 300px;
+}
+.bg-circle {
+    background-color: #E5E5E5;
+    border-radius: 100px;
+    height: 130px;
+    width: 130px;
+    position:relative;
+}
+.sm-circle {
+    background-color: #005382;
+    border-radius: 100px;
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 3px solid #FFFFFF;
+}
+.form-header {
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+.user-header {
+    margin-top: 25px;
+    color: white;
+}
+.reg-log {
+    color: white !important;
+    background-color: #005382 !important;
+    border-color: #005382 !important;
+}
+.open-count {
+    width: 200px;
+    height: 180px;
+    border-radius: 10% !important;
+    margin-right: 30px;
+    Margin-left: 30px;
+}
+.open-count h1 {
+    margin-top: -20px;
+}
+.table {
+    width: 1350px !important;
+}
+.header-line {
+    border-bottom: 3px rgb(128, 128, 128) solid;
+}
+
+td a {
+    color: rgb(0, 123, 255);
+}
+td a:hover {
+    color: rgb(0, 123, 255);
+}
+.delete {
+    color: rgb(142, 0, 0);
+}
