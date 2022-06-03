@@ -2,7 +2,7 @@
 session_start();
     include("database/connection.php");
 
-    $id=(int)$_GET['id'];
+    $id = (int)$_GET['id'];
     $sql = "SELECT * FROM `incidents` where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
