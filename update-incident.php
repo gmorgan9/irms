@@ -131,7 +131,7 @@ if(isset($_POST["update"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $status = $row["status"];
+                    $status = isset($_POST['status']) ? 1 : 0;
                     $inc_num = $row["inc_num"];
                     $priority = $row["priority"];
                     $description = $row["description"];
