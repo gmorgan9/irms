@@ -5,8 +5,8 @@ session_start();
 
 
    // Define variables and initialize with empty values
-$inc_num = $priority = $description = $assign_group = $kb_article = $date = "";
-$inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = "";
+$inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
+$inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
@@ -48,7 +48,7 @@ if(isset($_POST["update"])){
     // Validate address address
     $input_kb_article = trim($_POST["kb_article"]);
     if(empty($input_kb_article)){
-        $kb_article_err = "Please enter an assignment group.";     
+        $kb_article_err = "Please enter an KB Article.";     
     } else{
         $kb_article = $input_kb_article;
     }
@@ -56,21 +56,29 @@ if(isset($_POST["update"])){
     // Validate address address
     $input_date = trim($_POST["date"]);
     if(empty($input_date)){
-        $date_err = "Please enter an assignment group.";     
+        $date_err = "Please enter an date.";     
     } else{
         $date = $input_date;
+    }
+
+    // Validate address address
+    $input_time = trim($_POST["time"]);
+    if(empty($input_time)){
+        $time_err = "Please enter an time.";     
+    } else{
+        $time = $input_time;
     }
     
     
     // Check input errors before inserting in database
     if(empty($inc_num_err) && empty($priority_err) && empty($description_err) && empty($assign_group_err)
-    && empty($kb_article_err) && empty($date_err)){
+    && empty($kb_article_err) && empty($date_err) && empty($time_err)){
         // Prepare an update statement
-        $sql = "UPDATE incidents SET inc_num=?, priority=?, description=?, assign_group=?, kb_article=?, date=? WHERE id=?";
+        $sql = "UPDATE incidents SET inc_num=?, priority=?, description=?, assign_group=?, kb_article=?, date=?, time=? WHERE id=?";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssssi", $param_inc_num, $param_priority, $param_description, $param_assign_group, $param_kb_article, $param_date, $param_id);
+            mysqli_stmt_bind_param($stmt, "sssssssi", $param_inc_num, $param_priority, $param_description, $param_assign_group, $param_kb_article, $param_date, $param_time, $param_id);
             
             // Set parameters
             $param_inc_num = $inc_num;
@@ -79,7 +87,7 @@ if(isset($_POST["update"])){
             $param_assign_group = $assign_group;
             $param_kb_article = $kb_article;
             $param_date = $date;
-            // $param_time = $time;
+            $param_time = $time;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -129,7 +137,7 @@ if(isset($_POST["update"])){
                     $assign_group = $row["assign_group"];
                     $kb_article = $row["kb_article"];
                     $date = $row["date"];
-                    // $time = $row["time"];
+                    $time = $row["time"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: die-page.php");
