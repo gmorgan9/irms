@@ -25,16 +25,18 @@ session_start();
         $time = $_POST['time'];
 
         // Update Statement
-        $sql = "UPDATE `incidents` SET `inc_num`='$inc_num',`priority`='$priority',`description`='$description',`assign_group`='$assign_group',`kb_article`='$kb_article',`date`='$date',`time`='$time' HAVING id=$id";
-
-        mysqli_query($con,"UPDATE incidents set inc_num='" . $_POST['inc_num'] . "', priority='" . $_POST['priority'] . "', description='" . $_POST['description'] . "', assign_group='" . $_POST['assign_group'] . "' ,kb_article='" . $_POST['kb_article'] . "' ,date='" . $_POST['date'] . "' ,time='" . $_POST['time'] . "' where id='" . $_POST['id'] . "'");
-        $result=mysqli_query($con,$sql);
-        if($result) {
-            echo "Updated Successfully";
-            // header('location: all-incidents.php');
-        } else {
-            die(mysqli_error($con));
+        // $sql = "UPDATE `incidents` SET `inc_num`='$inc_num',`priority`='$priority',`description`='$description',`assign_group`='$assign_group',`kb_article`='$kb_article',`date`='$date',`time`='$time' HAVING id=$id";
+        if(count($_POST)>0) {
+            mysqli_query($con,"UPDATE incidents set inc_num='" . $_POST['inc_num'] . "', priority='" . $_POST['priority'] . "', description='" . $_POST['description'] . "', assign_group='" . $_POST['assign_group'] . "' ,kb_article='" . $_POST['kb_article'] . "' ,date='" . $_POST['date'] . "' ,time='" . $_POST['time'] . "' where id='" . $_POST['id'] . "'");
+        $message = "Record Modified Successfully";
         }
+        //$result=mysqli_query($con,$sql);
+        //if($result) {
+        //    echo "Updated Successfully";
+            // header('location: all-incidents.php');
+        // } else {
+        //    die(mysqli_error($con));
+        //}
     }
 
 ?>
