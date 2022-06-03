@@ -2,8 +2,7 @@
 session_start();
     include("database/connection.php");
 
-    $id = intval(trim($_GET['updateid']));
-    if(isset($id) && is_numeric($id)) {
+    $id = $_GET['updateid'];
     $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
@@ -47,7 +46,7 @@ session_start();
 // $inc_num = $priority = $description = $assign_group = $kb_article = $date = $time = "";
 // $inc_num_err = $priority_err = $description_err = $assign_group_err = $kb_article_err = $date_err = $time_err = "";
 
-        Update Statement
+        //Update Statement
         $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id=$id";
         $result=mysqli_query($con,$sql);
         if(mysqli_affected_rows($con) == 1)
@@ -61,7 +60,6 @@ session_start();
 				echo 'Unable to save blog' ;
 			}
         }
-    }
 
 
 ?>
