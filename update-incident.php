@@ -2,7 +2,7 @@
 session_start();
     include("database/connection.php");
 
-    $uid=(INT)$_GET['updateid'];
+    $id=(INT)$_GET['id'];
     if(isset($id) && is_numeric($id)) {
     $sql = "SELECT * FROM incidents where id='$uid' limit 1";
     $result=mysqli_query($con,$sql);
@@ -25,13 +25,12 @@ session_start();
         $kb_article = $_POST['kb_article'];
         $date = $_POST['date'];
         $time = $_POST['time'];
-        $uid =$_GET['updateid'];
 
         // Update Statement
-        $update = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$uid'";
+        $update = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
         $result=mysqli_query($con,$update);
         if($result) {
-            echo 'Updated Successfully using ID: ' . $inc_num;
+            echo 'Updated Successfully using ID: ' . $id;
             // header('location: all-incidents.php');
         } else {
             die(mysqli_error($con));
@@ -89,7 +88,7 @@ session_start();
             <div class="input-group-prepend">
 	            <span class="input-group-text"> Identifer</span>
 	        </div>
-            <input name="inc_num" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
+            <input name="id" class="form-control text-center" placeholder="Incident Number" type="text" value="<?php echo $id ?>" readonly>
         </div>
     </div> 
     <!-- form-group// -->
