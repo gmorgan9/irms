@@ -48,6 +48,12 @@ body {
     margin-bottom: 15px;
 }
 
+.note-form {
+    background-color: white;
+    border-radius: 15px;
+    width: 1200px;
+    height: 600px;
+}
 .reg-form {
     background-color: white;
     border-radius: 15px;
