@@ -231,17 +231,24 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
-    <?php if($status == 1) { ?>
+    
         <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
 	            <span class="input-group-text">Closed</span>
 	        </div>
             <input name="status" class="form-control text-center" placeholder="Incident Number" type="checkbox" value="<?php echo $status; ?>" checked>
+            <select class="form-control">
+            <?php if($status == 1) { ?>
+                <option name="status">Open</option>
+            <?php } else { ?>
+                <option>Default select</option>
+            <?php } ?>
+            </select>
         </div>
     </div> 
     <!-- form-group// -->
-    <?php } else { ?>
+   
         <div class="d-flex justify-content-center">
         <div class="form-group input-group w-25">
             <div class="input-group-prepend">
@@ -251,7 +258,7 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
-    <?php } ?>
+    
 
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
