@@ -83,7 +83,7 @@ session_start();
 
     <div class="form-row">
         <div class="d-flex justify-content-center">
-            <div class="form-group input-group w-50">
+            <div class="form-group input-group">
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
 		        </div>
