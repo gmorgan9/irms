@@ -2,11 +2,12 @@
 session_start();
     include("database/connection.php");
 
-    $id=(INT)$_POST['id'];
+    $id=(INT)$_GET['id'];
     if(isset($id) && is_numeric($id)) {
     $sql = "SELECT * FROM incidents where id='$id' limit 1";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
+    $id=row['id'];
     $inc_num = $row['inc_num'];
     $priority = $row['priority'];
     $description = $row['description'];
