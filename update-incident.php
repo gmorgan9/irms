@@ -233,12 +233,12 @@ if(isset($_POST["update"])){
 <?php if (isset($status) && $status == 1): ?>
     <label>
         <input type="checkbox" name="status" checked>
-        not
+        Closed
     </label>
 <?php else: ?>
     <label>
         <input type="checkbox" name="status">
-        completed
+        Open
     </label>
 <?php endif; ?>
 
