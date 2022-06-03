@@ -232,9 +232,9 @@ if(isset($_POST["update"])){
     </div> 
     <!-- form-group// -->
     <?php if($status == 1) { ?>
-    <input type="checkbox" name="status" value="1" id="status" checked>
+    <p>Closed</p>
     <?php } else { ?>
-    <input type="checkbox" name="status" value="0" id="status">
+    <p>Not Closed</p>
     <?php } ?>
 
     <div class="d-flex justify-content-center">
