@@ -142,7 +142,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
     
     // Close connection
-    mysqli_close($link);
+    mysqli_close($con);
 } else{
     // Check existence of id parameter before processing further
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
