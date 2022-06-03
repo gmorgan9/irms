@@ -44,8 +44,6 @@ session_start();
 <br>
 
     <div class="d-flex justify-content-center">
-
-
     <div class="form-row">
         <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -92,6 +90,7 @@ session_start();
         </div> 
         <!-- form-group// -->
     </div>
+</div>
     <div class="d-flex justify-content-center">                                
         <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
     </div>                                                               
