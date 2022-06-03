@@ -52,7 +52,7 @@ session_start();
 
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
-    <div class="card open-count" style="width: 15rem;">
+    <div class="card open-count" style="width: 1rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
@@ -94,8 +94,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-            
-            <h1 class="text-center" style="font-size: 100px;">
+                <h1 class="text-center" style="font-size: 100px;">
             <?php
             $sql="select count('1') from incidents where priority=4";
             $result=mysqli_query($con,$sql);
@@ -113,27 +112,11 @@ session_start();
 
 </div>
 </div>
-<br><br><br>
+
 <div class="col d-flex justify-content-center">
     <h2>Priority 2</h2>
 </div>
 <div class="col d-flex justify-content-center">
-<?php
-
-$sql = "SELECT * FROM incidents where priority=3";
-$result = mysqli_query($con, $sql);
-if(mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      $id=$row['id'];
-      $status=$row['status'];
-      $inc_num = $row['inc_num'];
-      $priority = $row['priority'];
-      $description = $row['description'];
-      //$assign_group = $row['assign_group'];
-      //$kb_article = $row['kb_article'];
-      $date = $row['date'];
-      $time = $row['time'];
-      ?>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -149,6 +132,23 @@ if(mysqli_num_rows($result) > 0) {
     </tr>
   </thead>
   <tbody>
+
+      <?php
+
+      $sql = "SELECT * FROM incidents where priority=2";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $id=$row['id'];
+            $status=$row['status'];
+            $inc_num = $row['inc_num'];
+            $priority = $row['priority'];
+            $description = $row['description'];
+            //$assign_group = $row['assign_group'];
+            //$kb_article = $row['kb_article'];
+            $date = $row['date'];
+            $time = $row['time'];
+            ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
             <?php if($status == 0) { ?>
@@ -164,36 +164,18 @@ if(mysqli_num_rows($result) > 0) {
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-         <?php } 
-    }else { ?>   
-    <h5 class="text-center"> No Records Found!</h5> <br>
-<?php } ?> 
+         <?php }
+      }
+
+?>
   </tbody>
 </table>
 </div>
 
-
-<!-- New Table -->
 <div class="col d-flex justify-content-center">
     <h2>Priority 3</h2>
 </div>
 <div class="col d-flex justify-content-center">
-<?php
-
-$sql = "SELECT * FROM incidents where priority=3";
-$result = mysqli_query($con, $sql);
-if(mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      $id=$row['id'];
-      $status=$row['status'];
-      $inc_num = $row['inc_num'];
-      $priority = $row['priority'];
-      $description = $row['description'];
-      //$assign_group = $row['assign_group'];
-      //$kb_article = $row['kb_article'];
-      $date = $row['date'];
-      $time = $row['time'];
-      ?>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -209,6 +191,23 @@ if(mysqli_num_rows($result) > 0) {
     </tr>
   </thead>
   <tbody>
+
+      <?php
+
+      $sql = "SELECT * FROM incidents where priority=3";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $id=$row['id'];
+            $status=$row['status'];
+            $inc_num = $row['inc_num'];
+            $priority = $row['priority'];
+            $description = $row['description'];
+            //$assign_group = $row['assign_group'];
+            //$kb_article = $row['kb_article'];
+            $date = $row['date'];
+            $time = $row['time'];
+            ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
             <?php if($status == 0) { ?>
@@ -224,36 +223,18 @@ if(mysqli_num_rows($result) > 0) {
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-            <?php } 
-    }else { ?> 
+         <?php }
+      }
+
+?>
   </tbody>
-  <h5 class="text-center"> No Records Found!</h5> <br>
-<?php } ?>
 </table>
 </div>
 
-
-<!-- new table -->
 <div class="col d-flex justify-content-center">
     <h2>Priority 4</h2>
 </div>
 <div class="col d-flex justify-content-center">
-<?php
-
-$sql = "SELECT * FROM incidents where priority=3";
-$result = mysqli_query($con, $sql);
-if(mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      $id=$row['id'];
-      $status=$row['status'];
-      $inc_num = $row['inc_num'];
-      $priority = $row['priority'];
-      $description = $row['description'];
-      //$assign_group = $row['assign_group'];
-      //$kb_article = $row['kb_article'];
-      $date = $row['date'];
-      $time = $row['time'];
-      ?>
 <table class="table table-hover table-light">
   <thead>
     <tr class="header-line">
@@ -269,6 +250,23 @@ if(mysqli_num_rows($result) > 0) {
     </tr>
   </thead>
   <tbody>
+
+      <?php
+
+      $sql = "SELECT * FROM incidents where priority=4";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $id=$row['id'];
+            $status=$row['status'];
+            $inc_num = $row['inc_num'];
+            $priority = $row['priority'];
+            $description = $row['description'];
+            //$assign_group = $row['assign_group'];
+            //$kb_article = $row['kb_article'];
+            $date = $row['date'];
+            $time = $row['time'];
+            ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
             <?php if($status == 0) { ?>
@@ -284,13 +282,14 @@ if(mysqli_num_rows($result) > 0) {
             <td><?php echo $date; ?></td>
             <td><?php echo $time; ?></td>
             </tr>
-            <?php } 
-    }else { ?>
+         <?php }
+      }
+
+?>
   </tbody>
 </table>
-<h5 class="text-center"> No Records Found!</h5> <br>
-<?php } ?>
 </div>
+
 
 
 </body>
