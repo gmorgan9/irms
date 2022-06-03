@@ -2,7 +2,7 @@
 
 include(ROOT_PATH . "/app/database/functions.php");
 //include(ROOT_PATH . "/app/helpers/middleware.php");
-include(ROOT_PATH . "/app/helpers/validateIncident.php");
+include("app/helpers/validateIncident.php");
 
 $table = 'incidents';
 
