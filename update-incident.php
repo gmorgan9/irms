@@ -5,8 +5,8 @@ session_start();
 
 
    // Define variables and initialize with empty values
-$inc_num = $priority = "";
-$inc_num_err = $priority_err = "";
+$inc_num = $priority = $description = "";
+$inc_num_err = $priority_err = $priority_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
@@ -28,21 +28,29 @@ if(isset($_POST["update"])){
     } else{
         $priority = $input_priority;
     }
+
+    // Validate address address
+    $input_description = trim($_POST["description"]);
+    if(empty($input_description)){
+        $description_err = "Please enter an Incident Number.";     
+    } else{
+        $description = $input_description;
+    }
     
     
     // Check input errors before inserting in database
-    if(empty($inc_num_err) && empty($priority_err)){
+    if(empty($inc_num_err) && empty($priority_err) && empty($description_err)){
         // Prepare an update statement
-        $sql = "UPDATE incidents SET inc_num=?, priority=? WHERE id=?";
+        $sql = "UPDATE incidents SET inc_num=?, priority=?, description=?  WHERE id=?";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssi", $param_inc_num, $param_priority, $param_id);
+            mysqli_stmt_bind_param($stmt, "sssi", $param_inc_num, $param_priority, $param_description, $param_id);
             
             // Set parameters
             $param_inc_num = $inc_num;
             $param_priority = $priority;
-            // $param_description = $description;
+            $param_description = $description;
             // $param_assign_group = $assign_group;
             // $param_kb_article = $kb_article;
             // $param_date = $date;
@@ -92,7 +100,7 @@ if(isset($_POST["update"])){
                     // Retrieve individual field value
                     $inc_num = $row["inc_num"];
                     $priority = $row["priority"];
-                    // $description = $row["description"];
+                    $description = $row["description"];
                     // $assign_group = $row["assign_group"];
                     // $kb_article = $row["kb_article"];
                     // $date = $row["date"];
