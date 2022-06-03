@@ -229,15 +229,17 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
-    <?php if($status == 1) { 
-        $status =1?>
+    
             <input name="status" class="text-center" placeholder="Status" type="checkbox" checked>
+            <?php 
+    $check = isset($_POST['status']) ? "checked" : "unchecked";
+    echo $check;
+    ?>
     <!-- form-group// -->
-    <?php } else { 
-        $status =0?>
-            <input name="status" class="text-center" placeholder="Status" type="checkbox">
+    
+            <!-- <input name="status" class="text-center" placeholder="Status" type="checkbox"> -->
     <!-- form-group// -->
-    <?php } ?>
+
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
             <div class="input-group-prepend">
