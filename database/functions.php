@@ -233,24 +233,24 @@ function countOpenInc()
 
 
 
-// UPDATE //
-if (isset($_GET['updateid'])) {
+// // UPDATE //
+// if (isset($_GET['updateid'])) {
     
-	$id = $_GET['updateid'];
-    $inc_num = $_POST['inc_num'];
+// 	$id = $_GET['updateid'];
+//     $inc_num = $_POST['inc_num'];
     
-	updateInc($id);
-}
+// 	updateInc($id);
+// }
 
 
 
-function updateInc($id) {
-	global $con, $inc_num;
-	$sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
-	if (mysqli_query($con, $sql)) {
-		$_SESSION['message'] = "Incident successfully updated";
-		//header('location: '); // returns back to same page
-    echo 'update';
-		exit(0);
-	}
-}
+// function updateInc($id) {
+// 	global $con, $inc_num;
+// 	$sql = "UPDATE incidents SET inc_num='$inc_num' WHERE id=$id";
+// 	if (mysqli_query($con, $sql)) {
+// 		$_SESSION['message'] = "Incident successfully updated";
+// 		//header('location: '); // returns back to same page
+//     echo 'update';
+// 		exit(0);
+// 	}
+// }

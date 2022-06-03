@@ -4,7 +4,19 @@ session_start();
     include("database/functions.php");
 
     
+    $inc_num = "";
+	//$address = "";
+	$id = $_GET['updateid'];
+	//$update = false;
 
+	if (isset($_POST['update'])) {
+		$inc_num = $_POST['inc_num'];
+		//$address = $_POST['address'];
+
+		mysqli_query($db, "UPDATE incidents SET inc_num='$inc_num' where id=$id"); 
+		$_SESSION['message'] = "Record updated"; 
+		header('location: all-incidents.php');
+	}
 
 
 
