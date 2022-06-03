@@ -204,6 +204,7 @@ if(isset($_POST["update"])){
     <div class="header">
         <h2 class="logo">
             Incident Record Management System
+            <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </h2>
     </div>
 
