@@ -2,7 +2,7 @@
 session_start();
     include("database/connection.php");
 
-    $uid=(INT)$_GET['updateid'];
+    $uid=(INT)$_GET['id'];
     if(isset($id) && is_numeric($id)) {
     $sql = "SELECT * FROM incidents where id='$uid' limit 1";
     $result=mysqli_query($con,$sql);
