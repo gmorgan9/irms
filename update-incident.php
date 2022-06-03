@@ -28,15 +28,14 @@ session_start();
         $sql = "UPDATE incidents SET inc_num='$inc_num',priority='$priority',description='$description',assign_group='$assign_group',kb_article='$kb_article',date='$date',time='$time' WHERE id='$id'";
         $result=mysqli_query($con,$sql);
         if(mysqli_affected_rows($con) == 1)
-			{
-				
-				header('location: index.php');
-				exit();
-			}
-			else
-			{
-				echo 'Unable to save blog' ;
-			}
+        if (mysqli_num_rows($result) > 0) {
+                //print data of each row
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "inc_num: " . $row["inc_num"];
+                }
+            } else {
+                echo "No record exists";
+            }
         }
 
 
