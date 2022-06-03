@@ -46,37 +46,59 @@ session_start();
     	<h1 style="margin-left: 150px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
     <?php endif ?>
     <br>
-    <div class="row row_one">
-    <div class="col d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h1 class="text-center" style="font-size: 100px;">
-
-                <?php
-                    $sql="select count('1') from incidents where status=1";
-                    $result=mysqli_query($con,$sql);
-                    $rowtotal=mysqli_fetch_array($result); 
-                    echo "$rowtotal[0]";
-
-                ?>
-
-                </h1>
-                <p class="text-center">Closed Incidents</p>
-            </div>
-    </div>
-</div>
 
 
-<div class="card" style="width: 18rem;">
+<div class="row row_one">
+    <div class="card" style="width: 18rem;">
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
+                <h1>
             <?php
             $sql="select count('1') from incidents where status=1";
             $result=mysqli_query($con,$sql);
             $rowtotal=mysqli_fetch_array($result); 
             echo "$rowtotal[0]";
         ?>
+        </h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <h1>
+            <?php
+            $sql="select count('1') from incidents where status=1";
+            $result=mysqli_query($con,$sql);
+            $rowtotal=mysqli_fetch_array($result); 
+            echo "$rowtotal[0]";
+        ?>
+        </h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <h1>
+            <?php
+            $sql="select count('1') from incidents where status=1";
+            $result=mysqli_query($con,$sql);
+            $rowtotal=mysqli_fetch_array($result); 
+            echo "$rowtotal[0]";
+        ?>
+        </h1>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
@@ -85,75 +107,9 @@ session_start();
     </div>
 </div>
 
-
-
-
-
-<div class="card" style="width: 18rem;">
-    <div class="card-body d-flex flex-column align-items-center">
-        <div class="card-body">
-        <h1 class="text-center" style="font-size: 100px;">
-
-        <?php
-            $sql="select count('1') from incidents where status=1";
-            $result=mysqli_query($con,$sql);
-            $rowtotal=mysqli_fetch_array($result); 
-            echo "$rowtotal[0]";
-        ?>
-
-</h1>
-<p class="text-center">Closed Incidents</p>
-        </div>
-    </div>
 </div>
 
 
-
-
-<div class="col d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h1 class="text-center" style="font-size: 100px;">
-
-                <?php
-                    $sql="select count('1') from incidents where status=1";
-                    $result=mysqli_query($con,$sql);
-                    $rowtotal=mysqli_fetch_array($result); 
-                    echo "$rowtotal[0]";
-
-                ?>
-
-                </h1>
-                <p class="text-center">Closed Incidents</p>
-    </div>
-</div>
-</div>
-<div class="col d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h1 class="text-center" style="font-size: 100px;">
-
-                <?php
-                    $sql="select count('1') from incidents where status=1";
-                    $result=mysqli_query($con,$sql);
-                    $rowtotal=mysqli_fetch_array($result); 
-                    echo "$rowtotal[0]";
-
-                ?>
-
-                </h1>
-                <p class="text-center">Closed Incidents</p>
-            </div>
-        </div>
-</div>
-  </div>
-  </div>
-  <br>
-  </div>
-</div>
-</div>
-
-<br><br>
 
 </body>
 </html>
