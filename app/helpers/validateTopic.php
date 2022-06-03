@@ -1,20 +1,20 @@
 <?php
 
-function validateTopic($topic)
+function validateIncident($incident)
 {
     $errors = array();
 
-    if (empty($topic['name'])) {
+    if (empty($incident['inc_num'])) {
         array_push($errors, 'Name is required');
     }
 
-    $existingTopic = selectOne('topics', ['name' => $post['name']]);
-    if ($existingTopic) {
-        if (isset($post['update-topic']) && $existingTopic['id'] != $post['id']) {
+    $existingIncident = selectOne('incidents', ['inc_num' => $post['inc_num']]);
+    if ($existingIncident) {
+        if (isset($post['update-incident']) && $existingIncident['id'] != $incident['id']) {
             array_push($errors, 'Name already exists');
         }
 
-        if (isset($post['add-topic'])) {
+        if (isset($post['add-incident'])) {
             array_push($errors, 'Name already exists');
         }
     }
