@@ -1,16 +1,13 @@
 <header>
     <a href="<?php echo BASE_URL . '/' ?>" class="logo">
-      <h1 class="logo-text"><span>Morgan</span>Finances</h1>
+      <h1 class="logo-text"><span>Morgan</span>Recipes</h1>
     </a>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav">
-      <!-- <li><a href="<?php 
-      // echo 
-      // BASE_URL . '/' ?>">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="<?php 
-      // echo BASE_URL . '/' ?>">Documentation</a></li> -->
-
+    <?php if (strpos($_SERVER['SCRIPT_NAME'], 'login.php') !== false || strpos($_SERVER['SCRIPT_NAME'], 'register.php') !== false) { ?>
+      <li><a href="<?php echo BASE_URL . '/' ?>" class="logout">Home</a></li>
+        <?php } else { ?>
+        <?php } ?>
       <?php if (isset($_SESSION['id'])): ?>
         <li>
           <a href="#">

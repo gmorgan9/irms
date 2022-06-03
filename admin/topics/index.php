@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/categories.php");
+<?php include(ROOT_PATH . "/app/controllers/topics.php"); 
 adminOnly();
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,6 @@ adminOnly();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" type="image/x-icon" href="../../assets/images/fav.png?v=<?php echo time(); ?>">
 
         <!-- Font Awesome -->
         <link rel="stylesheet"
@@ -22,12 +21,15 @@ adminOnly();
             rel="stylesheet">
 
         <!-- Custom Styling -->
-        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/style.css?v=<?php echo time(); ?>">
 
         <!-- Admin Styling -->
-        <link rel="stylesheet" href="../../assets/css/admin.css">
+        <link rel="stylesheet" href="../../assets/css/admin.css?v=<?php echo time(); ?>">
 
-        <title>Admin Section - Edit Categories</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/assets/images/fav.png?v=<?php echo time(); ?>">
+
+        <title>Admin Section - Manage Topics</title>
     </head>
 
     <body>
@@ -43,31 +45,34 @@ adminOnly();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Category</a>
-                    <a href="index.php" class="btn btn-big">Manage Categories</a>
+                    <a href="create.php" class="btn btn-big">Add Topic</a>
+                    <a href="index.php" class="btn btn-big">Manage Topics</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Edit Category</h2>
-                    <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+                    <h2 class="page-title">Manage Topics</h2>
 
-                    <form action="edit.php" method="post">
-                        <input type="hidden" name="id" value="<?php echo $id; ?>" >
-                        <div>
-                            <label>Name</label>
-                            <input type="text" name="name" value="<?php echo $name; ?>" class="text-input">
-                        </div>
-                        <div>
-                            <label>Description</label>
-                            <textarea name="description" id="body"><?php echo $description; ?></textarea>
-                        </div>
+                    <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
-                        <div>
-                            <button type="submit" name="update-category" class="btn btn-big">Update Topic</button>
-                        </div>
-                    </form>
+                    <table>
+                        <thead>
+                            <th>SN</th>
+                            <th>Name</th>
+                            <th colspan="2">Action</th>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($topics as $key => $topic): ?>
+                               <tr>
+                                    <td><?php echo $key + 1; ?></td>
+                                    <td><?php echo $topic['name']; ?></td>
+                                    <td><a href="edit.php?id=<?php echo $topic['id']; ?>" class="edit">edit</a></td>
+                                    <td><a href="index.php?del_id=<?php echo $topic['id']; ?>" class="delete">delete</a></td>
+                                </tr> 
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
 
                 </div>
 

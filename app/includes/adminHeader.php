@@ -1,12 +1,12 @@
 <header>
     <a class="logo" href="<?php echo BASE_URL . '/'; ?>">
-        <h1 class="logo-text"><span>Morgan</span>Finances</h1>
+        <h1 class="logo-text"><span>Morgan</span>Recipes</h1>
     </a>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav">
         <?php if (isset($_SESSION['username'])): ?>
             <li>
-            <a href="/admin/dashboard.php">
+            <a href="/">
             <i class="fa fa-globe"></i>
             Public</a>
             </li>

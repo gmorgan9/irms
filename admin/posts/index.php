@@ -10,7 +10,9 @@ session_start();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" type="image/x-icon" href="../../assets/images/fav.png?v=<?php echo time(); ?>">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/assets/images/fav.png?v=<?php echo time(); ?>">
 
         <!-- Font Awesome -->
         <link rel="stylesheet"
@@ -28,7 +30,7 @@ session_start();
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../assets/css/admin.css?v=<?php echo time(); ?>">
 
-        <title>Admin Section - Manage Transactions</title>
+        <title>Admin Section - Manage Posts</title>
     </head>
 
     <body>
@@ -44,14 +46,14 @@ session_start();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Transactions</a>
-                    <a href="index.php" class="btn btn-big">Manage Transactions</a>
+                    <a href="create.php" class="btn btn-big">Add Post</a>
+                    <a href="index.php" class="btn btn-big">Manage Posts</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Manage Transactions</h2>
+                    <h2 class="page-title">Manage Posts</h2>
 
                     <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
                     <table>
