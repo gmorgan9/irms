@@ -170,11 +170,12 @@ session_start();
        
   </tbody>
 </table>
+
+</div>
 <?php
   echo "<br><br><br><br>No Records Found!";
     } 
 ?>
-</div>
 
 
 <div class="col d-flex justify-content-center">
