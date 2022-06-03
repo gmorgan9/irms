@@ -21,8 +21,8 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- CKEDITOR -->
-    <!-- <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
-    <script src="ckeditor/ckeditor.js"></script> -->
+    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
 
     <title>Record Note - IRMS</title>
 </head>
@@ -99,7 +99,7 @@ session_start();
 <script>
                 // Replace the <textarea id="editor1"> with a CKEditor 4
                 // instance, using default configuration.
-                // CKEDITOR.replace( 'note' );
+                CKEDITOR.replace( 'note' );
             </script>
 
 </body>
