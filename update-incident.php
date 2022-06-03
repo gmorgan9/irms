@@ -241,8 +241,10 @@ if(isset($_POST["update"])){
             <select class="form-control">
             <?php if($status == 1) { ?>
                 <option name="status">Open</option>
+                <option name="status">Close</option>
             <?php } else { ?>
-                <option>Default select</option>
+                <option name="status">Open</option>
+                <option name="status">Close</option>
             <?php } ?>
             </select>
         </div>
