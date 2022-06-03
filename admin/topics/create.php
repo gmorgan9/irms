@@ -1,6 +1,6 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/topics.php");
-adminOnly();
+<?php //include(ROOT_PATH . "/app/controllers/topics.php");
+//adminOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,60 +34,94 @@ adminOnly();
 
     <body>
         
-    <?php include(ROOT_PATH . "/app/includes/adminHeader.php"); ?>
+    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper">
 
-        <?php include(ROOT_PATH . "/app/includes/adminSidebar.php"); ?>
+        <?php// include(ROOT_PATH . "/app/includes/adminSidebar.php"); ?>
 
 
-            <!-- Admin Content -->
-            <div class="admin-content">
-                <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Topic</a>
-                    <a href="index.php" class="btn btn-big">Manage Topics</a>
+        <br><br>
+<div class="d-flex justify-content-center">
+    <!-- form start -->
+<form action="create.php" class="reg-form" method="post">
+
+    <!-- <div class="form-header d-flex justify-content-center">
+        <div class="bg-circle">
+            <div class="sm-circle">
+                <div class="d-flex justify-content-center">
+                    <i class="user-header fa-solid fa-user fa-3x"></i>
                 </div>
-
-
-                <div class="content">
-
-                    <h2 class="page-title">Add Topic</h2>
-                    <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
-
-                    <form action="create.php" method="post">
-                        <div>
-                            <label>Name</label>
-                            <input type="text" name="name" value="<?php echo $name ?>" class="text-input">
-                        </div>
-                        <div>
-                            <label>Description</label>
-                            <textarea name="description" id="body"><?php echo $description ?></textarea>
-                        </div>
-
-                        <div>
-                            <button type="submit" name="add-topic" class="btn btn-big">Add Topic</button>
-                        </div>
-                    </form>
-
-                </div>
-
             </div>
-            <!-- // Admin Content -->
-
         </div>
-        <!-- // Page Wrapper -->
+    </div> -->
+<br>
+<h2 class="text-center">Record Incident</h2>
+<br>
 
-
-
-        <!-- JQuery -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- Ckeditor -->
-        <script
-            src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
-        <!-- Custom Script -->
-        <script src="../../assets/js/scripts.js"></script>
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
+	        </div>
+            <input name="inc_num" class="form-control" placeholder="Incident Number" type="text">
+        </div>
+    </div> 
+    <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
+		    </div>
+            <input name="priority" class="form-control" placeholder="Priority" type="text">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
+		    </div>
+            <input name="description" class="form-control" placeholder="Description" type="text">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
+		    </div>
+            <input name="assign_group" class="form-control" placeholder="Assignment Group" type="text">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-book"></i> </span>
+		    </div>
+            <input name="kb_article" class="form-control" placeholder="KB Artcile" type="text">
+        </div>
+    </div> <!-- form-group// -->    
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
+		    </div>
+            <input name="date" class="form-control" placeholder="Date" type="date">
+        </div>
+    </div> <!-- form-group// -->    
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-clock"></i> </span>
+		    </div>
+            <input name="time" class="form-control" placeholder="Time" type="time">
+        </div>
+    </div> <!-- form-group// -->   
+    <div class="d-flex justify-content-center">                                
+        <button id="button" type="submit" name="rec_inc" class="btn btn-primary text-center reg-log">Submit Incident</button>  
+    </div>                                                               
+</form>
+</div>
 
     </body>
 
