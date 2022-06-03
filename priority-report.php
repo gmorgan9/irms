@@ -169,7 +169,6 @@ session_start();
       
   </tbody>
 </table>
-</div>
 <?php
 }else { ?>
       <h3 class="text-center">No Records Found!</h3>
@@ -177,6 +176,8 @@ session_start();
   }
 
 ?>
+</div>
+
 
 <div class="col d-flex justify-content-center">
     <h2>Priority 3</h2>
