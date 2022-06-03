@@ -16,7 +16,7 @@ $kb_article = '';
 $date = '';
 $time = '';
 
-$topics = selectAll($table);
+$incidents = selectAll($table);
 
 
 if (isset($_POST['add-incident'])) {
