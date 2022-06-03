@@ -62,10 +62,8 @@ session_start();
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <p>
         <input name="password" class="form-control" placeholder="Enter password" type="password" id="password">
         <i class="bi bi-eye-slash" id="togglePassword"></i>
-</p>
 </div>
     </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
