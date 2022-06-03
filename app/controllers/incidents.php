@@ -16,7 +16,7 @@ $kb_article = '';
 $date = '';
 $time = '';
 
-$incident = selectAll($table);
+$incidents = selectAll($table);
 
 
 if (isset($_POST['add-incident'])) {
@@ -44,15 +44,15 @@ if (isset($_POST['add-incident'])) {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $incident = selectOne($table, ['id' => $id]);
-    $id = $incident['id'];
-    $inc_num = $incident['inc_num'];
-    $priority = $incident['priority'];
-    $description = $incident['description'];
-    $assign_group = $incident['assign_group'];
-    $kb_article = $incident['kb_article'];
-    $date = $incident['date'];
-    $time = $incident['time'];
+    $incidents = selectOne($table, ['id' => $id]);
+    $id = $incidents['id'];
+    $inc_num = $incidents['inc_num'];
+    $priority = $incidents['priority'];
+    $description = $incidents['description'];
+    $assign_group = $incidents['assign_group'];
+    $kb_article = $incidents['kb_article'];
+    $date = $incidents['date'];
+    $time = $incidents['time'];
 }
 
 if (isset($_GET['del_id'])) {
@@ -80,14 +80,14 @@ if (isset($_POST['update-incident'])) {
         exit();
     } else {
         $id = $_POST['id'];
-        $id = $incident['id'];
-        $inc_num = $incident['inc_num'];
-        $priority = $incident['priority'];
-        $description = $incident['description'];
-        $assign_group = $incident['assign_group'];
-        $kb_article = $incident['kb_article'];
-        $date = $incident['date'];
-        $time = $incident['time'];
+        $id = $incidents['id'];
+        $inc_num = $incidents['inc_num'];
+        $priority = $incidents['priority'];
+        $description = $incidents['description'];
+        $assign_group = $incidents['assign_group'];
+        $kb_article = $incidents['kb_article'];
+        $date = $incidents['date'];
+        $time = $incidents['time'];
     }
 
 }
