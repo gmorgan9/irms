@@ -74,11 +74,14 @@ session_start();
 </div>
 
 <script>
-$(document).ready(function(){
-    $('#checkbox').on('change', function(){
-        $('#password').attr('type',$('#checkbox').prop('checked')==true?"text":"password"); 
-    });
-});
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 </script>
 
 </body>
