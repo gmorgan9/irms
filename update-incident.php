@@ -22,7 +22,7 @@ if (isset($_GET['updateid'])) {
 	$id = $_GET['updateid'];
 	updateInc($id);
 }
-}
+
 
 
 function updateInc($id) {
@@ -33,6 +33,7 @@ function updateInc($id) {
 		header('location: '.$_SERVER['PHP_SELF']); // returns back to same page
 		exit(0);
 	}
+}
 }
 
 
