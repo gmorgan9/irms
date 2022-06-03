@@ -167,12 +167,13 @@ session_start();
             </tr>
          <?php } 
     }else { ?> 
-    <h5 class="text-center"> No Records Found!</h5> <br>
+
+       
+  </tbody>
+  <h5 class="text-center"> No Records Found!</h5> <br>
 <?php
     } 
 ?>
-       
-  </tbody>
 </table>
 
 </div>
