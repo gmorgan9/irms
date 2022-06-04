@@ -124,7 +124,7 @@ if(mysqli_num_rows($result) == 0 ) {
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
             <td style="display: block;
-  width: 50px;
+  width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;"><?php echo $note; ?></td>
