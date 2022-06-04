@@ -108,8 +108,8 @@ if(isset($_POST["up-note"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $date = $row['date'];
-                    // $title = $row["title"];
+                    // $date = $row['date'];
+                    $title = $row["title"];
                     // $note = $row["note"];
                     // $tag = $row["tag"];
                 } else{
