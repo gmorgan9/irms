@@ -5,41 +5,72 @@ session_start();
 
 
    // Define variables and initialize with empty values
-$date = "";
-$date_err = "";
+   $tag = $title = $note = $date = "";
+   $tag_err = $title_err = $note_err = $date_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
     // Get hidden input value
     $id = $_POST["id"];
+    //$status = isset($_POST['status']) ? 1 : 0;
     
-    // Validate Date
+    // Validate address address
+    $input_tag = trim($_POST["tag"]);
+    if(empty($input_tag)){
+        $tag_err = "Please enter an Incident Number.";     
+    } else{
+        $tag = $input_tag;
+    }
+
+    // Validate address address
+    $input_title = trim($_POST["title"]);
+    if(empty($input_title)){
+        $title_err = "Please enter an Title.";     
+    } else{
+        $title = $input_title;
+    }
+
+    // Validate address address
+    $input_note = trim($_POST["note"]);
+    if(empty($input_note)){
+        $note_err = "Please enter a Note.";     
+    } else{
+        $note = $input_note;
+    }
+
+    // Validate address address
     $input_date = trim($_POST["date"]);
     if(empty($input_date)){
-        $date_err = "Please enter an address.";     
+        $date_err = "Please enter an assignment group.";     
     } else{
         $date = $input_date;
     }
     
+    
     // Check input errors before inserting in database
-    if(empty($date_err)){
+    if(empty($tag_err) && empty($title_err) && empty($note_err) && empty($date_err)){
         // Prepare an update statement
-        $sql = "UPDATE notes SET date=? WHERE id=?";
+        $sql = "UPDATE notes SET tag=?, title=?, note=?, date=? WHERE id=?";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_date, $param_id);
+            mysqli_stmt_bind_param($stmt, "ssssi", $param_tag, $param_title, $param_note, $param_date, $param_id);
             
             // Set parameters
+            $param_tag = $tag;
+            $param_title = $title;
+            // $param_priority = $priority;
+            $param_note = $note;
+            // $param_assign_group = $assign_group;
+            // $param_kb_article = $kb_article;
             $param_date = $date;
-            // $param_address = $address;
-            // $param_salary = $salary;
+            // $param_time = $time;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location: incident-notes.php");
+                header("location: index.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -56,7 +87,7 @@ if(isset($_POST["update"])){
     // Check existence of id parameter before processing further
     if(isset($_GET["noteid"]) && !empty(trim($_GET["noteid"]))){
         // Get URL parameter
-        $id =  intval($_GET["noteid"]);
+        $id =  trim($_GET["noteid"]);
         
         // Prepare a select statement
         $sql = "SELECT * FROM notes WHERE id = ?";
@@ -77,12 +108,17 @@ if(isset($_POST["update"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
+                    $tag = $row['tag'];
+                    $title = $row["title"];
+                    //$priority = $row["priority"];
+                    $note = $row["note"];
+                    // $assign_group = $row["assign_group"];
+                    // $kb_article = $row["kb_article"];
                     $date = $row["date"];
-                    // $address = $row["address"];
-                    // $salary = $row["salary"];
+                    // $time = $row["time"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
-                    header("location: error.php");
+                    header("location: die-page.php");
                     exit();
                 }
                 
@@ -98,10 +134,27 @@ if(isset($_POST["update"])){
         mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
-        header("location: error.php");
+        header("location: die-page2.php");
         exit();
     }
 }
+    
+
+
+        
+// $id = intval($_GET['updateid']);
+//     $sql = "SELECT * FROM incidents where id=$id";
+//     $result=mysqli_query($con,$sql);
+//     $row=mysqli_fetch_assoc($result);
+//    // $id=$row['id'];
+//     $inc_num = $row['inc_num'];
+//     $priority = $row['priority'];
+//     $description = $row['description'];
+//     $assign_group = $row['assign_group'];
+//     $kb_article = $row['kb_article'];
+//     $date = $row['date'];
+//     $time = $row['time'];
+
 ?>
 
 <!DOCTYPE html>
@@ -115,16 +168,12 @@ if(isset($_POST["update"])){
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.21">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.16">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- CKEDITOR -->
-    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
-    <script src="ckeditor/ckeditor.js"></script>
-
-    <title>Update Note - IRMS</title>
+    <title>Record Incident - IRMS</title>
 </head>
 <body>
     <div class="header">
@@ -144,70 +193,60 @@ if(isset($_POST["update"])){
 <div class="d-flex justify-content-center">
 
     <!-- form start -->
-    <form action="update-note.php" class="note-form" method="post">
-<?php //include("errors.php"); ?>
+<form action="update-note.php" class="inc-form" method="post">
+<?php //include('errors.php'); ?>
 <br>
-<h2 class="text-center">Update Note</h2>
-<br>
+<h2 class="text-center">Update Incident</h2>
 
     <div class="d-flex justify-content-center">
-    <div class="form-row">
-        <div class="form-group input-group">
+        <div class="form-group input-group w-50">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"> Identifer</span>
+	        </div>
+            <input name="id" class="form-control text-center" placeholder="Id" type="text" value="<?php echo $id ?>" readonly>
+        </div>
+    </div> 
+    <!-- form-group// -->
+    
+
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-            <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date ?>">
-            </div>
-        </div>
-    <!-- form-group// -->
-        <div class="p-3"></div>
-        <div class="d-flex justify-content-center">
-            <div class="form-group input-group">
-    	        <div class="input-group-prepend">
-		            <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
-		        </div>
             <input name="title" class="form-control" placeholder="Title" type="text" value="<?php echo $title ?>">
         </div>
-        </div> 
+    </div> 
     <!-- form-group// -->
-    </div>
-    <!-- end row // -->
-    <div class="form-row">
-        <div class="mx-auto" style="width: -1100px;">
-            <div class="form-group input-group">
-    	        <div class="input-group-prepend">
-		            <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
-		        </div>
-                <input name="tag" class="form-control" placeholder="Tag" type="text" value="<?php echo $tag ?>">
-            </div>
-        </div> 
-        <!-- form-group// -->
-    </div>
-    <!-- end row // -->
-
-    <div class="form-row">
-    <div class="mx-auto" style="width: -1100px;">
-            <div class="form-group input-group">
-    	        <div class="input-group-prepend">
-		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-                    <textarea name="note" class="form-control" placeholder="Note" type="text"><?php echo $note ?></textarea>
-                    </div>
-            </div>
-        </div> 
-        <!-- form-group// -->
-    </div>
-    <!-- end row // --> 
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
+		    </div>
+            <input name="tag" class="form-control" placeholder="Tag" type="text"value="<?php echo $tag ?>">
+        </div>
+    </div> <!-- form-group// -->
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
+		    </div>
+            <input name="note" class="form-control" placeholder="Note" type="text" value="<?php echo $note ?>">
+        </div>
+    </div> <!-- form-group// -->  
+    <div class="d-flex justify-content-center">
+        <div class="form-group input-group w-75">
+    	    <div class="input-group-prepend">
+		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
+		    </div>
+            <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date ?>">
+        </div>
+    </div> <!-- form-group// -->   
     <div class="d-flex justify-content-center">                                
         <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
-
-<script>
-    // Replace the <textarea id="editor1"> with a CKEditor 4
-    // instance, using default configuration.
-    CKEDITOR.replace( 'note' );
-</script>
 
 
 </body>
