@@ -2,6 +2,11 @@
 session_start();
     include("database/connection.php");
     include("database/functions.php");
+
+    if (isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You are already logged in";
+        header('location: index.php');
+    }
 ?>
 
 
