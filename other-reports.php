@@ -41,7 +41,9 @@ session_start();
     <a href="/"><button class="btn btn-primary rec">Back</button></a>
 </div>
 
-<br><br>
+<br>
+    <h1 style="margin-left: 150px;" class="text-center"><strong>Other Reports</strong></h1>
+<br>
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
 <div class="card" style="width: 18rem;">
