@@ -11,7 +11,7 @@ $date_err = "";
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
     // Get hidden input value
-    $id = $_POST["id"];
+    $id = $_POST["noteid"];
     
     // Validate Date
     $input_date = trim($_POST["date"]);
