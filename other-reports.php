@@ -27,7 +27,7 @@ session_start();
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Home</title>
+    <title>Other Reports - IRMS</title>
 </head>
 <body>
     <div class="header">
@@ -38,14 +38,10 @@ session_start();
     </div>
 <br>
 <div class="record_incident">
-    <a href="record-incident.php"><button class="btn btn-primary rec">Record Incident</button></a>
+    <a href="/"><button class="btn btn-primary rec">Back</button></a>
 </div>
 
-<br>
-<?php  if (isset($_SESSION['username'])) : ?>
-    	<h1 style="margin-left: 150px;" class="text-center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h1>
-    <?php endif ?>
-    <br>
+<br><br>
 <div class="col d-flex justify-content-center">
 <div class="row row_one">
 <div class="card" style="width: 18rem;">
@@ -55,7 +51,7 @@ session_start();
                 <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="/open-incidents.php" class="btn stretched-link">Open Incidents</a>
+                <a href="#" class="btn stretched-link">Report 1</a>
             </div>
         </div>
     </div>
@@ -67,7 +63,7 @@ session_start();
                 <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="/closed-incidents.php" class="btn stretched-link">Closed Incidents</a>
+                <a href="#" class="btn stretched-link">Report 2</a>
             </div>
         </div>
     </div>
@@ -79,7 +75,7 @@ session_start();
                 <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="/all-incidents.php" class="btn stretched-link">All Incidents</a>
+                <a href="#" class="btn stretched-link">Report 3</a>
             </div>
         </div>
     </div>
@@ -97,7 +93,7 @@ session_start();
                 <i class="fa-solid fa-file-invoice fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="priority-report.php" class="btn stretched-link" style="width: 200px;">Incident Priority Report</a>
+                <a href="#" class="btn stretched-link" style="width: 200px;">Report 4</a>
             </div>
         </div>
     </div>
@@ -109,7 +105,7 @@ session_start();
                 <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="other-reports.php" class="btn stretched-link">Other Reports</a>
+                <a href="#" class="btn stretched-link">Report 5</a>
             </div>
         </div>
     </div>
@@ -121,7 +117,7 @@ session_start();
                 <i class="fa-solid fa-note-sticky fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
-                <a href="incident-notes.php" class="btn stretched-link">Incident Notes</a>
+                <a href="#" class="btn stretched-link">Report 6</a>
             </div>
         </div>
     </div>
