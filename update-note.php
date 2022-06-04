@@ -202,8 +202,8 @@ if(isset($_POST["update"])){
         <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
-                <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date ?>">
             </div>
+                <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date ?>">
         </div>
         </div> <!-- form-group// --> 
     <div class="p-3"></div> <!-- spacing -->
@@ -211,8 +211,8 @@ if(isset($_POST["update"])){
     <div class="form-group input-group">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
-                <input name="title" class="form-control" placeholder="Title" type="text" value="<?php echo $title ?>">
             </div>
+                <input name="title" class="form-control" placeholder="Title" type="text" value="<?php echo $title ?>">
         </div>
     </div> <!-- form-group// -->
     </div> <!-- end row // -->
@@ -222,8 +222,8 @@ if(isset($_POST["update"])){
         <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
-                <input name="tag" class="form-control" placeholder="Tag" type="text"value="<?php echo $tag ?>">
             </div>
+                <input name="tag" class="form-control" placeholder="Tag" type="text"value="<?php echo $tag ?>">
         </div>
     </div> <!-- form-group// -->
     </div> <!-- end row // -->
