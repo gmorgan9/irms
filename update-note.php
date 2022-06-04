@@ -5,23 +5,21 @@ session_start();
 
 
    // Define variables and initialize with empty values
-   $date = "";
-   $date_err = "";
+$date = "";
+$date_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
     // Get hidden input value
     $id = $_POST["id"];
-    //$status = isset($_POST['status']) ? 1 : 0;
     
-    // Validate address address
+    // Validate Date
     $input_date = trim($_POST["date"]);
     if(empty($input_date)){
-        $date_err = "Please enter an Incident Number.";     
+        $date_err = "Please enter an address.";     
     } else{
         $date = $input_date;
     }
-    
     
     // Check input errors before inserting in database
     if(empty($date_err)){
@@ -33,7 +31,9 @@ if(isset($_POST["update"])){
             mysqli_stmt_bind_param($stmt, "si", $param_date, $param_id);
             
             // Set parameters
-            $param_date = $date;
+            $param_name = $date;
+            // $param_address = $address;
+            // $param_salary = $salary;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -54,7 +54,7 @@ if(isset($_POST["update"])){
     mysqli_close($con);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["noteid"]) && !empty(trim($_GET["noteid"]))){
+    if(isset($_GET["noteid"])){
         // Get URL parameter
         $id =  trim($_GET["noteid"]);
         
@@ -77,8 +77,9 @@ if(isset($_POST["update"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $date = $row['date'];
-                    
+                    $date = $row["date"];
+                    // $address = $row["address"];
+                    // $salary = $row["salary"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: die-page.php");
@@ -101,23 +102,6 @@ if(isset($_POST["update"])){
         exit();
     }
 }
-    
-
-
-        
-// $id = intval($_GET['updateid']);
-//     $sql = "SELECT * FROM incidents where id=$id";
-//     $result=mysqli_query($con,$sql);
-//     $row=mysqli_fetch_assoc($result);
-//    // $id=$row['id'];
-//     $inc_num = $row['inc_num'];
-//     $priority = $row['priority'];
-//     $description = $row['description'];
-//     $assign_group = $row['assign_group'];
-//     $kb_article = $row['kb_article'];
-//     $date = $row['date'];
-//     $time = $row['time'];
-
 ?>
 
 <!DOCTYPE html>
