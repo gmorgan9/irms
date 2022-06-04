@@ -51,7 +51,9 @@ session_start();
 <br><br>
 
             <h1 class="text-center"><?php echo $title; ?></h1>
-            <p class="text-center"><?php echo html_entity_decode($note); ?></p>
+            <div class="mx-auto">
+            <p><?php echo html_entity_decode($note); ?></p>
+            </div>
 
 
 
