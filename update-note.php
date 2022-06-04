@@ -5,8 +5,8 @@ session_start();
 
 
    // Define variables and initialize with empty values
-   $title = "";
-   $title_err = "";
+   $date = "";
+   $date_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["update"])){
@@ -15,25 +15,25 @@ if(isset($_POST["update"])){
     //$status = isset($_POST['status']) ? 1 : 0;
     
     // Validate address address
-    $input_title = trim($_POST["title"]);
-    if(empty($input_title)){
-        $title_err = "Please enter an Incident Number.";     
+    $input_date = trim($_POST["date"]);
+    if(empty($input_date)){
+        $date_err = "Please enter an Incident Number.";     
     } else{
-        $title = $input_title;
+        $date = $input_date;
     }
     
     
     // Check input errors before inserting in database
-    if(empty($title_err)){
+    if(empty($date_err)){
         // Prepare an update statement
-        $sql = "UPDATE notes SET title=? WHERE id=?";
+        $sql = "UPDATE notes SET date=? WHERE id=?";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_title, $param_id);
+            mysqli_stmt_bind_param($stmt, "si", $param_date, $param_id);
             
             // Set parameters
-            $param_title = $title;
+            $param_date = $date;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -77,7 +77,7 @@ if(isset($_POST["update"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $title = $row['title'];
+                    $date = $row['date'];
                     
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
