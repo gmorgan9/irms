@@ -51,7 +51,7 @@ session_start();
 <br><br>
 <div class="d-flex justify-content-center">
 
-            <h1><?php echo $title; ?></h1>
+            <h1><?php echo $title; ?></h1> <br>
             <?php echo html_entity_decode($note); ?>
 
 </div>
