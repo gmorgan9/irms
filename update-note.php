@@ -15,12 +15,12 @@ if(isset($_POST["up-note"])){
     //$status = isset($_POST['status']) ? 1 : 0;
     
     // Validate date address
-    $input_date = trim($_POST["date"]);
-    if(empty($input_date)){
-        $date_err = "Please enter a Date.";     
-    } else{
-        $date = $input_date;
-    }
+    // $input_date = trim($_POST["date"]);
+    // if(empty($input_date)){
+    //     $date_err = "Please enter a Date.";     
+    // } else{
+    //     $date = $input_date;
+    // }
 
     // Validate title address
     $input_title = trim($_POST["title"]);
@@ -31,35 +31,40 @@ if(isset($_POST["up-note"])){
     }
 
     // Validate address address
-    $input_note = trim($_POST["note"]);
-    if(empty($input_note)){
-        $note_err = "Please enter a description.";     
-    } else{
-        $note = $input_note;
-    }
+    // $input_note = trim($_POST["note"]);
+    // if(empty($input_note)){
+    //     $note_err = "Please enter a description.";     
+    // } else{
+    //     $note = $input_note;
+    // }
 
     // Validate address address
-    $input_tag = trim($_POST["tag"]);
-    if(empty($input_tag)){
-        $tag_err = "Please enter an assignment group.";     
-    } else{
-        $tag = $input_tag;
-    }
+    // $input_tag = trim($_POST["tag"]);
+    // if(empty($input_tag)){
+    //     $tag_err = "Please enter an assignment group.";     
+    // } else{
+    //     $tag = $input_tag;
+    // }
     
     // Check input errors before inserting in database
-    if(empty($date_err) && empty($title_err) && empty($note_err) && empty($tag_err)){
+    if(empty($title_err)){
         // Prepare an update statement
-        $sql = "UPDATE notes SET date=?, title=?, note=?, tag=? WHERE id=?";
+        $sql = "UPDATE notes SET title=? WHERE id=?";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssi", $param_date, $param_title, $param_note, $param_tag, $param_id);
+            mysqli_stmt_bind_param($stmt, "si", 
+           # $param_date, 
+            $param_title, 
+           # $param_note, 
+           # $param_tag, 
+            $param_id);
             
             // Set parameters
-            $param_date = $date;
+            // $param_date = $date;
             $param_title = $title;
-            $param_note = $note;
-            $param_tag = $tag;
+            // $param_note = $note;
+            // $param_tag = $tag;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -104,9 +109,9 @@ if(isset($_POST["up-note"])){
                     
                     // Retrieve individual field value
                     $date = $row['date'];
-                    $title = $row["title"];
-                    $note = $row["note"];
-                    $tag = $row["tag"];
+                    // $title = $row["title"];
+                    // $note = $row["note"];
+                    // $tag = $row["tag"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: die-page.php");
