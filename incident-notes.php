@@ -123,10 +123,11 @@ if(mysqli_num_rows($result) == 0 ) {
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td style="width: 5px;
+            <td style="display: block;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; //making dots"><?php echo $note; ?></td>
+  text-overflow: ellipsis;"><?php echo $note; ?></td>
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="view-note.php?viewid=<?php echo $id; ?>"><i class="fa-solid fa-eye" style="color:#1f7828;"></a></i></td>
