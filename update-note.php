@@ -168,7 +168,7 @@ if(isset($_POST["up-note"])){
 <div class="d-flex justify-content-center">
 
     <!-- form start -->
-    <form action="update-note.php" class="note-form" method="post">
+    <form action="update-note.php" class="rec-form" method="post">
 <?php include('errors.php'); ?>
 <br>
 <h2 class="text-center">Update Note</h2>
@@ -202,7 +202,7 @@ if(isset($_POST["up-note"])){
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
 		        </div>
-                <input name="tag" class="form-control" placeholder="Tag" type="text"  value="<?php echo $tag ?>">
+                <input name="tag" class="form-control" placeholder="Tag" type="text" value="<?php echo $tag ?>">
             </div>
         </div> 
         <!-- form-group// -->
