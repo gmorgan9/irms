@@ -148,7 +148,7 @@ if(isset($_POST["update"])){
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Record Incident - IRMS</title>
+    <title>Update Note - IRMS</title>
 </head>
 <body>
     <div class="header">
@@ -171,7 +171,7 @@ if(isset($_POST["update"])){
     <form action="record-note.php" class="note-form" method="post">
 <?php include('errors.php'); ?>
 <br>
-<h2 class="text-center">Record Note</h2>
+<h2 class="text-center">Update Note</h2>
 <br>
 
     <div class="d-flex justify-content-center">
@@ -180,7 +180,7 @@ if(isset($_POST["update"])){
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
-                <input name="date" class="form-control" placeholder="Date" type="date">
+                <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date ?>">
             </div>
         </div>
     <!-- form-group// -->
