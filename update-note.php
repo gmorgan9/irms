@@ -56,16 +56,16 @@ if(isset($_POST["update"])){
     // Check existence of id parameter before processing further
     if(isset($_GET["noteid"]) && !empty(trim($_GET["noteid"]))){
         // Get URL parameter
-        $noteid =  trim($_GET["noteid"]);
+        $id =  trim($_GET["noteid"]);
         
         // Prepare a select statement
-        $notesql = "SELECT * FROM notes WHERE id = ?";
-        if($stmt = mysqli_prepare($con, $notesql)){
+        $sql = "SELECT * FROM notes WHERE id = ?";
+        if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_noteid);
+            mysqli_stmt_bind_param($stmt, "i", $param_id);
             
             // Set parameters
-            $param_noteid = $noteid;
+            $param_id = $id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -77,7 +77,7 @@ if(isset($_POST["update"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $nadateme = $row["date"];
+                    $date = $row["date"];
                     // $address = $row["address"];
                     // $salary = $row["salary"];
                 } else{
@@ -95,7 +95,7 @@ if(isset($_POST["update"])){
         mysqli_stmt_close($stmt);
         
         // Close connection
-        mysqli_close($link);
+        mysqli_close($con);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");
