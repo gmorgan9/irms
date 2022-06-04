@@ -187,7 +187,7 @@ if(isset($_POST["update"])){
 <h2 class="text-center">Update Incident</h2>
 
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-50">
+        <div class="form-group input-group w-25">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> Identifer</span>
 	        </div>
@@ -198,7 +198,8 @@ if(isset($_POST["update"])){
     
 
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+    <div class="form-row"> <!-- start row -->
+        <div class="form-group input-group">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
 	        </div>
@@ -207,13 +208,19 @@ if(isset($_POST["update"])){
     </div> 
     <!-- form-group// -->
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+        <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
 		    </div>
             <input name="tag" class="form-control" placeholder="Tag" type="text"value="<?php echo $tag ?>">
         </div>
     </div> <!-- form-group// -->
+    </div>
+    <!-- end row // -->
+
+
+
+
     <div class="d-flex justify-content-center">
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
