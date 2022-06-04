@@ -51,7 +51,7 @@ session_start();
     <a href="/"><button class="btn btn-primary rec">Back</button></a>
 </div>
 
-<br><br>
+<br>
 
             <h1 class="text-center"><?php echo $title; ?></h1>
             <p class="text-center text-muted"><?php echo $fullDate; ?></p>
