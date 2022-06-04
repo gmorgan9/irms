@@ -123,7 +123,7 @@ if(mysqli_num_rows($result) == 0 ) {
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td style="color:black;max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note; ?></td>
+            <td style="color:black;max-width: 40em;white-space:nowrap !important;overflow:hidden !important;text-overflow:ellipsis;width:100px;"><?php echo $note; ?></td>
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="view-note.php?viewid=<?php echo $id; ?>"><i class="fa-solid fa-eye" style="color:#1f7828;"></a></i></td>
