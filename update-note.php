@@ -235,8 +235,8 @@ if(isset($_POST["update"])){
         <div class="form-group input-group w-75">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-		    </div>
             <textarea name="note" class="form-control" placeholder="Note" type="text"><?php echo $note ?></textarea>
+            </div>
         </div>
     </div> <!-- form-group// -->  
     </div> <!-- end row // -->
