@@ -117,7 +117,7 @@ session_start();
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="view-note.php?viewid=<?php echo $id; ?>"><i class="fa-solid fa-eye" style="color:#1f7828;"></a></i></td>
-            <td scope="row"><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square" style="color:blue;"></a></i></td>
+            <td scope="row"><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square" style="color:#0a3978;"></a></i></td>
             <td scope="row"><a href="incident-notes.php?id=<?php echo $id; ?>" class="delete"><i class="fa-solid fa-trash-can" style="color:red;"></i></a></td>
             </tr>
          <?php }
