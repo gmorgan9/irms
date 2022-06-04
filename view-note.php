@@ -30,8 +30,8 @@ session_start();
     </div>
 
     <?php
-
-      $sql = "SELECT * FROM notes where id=$id";
+      $viewid = $_GET['viewid'];
+      $sql = "SELECT * FROM notes where id=$viewid";
       $result = mysqli_query($con, $sql);
       if($result) {
           while ($row = mysqli_fetch_assoc($result)) {
