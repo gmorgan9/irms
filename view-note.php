@@ -26,8 +26,15 @@ session_start();
     <div class="header">
         <h2 class="logo">
             Incident Record Management System
+            <a href="/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </h2>
     </div>
+
+    <br>
+<div class="record_incident">
+    <a href="javascript:history.back()"><button class="btn btn-primary rec">Back</button></a>
+</div>
+<br>
 
     <?php
       $viewid = $_GET['viewid'];
@@ -46,7 +53,7 @@ session_start();
             ?>
 
 
-<br><br>
+<br>
 <div class="record_incident">
     <a href="incident-notes.php"><button class="btn btn-primary rec">Back</button></a>
 </div>
