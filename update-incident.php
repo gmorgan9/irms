@@ -110,9 +110,9 @@ if(isset($_POST["update"])){
     mysqli_close($con);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["noteid"]) && !empty(trim($_GET["noteid"]))){
+    if(isset($_GET["updateid"]) && !empty(trim($_GET["updateid"]))){
         // Get URL parameter
-        $id =  trim($_GET["noteid"]);
+        $id =  trim($_GET["updateid"]);
         
         // Prepare a select statement
         $sql = "SELECT * FROM incidents WHERE id = ?";
