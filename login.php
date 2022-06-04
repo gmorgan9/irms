@@ -20,6 +20,9 @@ session_start();
     <!-- Font Awesome -->
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/bell-regular.svg">
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/style.css?v=2.14">
 
