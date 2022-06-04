@@ -103,10 +103,10 @@ if(isset($_POST["up-note"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    // $date = $row['date'];
+                    $date = $row['date'];
                     $title = $row["title"];
-                    // $note = $row["note"];
-                    // $tag = $row["tag"];
+                    $note = $row["note"];
+                    $tag = $row["tag"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: die-page.php");
