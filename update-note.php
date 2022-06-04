@@ -214,7 +214,7 @@ if(isset($_POST["update"])){
     </div>
     <!-- end row // --> 
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="up-note" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
