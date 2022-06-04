@@ -138,22 +138,6 @@ if(isset($_POST["update"])){
         exit();
     }
 }
-    
-
-
-        
-// $id = intval($_GET['updateid']);
-//     $sql = "SELECT * FROM incidents where id=$id";
-//     $result=mysqli_query($con,$sql);
-//     $row=mysqli_fetch_assoc($result);
-//    // $id=$row['id'];
-//     $inc_num = $row['inc_num'];
-//     $priority = $row['priority'];
-//     $description = $row['description'];
-//     $assign_group = $row['assign_group'];
-//     $kb_article = $row['kb_article'];
-//     $date = $row['date'];
-//     $time = $row['time'];
 
 ?>
 
@@ -172,6 +156,10 @@ if(isset($_POST["update"])){
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CKEDITOR -->
+    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
 
     <title>Record Incident - IRMS</title>
 </head>
@@ -231,7 +219,7 @@ if(isset($_POST["update"])){
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 		    </div>
-            <input name="note" class="form-control" placeholder="Note" type="text" value="<?php echo $note ?>">
+            <textarea name="note" class="form-control" placeholder="Note" type="text"><?php echo $note ?></textarea>
         </div>
     </div> <!-- form-group// -->  
     <div class="d-flex justify-content-center">
@@ -249,5 +237,10 @@ if(isset($_POST["update"])){
 </div>
 
 
+<script>
+    // Replace the <textarea id="editor1"> with a CKEditor 4
+    // instance, using default configuration.
+    CKEDITOR.replace( 'note' );
+</script>
 </body>
 </html>

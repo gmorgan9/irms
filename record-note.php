@@ -97,10 +97,10 @@ session_start();
 </div>
 
 <script>
-                // Replace the <textarea id="editor1"> with a CKEditor 4
-                // instance, using default configuration.
-                CKEDITOR.replace( 'note' );
-            </script>
+    // Replace the <textarea id="editor1"> with a CKEditor 4
+    // instance, using default configuration.
+    CKEDITOR.replace( 'note' );
+</script>
 
 </body>
 </html>
