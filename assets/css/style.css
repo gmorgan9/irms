@@ -132,43 +132,5 @@ td a:hover {
     color: rgb(142, 0, 0);
 }
 .notes-table {
-    width: 1200px !important;
+    width: 800px !important;
 }
-.note-col {
-    width: 30em !important;
-    white-space: nowrap !important;
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
-}
-.truncate-overflow {
-    --max-lines: 1;
-    position: relative;
-    max-height: calc(var(--lh) * var(--max-lines));
-    overflow: hidden;
-    padding-right: 1rem; /* space for ellipsis */
-  }
-  .truncate-overflow::before {
-    position: absolute;
-    content: "...";
-    /* tempting... but shows when lines == content */
-    /* top: calc(var(--lh) * (var(--max-lines) - 1)); */
-    
-    /*
-    inset-block-end: 0;
-    inset-inline-end: 0;
-    */
-    bottom: 0;
-    right: 0;
-  }
-  .truncate-overflow::after {
-    content: "";
-    position: absolute;
-    /*
-    inset-inline-end: 0;
-    */
-    right: 0;
-    /* missing bottom on purpose*/
-    width: 40em;
-    height: 1rem;
-    background: white;
-  }
