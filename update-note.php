@@ -9,7 +9,7 @@ session_start();
    $date_err = $title_err = $note_err = $tag_err = "";
  
 // Processing form data when form is submitted
-if(isset($_POST["update"])){
+if(isset($_POST["up-note"])){
     // Get hidden input value
     $id = $_POST["id"];
     //$status = isset($_POST['status']) ? 1 : 0;
@@ -22,44 +22,44 @@ if(isset($_POST["update"])){
         $date = $input_date;
     }
 
-    // // Validate title address
-    // $input_title = trim($_POST["title"]);
-    // if(empty($input_title)){
-    //     $title_err = "Please enter an Incident Number.";     
-    // } else{
-    //     $title = $input_title;
-    // }
+    // Validate title address
+    $input_title = trim($_POST["title"]);
+    if(empty($input_title)){
+        $title_err = "Please enter an Incident Number.";     
+    } else{
+        $title = $input_title;
+    }
 
     // Validate address address
-    // $input_note = trim($_POST["note"]);
-    // if(empty($input_note)){
-    //     $note_err = "Please enter a description.";     
-    // } else{
-    //     $note = $input_note;
-    // }
+    $input_note = trim($_POST["note"]);
+    if(empty($input_note)){
+        $note_err = "Please enter a description.";     
+    } else{
+        $note = $input_note;
+    }
 
     // Validate address address
-    // $input_tag = trim($_POST["tag"]);
-    // if(empty($input_tag)){
-    //     $tag_err = "Please enter an assignment group.";     
-    // } else{
-    //     $tag = $input_tag;
-    // }
+    $input_tag = trim($_POST["tag"]);
+    if(empty($input_tag)){
+        $tag_err = "Please enter an assignment group.";     
+    } else{
+        $tag = $input_tag;
+    }
     
     // Check input errors before inserting in database
-    if(empty($date_err)){
+    if(empty($date_err) && empty($title_err) && empty($note_err) && empty($tag_err)){
         // Prepare an update statement
-        $sql = "UPDATE notes SET date=? WHERE id=?";
+        $sql = "UPDATE notes SET date=?, title=?, note=?, tag=? WHERE id=?";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_date, $param_id);
+            mysqli_stmt_bind_param($stmt, "ssssi", $param_date, $param_title, $param_note, $param_tag, $param_id);
             
             // Set parameters
             $param_date = $date;
-            // $param_title = $title;
-            // $param_note = $note;
-            // $param_tag = $tag;
+            $param_title = $title;
+            $param_note = $note;
+            $param_tag = $tag;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -80,9 +80,9 @@ if(isset($_POST["update"])){
     mysqli_close($con);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["updateid"]) && !empty(trim($_GET["updateid"]))){
+    if(isset($_GET["note-id"]) && !empty(trim($_GET["note-id"]))){
         // Get URL parameter
-        $id =  trim($_GET["updateid"]);
+        $id =  trim($_GET["note-id"]);
         
         // Prepare a select statement
         $sql = "SELECT * FROM notes WHERE id = ?";
@@ -104,9 +104,9 @@ if(isset($_POST["update"])){
                     
                     // Retrieve individual field value
                     $date = $row['date'];
-                    // $title = $row["title"];
-                    // $note = $row["note"];
-                    // $tag = $row["tag"];
+                    $title = $row["title"];
+                    $note = $row["note"];
+                    $tag = $row["tag"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: die-page.php");
@@ -222,7 +222,7 @@ if(isset($_POST["update"])){
     </div>
     <!-- end row // --> 
     <div class="d-flex justify-content-center">                                
-        <button id="button" type="submit" name="update" class="btn btn-primary text-center reg-log">Update Incident</button>  
+        <button id="button" type="submit" name="up-note" class="btn btn-primary text-center reg-log">Update Incident</button>  
     </div>                                                               
 </form>
 </div>
