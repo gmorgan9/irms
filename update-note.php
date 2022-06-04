@@ -56,7 +56,7 @@ if(isset($_POST["update"])){
     // Check existence of id parameter before processing further
     if(isset($_GET["noteid"]) && !empty(trim($_GET["noteid"]))){
         // Get URL parameter
-        $id =  trim($_GET["noteid"]);
+        $noteid =  trim($_GET["noteid"]);
         
         // Prepare a select statement
         $sql = "SELECT * FROM notes WHERE id = ?";
@@ -65,7 +65,7 @@ if(isset($_POST["update"])){
             mysqli_stmt_bind_param($stmt, "i", $param_id);
             
             // Set parameters
-            $param_id = $id;
+            $param_id = $noteid;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
