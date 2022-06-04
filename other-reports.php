@@ -50,7 +50,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-envelope-open fa-8x"></i> <br>
+            <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Report 1</a>
@@ -62,7 +62,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-envelope-circle-check fa-8x"></i> <br>
+            <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Report 2</a>
@@ -74,7 +74,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-envelopes-bulk fa-8x"></i> <br>
+            <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Report 3</a>
@@ -92,7 +92,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-file-invoice fa-8x"></i> <br>
+            <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link" style="width: 200px;">Report 4</a>
@@ -116,7 +116,7 @@ session_start();
     <div class="card-body d-flex flex-column align-items-center">
         <div class="card-body">
             <div class="d-flex justify-content-center">
-                <i class="fa-solid fa-note-sticky fa-8x"></i> <br>
+            <i class="fa-solid fa-file-lines fa-8x"></i> <br>
             </div>
             <div class="d-flex justify-content-center">
                 <a href="#" class="btn stretched-link">Report 6</a>
