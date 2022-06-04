@@ -199,7 +199,6 @@ if(isset($_POST["update"])){
 
     <div class="d-flex justify-content-center">
     <div class="form-row"> <!-- start row -->
-    <div class="d-flex justify-content-center">
         <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
@@ -208,6 +207,7 @@ if(isset($_POST["update"])){
         </div>
         </div> <!-- form-group// --> 
     <div class="p-3"></div> <!-- spacing -->
+    <div class="d-flex justify-content-center">
     <div class="form-group input-group">
             <div class="input-group-prepend">
 	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
