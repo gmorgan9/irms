@@ -85,7 +85,7 @@ session_start();
 <br><br><br>
 
 <?php 
-$sql = "SELECT * FROM incidents where priority=2";
+$sql = "SELECT * FROM notes";
 $result = mysqli_query($con, $sql);
 if(mysqli_num_rows($result) == 0 ) {
 ?>
