@@ -231,7 +231,7 @@ if(isset($_POST["update"])){
 
 
     <div class="form-row"> <!-- start row -->
-    <div class="d-flex justify-content-center">
+    <div class="mx-auto" style="width: -1100px;">
         <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
