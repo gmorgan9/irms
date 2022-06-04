@@ -135,6 +135,7 @@ td a:hover {
     width: 1200px !important;
 }
 .note-col {
+    width: 30em !important;
     white-space: nowrap !important;
     text-overflow: ellipsis !important;
     overflow: hidden !important;
