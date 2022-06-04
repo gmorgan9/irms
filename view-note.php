@@ -45,14 +45,14 @@ session_start();
             $note = $row['note'];
             $tag = $row['tag'];
           }
-          $newDate = date("M d, Y", strtotime($date));
+          $fullDate = date("M d, Y", strtotime($date));
         }
             ?>
 
 <br><br>
 
             <h1 class="text-center"><?php echo $title; ?></h1>
-            <p class="text-center text-muted"><?php echo $newDate; ?></p>
+            <p class="text-center text-muted"><?php echo $fullDate; ?></p>
             <div class="mx-auto" style="width:1200px;">
             <p><?php echo html_entity_decode($note); ?></p>
             </div>
