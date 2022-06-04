@@ -45,7 +45,7 @@ session_start();
             $note = $row['note'];
             $tag = $row['tag'];
           }
-          $newDate = date("m-d-Y", strtotime($date))
+          $newDate = date("m-d-Y", strtotime($date));
         }
             ?>
 
