@@ -20,10 +20,6 @@ session_start();
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- CKEDITOR -->
-    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
-    <script src="ckeditor/ckeditor.js"></script>
-
     <title>View Note - IRMS</title>
 </head>
 <body>
@@ -49,7 +45,13 @@ session_start();
         }
             ?>
 
-<br><br>
+
+<br>
+<div class="record_incident">
+    <a href="/"><button class="btn btn-primary rec">Back</button></a>
+</div>
+
+<br><br><br>
 
             <h1 class="text-center"><?php echo $title; ?></h1>
             <p class="text-center text-muted"><?php echo $fullDate; ?></p>
