@@ -31,7 +31,7 @@ session_start();
 
     <?php
 
-      $sql = "SELECT * FROM notes";
+      $sql = "SELECT * FROM notes where id=$id";
       $result = mysqli_query($con, $sql);
       if($result) {
           while ($row = mysqli_fetch_assoc($result)) {
