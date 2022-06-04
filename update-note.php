@@ -31,7 +31,7 @@ if(isset($_POST["update"])){
             mysqli_stmt_bind_param($stmt, "si", $param_date, $param_id);
             
             // Set parameters
-            $param_name = $date;
+            $param_date = $date;
             // $param_address = $address;
             // $param_salary = $salary;
             $param_id = $id;
