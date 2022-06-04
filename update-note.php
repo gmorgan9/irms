@@ -80,9 +80,9 @@ if(isset($_POST["update"])){
     mysqli_close($con);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["viewid"]) && !empty(trim($_GET["viewid"]))){
+    if(isset($_GET["updateid"]) && !empty(trim($_GET["updateid"]))){
         // Get URL parameter
-        $id =  trim($_GET["viewid"]);
+        $id =  trim($_GET["updateid"]);
         
         // Prepare a select statement
         $sql = "SELECT * FROM notes WHERE id = ?";
