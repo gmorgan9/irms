@@ -101,7 +101,7 @@ if(mysqli_num_rows($result) == 0 ) {
       <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Title</th>
-      <th scope="col">Note</th>
+      <!-- <th scope="col">Note</th> -->
       <th scope="col">Tag</th>
     </tr>
   </thead>
@@ -116,14 +116,14 @@ if(mysqli_num_rows($result) == 0 ) {
             $id = $row['id'];
             $date = $row['date'];
             $title = $row['title'];
-            $note = $row['note'];
+            // $note = $row['note'];
             $tag = $row['tag'];
             ?>
             <tr>
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note; ?></td>
+            <!-- <td><?php #echo $note; ?></td> -->
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="view-note.php?viewid=<?php echo $id; ?>"><i class="fa-solid fa-eye" style="color:#1f7828;"></a></i></td>
