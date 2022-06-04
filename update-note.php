@@ -5,61 +5,35 @@ session_start();
 
 
    // Define variables and initialize with empty values
-   $date = $title = $note = $tag = "";
-   $date_err = $title_err = $note_err = $tag_err = "";
+   $title = "";
+   $title_err = "";
  
 // Processing form data when form is submitted
-if(isset($_POST["up-note"])){
+if(isset($_POST["update"])){
     // Get hidden input value
     $id = $_POST["id"];
     //$status = isset($_POST['status']) ? 1 : 0;
     
-    // Validate date address
-    $input_date = trim($_POST["date"]);
-    if(empty($input_date)){
-        $date_err = "Please enter a Date.";     
-    } else{
-        $date = $input_date;
-    }
-
-    // Validate title address
+    // Validate address address
     $input_title = trim($_POST["title"]);
     if(empty($input_title)){
         $title_err = "Please enter an Incident Number.";     
     } else{
         $title = $input_title;
     }
-
-    // Validate address address
-    $input_note = trim($_POST["note"]);
-    if(empty($input_note)){
-        $note_err = "Please enter a description.";     
-    } else{
-        $note = $input_note;
-    }
-
-    // Validate address address
-    $input_tag = trim($_POST["tag"]);
-    if(empty($input_tag)){
-        $tag_err = "Please enter an assignment group.";     
-    } else{
-        $tag = $input_tag;
-    }
+    
     
     // Check input errors before inserting in database
-    if(empty($date_err) && empty($title_err) && empty($note_err) && empty($tag_err)){
+    if(empty($title_err)){
         // Prepare an update statement
-        $sql = "UPDATE notes SET date=?, title=?, note=?, tag=? WHERE id=?";
+        $sql = "UPDATE notes SET title=? WHERE id=?";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssi", $param_date, $param_title, $param_note, $param_tag, $param_id);
+            mysqli_stmt_bind_param($stmt, "si", $param_title, $param_id);
             
             // Set parameters
-            $param_date = $date;
             $param_title = $title;
-            $param_note = $note;
-            $param_tag = $tag;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -103,10 +77,8 @@ if(isset($_POST["up-note"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $date = $row['date'];
-                    $title = $row["title"];
-                    $note = $row["note"];
-                    $tag = $row["tag"];
+                    $title = $row['title'];
+                    
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: die-page.php");
@@ -129,6 +101,22 @@ if(isset($_POST["up-note"])){
         exit();
     }
 }
+    
+
+
+        
+// $id = intval($_GET['updateid']);
+//     $sql = "SELECT * FROM incidents where id=$id";
+//     $result=mysqli_query($con,$sql);
+//     $row=mysqli_fetch_assoc($result);
+//    // $id=$row['id'];
+//     $inc_num = $row['inc_num'];
+//     $priority = $row['priority'];
+//     $description = $row['description'];
+//     $assign_group = $row['assign_group'];
+//     $kb_article = $row['kb_article'];
+//     $date = $row['date'];
+//     $time = $row['time'];
 
 ?>
 
