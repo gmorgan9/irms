@@ -38,7 +38,7 @@ session_start();
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.20">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.21">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -123,7 +123,7 @@ if(mysqli_num_rows($result) == 0 ) {
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td style="max-width: 40em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100px;"><?php echo $note; ?></td>
+            <td class="truncate-overflow"><?php echo $note; ?></td>
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="view-note.php?viewid=<?php echo $id; ?>"><i class="fa-solid fa-eye" style="color:#1f7828;"></a></i></td>

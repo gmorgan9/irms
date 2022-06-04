@@ -140,3 +140,10 @@ td a:hover {
     text-overflow: ellipsis !important;
     overflow: hidden !important;
 }
+.truncate-overflow {
+    --max-lines: 3;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+    padding-right: 1rem; /* space for ellipsis */
+  }
