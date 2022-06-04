@@ -50,8 +50,8 @@ session_start();
 
 <br><br>
 
-            <h1 class="text-venter"><?php echo $title; ?></h1> <br>
-            <p><?php echo html_entity_decode($note); ?></p>
+            <h1 class="text-center"><?php echo $title; ?></h1>
+            <p class="text-center"><?php echo html_entity_decode($note); ?></p>
 
 
 
