@@ -199,22 +199,22 @@ if(isset($_POST["update"])){
 
     <div class="d-flex justify-content-center">
     <div class="form-row"> <!-- start row -->
-        <div class="form-group input-group">
-            <div class="input-group-prepend">
-	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
-	        </div>
-            <input name="title" class="form-control" placeholder="Title" type="text" value="<?php echo $title ?>">
-        </div>
-    </div> <!-- form-group// -->
-    <div class="p-3"></div> <!-- spacing -->
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+        <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa fa-calendar-days"></i> </span>
-		    </div>
-            <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date ?>">
+                <input name="date" class="form-control" placeholder="Date" type="date" value="<?php echo $date ?>">
+            </div>
         </div>
-    </div> <!-- form-group// --> 
+        </div> <!-- form-group// --> 
+    <div class="p-3"></div> <!-- spacing -->
+    <div class="form-group input-group">
+            <div class="input-group-prepend">
+	            <span class="input-group-text"> <i class="fa-solid fa-hashtag"></i> </span>
+                <input name="title" class="form-control" placeholder="Title" type="text" value="<?php echo $title ?>">
+            </div>
+        </div>
+    </div> <!-- form-group// -->
     </div> <!-- end row // -->
 
     <div class="form-row"> <!-- start row -->
@@ -222,8 +222,8 @@ if(isset($_POST["update"])){
         <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
-		    </div>
-            <input name="tag" class="form-control" placeholder="Tag" type="text"value="<?php echo $tag ?>">
+                <input name="tag" class="form-control" placeholder="Tag" type="text"value="<?php echo $tag ?>">
+            </div>
         </div>
     </div> <!-- form-group// -->
     </div> <!-- end row // -->
@@ -232,10 +232,10 @@ if(isset($_POST["update"])){
 
     <div class="form-row"> <!-- start row -->
     <div class="d-flex justify-content-center">
-        <div class="form-group input-group w-75">
+        <div class="form-group input-group">
     	    <div class="input-group-prepend">
 		        <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-            <textarea name="note" class="form-control" placeholder="Note" type="text"><?php echo $note ?></textarea>
+                <textarea name="note" class="form-control" placeholder="Note" type="text"><?php echo $note ?></textarea>
             </div>
         </div>
     </div> <!-- form-group// -->  
