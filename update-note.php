@@ -168,7 +168,7 @@ if(isset($_POST["update"])){
 <div class="d-flex justify-content-center">
 
     <!-- form start -->
-    <form action="record-note.php" class="note-form" method="post">
+    <form action="update-note.php" class="note-form" method="post">
 <?php include('errors.php'); ?>
 <br>
 <h2 class="text-center">Update Note</h2>
