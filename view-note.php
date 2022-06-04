@@ -46,12 +46,12 @@ session_start();
             ?>
 
 
-<br>
+<br><br>
 <div class="record_incident">
     <a href="/"><button class="btn btn-primary rec">Back</button></a>
 </div>
 
-<br><br><br>
+<br><br>
 
             <h1 class="text-center"><?php echo $title; ?></h1>
             <p class="text-center text-muted"><?php echo $fullDate; ?></p>
