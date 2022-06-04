@@ -147,3 +147,28 @@ td a:hover {
     overflow: hidden;
     padding-right: 1rem; /* space for ellipsis */
   }
+  .truncate-overflow::before {
+    position: absolute;
+    content: "...";
+    /* tempting... but shows when lines == content */
+    /* top: calc(var(--lh) * (var(--max-lines) - 1)); */
+    
+    /*
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    */
+    bottom: 0;
+    right: 0;
+  }
+  .truncate-overflow::after {
+    content: "";
+    position: absolute;
+    /*
+    inset-inline-end: 0;
+    */
+    right: 0;
+    /* missing bottom on purpose*/
+    width: 1rem;
+    height: 1rem;
+    background: white;
+  }
