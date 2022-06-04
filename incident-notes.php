@@ -101,7 +101,11 @@ session_start();
 
       $sql = "SELECT * FROM notes";
       $result = mysqli_query($con, $sql);
-      if($result) {
+      if(mysqli_num_rows($result) == 0 ) {
+        ?>
+        <h3 class="text-center">No records found!</h3>
+        <?php 
+            } else {
           while ($row = mysqli_fetch_assoc($result)) {
             $id = $row['id'];
             $date = $row['date'];
