@@ -173,7 +173,7 @@ if(isset($_POST["up-note"])){
 
     <!-- form start -->
     <form action="update-note.php" class="note-form" method="post">
-<?php //include('errors.php'); ?>
+<?php include('errors.php'); ?>
 <br>
 <h2 class="text-center">Update Note</h2>
 <br>
