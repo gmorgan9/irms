@@ -143,7 +143,7 @@ if(isset($_POST["update"])){
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.16">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.21">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -190,7 +190,7 @@ if(isset($_POST["update"])){
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa-solid fa-arrow-up-wide-short"></i> </span>
 		        </div>
-            <input name="title" class="form-control" placeholder="Title" type="text">
+            <input name="title" class="form-control" placeholder="Title" type="text" value="<?php echo $title ?>">
         </div>
         </div> 
     <!-- form-group// -->
@@ -202,7 +202,7 @@ if(isset($_POST["update"])){
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa fa-users fa-xs"></i> </span>
 		        </div>
-                <input name="tag" class="form-control" placeholder="Tag" type="text">
+                <input name="tag" class="form-control" placeholder="Tag" type="text"  value="<?php echo $tag ?>">
             </div>
         </div> 
         <!-- form-group// -->
@@ -214,7 +214,7 @@ if(isset($_POST["update"])){
             <div class="form-group input-group">
     	        <div class="input-group-prepend">
 		            <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-                    <textarea name="note" class="form-control" placeholder="Note" type="text"></textarea>
+                    <textarea name="note" class="form-control" placeholder="Note" type="text"><?php echo $note ?></textarea>
                     </div>
             </div>
         </div> 
