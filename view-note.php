@@ -33,10 +33,29 @@ session_start();
         </h2>
     </div>
 
+    <?php
+
+      $sql = "SELECT * FROM notes";
+      $result = mysqli_query($con, $sql);
+      if($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $id = $row['id'];
+            $date = $row['date'];
+            $title = $row['title'];
+            $note = $row['note'];
+            $tag = $row['tag'];
+          }
+        }
+            ?>
 
 <br><br>
 <div class="d-flex justify-content-center">
-    
+
+<h1><?php echo $title; ?></h1>
+
+          <div>
+            <?php echo html_entity_decode($note); ?>
+          </div>
 
 </div>
 
