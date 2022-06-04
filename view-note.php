@@ -30,12 +30,6 @@ session_start();
         </h2>
     </div>
 
-    <br>
-<div class="record_incident">
-    <a href="javascript:history.back()"><button class="btn btn-primary rec">Back</button></a>
-</div>
-<br>
-
     <?php
       $viewid = $_GET['viewid'];
       $sql = "SELECT * FROM notes where id=$viewid";
