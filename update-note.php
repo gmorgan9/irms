@@ -207,6 +207,7 @@ if(isset($_POST["update"])){
         </div>
     </div> 
     <!-- form-group// -->
+    <div class="p-3"></div> <!-- spacing -->
     <div class="d-flex justify-content-center">
         <div class="form-group input-group">
     	    <div class="input-group-prepend">
