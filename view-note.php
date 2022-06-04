@@ -51,8 +51,9 @@ session_start();
 <br><br>
 
             <h1 class="text-center"><?php echo $title; ?></h1>
-            <small class="text-muted text-center"><?php echo $date; ?></small>
             <div class="mx-auto" style="width:1200px;">
+            <small class="text-muted"><?php echo $date; ?></small>
+            
             <p><?php echo html_entity_decode($note); ?></p>
             </div>
 
