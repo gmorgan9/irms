@@ -123,7 +123,7 @@ if(mysqli_num_rows($result) == 0 ) {
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td style="width: 30em;
+            <td style="width: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; //making dots"><?php echo $note; ?></td>
