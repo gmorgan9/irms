@@ -48,7 +48,7 @@ session_start();
 
 <br><br>
 <div class="record_incident">
-    <a href="/"><button class="btn btn-primary rec">Back</button></a>
+    <a href="incident-notes.php"><button class="btn btn-primary rec">Back</button></a>
 </div>
 
 <br><br>
