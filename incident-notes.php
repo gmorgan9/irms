@@ -38,7 +38,7 @@ session_start();
     <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.19">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.20">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -112,7 +112,7 @@ session_start();
             <th scope="row"><?php echo $id; ?></th>
             <td scope="row"><?php echo $date; ?></td>
             <td scope="row"><?php echo $title; ?></td>
-            <td class="d-inline-block text-truncate" style="white-space: nowrap !important; text-overflow: ellipsis !important; overflow: hidden !important;"><?php echo $note; ?></td>
+            <td class="note-col"><?php echo $note; ?></td>
             <td scope="row"><?php echo $tag; ?></td>
             <td scope="row"><?php echo $time; ?></td>
             <td scope="row"><a href="update-note.php?updateid=<?php echo $id; ?>"><i class="fa-solid fa-pen-to-square"></a></i></td>

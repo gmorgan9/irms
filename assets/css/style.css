@@ -134,3 +134,8 @@ td a:hover {
 .notes-table {
     width: 1200px !important;
 }
+.note-col {
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+}
